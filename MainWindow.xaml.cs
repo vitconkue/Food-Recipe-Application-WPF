@@ -24,5 +24,29 @@ namespace Food_Recipe_Appplication
         {
             InitializeComponent();
         }
+
+        private void SearchBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            SearchBox.Text = "";
+            SearchBox.Foreground = Brushes.Black;
+        }
+
+        private void SearchBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            SearchBox.Text = "Search";
+            SearchBox.Foreground = Brushes.Gray;
+        }
+
+        private void MenuButton_Click(object sender, RoutedEventArgs e)
+        {
+            LeftMenu.Visibility = Visibility.Visible;
+            MenuButton.Visibility = Visibility.Collapsed;
+        }
+
+        private void LeftMenuButton_Click(object sender, RoutedEventArgs e)
+        {
+            LeftMenu.Visibility = Visibility.Collapsed;
+            MenuButton.Visibility = Visibility.Visible;
+        }
     }
 }

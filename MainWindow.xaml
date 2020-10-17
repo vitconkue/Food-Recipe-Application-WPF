@@ -5,8 +5,54 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Food_Recipe_Appplication"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="MainWindow" Height="700" Width="1000" WindowStartupLocation="CenterScreen">
+
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Left"  Name="LeftMenu" Background="#00B4AB" Width="170" Visibility="Collapsed">
+            <Button Name="LeftMenuButton" Click="LeftMenuButton_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Height="30" Source="Icons/menu.png" Margin="10 0 10 0"></Image>
+                    <TextBlock FontSize="20">Menu</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button>
+                <StackPanel Orientation="Horizontal">
+                    <Image Height="30" Source="Icons/favourite.png" Margin="10 0 10 0"></Image>
+                    <TextBlock FontSize="20">Favourite</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button>
+                <StackPanel Orientation="Horizontal">
+                    <Image Height="30" Source="Icons/recipe-book.png" Margin="10 0 10 0"></Image>
+                    <TextBlock FontSize="20">Add recpie</TextBlock>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Background="#99D9F3" Height="60">
+            <Button Name="MenuButton" Click="MenuButton_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Height="30" Source="Icons/menu.png" Margin="10 0 10 0"></Image>
+                    <TextBlock FontSize="20">Menu</TextBlock>
+                </StackPanel>
+            </Button>
+            <StackPanel Margin="500 0 0 0" Orientation="Horizontal" FlowDirection="RightToLeft">
+                <Image Margin="20 0 0 0" Height="30" Source="Icons/loupe.png"></Image>
+                <TextBox Name="SearchBox"  BorderThickness="2" BorderBrush="Black" Width="250" Height="30" Margin="20 0 0 0" FlowDirection="LeftToRight" FontSize="20" GotFocus="SearchBox_GotFocus" LostFocus="SearchBox_LostFocus" Foreground="Gray">Search</TextBox>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel>
+
+        </StackPanel>
+    </DockPanel>
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Height" Value="60"></Setter>
+            <Setter Property="Width" Value="170"></Setter>
+            <Setter Property="HorizontalContentAlignment" Value="Left"></Setter>
+            <Setter Property="Background" Value="Transparent"></Setter>
+            <Setter Property="BorderBrush" Value="Transparent"></Setter>
+            <Setter Property="BorderThickness" Value="0"></Setter>
+        </Style>
+    </Window.Resources>
 </Window>

@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("xmlfiles/xmlfile2.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("icons/recipe-book.png")]
 
 
