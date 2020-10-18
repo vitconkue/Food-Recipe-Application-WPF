@@ -5,48 +5,55 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Food_Recipe_Appplication"
         mc:Ignorable="d"
-        Title="MainWindow" Height="700" Width="1000" WindowStartupLocation="CenterScreen">
+        Title="MainWindow" Height="700" Width="1000" WindowStartupLocation="CenterScreen"  MinHeight="550" MinWidth="600">
 
     <DockPanel>
         <StackPanel DockPanel.Dock="Left"  Name="LeftMenu" Background="#00B4AB" Width="170" Visibility="Collapsed">
-            <Button Name="LeftMenuButton" Click="LeftMenuButton_Click">
+            
+            <Button Style="{DynamicResource MenuButtonStyle}"  Name="LeftMenuButton" Click="LeftMenuButton_Click">
                 <StackPanel Orientation="Horizontal">
                     <Image Height="30" Source="Icons/menu.png" Margin="10 0 10 0"></Image>
                     <TextBlock FontSize="20">Menu</TextBlock>
                 </StackPanel>
             </Button>
-            <Button>
+            <Button  Style="{DynamicResource MenuButtonStyle}">
+                <StackPanel Orientation="Horizontal">
+                    <Image Height="30" Source="Icons/home-page.png" Margin="10 0 10 0"></Image>
+                    <TextBlock FontSize="20">Home</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button  Style="{DynamicResource MenuButtonStyle}">
                 <StackPanel Orientation="Horizontal">
                     <Image Height="30" Source="Icons/favourite.png" Margin="10 0 10 0"></Image>
                     <TextBlock FontSize="20">Favourite</TextBlock>
                 </StackPanel>
             </Button>
-            <Button>
+            <Button  Style="{DynamicResource MenuButtonStyle}">
                 <StackPanel Orientation="Horizontal">
-                    <Image Height="30" Source="Icons/recipe-book.png" Margin="10 0 10 0"></Image>
+                    <Image Height="30" Source="Icons/add-file.png" Margin="10 0 10 0"></Image>
                     <TextBlock FontSize="20">Add recpie</TextBlock>
                 </StackPanel>
             </Button>
         </StackPanel>
         <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Background="#99D9F3" Height="60">
-            <Button Name="MenuButton" Click="MenuButton_Click">
+            <Button  Style="{DynamicResource MenuButtonStyle}" Name="MenuButton" Click="MenuButton_Click">
                 <StackPanel Orientation="Horizontal">
                     <Image Height="30" Source="Icons/menu.png" Margin="10 0 10 0"></Image>
                     <TextBlock FontSize="20">Menu</TextBlock>
                 </StackPanel>
-            </Button>
-            <StackPanel Margin="500 0 0 0" Orientation="Horizontal" FlowDirection="RightToLeft">
+            </Button >
+            <StackPanel Name="SearchBlock"  Orientation="Horizontal" FlowDirection="RightToLeft">
                 <Image Margin="20 0 0 0" Height="30" Source="Icons/loupe.png"></Image>
                 <TextBox Name="SearchBox"  BorderThickness="2" BorderBrush="Black" Width="250" Height="30" Margin="20 0 0 0" FlowDirection="LeftToRight" FontSize="20" GotFocus="SearchBox_GotFocus" LostFocus="SearchBox_LostFocus" Foreground="Gray">Search</TextBox>
             </StackPanel>
         </StackPanel>
 
-        <StackPanel>
-
-        </StackPanel>
+        <WrapPanel Name="ListOfFood">
+         
+        </WrapPanel>
     </DockPanel>
     <Window.Resources>
-        <Style TargetType="Button">
+        <Style x:Key="MenuButtonStyle" TargetType="{x:Type Button}">
             <Setter Property="Height" Value="60"></Setter>
             <Setter Property="Width" Value="170"></Setter>
             <Setter Property="HorizontalContentAlignment" Value="Left"></Setter>

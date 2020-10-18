@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +22,23 @@ namespace Food_Recipe_Appplication
     /// </summary>
     public partial class MainWindow : Window
     {
+        private ObservableCollection<RecipesList> recipes;
         public MainWindow()
         {
             InitializeComponent();
+            SizeChanged += MainWindow_SizeChanged;
+            Ellipse yellowCircle = new Ellipse();
+            yellowCircle.Width = 60;
+            yellowCircle.Height = 60;
+            yellowCircle.Fill = new SolidColorBrush(Colors.Yellow);
+
+            ListOfFood.Children.Add(yellowCircle);
+        }
+
+        private void MainWindow_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            var windowWidth = e.NewSize.Width;
+            SearchBlock.Margin = new Thickness(windowWidth-500, 0, 0, 0);
         }
 
         private void SearchBox_GotFocus(object sender, RoutedEventArgs e)

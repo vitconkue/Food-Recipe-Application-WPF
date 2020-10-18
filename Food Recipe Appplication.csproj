@@ -112,17 +112,22 @@
     </Resource>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="XMLFiles\Recipes.xml" />
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="Icons\favourite.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Icons\recipe-book.png">
+    <Resource Include="Icons\home-page.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="XMLFiles\Recipes.xml" />
+    <Resource Include="Icons\add-file.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
