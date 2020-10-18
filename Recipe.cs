@@ -1,35 +1,80 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace Food_Recipe_Appplication
 {
-    class Step
+    public class Recipe
     {
-        private string _text; 
-        private string _video_link;
+        private string _foodName;
 
-        private string _image_name;
+        private bool _isFavorite;
 
-        public string Text { get => _text; set => _text = value; }
-        public string Video_link { get => _video_link; set => _video_link = value; }
-        public string Image_name { get => _image_name; set => _image_name = value; }
-    }
-    class Recipe
-    {
-        private string _name;
-        public string Name
+        private string _mainPictureName;
+
+        private StepsList _steps;
+
+        public string FoodName { get => _foodName; set => _foodName = value; }
+        public bool IsFavorite { get => _isFavorite; set => _isFavorite = value; }
+        public string MainPictureName { get => _mainPictureName; set => _mainPictureName = value; }
+        public StepsList Steps { get => _steps; set => _steps = value; }
+
+        public Recipe()
         {
-            get{
-                return _name; 
+            _mainPictureName = "default_name";
+            _foodName = "";
+            _isFavorite = false;
+            _steps = new StepsList();
+        }
+
+        public static Recipe LoadedSingleRecipe(XmlReader reader)
+        {
+            reader.Read();
+            Recipe result = new Recipe();
+            //TODO: Load single recipe after received reader from RecipeList
+            while (reader.Read())
+            {
+                if (reader.IsStartElement())
+                {
+                    switch (reader.Name)
+                    {
+                        case "foodname":
+                            {
+                                reader.Read();
+                                string foodName = reader.Value;
+                                result._foodName = foodName;
+                                break;
+                            }
+                        case "mainpicture_name":
+                            {
+                                reader.Read();
+
+                                string mainPictureName = reader.Value;
+                                result._mainPictureName = mainPictureName;
+                                break;
+                            }
+                        case "steps":
+                            {
+
+                                result._steps = StepsList.LoadedStepsList(reader.ReadSubtree());
+
+                                break;
+                            }
+                        default:
+                            break;
+                    }
+                }
+
+
             }
-            set{
-                _name = value; 
-                // getter for name
-            }
-            
+
+
+            return result;
         }
     }
 }

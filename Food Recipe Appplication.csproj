@@ -56,6 +56,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Recipe.cs" />
+    <Compile Include="RecipesList.cs" />
+    <Compile Include="Step.cs" />
+    <Compile Include="StepsList.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -101,9 +104,6 @@
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="XMLFiles\Recipes_save.xml" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="XMLFiles\Preferences.xml" />
   </ItemGroup>
   <ItemGroup>
@@ -120,6 +120,9 @@
     <Resource Include="Icons\recipe-book.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XMLFiles\Recipes.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
