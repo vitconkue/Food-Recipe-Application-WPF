@@ -63,6 +63,19 @@ namespace Food_Recipe_Appplication
             }
         }
 
+        public RecipesList SearchName(string in_name)
+        {
+            RecipesList result = new RecipesList();
+            IEnumerable<Recipe> filtered = this.Where(food => food.FoodName == in_name);
+            foreach(var value in filtered)
+            {
+                result.AddRecipe(value); 
+            }
+
+            return result;
+            
+        }
+
         public IEnumerator<Recipe> GetEnumerator()
         {
             foreach (var val in _recipes)
