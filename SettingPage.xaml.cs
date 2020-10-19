@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,21 +16,14 @@ using System.Windows.Shapes;
 namespace Food_Recipe_Appplication
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for SettingPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class SettingPage : Page
     {
-
-        public MainWindow()
+        public SettingPage()
         {
             InitializeComponent();
-            Loaded += MainWindow_Loaded;
         }
 
-        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
-        {
-            Frame.NavigationService.Navigate(new HomePage());
-        }
     }
-       
 }

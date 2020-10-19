@@ -28,3 +28,9 @@ E:\Study\Windows Programming -HCMUS\Project01-FoodRecipe\src\Food Recipe Appplic
 E:\Study\Windows Programming -HCMUS\Project01-FoodRecipe\src\Food Recipe Appplication\obj\Debug\Food Recipe Appplication.csproj.CoreCompileInputs.cache
 E:\Study\Windows Programming -HCMUS\Project01-FoodRecipe\src\Food Recipe Appplication\obj\Debug\Food Recipe Appplication.exe
 E:\Study\Windows Programming -HCMUS\Project01-FoodRecipe\src\Food Recipe Appplication\obj\Debug\Food Recipe Appplication.pdb
+E:\IT documents\C#\Food Recipe Project\Food-Recipe-Appplication\obj\Debug\HomePage.g.cs
+E:\IT documents\C#\Food Recipe Project\Food-Recipe-Appplication\obj\Debug\SettingPage.g.cs
+E:\IT documents\C#\Food Recipe Project\Food-Recipe-Appplication\obj\Debug\SplashScreen.g.cs
+E:\IT documents\C#\Food Recipe Project\Food-Recipe-Appplication\obj\Debug\HomePage.baml
+E:\IT documents\C#\Food Recipe Project\Food-Recipe-Appplication\obj\Debug\SettingPage.baml
+E:\IT documents\C#\Food Recipe Project\Food-Recipe-Appplication\obj\Debug\SplashScreen.baml
