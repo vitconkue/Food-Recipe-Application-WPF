@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="HelperFunctions.cs" />
     <Compile Include="Recipe.cs" />
     <Compile Include="RecipesList.cs" />
     <Compile Include="Step.cs" />

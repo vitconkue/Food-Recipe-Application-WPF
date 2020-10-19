@@ -63,7 +63,7 @@ namespace Food_Recipe_Appplication
             }
         }
 
-        public RecipesList SearchName(string in_name)
+        public RecipesList SearchExactName(string in_name)
         {
             RecipesList result = new RecipesList();
             IEnumerable<Recipe> filtered = this.Where(food => food.FoodName == in_name);
@@ -74,6 +74,34 @@ namespace Food_Recipe_Appplication
 
             return result;
             
+        }
+
+        public RecipesList SearchNameContains(string in_name)
+        {
+            RecipesList result = new RecipesList();
+            IEnumerable<Recipe> filtered = this.Where(food => food.FoodName.Contains(in_name));
+            foreach (var value in filtered)
+            {
+                result.AddRecipe(value);
+            }
+
+            return result;
+
+        }
+
+        public RecipesList SearchNameContains_NoneUtf(string in_name)
+        {
+            RecipesList result = new RecipesList();
+            // query
+            IEnumerable<Recipe> filtered = this.Where(food => food.FoodName.Contains(in_name) ||
+            HelperFunctions.RemovedUTF(food.FoodName).Contains(HelperFunctions.RemovedUTF(in_name)));
+            foreach (var value in filtered)
+            {
+                result.AddRecipe(value);
+            }
+
+            return result;
+
         }
 
         public IEnumerator<Recipe> GetEnumerator()
