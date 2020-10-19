@@ -22,17 +22,20 @@ namespace Food_Recipe_Appplication
     /// </summary>
     public partial class MainWindow : Window
     {
-
+        public delegate void MyDelegate();
+        public event MyDelegate WindowSizeChangedHandler;
         public MainWindow()
         {
             InitializeComponent();
             Loaded += MainWindow_Loaded;
+    
         }
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            Frame.NavigationService.Navigate(new HomePage());
+            frame.NavigationService.Navigate(new HomePage());
         }
+         
     }
        
 }

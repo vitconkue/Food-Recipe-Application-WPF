@@ -34,3 +34,5 @@ E:\IT documents\C#\Food Recipe Project\Food-Recipe-Appplication\obj\Debug\Splash
 E:\IT documents\C#\Food Recipe Project\Food-Recipe-Appplication\obj\Debug\HomePage.baml
 E:\IT documents\C#\Food Recipe Project\Food-Recipe-Appplication\obj\Debug\SettingPage.baml
 E:\IT documents\C#\Food Recipe Project\Food-Recipe-Appplication\obj\Debug\SplashScreen.baml
+E:\IT documents\C#\Food Recipe Project\Food-Recipe-Appplication\obj\Debug\FavouritePage.g.cs
+E:\IT documents\C#\Food Recipe Project\Food-Recipe-Appplication\obj\Debug\FavouritePage.baml

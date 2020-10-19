@@ -57,6 +57,11 @@ namespace Food_Recipe_Appplication
             LeftMenu.Visibility = Visibility.Collapsed;
             MenuButton.Visibility = Visibility.Visible;
         }
+
+        private void SettingButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new SettingPage());
+        }
     }
 }
 

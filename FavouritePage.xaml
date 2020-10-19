@@ -1,4 +1,4 @@
-﻿<Page x:Class="Food_Recipe_Appplication.SettingPage"
+﻿<Page x:Class="Food_Recipe_Appplication.FavouritePage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Food_Recipe_Appplication"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="SettingPage">
+      Title="FavouritePage">
     <DockPanel>
         <StackPanel DockPanel.Dock="Left"  Name="LeftMenu" Background="#00B4AB" Width="170">
 
@@ -56,7 +56,7 @@
 
 
         <Grid>
-                
+
         </Grid>
 
     </DockPanel>

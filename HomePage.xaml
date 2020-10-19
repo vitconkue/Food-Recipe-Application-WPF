@@ -35,6 +35,12 @@
                     <TextBlock FontSize="20">Add recpie</TextBlock>
                 </StackPanel>
             </Button>
+            <Button Name="SettingButton" Click="SettingButton_Click" Style="{DynamicResource MenuButtonStyle}">
+                <StackPanel Orientation="Horizontal">
+                    <Image Height="30" Source="Icons/settings.png" Margin="10 0 10 0"></Image>
+                    <TextBlock FontSize="20">Settings</TextBlock>
+                </StackPanel>
+            </Button>
         </StackPanel>
         <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Background="#99D9F3" Height="60">
             <Button  Style="{DynamicResource MenuButtonStyle}" Name="MenuButton" Click="MenuButton_Click">

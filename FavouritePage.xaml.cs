@@ -16,21 +16,22 @@ using System.Windows.Shapes;
 namespace Food_Recipe_Appplication
 {
     /// <summary>
-    /// Interaction logic for SettingPage.xaml
+    /// Interaction logic for FavouritePage.xaml
     /// </summary>
-    public partial class SettingPage : Page
+    public partial class FavouritePage : Page
     {
-        public SettingPage()
+        public FavouritePage()
         {
             InitializeComponent();
-            SizeChanged += SettingPage_SizeChanged;
+            SizeChanged += FavouritePage_SizeChanged;
         }
 
-        private void SettingPage_SizeChanged(object sender, SizeChangedEventArgs e)
+        private void FavouritePage_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             var windowWidth = e.NewSize.Width;
             SearchBlock.Margin = new Thickness(windowWidth - 500, 0, 0, 0);
         }
+
 
         private void SearchBox_GotFocus(object sender, RoutedEventArgs e)
         {
