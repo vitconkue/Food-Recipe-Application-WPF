@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,15 +8,26 @@ using System.Xml;
 
 namespace Food_Recipe_Appplication
 {
-    public class RecipesList
+    public class RecipesList: IEnumerable<Recipe>
     {
         private List<Recipe> _recipes;
 
         public List<Recipe> Recipes { get => _recipes; set => _recipes = value; }
 
+        public Recipe this[int index]
+        {
+            get => _recipes[index];
+            set => _recipes[index] = value;
+        }
+
         public RecipesList()
         {
             _recipes = new List<Recipe>();
+        }
+
+        public void AddRecipe(Recipe in_recipe)
+        {
+            _recipes.Add(in_recipe);
         }
 
         public void LoadAll()
@@ -51,8 +63,17 @@ namespace Food_Recipe_Appplication
             }
         }
 
+        public IEnumerator<Recipe> GetEnumerator()
+        {
+            foreach (var val in _recipes)
+            {
+                yield return val;
+            }
+        }
 
-
-
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
     }
 }
