@@ -113,7 +113,9 @@
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="XMLFiles\Recipes.xml" />
+    <None Include="XMLFiles\Recipes.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Icons\favourite.png">

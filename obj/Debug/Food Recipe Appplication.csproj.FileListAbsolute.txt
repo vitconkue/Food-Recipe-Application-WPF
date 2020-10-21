@@ -28,3 +28,4 @@ E:\Study\Windows Programming -HCMUS\Project01-FoodRecipe\src\Food Recipe Appplic
 E:\Study\Windows Programming -HCMUS\Project01-FoodRecipe\src\Food Recipe Appplication\obj\Debug\Food Recipe Appplication.csproj.CoreCompileInputs.cache
 E:\Study\Windows Programming -HCMUS\Project01-FoodRecipe\src\Food Recipe Appplication\obj\Debug\Food Recipe Appplication.exe
 E:\Study\Windows Programming -HCMUS\Project01-FoodRecipe\src\Food Recipe Appplication\obj\Debug\Food Recipe Appplication.pdb
+E:\Study\Windows Programming -HCMUS\Project01-FoodRecipe\src\Food Recipe Appplication\bin\Debug\XMLFiles\Recipes.xml

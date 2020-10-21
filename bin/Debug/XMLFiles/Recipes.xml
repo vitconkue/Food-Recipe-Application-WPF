@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<recipes>
+  <recipe favorite="true">
+    <mainpicture_name>cbs_mainpicture </mainpicture_name>
+    <foodname>Cá ba sa</foodname>
+    <steps>
+      <step>
+        <step_text>1cbs_step</step_text>
+        <step_video_link>1cbs_step_video</step_video_link>
+        <step_picture_name>1cbs_step_picture</step_picture_name>
+      </step>
+      <step>
+        <step_text>2cbs_step</step_text>
+        <step_video_link>2cbs_video</step_video_link>
+        <step_picture_name>2cbs_picture</step_picture_name>
+      </step>
+      <step>
+        <step_text>3cbs_step</step_text>
+        <step_video_link>3cbs_video</step_video_link>
+        <step_picture_name>3cbs_picture</step_picture_name>
+      </step>
+    </steps>
+  </recipe>
+  <recipe favorite="false">
+    <mainpicture_name>cc_mainpicture </mainpicture_name>
+    <foodname>Cá cơm</foodname>
+    <steps>
+      <step>
+        <step_text>1cc_step</step_text>
+        <step_video_link>1cc_step_video</step_video_link>
+        <step_picture_name>1cc_step_picture</step_picture_name>
+      </step>
+      <step>
+        <step_text>2cc_step</step_text>
+        <step_video_link>2cc_video</step_video_link>
+        <step_picture_name>2cc_picture</step_picture_name>
+      </step>
+      <step>
+        <step_text>3cc_step</step_text>
+        <step_video_link>3cc_video</step_video_link>
+        <step_picture_name>3cc_picture</step_picture_name>
+      </step>
+    </steps>
+  </recipe>
+</recipes>

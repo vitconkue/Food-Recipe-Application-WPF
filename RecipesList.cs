@@ -5,12 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using System.Xml.Linq;
 
 namespace Food_Recipe_Appplication
 {
     public class RecipesList: IEnumerable<Recipe>
     {
         private List<Recipe> _recipes;
+        private XDocument document = XDocument.Load("XMLFiles/Recipes.xml");
+
 
         public List<Recipe> Recipes { get => _recipes; set => _recipes = value; }
 
@@ -27,7 +30,17 @@ namespace Food_Recipe_Appplication
 
         public void AddRecipe(Recipe in_recipe)
         {
+            // Add to the list on memory
             _recipes.Add(in_recipe);
+            // Update to XML
+
+
+            XElement root = document.Root;
+
+            root.Add(in_recipe.ToXElement());
+
+            root.Save("Recipes.xml");
+
         }
 
         public void LoadAll()
@@ -102,6 +115,19 @@ namespace Food_Recipe_Appplication
 
             return result;
 
+        }
+
+        public RecipesList SearchFavoriteRecipes()
+        {
+            RecipesList result = new RecipesList();
+            IEnumerable<Recipe> filtered = this.Where(food => food.IsFavorite == true);
+
+            foreach (var value in filtered)
+            {
+                result.AddRecipe(value);
+            }
+
+            return result; 
         }
 
         public IEnumerator<Recipe> GetEnumerator()
