@@ -6,6 +6,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using System.Xml.Linq;
 
 namespace Food_Recipe_Appplication
 {
@@ -72,6 +73,19 @@ namespace Food_Recipe_Appplication
 
 
             }
+
+
+            return result;
+        }
+
+        public XElement ToXElement()
+        {
+            XElement result = new XElement("recipe", new XAttribute("isFavorite", _isFavorite ? "true" : "false"));
+
+            result.Add(new XElement("foodname", _foodName));
+            result.Add(new XElement("mainpicture_name", _mainPictureName));
+
+            result.Add(_steps.ToXElement());
 
 
             return result;

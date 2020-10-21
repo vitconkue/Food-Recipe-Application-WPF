@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls.Primitives;
 using System.Xml;
+using System.Xml.Linq;
 
 namespace Food_Recipe_Appplication
 {
@@ -71,6 +72,17 @@ namespace Food_Recipe_Appplication
 
             Step result = new Step(step_text, step_picture_name, step_video_link);
             return result;
+        }
+
+        public XElement ToXElement()
+        {
+            XElement result = new XElement("step",
+                new XElement("step_text", _text),
+                new XElement("step_video_link", _video_link),
+                new XElement("step_picture_name", _picture_name));
+
+            return result;
+
         }
 
     }

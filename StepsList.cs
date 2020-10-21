@@ -1,13 +1,15 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using System.Xml.Linq;
 
 namespace Food_Recipe_Appplication
 {
-    public class StepsList
+    public class StepsList: IEnumerable<Step>
     {
         private List<Step> steps;
 
@@ -22,6 +24,11 @@ namespace Food_Recipe_Appplication
         public StepsList()
         {
             steps = new List<Step>();
+        }
+
+        public void AddStep(Step input)
+        {
+            steps.Add(input);
         }
         public static StepsList LoadedStepsList(XmlReader reader)
         {
@@ -41,6 +48,31 @@ namespace Food_Recipe_Appplication
             }
 
             return result;
+        }
+
+        public XElement ToXElement()
+        {
+            XElement result = new XElement("steps");
+            foreach (var step in steps)
+            {
+                result.Add(step.ToXElement());
+            }
+
+
+            return result;
+        }
+
+        public IEnumerator<Step> GetEnumerator()
+        {
+            foreach (var val in steps)
+            {
+                yield return val;
+            }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator(); 
         }
     }
 }
