@@ -29,7 +29,7 @@ namespace Food_Recipe_Appplication
         private void FavouritePage_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             var windowWidth = e.NewSize.Width;
-            SearchBlock.Margin = new Thickness(windowWidth - 500, 0, 0, 0);
+            SearchBlock.Margin = new Thickness(windowWidth - 480, 0, 0, 0);
         }
 
 
@@ -55,6 +55,22 @@ namespace Food_Recipe_Appplication
         {
             LeftMenu.Visibility = Visibility.Collapsed;
             MenuButton.Visibility = Visibility.Visible;
+        }
+
+        private void HomeButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new HomePage());
+        }
+
+
+        private void AddRecipeButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new AddRecipePage());
+        }
+
+        private void SettingButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new SettingPage());
         }
     }
 }

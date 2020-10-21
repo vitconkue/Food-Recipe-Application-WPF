@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,21 +16,19 @@ using System.Windows.Shapes;
 namespace Food_Recipe_Appplication
 {
     /// <summary>
-    /// Interaction logic for HomePage.xaml
+    /// Interaction logic for AddRecipePage.xaml
     /// </summary>
-    public partial class HomePage : Page
+    public partial class AddRecipePage : Page
     {
-        public HomePage()
+        public AddRecipePage()
         {
             InitializeComponent();
-            SizeChanged += HomePage_SizeChanged;
-            Debug.WriteLine("iN home page");
+            SizeChanged += AddRecipePage_SizeChanged;
         }
 
-        private void HomePage_SizeChanged(object sender, SizeChangedEventArgs e)
+        private void AddRecipePage_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             var windowWidth = e.NewSize.Width;
-            Debug.WriteLine(windowWidth);
             SearchBlock.Margin = new Thickness(windowWidth - 480, 0, 0, 0);
         }
 
@@ -59,25 +56,19 @@ namespace Food_Recipe_Appplication
             MenuButton.Visibility = Visibility.Visible;
         }
 
+        private void HomeButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new HomePage());
+        }
+
+        private void FavouriteButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new FavouritePage());
+        }
+
         private void SettingButton_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new SettingPage());
         }
-
-        private void HomePage_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void AddRecipe_Click(object sender, RoutedEventArgs e)
-        {
-            this.NavigationService.Navigate(new AddRecipePage());
-        }
-
-        private void Favorite_Click(object sender, RoutedEventArgs e)
-        {
-            this.NavigationService.Navigate(new FavouritePage());
-        }
     }
 }
-

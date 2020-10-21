@@ -1,4 +1,4 @@
-﻿<Page x:Class="Food_Recipe_Appplication.FavouritePage"
+﻿<Page x:Class="Food_Recipe_Appplication.AddRecipePage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Food_Recipe_Appplication"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="FavouritePage">
+      Title="AddRecipePage">
     <DockPanel>
         <StackPanel DockPanel.Dock="Left"  Name="LeftMenu" Background="#00B4AB" Width="170">
 
@@ -16,19 +16,19 @@
                     <TextBlock FontSize="18">Menu</TextBlock>
                 </StackPanel>
             </Button>
-            <Button Name="HomeButton" Click="HomeButton_Click" Style="{DynamicResource MenuButtonStyle}">
+            <Button Name="HomeButton" Click="HomeButton_Click"  Style="{DynamicResource MenuButtonStyle}">
                 <StackPanel Orientation="Horizontal">
                     <Image Height="20" Source="Icons/home-page.png" Margin="10 0 10 0"></Image>
                     <TextBlock FontSize="18">Home</TextBlock>
                 </StackPanel>
             </Button>
-            <Button   Style="{DynamicResource MenuButtonStyle}">
+            <Button Name="FavouriteButton" Click="FavouriteButton_Click" Style="{DynamicResource MenuButtonStyle}">
                 <StackPanel Orientation="Horizontal">
                     <Image Height="20" Source="Icons/favourite.png" Margin="10 0 10 0"></Image>
                     <TextBlock FontSize="18">Favourite</TextBlock>
                 </StackPanel>
             </Button>
-            <Button Name="AddRecipeButton" Click="AddRecipeButton_Click"  Style="{DynamicResource MenuButtonStyle}">
+            <Button  Style="{DynamicResource MenuButtonStyle}">
                 <StackPanel Orientation="Horizontal">
                     <Image Height="20" Source="Icons/add-file.png" Margin="10 0 10 0"></Image>
                     <TextBlock FontSize="18">Add recpie</TextBlock>
@@ -49,7 +49,7 @@
                 </StackPanel>
             </Button >
             <StackPanel Name="SearchBlock"  Orientation="Horizontal" FlowDirection="RightToLeft">
-                <Image Height="30" Source="Icons/loupe.png"></Image>
+                <Image  Height="25" Source="Icons/loupe.png"></Image>
                 <TextBox Name="SearchBox"  BorderThickness="2" BorderBrush="Black" Width="250" Height="25" Margin="10 0 0 0" FlowDirection="LeftToRight" FontSize="16" GotFocus="SearchBox_GotFocus" LostFocus="SearchBox_LostFocus" Foreground="Gray">Search</TextBox>
             </StackPanel>
         </StackPanel>

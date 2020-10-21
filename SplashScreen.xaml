@@ -7,7 +7,23 @@
         mc:Ignorable="d"
         Title="SplashScreen" Height="450" Width="800" MaxHeight="450" MaxWidth="800" MinHeight="450" MinWidth="800" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
     <Canvas>
-        <ProgressBar x:Name="progress" Width="500"  Minimum="0" Maximum="10" Value="0" Height="10" Canvas.Left="155" Canvas.Top="379"/>
 
+        <Button Name="SkipButton" Click="SkipButton_Click" Canvas.Left="728" Canvas.Top="10" Width="46">
+            <StackPanel Orientation="Horizontal">
+                <Image Height="10" Source="Icons/next.png" Margin="0 0 5 0"></Image>
+                <TextBlock>Skip</TextBlock>
+            </StackPanel>
+        </Button>
+
+        <ProgressBar  Foreground="#00B4AB" x:Name="progress" Width="500"  Minimum="0" Maximum="5" Value="0" Height="8" Canvas.Left="152" Canvas.Top="388"/>
+        <CheckBox Width="150" Height="20" Canvas.Left="330" Canvas.Top="363" Checked="CheckBox_Checked">Never show this again</CheckBox>
     </Canvas>
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="Transparent"></Setter>
+            <Setter Property="BorderBrush" Value="Transparent"></Setter>
+            <Setter Property="BorderThickness" Value="0"></Setter>
+            <Setter Property="Height" Value="20"></Setter>
+        </Style>
+    </Window.Resources>
 </Window>

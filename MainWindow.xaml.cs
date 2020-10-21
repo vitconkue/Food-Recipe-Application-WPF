@@ -22,8 +22,7 @@ namespace Food_Recipe_Appplication
     /// </summary>
     public partial class MainWindow : Window
     {
-        public delegate void MyDelegate();
-        public event MyDelegate WindowSizeChangedHandler;
+ 
         public MainWindow()
         {
             InitializeComponent();

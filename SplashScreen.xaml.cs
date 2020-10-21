@@ -23,8 +23,8 @@ namespace Food_Recipe_Appplication
     public partial class SplashScreen : Window
     {
         Timer timer;
-        int count = 0;
-        int time = 10;
+        double count = 0;
+        double time = 5;
         public SplashScreen()
         {
             InitializeComponent();
@@ -44,15 +44,15 @@ namespace Food_Recipe_Appplication
             {
                 timer = new Timer();
                 timer.Elapsed += Timer_Elapsed;
-                timer.Interval = 1000;
+                timer.Interval = 10;
                 timer.Start();
             }
         }
 
         private void Timer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
         {
-            count++;
-            if (count == time)
+            count=count+ 0.01;
+            if (count.CompareTo(time)==1)
             {
                 timer.Stop();
                 Dispatcher.Invoke(() =>
@@ -70,5 +70,21 @@ namespace Food_Recipe_Appplication
             });
         }
 
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            var config = ConfigurationManager.OpenExeConfiguration(
+                ConfigurationUserLevel.None);
+            config.AppSettings.Settings["ShowSplashScreen"].Value = "false";
+            config.Save(ConfigurationSaveMode.Minimal);
+        }
+
+  
+        private void SkipButton_Click(object sender, RoutedEventArgs e)
+        {
+            timer.Stop();
+            var screen = new MainWindow();
+            screen.Show();
+            this.Close();
+        }
     }
 }

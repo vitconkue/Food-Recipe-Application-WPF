@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:Food_Recipe_Appplication"
              StartupUri="SplashScreen.xaml">
     <Application.Resources>
-         
+    
     </Application.Resources>
 </Application>

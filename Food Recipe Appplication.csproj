@@ -56,6 +56,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddRecipePage.xaml.cs">
+      <DependentUpon>AddRecipePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FavouritePage.xaml.cs">
       <DependentUpon>FavouritePage.xaml</DependentUpon>
     </Compile>
@@ -72,6 +75,10 @@
     </Compile>
     <Compile Include="Step.cs" />
     <Compile Include="StepsList.cs" />
+    <Page Include="AddRecipePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="FavouritePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -162,6 +169,18 @@
     <Resource Include="Icons\settings.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Photos\ca-kho-to.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\alert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\check.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
