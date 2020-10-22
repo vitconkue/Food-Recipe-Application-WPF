@@ -9,7 +9,7 @@ using System.Xml.Linq;
 
 namespace Food_Recipe_Appplication
 {
-    public class RecipesList: IEnumerable<Recipe>
+    public class RecipesList : IEnumerable<Recipe>
     {
         private List<Recipe> _recipes;
         private XDocument document = XDocument.Load("XMLFiles/Recipes.xml");
@@ -55,7 +55,7 @@ namespace Food_Recipe_Appplication
             reader_setting.IgnoreWhitespace = true;
             reader_setting.IgnoreComments = true;
             XmlReader recipeReader = XmlReader.Create("XMLFiles/Recipes.xml", reader_setting);
-        
+
             using (recipeReader)
             {
                 recipeReader.MoveToContent();
@@ -85,14 +85,14 @@ namespace Food_Recipe_Appplication
         {
             RecipesList result = new RecipesList();
             IEnumerable<Recipe> filtered = this.Where(food => food.FoodName == in_name);
-            foreach(var value in filtered)
+            foreach (var value in filtered)
             {
-                result.AddRecipeWithoutSaving(value); 
+                result.AddRecipeWithoutSaving(value);
 
             }
 
             return result;
-            
+
         }
 
         public RecipesList SearchNameContains(string in_name)
@@ -101,7 +101,7 @@ namespace Food_Recipe_Appplication
             IEnumerable<Recipe> filtered = this.Where(food => food.FoodName.Contains(in_name));
             foreach (var value in filtered)
             {
-                result.AddRecipeWithoutSaving(value); 
+                result.AddRecipeWithoutSaving(value);
 
             }
 
@@ -134,10 +134,10 @@ namespace Food_Recipe_Appplication
                 result.AddRecipeWithoutSaving(value);
             }
 
-            return result; 
+            return result;
         }
 
-        public RecipesList SortName()
+        public RecipesList SortByName()
         {
             RecipesList result = new RecipesList();
             IEnumerable<Recipe> filtered = this.OrderBy(food => food.FoodName);
@@ -145,7 +145,18 @@ namespace Food_Recipe_Appplication
             {
                 result.AddRecipeWithoutSaving(value);
             }
-            return result; 
+            return result;
+        }
+
+        public RecipesList SortByDate()
+        {
+            RecipesList result = new RecipesList();
+            IEnumerable<Recipe> filtered = this.OrderBy(food => food.Date_created);
+            foreach (var value in filtered)
+            {
+                result.AddRecipeWithoutSaving(value);
+            }
+            return result;
         }
 
         public IEnumerator<Recipe> GetEnumerator()
