@@ -67,10 +67,10 @@ namespace Food_Recipe_Appplication
                         if (recipeReader.Name == "recipe")
                         {
                             Recipe newRecipe = new Recipe();
-                            bool isFavorite = (recipeReader.GetAttribute(0) == "true") ? true : false;
+
                             newRecipe = Recipe.LoadedSingleRecipe(recipeReader.ReadSubtree());
 
-                            newRecipe.IsFavorite = isFavorite;
+
 
                             _recipes.Add(newRecipe);
                         }

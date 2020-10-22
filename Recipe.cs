@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
@@ -20,13 +21,18 @@ namespace Food_Recipe_Appplication
 
         private StepsList _steps;
 
+        private DateTime _date_created;
+
         public string FoodName { get => _foodName; set => _foodName = value; }
         public bool IsFavorite { get => _isFavorite; set => _isFavorite = value; }
         public string MainPictureName { get => _mainPictureName; set => _mainPictureName = value; }
         public StepsList Steps { get => _steps; set => _steps = value; }
 
+        public DateTime Date_created { get => _date_created; set => _date_created = value; }
+
         public Recipe()
         {
+            _date_created = DateTime.Now;
             _mainPictureName = "default_name";
             _foodName = "";
             _isFavorite = false;
@@ -36,7 +42,17 @@ namespace Food_Recipe_Appplication
         public static Recipe LoadedSingleRecipe(XmlReader reader)
         {
             reader.Read();
+            bool isFavorite = (reader.GetAttribute(0) == "true") ? true : false;
+
             Recipe result = new Recipe();
+            result.IsFavorite = isFavorite;
+
+            CultureInfo provider = CultureInfo.InvariantCulture;
+
+            DateTime dateCreated = DateTime.ParseExact(reader.GetAttribute(1), "dd-MM-yyyy", provider).Date;
+
+            result.Date_created = dateCreated;
+
             //TODO: Load single recipe after received reader from RecipeList
             while (reader.Read())
             {
@@ -80,7 +96,8 @@ namespace Food_Recipe_Appplication
 
         public XElement ToXElement()
         {
-            XElement result = new XElement("recipe", new XAttribute("isFavorite", _isFavorite ? "true" : "false"));
+            XElement result = new XElement("recipe", new XAttribute("isFavorite", _isFavorite ? "true" : "false"),
+                new XAttribute("date_created", _date_created.Date.ToString("dd/MM/yyyy")));
 
             result.Add(new XElement("foodname", _foodName));
             result.Add(new XElement("mainpicture_name", _mainPictureName));
@@ -89,6 +106,11 @@ namespace Food_Recipe_Appplication
 
 
             return result;
+        }
+
+        public void ToggleFavorite()
+        {
+            _isFavorite = !_isFavorite;
         }
     }
 }
