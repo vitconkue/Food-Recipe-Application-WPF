@@ -28,6 +28,11 @@ namespace Food_Recipe_Appplication
             _recipes = new List<Recipe>();
         }
 
+        public void AddRecipeWithoutSaving(Recipe in_recipe)
+        {
+            _recipes.Add(in_recipe);
+        }
+
         public void AddRecipe(Recipe in_recipe)
         {
             // Add to the list on memory
@@ -82,7 +87,8 @@ namespace Food_Recipe_Appplication
             IEnumerable<Recipe> filtered = this.Where(food => food.FoodName == in_name);
             foreach(var value in filtered)
             {
-                result.AddRecipe(value); 
+                result.AddRecipeWithoutSaving(value); 
+
             }
 
             return result;
@@ -95,7 +101,8 @@ namespace Food_Recipe_Appplication
             IEnumerable<Recipe> filtered = this.Where(food => food.FoodName.Contains(in_name));
             foreach (var value in filtered)
             {
-                result.AddRecipe(value);
+                result.AddRecipeWithoutSaving(value); 
+
             }
 
             return result;
@@ -110,7 +117,7 @@ namespace Food_Recipe_Appplication
             HelperFunctions.RemovedUTF(food.FoodName).Contains(HelperFunctions.RemovedUTF(in_name)));
             foreach (var value in filtered)
             {
-                result.AddRecipe(value);
+                result.AddRecipeWithoutSaving(value);
             }
 
             return result;
@@ -124,9 +131,20 @@ namespace Food_Recipe_Appplication
 
             foreach (var value in filtered)
             {
-                result.AddRecipe(value);
+                result.AddRecipeWithoutSaving(value);
             }
 
+            return result; 
+        }
+
+        public RecipesList SortName()
+        {
+            RecipesList result = new RecipesList();
+            IEnumerable<Recipe> filtered = this.OrderBy(food => food.FoodName);
+            foreach (var value in filtered)
+            {
+                result.AddRecipeWithoutSaving(value);
+            }
             return result; 
         }
 
