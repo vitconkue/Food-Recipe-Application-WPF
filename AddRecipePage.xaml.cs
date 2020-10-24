@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +14,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
+using Microsoft.Win32;
 
 namespace Food_Recipe_Appplication
 {
@@ -69,6 +73,51 @@ namespace Food_Recipe_Appplication
         private void SettingButton_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new SettingPage());
+        }
+
+        private void AddImage_Click(object sender, RoutedEventArgs e)
+        {
+            var openFileDialog = new OpenFileDialog();
+            string filePath;
+            if (openFileDialog.ShowDialog() == true)
+            {
+                File.ReadAllText(openFileDialog.FileName);
+                filePath = openFileDialog.FileName;
+                var bitmap =
+                new BitmapImage(
+                    new Uri(
+                        filePath,
+                        UriKind.Absolute)
+                    );
+                Debug.WriteLine(filePath);
+                RecipeImage.Source = bitmap;
+            }
+        }
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void LeftArrowButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RightArrowButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DescriptionBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            DescriptionBox.Text = "";
+            DescriptionBox.Foreground = Brushes.Black;
+        }
+
+        private void DescriptionBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            DescriptionBox.Text = "Viết công thức chỗ này";
+            DescriptionBox.Foreground = Brushes.Gray;
         }
     }
 }

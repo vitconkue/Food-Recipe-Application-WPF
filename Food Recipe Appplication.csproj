@@ -182,5 +182,12 @@
   <ItemGroup>
     <Resource Include="Icons\check.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\add-image.png" />
+    <Resource Include="Icons\checked.png" />
+    <Resource Include="Icons\circle-shape.png" />
+    <Resource Include="Icons\left-arrow.png" />
+    <Resource Include="Icons\right-arrow.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

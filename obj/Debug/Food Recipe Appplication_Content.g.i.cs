@@ -8,6 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("icons/check.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("icons/add-image.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("icons/checked.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("icons/circle-shape.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("icons/left-arrow.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("icons/right-arrow.png")]
 
 

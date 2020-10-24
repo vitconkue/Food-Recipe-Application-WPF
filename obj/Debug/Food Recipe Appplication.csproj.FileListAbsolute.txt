@@ -38,3 +38,28 @@ E:\IT documents\C#\Food Recipe Project\Food-Recipe-Appplication\obj\Debug\Favour
 E:\IT documents\C#\Food Recipe Project\Food-Recipe-Appplication\obj\Debug\AddRecipePage.g.cs
 E:\IT documents\C#\Food Recipe Project\Food-Recipe-Appplication\obj\Debug\AddRecipePage.baml
 E:\IT documents\C#\Food Recipe Project\Food-Recipe-Appplication\obj\Debug\Food Recipe Appplication.csprojAssemblyReference.cache
+C:\Users\DELL 6540\Source\Repos\Food-Recipe-Appplication\bin\Debug\Food Recipe Appplication.exe.config
+C:\Users\DELL 6540\Source\Repos\Food-Recipe-Appplication\bin\Debug\Food Recipe Appplication.exe
+C:\Users\DELL 6540\Source\Repos\Food-Recipe-Appplication\bin\Debug\Food Recipe Appplication.pdb
+C:\Users\DELL 6540\Source\Repos\Food-Recipe-Appplication\obj\Debug\Food Recipe Appplication.csprojAssemblyReference.cache
+C:\Users\DELL 6540\Source\Repos\Food-Recipe-Appplication\obj\Debug\AddRecipePage.g.cs
+C:\Users\DELL 6540\Source\Repos\Food-Recipe-Appplication\obj\Debug\FavouritePage.g.cs
+C:\Users\DELL 6540\Source\Repos\Food-Recipe-Appplication\obj\Debug\HomePage.g.cs
+C:\Users\DELL 6540\Source\Repos\Food-Recipe-Appplication\obj\Debug\MainWindow.g.cs
+C:\Users\DELL 6540\Source\Repos\Food-Recipe-Appplication\obj\Debug\SettingPage.g.cs
+C:\Users\DELL 6540\Source\Repos\Food-Recipe-Appplication\obj\Debug\SplashScreen.g.cs
+C:\Users\DELL 6540\Source\Repos\Food-Recipe-Appplication\obj\Debug\App.g.cs
+C:\Users\DELL 6540\Source\Repos\Food-Recipe-Appplication\obj\Debug\Food Recipe Appplication_MarkupCompile.cache
+C:\Users\DELL 6540\Source\Repos\Food-Recipe-Appplication\obj\Debug\Food Recipe Appplication_MarkupCompile.lref
+C:\Users\DELL 6540\Source\Repos\Food-Recipe-Appplication\obj\Debug\AddRecipePage.baml
+C:\Users\DELL 6540\Source\Repos\Food-Recipe-Appplication\obj\Debug\FavouritePage.baml
+C:\Users\DELL 6540\Source\Repos\Food-Recipe-Appplication\obj\Debug\HomePage.baml
+C:\Users\DELL 6540\Source\Repos\Food-Recipe-Appplication\obj\Debug\MainWindow.baml
+C:\Users\DELL 6540\Source\Repos\Food-Recipe-Appplication\obj\Debug\SettingPage.baml
+C:\Users\DELL 6540\Source\Repos\Food-Recipe-Appplication\obj\Debug\SplashScreen.baml
+C:\Users\DELL 6540\Source\Repos\Food-Recipe-Appplication\obj\Debug\Food Recipe Appplication.g.resources
+C:\Users\DELL 6540\Source\Repos\Food-Recipe-Appplication\obj\Debug\Food_Recipe_Appplication.Properties.Resources.resources
+C:\Users\DELL 6540\Source\Repos\Food-Recipe-Appplication\obj\Debug\Food Recipe Appplication.csproj.GenerateResource.cache
+C:\Users\DELL 6540\Source\Repos\Food-Recipe-Appplication\obj\Debug\Food Recipe Appplication.csproj.CoreCompileInputs.cache
+C:\Users\DELL 6540\Source\Repos\Food-Recipe-Appplication\obj\Debug\Food Recipe Appplication.exe
+C:\Users\DELL 6540\Source\Repos\Food-Recipe-Appplication\obj\Debug\Food Recipe Appplication.pdb
