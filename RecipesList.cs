@@ -45,7 +45,7 @@ namespace Food_Recipe_Appplication
 
             root.Add(in_recipe.ToXElement());
 
-            root.Save("Recipes.xml");
+            root.Save("XMLFiles/Recipes.xml");
 
         }
         public BindingList<Recipe> GetBindingData()
