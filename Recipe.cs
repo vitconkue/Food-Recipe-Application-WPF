@@ -111,7 +111,7 @@ namespace Food_Recipe_Appplication
         public void ToggleFavorite()
         {
             _isFavorite = !_isFavorite;
-            XDocument document = XDocument.Load("Recipes.xml");
+            XDocument document = XDocument.Load("XMLFiles/Recipes.xml");
 
             XElement root = document.Root;
 
@@ -121,7 +121,7 @@ namespace Food_Recipe_Appplication
 
             query.SetValue(_isFavorite.ToString().ToLower());
 
-            document.Save("Recipes.xml");
+            document.Save("XMLFiles/Recipes.xml");
         }
     }
 }

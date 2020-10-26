@@ -116,6 +116,10 @@ namespace Food_Recipe_Appplication
                 {
                     checkImg.Visibility = Visibility.Visible;
                     invalidNofication.Visibility = Visibility.Collapsed;
+                    var config = ConfigurationManager.OpenExeConfiguration(
+              ConfigurationUserLevel.None);
+                    var number = config.AppSettings.Settings["NumberOfRecipePerPage"].Value=numberDisplay.Text;
+                    config.Save(ConfigurationSaveMode.Minimal);
                     numberDisplay.Focusable = false;
                 }
             }
@@ -125,6 +129,14 @@ namespace Food_Recipe_Appplication
         private void numberDisplay_MouseDown(object sender, MouseButtonEventArgs e)
         {
             numberDisplay.Focusable = true;
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            var config = ConfigurationManager.OpenExeConfiguration(
+          ConfigurationUserLevel.None);
+            var number = config.AppSettings.Settings["NumberOfRecipePerPage"].Value;
+            numberDisplay.Text = number;
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,10 +21,19 @@ namespace Food_Recipe_Appplication
     /// </summary>
     public partial class FavouritePage : Page
     {
+        private RecipesList _favoriteList = new RecipesList(); 
         public FavouritePage()
         {
             InitializeComponent();
             SizeChanged += FavouritePage_SizeChanged;
+        }
+
+        public FavouritePage(RecipesList favoriteList)
+        {
+            InitializeComponent();
+            SizeChanged += FavouritePage_SizeChanged;
+
+            _favoriteList = favoriteList; 
         }
 
         private void FavouritePage_SizeChanged(object sender, SizeChangedEventArgs e)
@@ -71,6 +81,61 @@ namespace Food_Recipe_Appplication
         private void SettingButton_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new SettingPage());
+        }
+
+        private void ListViewItem_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            var item = sender as ListViewItem;
+            var temp = dataListView.SelectedItem;
+            if (item != null)
+            {
+                Recipe tempRecipe = (Recipe)item.Content;
+                MessageBox.Show(tempRecipe.FoodName); 
+            }
+        }
+
+        private int NumberOfRecipePerPage()
+        {
+            var config = ConfigurationManager.OpenExeConfiguration(
+     ConfigurationUserLevel.None);
+            var result = int.Parse(config.AppSettings.Settings["NumberOfRecipePerPage"].Value);
+            return result;
+        }
+
+
+        private void PageNumber_Click(object sender, RoutedEventArgs e)
+        {
+            var number = NumberOfRecipePerPage();
+            string[] separator = new string[] { "_" };
+            string pageNumber = (sender as Button).Name;
+            var tokens = pageNumber.Split(separator, StringSplitOptions.None);
+            int nextPage = int.Parse(tokens[1]);
+
+            RecipesList toShow = _favoriteList.GetByPage(nextPage, number);
+            dataListView.ItemsSource = toShow.GetBindingData();
+
+
+
+
+
+        }
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            var number = NumberOfRecipePerPage();
+            var bindingList = _favoriteList.GetByPage(1, number).GetBindingData();
+            dataListView.ItemsSource = bindingList;
+            int len = _favoriteList.Recipes.Count;
+            int numberOfPage = len / number + (len % number == 0 ? 0 : 1);
+
+            for (int i = 1; i <= numberOfPage; i++)
+            {
+                Button numberButton = new Button();
+                numberButton.Name = $"page_{i}";
+                numberButton.Content = $"{i}";
+                numberButton.Click += PageNumber_Click;
+                SkipButton.Children.Add(numberButton);
+
+            }
         }
     }
 }

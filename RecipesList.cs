@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Security.RightsManagement;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Xml;
 using System.Xml.Linq;
 
@@ -44,10 +47,19 @@ namespace Food_Recipe_Appplication
 
             root.Add(in_recipe.ToXElement());
 
-            root.Save("Recipes.xml");
+            root.Save("XMLFiles/Recipes.xml");
 
         }
+        public BindingList<Recipe> GetBindingData()
+        {
+            var foods = new BindingList<Recipe>();
+            foreach( var recipe in _recipes)
+            {
+                foods.Add(recipe);
+            }
 
+            return foods;
+        }
         public void LoadAll()
         {
             //TODO: implement
@@ -157,6 +169,36 @@ namespace Food_Recipe_Appplication
                 result.AddRecipeWithoutSaving(value);
             }
             return result;
+        }
+
+        // PAGING HELPER
+
+        public RecipesList GetByPage(int pageNumber, int numberOfRecipePerPage)
+        {
+            RecipesList result = new RecipesList();
+            int len = this.Count();
+            // Skip the number of previous page's recipe
+            IEnumerable<Recipe> filtered = this._recipes.Skip((pageNumber - 1) * numberOfRecipePerPage);
+            // Take the appropiate number to take
+
+            int numberToTake = numberOfRecipePerPage;
+
+            int numberOfRecipeLeft = len - (pageNumber - 1) * numberOfRecipePerPage;
+
+            if (numberOfRecipeLeft < numberOfRecipePerPage)
+            {
+                numberToTake = numberOfRecipeLeft;
+            }
+
+            filtered = filtered.Take(numberToTake);
+
+            foreach (var value in filtered)
+            {
+                result.AddRecipeWithoutSaving(value);
+            }
+
+
+            return result; 
         }
 
         public IEnumerator<Recipe> GetEnumerator()

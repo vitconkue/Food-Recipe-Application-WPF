@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Food_Recipe_Appplication"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="SettingPage">
+      Title="SettingPage" Loaded="Page_Loaded">
     <DockPanel>
         <StackPanel DockPanel.Dock="Left"  Name="LeftMenu" Background="#00B4AB" Width="170">
 
