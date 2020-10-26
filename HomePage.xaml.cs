@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -21,11 +22,14 @@ namespace Food_Recipe_Appplication
     /// </summary>
     public partial class HomePage : Page
     {
+        private RecipesList temp = new RecipesList();
         public HomePage()
         {
             InitializeComponent();
             SizeChanged += HomePage_SizeChanged;
             Debug.WriteLine("iN home page");
+            temp.LoadAll(); 
+           
         }
 
         private void HomePage_SizeChanged(object sender, SizeChangedEventArgs e)
@@ -77,6 +81,22 @@ namespace Food_Recipe_Appplication
         private void Favorite_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new FavouritePage());
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            var bindingList = temp.GetBindingData();
+            dataListView.ItemsSource = bindingList;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void StackPanel_TouchEnter(object sender, TouchEventArgs e)
+        {
+            MessageBox.Show("You've touched n°" + panel.Children.IndexOf(sender as UIElement));
         }
     }
 }

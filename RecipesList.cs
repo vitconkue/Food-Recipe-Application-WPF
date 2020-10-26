@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,7 +48,16 @@ namespace Food_Recipe_Appplication
             root.Save("Recipes.xml");
 
         }
+        public BindingList<Recipe> GetBindingData()
+        {
+            var foods = new BindingList<Recipe>();
+            foreach( var recipe in _recipes)
+            {
+                foods.Add(recipe);
+            }
 
+            return foods;
+        }
         public void LoadAll()
         {
             //TODO: implement

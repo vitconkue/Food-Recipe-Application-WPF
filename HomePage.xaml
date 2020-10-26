@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Food_Recipe_Appplication"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="HomePage">
+      Title="HomePage" Loaded="Page_Loaded">
 
     <DockPanel>
         <StackPanel DockPanel.Dock="Left"  Name="LeftMenu" Background="#00B4AB" Width="170" Visibility="Collapsed">
@@ -56,9 +56,24 @@
         </StackPanel>
 
 
-        <ListView>
-            <Image Source="Photos/ca-kho-to.jpg" Width="148"></Image>
-        </ListView>
+        <Grid>
+            <ListView Name="dataListView" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel />
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Name="panel" TouchEnter="StackPanel_TouchEnter">
+                            <Button Click="Button_Click">
+                                <TextBlock  Text="{Binding FoodName}"></TextBlock>
+                            </Button>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
 
     </DockPanel>
 

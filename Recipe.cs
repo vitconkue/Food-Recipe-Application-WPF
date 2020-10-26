@@ -49,9 +49,9 @@ namespace Food_Recipe_Appplication
 
             CultureInfo provider = CultureInfo.InvariantCulture;
 
-            DateTime dateCreated = DateTime.ParseExact(reader.GetAttribute(1), "dd-MM-yyyy", provider).Date;
+            //DateTime dateCreated = DateTime.ParseExact(reader.GetAttribute(1), "dd-MM-yyyy", provider).Date;
 
-            result.Date_created = dateCreated;
+            //result.Date_created = dateCreated;
 
             //TODO: Load single recipe after received reader from RecipeList
             while (reader.Read())
