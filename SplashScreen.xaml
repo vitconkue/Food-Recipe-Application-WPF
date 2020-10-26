@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Food_Recipe_Appplication"
         mc:Ignorable="d"
-        Title="SplashScreen" Height="450" Width="800" MaxHeight="450" MaxWidth="800" MinHeight="450" MinWidth="800" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+        Title="SplashScreen" Height="450" Width="800" MaxHeight="450" MaxWidth="800" MinHeight="450" MinWidth="800" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen"
+         WindowStyle="None">
     <Canvas>
 
         <Button Name="SkipButton" Click="SkipButton_Click" Canvas.Left="728" Canvas.Top="10" Width="46">
@@ -15,7 +16,7 @@
             </StackPanel>
         </Button>
 
-        <ProgressBar  Foreground="#00B4AB" x:Name="progress" Width="500"  Minimum="0" Maximum="5" Value="0" Height="8" Canvas.Left="152" Canvas.Top="388"/>
+        <ProgressBar Foreground="Gray" Background="White" x:Name="progress" Width="500"  Minimum="0" Maximum="5" Value="0" Height="6" Canvas.Left="152" Canvas.Top="388"/>
         <CheckBox Width="150" Height="20" Canvas.Left="330" Canvas.Top="363" Checked="CheckBox_Checked">Never show this again</CheckBox>
     </Canvas>
     <Window.Resources>

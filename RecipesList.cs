@@ -178,7 +178,7 @@ namespace Food_Recipe_Appplication
             RecipesList result = new RecipesList();
             int len = this.Count();
             // Skip the number of previous page's recipe
-            IEnumerable<Recipe> filtered = this.Skip((pageNumber - 1) * numberOfRecipePerPage);
+            IEnumerable<Recipe> filtered = this._recipes.Skip((pageNumber - 1) * numberOfRecipePerPage);
             // Take the appropiate number to take
 
             int numberToTake = numberOfRecipePerPage;
@@ -190,10 +190,13 @@ namespace Food_Recipe_Appplication
                 numberToTake = numberOfRecipeLeft;
             }
 
-            filtered.Take(numberToTake);
+            filtered = filtered.Take(numberToTake);
 
-                        
-                                                     
+            foreach (var value in filtered)
+            {
+                result.AddRecipeWithoutSaving(value);
+            }
+
 
             return result; 
         }
