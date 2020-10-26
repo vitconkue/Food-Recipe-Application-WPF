@@ -3,8 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Security.RightsManagement;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Xml;
 using System.Xml.Linq;
 
@@ -167,6 +169,33 @@ namespace Food_Recipe_Appplication
                 result.AddRecipeWithoutSaving(value);
             }
             return result;
+        }
+
+        // PAGING HELPER
+
+        public RecipesList GetByPage(int pageNumber, int numberOfRecipePerPage)
+        {
+            RecipesList result = new RecipesList();
+            int len = this.Count();
+            // Skip the number of previous page's recipe
+            IEnumerable<Recipe> filtered = this.Skip((pageNumber - 1) * numberOfRecipePerPage);
+            // Take the appropiate number to take
+
+            int numberToTake = numberOfRecipePerPage;
+
+            int numberOfRecipeLeft = len - (pageNumber - 1) * numberOfRecipePerPage;
+
+            if (numberOfRecipeLeft < numberOfRecipePerPage)
+            {
+                numberToTake = numberOfRecipeLeft;
+            }
+
+            filtered.Take(numberToTake);
+
+                        
+                                                     
+
+            return result; 
         }
 
         public IEnumerator<Recipe> GetEnumerator()
