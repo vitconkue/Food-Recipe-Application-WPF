@@ -96,7 +96,28 @@ namespace Food_Recipe_Appplication
 
         private void StackPanel_TouchEnter(object sender, TouchEventArgs e)
         {
-            MessageBox.Show("You've touched n°" + panel.Children.IndexOf(sender as UIElement));
+            
+        }
+
+        private void ListViewItem_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            var item = sender as ListViewItem;
+
+            if(item != null && item.IsSelected)
+            {
+                MessageBox.Show(item.Content.ToString()); 
+            }
+        }
+
+        private void ListViewItem_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            var item = sender as ListViewItem;
+            var temp = dataListView.SelectedItem;
+            if(item != null)
+            {
+                Recipe tempRecipe = (Recipe)item.Content; 
+                MessageBox.Show(tempRecipe.FoodName); 
+            }
         }
     }
 }
