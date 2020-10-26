@@ -65,22 +65,24 @@ namespace Food_Recipe_Appplication
         {
             LeftMenu.Visibility = Visibility.Collapsed;
             MenuButton.Visibility = Visibility.Visible;
+
         }
 
         private void HomeButton_Click(object sender, RoutedEventArgs e)
         {
+            MenuButton.Visibility = Visibility.Visible;
+            LeftMenuButton.Visibility = Visibility.Collapsed;
             this.NavigationService.Navigate(new HomePage());
+
         }
-
-
         private void AddRecipeButton_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new AddRecipePage());
+            this.NavigationService.Navigate(new AddRecipePage(_favoriteList));
         }
 
         private void SettingButton_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new SettingPage());
+        
         }
 
         private void ListViewItem_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)

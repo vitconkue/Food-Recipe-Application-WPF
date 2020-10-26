@@ -5,57 +5,69 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Food_Recipe_Appplication"
       mc:Ignorable="d" 
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="15"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignPaper}"
+     FontFamily="{DynamicResource MaterialDesignFont}"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="AddRecipePage">
 	<DockPanel>
-		<StackPanel DockPanel.Dock="Left"  Name="LeftMenu" Background="#00B4AB" Width="170">
+        <StackPanel DockPanel.Dock="Left"  Name="LeftMenu" Background="#ffd8a7" Width="170">
 
-			<Button Style="{DynamicResource MenuButtonStyle}"  Name="LeftMenuButton" Click="LeftMenuButton_Click">
-				<StackPanel Orientation="Horizontal">
-					<Image Height="20" Source="Icons/menu.png" Margin="10 0 10 0"></Image>
-					<TextBlock FontSize="18">Menu</TextBlock>
-				</StackPanel>
-			</Button>
-			<Button Name="HomeButton" Click="HomeButton_Click"  Style="{DynamicResource MenuButtonStyle}">
-				<StackPanel Orientation="Horizontal">
-					<Image Height="20" Source="Icons/home-page.png" Margin="10 0 10 0"></Image>
-					<TextBlock FontSize="18">Home</TextBlock>
-				</StackPanel>
-			</Button>
-			<Button Name="FavouriteButton" Click="FavouriteButton_Click" Style="{DynamicResource MenuButtonStyle}">
-				<StackPanel Orientation="Horizontal">
-					<Image Height="20" Source="Icons/favourite.png" Margin="10 0 10 0"></Image>
-					<TextBlock FontSize="18">Favourite</TextBlock>
-				</StackPanel>
-			</Button>
-			<Button  Style="{DynamicResource MenuButtonStyle}">
-				<StackPanel Orientation="Horizontal">
-					<Image Height="20" Source="Icons/add-file.png" Margin="10 0 10 0"></Image>
-					<TextBlock FontSize="18">Add recpie</TextBlock>
-				</StackPanel>
-			</Button>
-			<Button Name="SettingButton" Click="SettingButton_Click" Style="{DynamicResource MenuButtonStyle}">
-				<StackPanel Orientation="Horizontal">
-					<Image Height="20" Source="Icons/settings.png" Margin="10 0 10 0"></Image>
-					<TextBlock FontSize="18">Settings</TextBlock>
-				</StackPanel>
-			</Button>
-		</StackPanel>
-		<StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Background="#99D9F3" Height="50">
-			<Button  Style="{DynamicResource MenuButtonStyle}" Name="MenuButton" Click="MenuButton_Click" Visibility="Collapsed">
-				<StackPanel Orientation="Horizontal">
-					<Image Height="20" Source="Icons/menu.png" Margin="10 0 10 0"></Image>
-					<TextBlock FontSize="18">Menu</TextBlock>
-				</StackPanel>
-			</Button >
-			<StackPanel Name="SearchBlock"  Orientation="Horizontal" FlowDirection="RightToLeft">
-				<Image  Height="25" Source="Icons/loupe.png"></Image>
-				<TextBox Name="SearchBox"  BorderThickness="2" BorderBrush="Black" Width="250" Height="25" Margin="10 0 0 0" FlowDirection="LeftToRight" FontSize="16" GotFocus="SearchBox_GotFocus" LostFocus="SearchBox_LostFocus" Foreground="Gray">Search</TextBox>
-			</StackPanel>
-		</StackPanel>
+            <Button Style="{DynamicResource MenuButtonStyle}"  Name="LeftMenuButton" Click="LeftMenuButton_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Height="20" Source="Icons/menu.png" Margin="10 0 10 0"></Image>
+                    <TextBlock>Menu</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Name="HomeButton" Click="HomeButton_Click"  Style="{DynamicResource MenuButtonStyle}">
+                <StackPanel Orientation="Horizontal">
+                    <Image Height="20" Source="Icons/home-page.png" Margin="10 0 10 0"></Image>
+                    <TextBlock>Home</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Name="FavouriteButton" Click="FavouriteButton_Click" Style="{DynamicResource MenuButtonStyle}">
+                <StackPanel Orientation="Horizontal">
+                    <Image Height="20" Source="Icons/favourite.png" Margin="10 0 10 0"></Image>
+                    <TextBlock>Favourite</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Name="AddRecipeButton" Style="{DynamicResource MenuButtonStyle}">
+                <StackPanel Orientation="Horizontal">
+                    <Image Height="20" Source="Icons/add-file.png" Margin="10 0 10 0"></Image>
+                    <TextBlock>Add recpie</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Name="SettingButton" Click="SettingButton_Click" Style="{DynamicResource MenuButtonStyle}">
+                <StackPanel Orientation="Horizontal">
+                    <Image Height="20" Source="Icons/settings.png" Margin="10 0 10 0"></Image>
+                    <TextBlock>Settings</TextBlock>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        <StackPanel  DockPanel.Dock="Top" Orientation="Horizontal" Background="#fdad5c" Height="50">
+            <Button Visibility="Collapsed" Style="{DynamicResource MenuButtonStyle}" Name="MenuButton" Click="MenuButton_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Height="20" Source="Icons/menu.png" Margin="10 0 10 0"></Image>
+                    <TextBlock>Menu</TextBlock>
+                </StackPanel>
+            </Button >
+            <StackPanel Name="SearchBlock"  Orientation="Horizontal" FlowDirection="RightToLeft">
+                <Image Height="25" Source="Icons/loupe.png"></Image>
+                <TextBox materialDesign:TextFieldAssist.DecorationVisibility="Collapsed" BorderThickness="0.8" Name="SearchBox" Background="White" BorderBrush="Black" Width="250" Height="25" Margin="10 0 0 0" FlowDirection="LeftToRight" FontSize="13" GotFocus="SearchBox_GotFocus" LostFocus="SearchBox_LostFocus" Foreground="Gray">Search</TextBox>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Name="SkipButton" HorizontalAlignment="Center" DockPanel.Dock="Bottom" Orientation="Horizontal"  Height="25">
+
+        </StackPanel>
 
 
-		<Grid>
+        <Grid>
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="1*" />
 				<ColumnDefinition Width="1*" />

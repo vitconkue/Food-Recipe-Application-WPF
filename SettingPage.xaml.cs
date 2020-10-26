@@ -37,20 +37,9 @@ namespace Food_Recipe_Appplication
             var state = config.AppSettings.Settings["ShowSplashScreen"].Value;
             var showSplash = bool.Parse(state);
             ToggleSwitch1.IsChecked = showSplash;
-
             recipeList = list;
         }
-        public SettingPage()
-        {
-            InitializeComponent();
-            SizeChanged += SettingPage_SizeChanged;
-            var config = ConfigurationManager.OpenExeConfiguration(
-              ConfigurationUserLevel.None);
-            var state = config.AppSettings.Settings["ShowSplashScreen"].Value;
-            var showSplash = bool.Parse(state);
-            ToggleSwitch1.IsChecked = showSplash;
-        }
-
+  
         private void SettingPage_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             var windowWidth = e.NewSize.Width;
@@ -97,10 +86,15 @@ namespace Food_Recipe_Appplication
             }
         }
 
+
+
         private void HomeButton_Click(object sender, RoutedEventArgs e)
         {
+            MenuButton.Visibility = Visibility.Visible;
+            LeftMenuButton.Visibility = Visibility.Collapsed;
             this.NavigationService.Navigate(new HomePage());
         }
+
 
         private void FavouriteButtton_Click(object sender, RoutedEventArgs e)
         {
@@ -109,7 +103,7 @@ namespace Food_Recipe_Appplication
 
         private void AddRecipeButton_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new AddRecipePage());
+            this.NavigationService.Navigate(new AddRecipePage(recipeList));
         }
 
         private void numberDisplay_PreviewTextInput(object sender, TextCompositionEventArgs e)

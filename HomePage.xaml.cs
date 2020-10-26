@@ -70,17 +70,14 @@ namespace Food_Recipe_Appplication
             this.NavigationService.Navigate(new SettingPage(recipeList));
         }
 
-        private void HomePage_Click(object sender, RoutedEventArgs e)
-        {
+ 
 
+        private void AddRecipeButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new AddRecipePage(recipeList));
         }
 
-        private void AddRecipe_Click(object sender, RoutedEventArgs e)
-        {
-            this.NavigationService.Navigate(new AddRecipePage());
-        }
-
-        private void Favorite_Click(object sender, RoutedEventArgs e)
+        private void FavoriteButton_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new FavouritePage(recipeList.SearchFavoriteRecipes()));
         }
@@ -121,9 +118,6 @@ namespace Food_Recipe_Appplication
 
             RecipesList toShow = recipeList.GetByPage(nextPage,number);
             dataListView.ItemsSource = toShow.GetBindingData(); 
-
-
-
             
 
         }

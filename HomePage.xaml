@@ -31,13 +31,13 @@
                     <TextBlock>Home</TextBlock>
                 </StackPanel>
             </Button>
-            <Button Name="Favorite" Click="Favorite_Click" Style="{DynamicResource MenuButtonStyle}">
+            <Button Name="FavoriteButton" Click="FavoriteButton_Click" Style="{DynamicResource MenuButtonStyle}">
                 <StackPanel Orientation="Horizontal">
                     <Image Height="20" Source="Icons/favourite.png" Margin="10 0 10 0"></Image>
                     <TextBlock>Favourite</TextBlock>
                 </StackPanel>
             </Button>
-            <Button Name="AddRecipe" Click="AddRecipe_Click"  Style="{DynamicResource MenuButtonStyle}">
+            <Button Name="AddRecipeButton" Click="AddRecipeButton_Click"  Style="{DynamicResource MenuButtonStyle}">
                 <StackPanel Orientation="Horizontal">
                     <Image Height="20" Source="Icons/add-file.png" Margin="10 0 10 0"></Image>
                     <TextBlock>Add recpie</TextBlock>

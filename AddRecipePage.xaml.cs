@@ -16,6 +16,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using Microsoft.Win32;
+using System.Configuration;
 
 namespace Food_Recipe_Appplication
 {
@@ -24,12 +25,15 @@ namespace Food_Recipe_Appplication
     /// </summary>
     public partial class AddRecipePage : Page
     {
-        public AddRecipePage()
+        private RecipesList recipeList = new RecipesList();
+
+
+        public AddRecipePage(RecipesList list)
         {
             InitializeComponent();
             SizeChanged += AddRecipePage_SizeChanged;
+            recipeList = list;
         }
-
         private void AddRecipePage_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             var windowWidth = e.NewSize.Width;
@@ -58,21 +62,25 @@ namespace Food_Recipe_Appplication
         {
             LeftMenu.Visibility = Visibility.Collapsed;
             MenuButton.Visibility = Visibility.Visible;
+            
         }
 
         private void HomeButton_Click(object sender, RoutedEventArgs e)
         {
+            MenuButton.Visibility = Visibility.Visible;
+            LeftMenuButton.Visibility = Visibility.Collapsed;
             this.NavigationService.Navigate(new HomePage());
+
         }
 
         private void FavouriteButton_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new FavouritePage());
+            this.NavigationService.Navigate(new FavouritePage(recipeList.SearchFavoriteRecipes()));
         }
 
         private void SettingButton_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new SettingPage());
+            this.NavigationService.Navigate(new SettingPage(recipeList.SearchFavoriteRecipes()));
         }
 
         private void AddImage_Click(object sender, RoutedEventArgs e)
@@ -118,6 +126,11 @@ namespace Food_Recipe_Appplication
         {
             DescriptionBox.Text = "Viết công thức chỗ này";
             DescriptionBox.Foreground = Brushes.Gray;
+        }
+
+        private void HomeButton_Click_1(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

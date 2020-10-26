@@ -16,49 +16,49 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="FavouritePage" Loaded="Page_Loaded">
     <DockPanel>
-        <StackPanel DockPanel.Dock="Left"  Name="LeftMenu" Background="#00B4AB" Width="170">
+        <StackPanel DockPanel.Dock="Left"  Name="LeftMenu" Background="#ffd8a7" Width="170">
 
             <Button Style="{DynamicResource MenuButtonStyle}"  Name="LeftMenuButton" Click="LeftMenuButton_Click">
                 <StackPanel Orientation="Horizontal">
                     <Image Height="20" Source="Icons/menu.png" Margin="10 0 10 0"></Image>
-                    <TextBlock FontSize="18">Menu</TextBlock>
+                    <TextBlock>Menu</TextBlock>
                 </StackPanel>
             </Button>
-            <Button Name="HomeButton" Click="HomeButton_Click" Style="{DynamicResource MenuButtonStyle}">
+            <Button Name="HomrButton" Click="HomeButton_Click"  Style="{DynamicResource MenuButtonStyle}">
                 <StackPanel Orientation="Horizontal">
                     <Image Height="20" Source="Icons/home-page.png" Margin="10 0 10 0"></Image>
-                    <TextBlock FontSize="18">Home</TextBlock>
+                    <TextBlock>Home</TextBlock>
                 </StackPanel>
             </Button>
-            <Button   Style="{DynamicResource MenuButtonStyle}">
+            <Button Name="FavoriteButton" Style="{DynamicResource MenuButtonStyle}">
                 <StackPanel Orientation="Horizontal">
                     <Image Height="20" Source="Icons/favourite.png" Margin="10 0 10 0"></Image>
-                    <TextBlock FontSize="18">Favourite</TextBlock>
+                    <TextBlock>Favourite</TextBlock>
                 </StackPanel>
             </Button>
             <Button Name="AddRecipeButton" Click="AddRecipeButton_Click"  Style="{DynamicResource MenuButtonStyle}">
                 <StackPanel Orientation="Horizontal">
                     <Image Height="20" Source="Icons/add-file.png" Margin="10 0 10 0"></Image>
-                    <TextBlock FontSize="18">Add recpie</TextBlock>
+                    <TextBlock>Add recpie</TextBlock>
                 </StackPanel>
             </Button>
             <Button Name="SettingButton" Click="SettingButton_Click" Style="{DynamicResource MenuButtonStyle}">
                 <StackPanel Orientation="Horizontal">
                     <Image Height="20" Source="Icons/settings.png" Margin="10 0 10 0"></Image>
-                    <TextBlock FontSize="18">Settings</TextBlock>
+                    <TextBlock>Settings</TextBlock>
                 </StackPanel>
             </Button>
         </StackPanel>
-        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Background="#99D9F3" Height="50">
-            <Button  Style="{DynamicResource MenuButtonStyle}" Name="MenuButton" Click="MenuButton_Click" Visibility="Collapsed">
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Background="#fdad5c" Height="50">
+            <Button Visibility="Collapsed"  Style="{DynamicResource MenuButtonStyle}" Name="MenuButton" Click="MenuButton_Click">
                 <StackPanel Orientation="Horizontal">
                     <Image Height="20" Source="Icons/menu.png" Margin="10 0 10 0"></Image>
-                    <TextBlock FontSize="18">Menu</TextBlock>
+                    <TextBlock>Menu</TextBlock>
                 </StackPanel>
             </Button >
             <StackPanel Name="SearchBlock"  Orientation="Horizontal" FlowDirection="RightToLeft">
-                <Image Height="30" Source="Icons/loupe.png"></Image>
-                <TextBox Name="SearchBox"  BorderThickness="2" BorderBrush="Black" Width="250" Height="25" Margin="10 0 0 0" FlowDirection="LeftToRight" FontSize="16" GotFocus="SearchBox_GotFocus" LostFocus="SearchBox_LostFocus" Foreground="Gray">Search</TextBox>
+                <Image Height="25" Source="Icons/loupe.png"></Image>
+                <TextBox materialDesign:TextFieldAssist.DecorationVisibility="Collapsed" BorderThickness="0.8" Name="SearchBox" Background="White" BorderBrush="Black" Width="250" Height="25" Margin="10 0 0 0" FlowDirection="LeftToRight" FontSize="13" GotFocus="SearchBox_GotFocus" LostFocus="SearchBox_LostFocus" Foreground="Gray">Search</TextBox>
             </StackPanel>
         </StackPanel>
 
@@ -96,9 +96,8 @@
             </ListView>
         </Grid>
 
-        
-
     </DockPanel>
+
     <Page.Resources>
         <Style x:Key="MenuButtonStyle" TargetType="{x:Type Button}">
             <Setter Property="Height" Value="50"></Setter>
@@ -107,9 +106,16 @@
             <Setter Property="Background" Value="Transparent"></Setter>
             <Setter Property="BorderBrush" Value="Transparent"></Setter>
             <Setter Property="BorderThickness" Value="0"></Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseCaptured" Value="True">
+                    <Setter Property="Background" Value="AntiqueWhite"></Setter>
+
+                </Trigger>
+            </Style.Triggers>
         </Style>
         <Style TargetType="Image">
             <Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality"></Setter>
         </Style>
+
     </Page.Resources>
 </Page>
