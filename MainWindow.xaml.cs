@@ -22,47 +22,19 @@ namespace Food_Recipe_Appplication
     /// </summary>
     public partial class MainWindow : Window
     {
-        private ObservableCollection<RecipesList> recipes;
+ 
         public MainWindow()
         {
             InitializeComponent();
-            SizeChanged += MainWindow_SizeChanged;
-            Ellipse yellowCircle = new Ellipse();
-            yellowCircle.Width = 60;
-            yellowCircle.Height = 60;
-            yellowCircle.Fill = new SolidColorBrush(Colors.Yellow);
-
-            ListOfFood.Children.Add(yellowCircle);
+            Loaded += MainWindow_Loaded;
+    
         }
 
-        private void MainWindow_SizeChanged(object sender, SizeChangedEventArgs e)
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            var windowWidth = e.NewSize.Width;
-            SearchBlock.Margin = new Thickness(windowWidth-500, 0, 0, 0);
+            frame.NavigationService.Navigate(new HomePage());
         }
-
-        private void SearchBox_GotFocus(object sender, RoutedEventArgs e)
-        {
-            SearchBox.Text = "";
-            SearchBox.Foreground = Brushes.Black;
-        }
-
-        private void SearchBox_LostFocus(object sender, RoutedEventArgs e)
-        {
-            SearchBox.Text = "Search";
-            SearchBox.Foreground = Brushes.Gray;
-        }
-
-        private void MenuButton_Click(object sender, RoutedEventArgs e)
-        {
-            LeftMenu.Visibility = Visibility.Visible;
-            MenuButton.Visibility = Visibility.Collapsed;
-        }
-
-        private void LeftMenuButton_Click(object sender, RoutedEventArgs e)
-        {
-            LeftMenu.Visibility = Visibility.Collapsed;
-            MenuButton.Visibility = Visibility.Visible;
-        }
+         
     }
+       
 }
