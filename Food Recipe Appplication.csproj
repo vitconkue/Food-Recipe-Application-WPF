@@ -141,17 +141,9 @@
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="XMLFiles\Preferences.xml" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Icons\menu.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="XMLFiles\Recipes.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Icons\favourite.png">
@@ -191,6 +183,11 @@
     <Resource Include="Icons\circle-shape.png" />
     <Resource Include="Icons\left-arrow.png" />
     <Resource Include="Icons\right-arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="XMLFiles\Recipes.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -2,7 +2,7 @@
 <recipes>
   <recipe favorite="true">
     <mainpicture_name>cbs_mainpicture </mainpicture_name>
-    <foodname>Cá ba sa</foodname>
+    <foodname>cá bê đê</foodname>
     <steps>
       <step>
         <step_text>1cbs_step</step_text>
@@ -23,7 +23,7 @@
   </recipe>
   <recipe favorite="false">
     <mainpicture_name>cc_mainpicture </mainpicture_name>
-    <foodname>Cá cơm</foodname>
+    <foodname>An Nam Nộm</foodname>
     <steps>
       <step>
         <step_text>1cc_step</step_text>
