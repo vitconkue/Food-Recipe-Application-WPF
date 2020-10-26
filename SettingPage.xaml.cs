@@ -21,8 +21,25 @@ namespace Food_Recipe_Appplication
     /// <summary>
     /// Interaction logic for SettingPage.xaml
     /// </summary>
+    /// 
+    
     public partial class SettingPage : Page
     {
+        private RecipesList recipeList = new RecipesList();
+
+
+        public SettingPage(RecipesList list)
+        {
+            InitializeComponent();
+            SizeChanged += SettingPage_SizeChanged;
+            var config = ConfigurationManager.OpenExeConfiguration(
+              ConfigurationUserLevel.None);
+            var state = config.AppSettings.Settings["ShowSplashScreen"].Value;
+            var showSplash = bool.Parse(state);
+            ToggleSwitch1.IsChecked = showSplash;
+
+            recipeList = list;
+        }
         public SettingPage()
         {
             InitializeComponent();
@@ -87,7 +104,7 @@ namespace Food_Recipe_Appplication
 
         private void FavouriteButtton_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new FavouritePage());
+            this.NavigationService.Navigate(new FavouritePage(recipeList.SearchFavoriteRecipes()));
         }
 
         private void AddRecipeButton_Click(object sender, RoutedEventArgs e)

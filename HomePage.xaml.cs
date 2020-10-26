@@ -67,7 +67,7 @@ namespace Food_Recipe_Appplication
 
         private void SettingButton_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new SettingPage());
+            this.NavigationService.Navigate(new SettingPage(recipeList));
         }
 
         private void HomePage_Click(object sender, RoutedEventArgs e)
