@@ -82,7 +82,7 @@ namespace Food_Recipe_Appplication
 
         private void Favorite_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new FavouritePage());
+            this.NavigationService.Navigate(new FavouritePage(recipeList.SearchFavoriteRecipes()));
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
