@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -86,31 +87,39 @@ namespace Food_Recipe_Appplication
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            var bindingList = recipeList.GetByPage(1,5).GetBindingData();
+
+            var number = NumberOfRecipePerPage();
+            var bindingList = recipeList.GetByPage(1,number).GetBindingData();
             dataListView.ItemsSource = bindingList;
             int len = recipeList.Recipes.Count; 
-            int numberOfPage = len / 5 + (len % 5 == 0 ? 0:1);
+            int numberOfPage = len / number + (len % number == 0 ? 0:1);
             
             for(int i = 1; i <= numberOfPage; i++)
             {
-                Button number = new Button();
-                number.Name = $"page_{i}";
-                number.Content =$"{i}";
-                number.Click += PageNumber_Click;
-                SkipButton.Children.Add(number);
+                Button numberButton = new Button();
+                numberButton.Name = $"page_{i}";
+                numberButton.Content =$"{i}";
+                numberButton.Click += PageNumber_Click;
+                SkipButton.Children.Add(numberButton);
                 
             }
         }
-
+        private int NumberOfRecipePerPage()
+        {
+            var config = ConfigurationManager.OpenExeConfiguration(
+     ConfigurationUserLevel.None);
+            var result = int.Parse(config.AppSettings.Settings["NumberOfRecipePerPage"].Value);
+            return result;
+        }
         private void PageNumber_Click(object sender, RoutedEventArgs e)
         {
-            
+            var number = NumberOfRecipePerPage();
             string[] separator = new string[] { "_" };
             string pageNumber = (sender as Button).Name;
             var tokens = pageNumber.Split(separator, StringSplitOptions.None);
             int nextPage = int.Parse(tokens[1]);
 
-            RecipesList toShow = recipeList.GetByPage(nextPage, 5);
+            RecipesList toShow = recipeList.GetByPage(nextPage,number);
             dataListView.ItemsSource = toShow.GetBindingData(); 
 
 
