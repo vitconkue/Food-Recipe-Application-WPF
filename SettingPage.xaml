@@ -84,7 +84,7 @@
                 <StackPanel  Height="80" Margin="0,0,0.4,0" VerticalAlignment="Top">
                     <TextBlock Width="350" >Number of food display each page on homepage</TextBlock>
                     <StackPanel Orientation="Horizontal">
-                        <TextBox materialDesign:TextFieldAssist.DecorationVisibility="Collapsed" MouseDown="numberDisplay_MouseDown" Keyboard.KeyDown="numberDisplay_KeyDown" Name="numberDisplay" PreviewTextInput="numberDisplay_PreviewTextInput" Width="40" FlowDirection="LeftToRight" Height="19" Margin="0,10,10,0"/>
+                        <TextBox HorizontalContentAlignment="Center"  FontSize="13"  materialDesign:TextFieldAssist.DecorationVisibility="Collapsed" BorderThickness="0.5" Background="White" BorderBrush="Black"  MouseDown="numberDisplay_MouseDown" Keyboard.KeyDown="numberDisplay_KeyDown" Name="numberDisplay" PreviewTextInput="numberDisplay_PreviewTextInput" Width="40" FlowDirection="LeftToRight" Height="22" Margin="0,10,10,0"/>
                         <Image Name="checkImg" Margin="0 10 0 0" Width="20" Source="Icons/check.png"></Image>
                     </StackPanel>
 
@@ -98,9 +98,9 @@
                     <ColumnDefinition Width="61*"/>
                     <ColumnDefinition Width="317*"/>
                 </Grid.ColumnDefinitions>
-                <StackPanel Visibility="Collapsed" Name="invalidNofication"  Orientation="Horizontal" Margin="54,-26,-67.2,22" Grid.ColumnSpan="3">
-                    <Image Margin="0 0 10 0"  Width="20" Source="Icons/alert.png" ></Image>
-                    <TextBlock Foreground="red" VerticalAlignment="Bottom"  x:Name="message" Width="387"  FontSize="13" Height="18" Margin="0,0,0,9.6"></TextBlock>
+                <StackPanel Visibility="Collapsed"  VerticalAlignment="Center" HorizontalAlignment="Center" Name="invalidNofication"  Orientation="Horizontal"  Grid.ColumnSpan="3" Margin="47,-18,0.2,48.6" Width="356" Height="21">
+                    <materialDesign:PackIcon Kind="ErrorOutline" Width="20"></materialDesign:PackIcon>
+                    <TextBlock Foreground="red" VerticalAlignment="Bottom"  x:Name="message" Width="387"  FontSize="13" Height="16" Margin="0,0,0,6.4"></TextBlock>
                 </StackPanel>
             </Grid>
 
