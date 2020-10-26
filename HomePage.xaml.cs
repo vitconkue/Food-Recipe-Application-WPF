@@ -31,7 +31,7 @@ namespace Food_Recipe_Appplication
             SizeChanged += HomePage_SizeChanged;
             Debug.WriteLine("iN home page");
             recipeList.LoadAll(); 
-           
+            
         }
 
         private void HomePage_SizeChanged(object sender, SizeChangedEventArgs e)
@@ -96,10 +96,15 @@ namespace Food_Recipe_Appplication
                 Button numberButton = new Button();
                 numberButton.Name = $"page_{i}";
                 numberButton.Content =$"{i}";
+                numberButton.Background = Brushes.White;
+                numberButton.BorderBrush = Brushes.Black;
+                numberButton.Foreground = Brushes.Black;
+                numberButton.Margin = new Thickness(5);
                 numberButton.Click += PageNumber_Click;
-                SkipButton.Children.Add(numberButton);
-                
+                SkipButton.Children.Add(numberButton);               
             }
+            Button firstButton = (Button)SkipButton.Children[0];
+            firstButton.Background = Brushes.Orange;
         }
         private int NumberOfRecipePerPage()
         {
@@ -113,6 +118,11 @@ namespace Food_Recipe_Appplication
             var number = NumberOfRecipePerPage();
             string[] separator = new string[] { "_" };
             string pageNumber = (sender as Button).Name;
+            foreach (Button button in SkipButton.Children)
+            {
+                button.Background = Brushes.White;
+            };
+            (sender as Button).Background = Brushes.Orange;
             var tokens = pageNumber.Split(separator, StringSplitOptions.None);
             int nextPage = int.Parse(tokens[1]);
 
@@ -122,15 +132,6 @@ namespace Food_Recipe_Appplication
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
-        private void StackPanel_TouchEnter(object sender, TouchEventArgs e)
-        {
-            
-        }
 
         private void ListViewItem_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
@@ -140,6 +141,17 @@ namespace Food_Recipe_Appplication
             {
                 Recipe tempRecipe = (Recipe)item.Content; 
             }
+        }
+
+        private void StackPanel_MouseEnter(object sender, MouseEventArgs e)
+        {
+            BrushConverter bc = new BrushConverter();
+            (sender as StackPanel).Background = (Brush)bc.ConvertFrom("#CAC9C7");
+        }
+
+        private void panel_MouseLeave(object sender, MouseEventArgs e)
+        {
+            (sender as StackPanel).Background = Brushes.White;
         }
     }
 }

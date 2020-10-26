@@ -110,6 +110,11 @@ namespace Food_Recipe_Appplication
             var number = NumberOfRecipePerPage();
             string[] separator = new string[] { "_" };
             string pageNumber = (sender as Button).Name;
+            foreach (Button button in SkipButton.Children)
+            {
+                button.Background = Brushes.White;
+            };
+            (sender as Button).Background = Brushes.Orange;
             var tokens = pageNumber.Split(separator, StringSplitOptions.None);
             int nextPage = int.Parse(tokens[1]);
 
@@ -134,10 +139,15 @@ namespace Food_Recipe_Appplication
                 Button numberButton = new Button();
                 numberButton.Name = $"page_{i}";
                 numberButton.Content = $"{i}";
+                numberButton.Background = Brushes.White;
+                numberButton.BorderBrush = Brushes.Black;
+                numberButton.Foreground = Brushes.Black;
+                numberButton.Margin = new Thickness(5);
                 numberButton.Click += PageNumber_Click;
                 SkipButton.Children.Add(numberButton);
-
             }
+            Button firstButton = (Button)SkipButton.Children[0];
+            firstButton.Background = Brushes.Orange;
         }
     }
 }

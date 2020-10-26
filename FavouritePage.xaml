@@ -49,7 +49,7 @@
                 </StackPanel>
             </Button>
         </StackPanel>
-        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Background="#fdad5c" Height="50">
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Background="#fed8b1" Height="50">
             <Button Visibility="Collapsed"  Style="{DynamicResource MenuButtonStyle}" Name="MenuButton" Click="MenuButton_Click">
                 <StackPanel Orientation="Horizontal">
                     <Image Height="20" Source="Icons/menu.png" Margin="10 0 10 0"></Image>
@@ -62,7 +62,8 @@
             </StackPanel>
         </StackPanel>
 
-        <StackPanel Name="SkipButton" HorizontalAlignment="Center" DockPanel.Dock="Bottom" Orientation="Horizontal"  Height="25">
+
+        <StackPanel Name="SkipButton" HorizontalAlignment="Center" DockPanel.Dock="Bottom" Orientation="Horizontal"  Height="50">
 
         </StackPanel>
         <Grid>
@@ -74,17 +75,17 @@
                 </ListView.ItemsPanel>
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel Name="panel">
-                            <Border  Width="300" Height="250">
+                        <StackPanel Margin="5" Name="panel">
+                            <Border BorderThickness="0.5" BorderBrush="Gray"
+                                    Margin="5"  Width="300" Height="250">
                                 <Border.Background >
                                     <ImageBrush ImageSource="Photos/ca-kho-to.jpg"></ImageBrush>
                                 </Border.Background>
                             </Border>
-                            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center"  Orientation="Horizontal">
-                                <TextBlock Padding="0 0 10 0" Text="{Binding FoodName}"></TextBlock>
-                                <materialDesign:PackIcon Kind="FavoriteBorder"/>
+                            <StackPanel Height="30" HorizontalAlignment="Center" VerticalAlignment="Center"  Orientation="Horizontal">
+                                <TextBlock  FontSize="15" Margin="0 4 10 0" Text="{Binding FoodName}"></TextBlock>
+                                <materialDesign:PackIcon Height="25" Width="25"  Kind="FavoriteBorder"/>
                             </StackPanel>
-
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
@@ -106,16 +107,24 @@
             <Setter Property="Background" Value="Transparent"></Setter>
             <Setter Property="BorderBrush" Value="Transparent"></Setter>
             <Setter Property="BorderThickness" Value="0"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
             <Style.Triggers>
-                <Trigger Property="IsMouseCaptured" Value="True">
-                    <Setter Property="Background" Value="AntiqueWhite"></Setter>
-
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#fdad5c"/>
                 </Trigger>
             </Style.Triggers>
+
         </Style>
         <Style TargetType="Image">
             <Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality"></Setter>
         </Style>
-
     </Page.Resources>
 </Page>

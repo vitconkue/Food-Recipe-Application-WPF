@@ -5,6 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Food_Recipe_Appplication"
         mc:Ignorable="d"
-        Title="MainWindow" Height="700" Width="1000" WindowStartupLocation="CenterScreen"  MinHeight="550" MinWidth="600">
+        Title="MainWindow" Height="760" Width="1300" WindowStartupLocation="CenterScreen"  MinHeight="550" MinWidth="600">
 	<Frame Name="frame" NavigationUIVisibility="Hidden"/>
 </Window>
