@@ -69,5 +69,8 @@
             <Setter Property="BorderBrush" Value="Transparent"></Setter>
             <Setter Property="BorderThickness" Value="0"></Setter>
         </Style>
+        <Style TargetType="Image">
+            <Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality"></Setter>
+        </Style>
     </Page.Resources>
 </Page>

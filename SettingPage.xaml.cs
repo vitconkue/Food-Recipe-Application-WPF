@@ -109,10 +109,12 @@ namespace Food_Recipe_Appplication
                 if (int.Parse(numberDisplay.Text) > 10)
                 {
                     invalidNofication.Visibility = Visibility.Visible;
+                    checkImg.Visibility = Visibility.Collapsed;
                     message.Text = "Number have to less than 10 and bigger than 0!!!";
                 }
                 else
                 {
+                    checkImg.Visibility = Visibility.Visible;
                     invalidNofication.Visibility = Visibility.Collapsed;
                     numberDisplay.Focusable = false;
                 }
