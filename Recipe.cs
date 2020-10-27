@@ -19,7 +19,9 @@ namespace Food_Recipe_Appplication
 
         private string _mainPictureName;
 
-        private string _mainVideoLink; 
+        private string _mainVideoLink;
+
+        private string _interesting_infomation; 
 
         private StepsList _steps;
 
@@ -32,6 +34,7 @@ namespace Food_Recipe_Appplication
 
         public DateTime Date_created { get => _date_created; set => _date_created = value; }
         public string MainVideoLink { get => _mainVideoLink; set => _mainVideoLink = value; }
+        public string Interesting_infomation { get => _interesting_infomation; set => _interesting_infomation = value; }
 
         public Recipe()
         {
@@ -41,6 +44,7 @@ namespace Food_Recipe_Appplication
             _foodName = "";
             _isFavorite = false;
             _steps = new StepsList();
+            _interesting_infomation = ""; 
         }
 
         public static Recipe LoadedSingleRecipe(XmlReader reader)
@@ -69,6 +73,14 @@ namespace Food_Recipe_Appplication
                                 reader.Read();
                                 string foodName = reader.Value;
                                 result._foodName = foodName;
+                                break;
+                            }
+                        case "interesting_information":
+                            {
+                                reader.Read();
+
+                                string interestingInformation = reader.Value;
+                                result._interesting_infomation = interestingInformation;
                                 break;
                             }
                         case "mainpicture_name":
@@ -113,7 +125,8 @@ namespace Food_Recipe_Appplication
 
             result.Add(new XElement("foodname", _foodName));
             result.Add(new XElement("mainpicture_name", _mainPictureName));
-            result.Add(new XElement("mainvideo_link", _mainVideoLink)); 
+            result.Add(new XElement("mainvideo_link", _mainVideoLink));
+            result.Add(new XElement("interesting_information", _interesting_infomation));
             result.Add(_steps.ToXElement());
 
 
