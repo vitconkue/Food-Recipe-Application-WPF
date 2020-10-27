@@ -3,7 +3,7 @@
   <recipe isFavorite="false" date_created="01-01-2020">
     <mainpicture_name>cbs_mainpicture </mainpicture_name>
     <mainvideo_link>cbs_mainvideo</mainvideo_link>
-    <foodname>cá bê đê</foodname>
+    <foodname>Cá kho tộ</foodname>
     <steps>
       <step>
         <step_text>1cbs_step</step_text>
@@ -24,8 +24,7 @@
   </recipe>
   <recipe isFavorite="false" date_created="03-02-1990">
     <mainpicture_name>cc_mainpicture </mainpicture_name>
-    <foodname>An Nam Nộm</foodname>
-    <foodname>án Nam Nộm</foodname>
+    <foodname>Gỏi gà lá chanh</foodname>
     <steps>
       <step>
         <step_text>1cc_step</step_text>
@@ -45,7 +44,7 @@
     </steps>
   </recipe>
   <recipe isFavorite="false" date_created="09-01-2021">
-    <foodname>Bò nai</foodname>
+    <foodname>Bò né</foodname>
     <mainvideo_link>cbs_mainvideo</mainvideo_link>
     <mainpicture_name>picturenamethitnai</mainpicture_name>
     <steps>
@@ -67,7 +66,7 @@
     </steps>
   </recipe>
   <recipe isFavorite="false" date_created="22-10-2020">
-    <foodname>Bò nai giấm</foodname>
+    <foodname>Chả giò</foodname>
     <mainvideo_link>cbs_mainvideo</mainvideo_link>
     <mainpicture_name>picturenamethitnai</mainpicture_name>
     <steps>
@@ -90,7 +89,7 @@
   </recipe>
   <recipe isFavorite="false" date_created="03-02-1990">
     <mainpicture_name>cc_mainpicture </mainpicture_name>
-    <foodname>án Nam Nộm</foodname>
+    <foodname>Đậu hủ thúi</foodname>
     <steps>
       <step>
         <step_text>1cc_step</step_text>
@@ -111,7 +110,7 @@
   </recipe>
   <recipe isFavorite="false" date_created="03-02-1990">
     <mainpicture_name>cc_mainpicture </mainpicture_name>
-    <foodname>án Nam Nộm</foodname>
+    <foodname>Nem rán</foodname>
     <steps>
       <step>
         <step_text>1cc_step</step_text>
@@ -132,7 +131,7 @@
   </recipe>
   <recipe isFavorite="false" date_created="03-02-1990">
     <mainpicture_name>cc_mainpicture </mainpicture_name>
-    <foodname>án Nam Nộm</foodname>
+    <foodname>Cá lóc nướng</foodname>
     <steps>
       <step>
         <step_text>1cc_step</step_text>
@@ -153,7 +152,7 @@
   </recipe>
   <recipe isFavorite="false" date_created="03-02-1990">
     <mainpicture_name>cc_mainpicture </mainpicture_name>
-    <foodname>án Nam Nộm</foodname>
+    <foodname>Gà đi bộ</foodname>
     <steps>
       <step>
         <step_text>1cc_step</step_text>
@@ -174,7 +173,7 @@
   </recipe>
   <recipe isFavorite="false" date_created="03-02-1990">
     <mainpicture_name>cc_mainpicture </mainpicture_name>
-    <foodname>án Nam Nộm</foodname>
+    <foodname>Heo quay sữa</foodname>
     <steps>
       <step>
         <step_text>1cc_step</step_text>
@@ -195,7 +194,7 @@
   </recipe>
   <recipe isFavorite="false" date_created="03-02-1990">
     <mainpicture_name>cc_mainpicture </mainpicture_name>
-    <foodname>án Nam Nộm</foodname>
+    <foodname>Bánh canh cua</foodname>
     <steps>
       <step>
         <step_text>1cc_step</step_text>
@@ -216,7 +215,7 @@
   </recipe>
   <recipe isFavorite="false" date_created="03-02-1990">
     <mainpicture_name>cc_mainpicture </mainpicture_name>
-    <foodname>án Nam Nộm</foodname>
+    <foodname>Bánh xèo</foodname>
     <steps>
       <step>
         <step_text>1cc_step</step_text>
@@ -237,7 +236,7 @@
   </recipe>
   <recipe isFavorite="false" date_created="03-02-1990">
     <mainpicture_name>cc_mainpicture </mainpicture_name>
-    <foodname>án Nam Nộm</foodname>
+    <foodname>Hủ tiếu hoành thánh</foodname>
     <mainvideo_link>cbs_mainvideo</mainvideo_link>
     <steps>
       <step>
@@ -259,7 +258,7 @@
   </recipe>
   <recipe isFavorite="false" date_created="03-02-1990">
     <mainpicture_name>cc_mainpicture </mainpicture_name>
-    <foodname>án Nam Nộm</foodname>
+    <foodname>Mì quảng</foodname>
     <steps>
       <step>
         <step_text>1cc_step</step_text>
@@ -280,7 +279,7 @@
   </recipe>
   <recipe isFavorite="false" date_created="03-02-1990">
     <mainpicture_name>cc_mainpicture </mainpicture_name>
-    <foodname>án Nam Nộm</foodname>
+    <foodname>Sương sa</foodname>
     <steps>
       <step>
         <step_text>1cc_step</step_text>
