@@ -19,6 +19,8 @@ namespace Food_Recipe_Appplication
 
         private string _mainPictureName;
 
+        private string _mainVideoLink; 
+
         private StepsList _steps;
 
         private DateTime _date_created;
@@ -29,11 +31,13 @@ namespace Food_Recipe_Appplication
         public StepsList Steps { get => _steps; set => _steps = value; }
 
         public DateTime Date_created { get => _date_created; set => _date_created = value; }
+        public string MainVideoLink { get => _mainVideoLink; set => _mainVideoLink = value; }
 
         public Recipe()
         {
             _date_created = DateTime.Now;
             _mainPictureName = "default_name";
+            _mainVideoLink = "default_name"; 
             _foodName = "";
             _isFavorite = false;
             _steps = new StepsList();
@@ -75,6 +79,14 @@ namespace Food_Recipe_Appplication
                                 result._mainPictureName = mainPictureName;
                                 break;
                             }
+                        case "mainvideo_link":
+                            {
+                                reader.Read();
+                                string mainVideoLink = reader.Value;
+                                result._mainVideoLink = mainVideoLink;
+
+                                break;
+                            }
                         case "steps":
                             {
 
@@ -101,7 +113,7 @@ namespace Food_Recipe_Appplication
 
             result.Add(new XElement("foodname", _foodName));
             result.Add(new XElement("mainpicture_name", _mainPictureName));
-
+            result.Add(new XElement("mainvideo_link", _mainVideoLink)); 
             result.Add(_steps.ToXElement());
 
 

@@ -2,6 +2,7 @@
 <recipes>
   <recipe isFavorite="true" date_created="01-01-2020">
     <mainpicture_name>cbs_mainpicture </mainpicture_name>
+    <mainvideo_link>cbs_mainvideo</mainvideo_link>
     <foodname>cá bê đê</foodname>
     <steps>
       <step>
@@ -45,6 +46,7 @@
   </recipe>
   <recipe isFavorite="false" date_created="09-01-2021">
     <foodname>Bò nai</foodname>
+    <mainvideo_link>cbs_mainvideo</mainvideo_link>
     <mainpicture_name>picturenamethitnai</mainpicture_name>
     <steps>
       <step>
@@ -66,6 +68,7 @@
   </recipe>
   <recipe isFavorite="true" date_created="22-10-2020">
     <foodname>Bò nai giấm</foodname>
+    <mainvideo_link>cbs_mainvideo</mainvideo_link>
     <mainpicture_name>picturenamethitnai</mainpicture_name>
     <steps>
       <step>
@@ -235,6 +238,7 @@
   <recipe isFavorite="false" date_created="03-02-1990">
     <mainpicture_name>cc_mainpicture </mainpicture_name>
     <foodname>án Nam Nộm</foodname>
+    <mainvideo_link>cbs_mainvideo</mainvideo_link>
     <steps>
       <step>
         <step_text>1cc_step</step_text>
