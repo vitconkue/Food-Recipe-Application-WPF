@@ -24,10 +24,18 @@ namespace Food_Recipe_Appplication
     /// </summary>
     public partial class AddRecipePage : Page
     {
-        public AddRecipePage()
+        private RecipesList recipeList = new RecipesList(); 
+        //public AddRecipePage()
+        //{
+        //    InitializeComponent();
+        //    SizeChanged += AddRecipePage_SizeChanged;
+        //}
+
+        public AddRecipePage(RecipesList recipes)
         {
             InitializeComponent();
             SizeChanged += AddRecipePage_SizeChanged;
+            recipeList = recipes;
         }
 
         private int Step = 1;
@@ -69,12 +77,12 @@ namespace Food_Recipe_Appplication
 
         private void FavouriteButton_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new FavouritePage());
+            this.NavigationService.Navigate(new FavouritePage(recipeList));
         }
 
         private void SettingButton_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new SettingPage());
+            this.NavigationService.Navigate(new SettingPage(recipeList));
         }
 
         private void AddImage_Click(object sender, RoutedEventArgs e)

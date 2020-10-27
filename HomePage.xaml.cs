@@ -94,7 +94,7 @@ namespace Food_Recipe_Appplication
 
         private void FavoriteButton_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new FavouritePage(recipeList.SearchFavoriteRecipes()));
+            this.NavigationService.Navigate(new FavouritePage(recipeList));
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)

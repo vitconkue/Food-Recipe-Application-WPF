@@ -23,18 +23,19 @@ namespace Food_Recipe_Appplication
     public partial class FavouritePage : Page
     {
         private RecipesList _favoriteList = new RecipesList(); 
-        public FavouritePage()
-        {
-            InitializeComponent();
-            SizeChanged += FavouritePage_SizeChanged;
-        }
+        //public FavouritePage()
+        //{
+        //    InitializeComponent();
+        //    SizeChanged += FavouritePage_SizeChanged;
+        //}
 
         public FavouritePage(RecipesList favoriteList)
         {
             InitializeComponent();
             SizeChanged += FavouritePage_SizeChanged;
 
-            _favoriteList = favoriteList; 
+            _favoriteList = favoriteList;
+            _favoriteList = _favoriteList.SearchFavoriteRecipes(); 
         }
 
         private void FavouritePage_SizeChanged(object sender, SizeChangedEventArgs e)
