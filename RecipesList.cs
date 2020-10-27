@@ -127,6 +127,11 @@ namespace Food_Recipe_Appplication
             // query
             IEnumerable<Recipe> filtered = this.Where(food => food.FoodName.Contains(in_name) ||
             HelperFunctions.RemovedUTF(food.FoodName).Contains(HelperFunctions.RemovedUTF(in_name)));
+
+            // Order by: search rate
+
+            filtered.OrderByDescending(food => HelperFunctions.rateSearchResult(in_name ,food.FoodName));
+
             foreach (var value in filtered)
             {
                 result.AddRecipeWithoutSaving(value);

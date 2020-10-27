@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Security.Permissions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -35,6 +37,41 @@ namespace Food_Recipe_Appplication
                     result = result.Replace(result[i], toMatch[checkValue]);
                 }
             }
+
+            return result;
+        }
+
+        public static int rateSearchResult(string searchText, string matchedText)
+        {
+            // longer match => higher rate
+            int result = searchText.Length;
+            string removedUTFSearchText = HelperFunctions.RemovedUTF(searchText);
+            string removedUTFMatchedText = HelperFunctions.RemovedUTF(matchedText);
+
+            
+            
+
+            int indexOfMatch = matchedText.IndexOf(searchText);
+
+            // match at the beginning => higher rate
+            result -= indexOfMatch;
+
+            // match with better Vietnamse symbol => higher rate
+
+            for(int i =0; i < searchText.Length; ++i)
+            {
+                if(searchText[i] == matchedText[indexOfMatch + i])
+                {
+                    result++; 
+                }
+            }
+
+            string separator = " ";
+            string[] searchTextTokens = searchText.Split(new string[] { separator }, StringSplitOptions.RemoveEmptyEntries);
+            string[] matchedTextTokens = matchedText.Split(new string[] { separator }, StringSplitOptions.RemoveEmptyEntries);
+
+
+          
 
             return result;
         }
