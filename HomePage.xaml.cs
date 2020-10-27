@@ -30,8 +30,9 @@ namespace Food_Recipe_Appplication
     /// </summary>
     public partial class HomePage : Page
     {
-      
+        private bool isFavoriteClicked = false;
         private RecipesList recipeList = new RecipesList();
+        private Recipe temp = new Recipe();
         public HomePage()
         {
             InitializeComponent();
@@ -76,9 +77,6 @@ namespace Food_Recipe_Appplication
             var sb = (Storyboard)FindResource("CloseMenu");
             this.BeginStoryboard(sb);
             var timer = new System.Timers.Timer();
-            timer.Interval = 3000;
-            timer.Start();
-            timer.Stop();
             MenuButton.Visibility = Visibility.Visible;
         }
 
@@ -152,12 +150,12 @@ namespace Food_Recipe_Appplication
 
         private void ListViewItem_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            var item = sender as ListViewItem;
-            var temp = dataListView.SelectedItem;
-            if(item != null)
-            {
-                Recipe tempRecipe = (Recipe)item.Content; 
-            }
+            
+            var item = sender as ListViewItem;          
+            if (item != null)
+            {                   
+                temp = (Recipe)item.Content;
+            }          
         }
 
         private void StackPanel_MouseEnter(object sender, MouseEventArgs e)
@@ -169,6 +167,21 @@ namespace Food_Recipe_Appplication
         private void panel_MouseLeave(object sender, MouseEventArgs e)
         {
             (sender as StackPanel).Background = Brushes.White;
+        }
+
+
+        private void PackIcon_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            var icon = sender as PackIcon;
+            icon.Foreground = Brushes.Red;
+      
+            
+            
+        }
+
+        private void DetaisButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -75,18 +75,25 @@
                 </ListView.ItemsPanel>
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel Margin="5" Name="panel">
-                            <Border BorderThickness="0.5" BorderBrush="Gray"
+                        <materialDesign:TransitioningContent>
+                            <materialDesign:TransitioningContent.OpeningEffects>
+                                <materialDesign:TransitionEffect Kind="SlideInFromRight" />
+
+                            </materialDesign:TransitioningContent.OpeningEffects>
+                            <StackPanel Margin="5" Name="panel">
+                                <Border BorderThickness="0.5" BorderBrush="Gray"
                                     Margin="5"  Width="300" Height="250">
-                                <Border.Background >
-                                    <ImageBrush ImageSource="Photos/ca-kho-to.jpg"></ImageBrush>
-                                </Border.Background>
-                            </Border>
-                            <StackPanel Height="30" HorizontalAlignment="Center" VerticalAlignment="Center"  Orientation="Horizontal">
-                                <TextBlock  FontSize="15" Margin="0 4 10 0" Text="{Binding FoodName}"></TextBlock>
-                                <materialDesign:PackIcon Height="25" Width="25"  Kind="FavoriteBorder"/>
+                                    <Border.Background >
+                                        <ImageBrush ImageSource="Photos/ca-kho-to.jpg"></ImageBrush>
+                                    </Border.Background>
+                                </Border>
+                                <StackPanel Height="30" HorizontalAlignment="Center" VerticalAlignment="Center"  Orientation="Horizontal">
+                                    <TextBlock  FontSize="15" Margin="0 4 10 0" Text="{Binding FoodName}"></TextBlock>
+                                    <materialDesign:PackIcon Height="25" Width="25"  Kind="FavoriteBorder"/>
+                                </StackPanel>
                             </StackPanel>
-                        </StackPanel>
+                        </materialDesign:TransitioningContent>
+                       
                     </DataTemplate>
                 </ListView.ItemTemplate>
                 <ListView.ItemContainerStyle>
@@ -126,5 +133,15 @@
         <Style TargetType="Image">
             <Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality"></Setter>
         </Style>
+        <Storyboard x:Key="OpenMenu">
+            <DoubleAnimation Storyboard.TargetName="LeftMenu"
+                  Storyboard.TargetProperty="Width"
+                  From="0" To="170" Duration="0:0:0.3" />
+        </Storyboard>
+        <Storyboard x:Key="CloseMenu">
+            <DoubleAnimation Storyboard.TargetName="LeftMenu"
+                  Storyboard.TargetProperty="Width"
+                  From="170" To="0" Duration="0:0:0.3" />
+        </Storyboard>
     </Page.Resources>
 </Page>

@@ -12,6 +12,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -60,13 +61,20 @@ namespace Food_Recipe_Appplication
 
         private void MenuButton_Click(object sender, RoutedEventArgs e)
         {
-            LeftMenu.Visibility = Visibility.Visible;
             MenuButton.Visibility = Visibility.Collapsed;
+
+
+            LeftMenu.Visibility = Visibility.Visible;
+            var sb = (Storyboard)FindResource("OpenMenu");
+            this.BeginStoryboard(sb);
         }
 
         private void LeftMenuButton_Click(object sender, RoutedEventArgs e)
         {
-            LeftMenu.Visibility = Visibility.Collapsed;
+
+            var sb = (Storyboard)FindResource("CloseMenu");
+            this.BeginStoryboard(sb);
+            var timer = new System.Timers.Timer();
             MenuButton.Visibility = Visibility.Visible;
         }
 

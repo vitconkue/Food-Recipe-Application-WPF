@@ -90,7 +90,8 @@
                                 <StackPanel  Height="30" HorizontalAlignment="Center" VerticalAlignment="Center"  Orientation="Horizontal">
 
                                     <TextBlock FontSize="15" Margin="0 4 10 0" Text="{Binding FoodName}"></TextBlock>
-                                    <materialDesign:PackIcon Height="25" Width="25"  Kind="FavoriteBorder"/>
+                                    <materialDesign:PackIcon Foreground="White" Cursor="Hand" PreviewMouseLeftButtonDown="PackIcon_PreviewMouseLeftButtonDown" Height="25" Width="25"  Kind="Heart"/>
+                                    <Button Name="DetaisButton" Click="DetaisButton_Click" Margin="10 0 0 0">Details</Button>
                                 </StackPanel>
                             </StackPanel>
                         </materialDesign:TransitioningContent>
@@ -108,7 +109,7 @@
                             </Setter.Value>
                         </Setter>
                         <Setter Property="Margin" Value="5 5 5 5"></Setter>
-                        <EventSetter Event="PreviewMouseLeftButtonDown" Handler="ListViewItem_PreviewMouseLeftButtonDown"></EventSetter>
+                        <EventSetter  Event="PreviewMouseLeftButtonDown" Handler="ListViewItem_PreviewMouseLeftButtonDown"></EventSetter>
                     </Style>
                 </ListView.ItemContainerStyle>
             </ListView>
