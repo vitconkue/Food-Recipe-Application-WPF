@@ -30,7 +30,7 @@ namespace Food_Recipe_Appplication
     /// </summary>
     public partial class HomePage : Page
     {
-        private bool isFavoriteClicked = false;
+     
         private RecipesList recipeList = new RecipesList();
         private Recipe temp = new Recipe();
         public HomePage()
@@ -174,7 +174,21 @@ namespace Food_Recipe_Appplication
         {
             var icon = sender as PackIcon;
             icon.Foreground = Brushes.Red;
-      
+            foreach(var recipe in recipeList)
+            {
+                if (recipe.FoodName == temp.FoodName)
+                {
+                    recipe.ToggleFavorite();
+                    if (recipe.IsFavorite == true)
+                    {
+                        icon.Foreground = Brushes.Red;
+                    }
+                    else
+                    {
+                        icon.Foreground = Brushes.Pink;
+                    }
+                }
+            }
             
             
         }
