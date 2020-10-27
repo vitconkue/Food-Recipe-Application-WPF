@@ -16,8 +16,6 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using Microsoft.Win32;
-using System.Configuration;
-using System.Windows.Media.Animation;
 
 namespace Food_Recipe_Appplication
 {
@@ -26,15 +24,14 @@ namespace Food_Recipe_Appplication
     /// </summary>
     public partial class AddRecipePage : Page
     {
-        private RecipesList recipeList = new RecipesList();
-
-
-        public AddRecipePage(RecipesList list)
+        public AddRecipePage()
         {
             InitializeComponent();
             SizeChanged += AddRecipePage_SizeChanged;
-            recipeList = list;
         }
+
+        private int Step = 1;
+
         private void AddRecipePage_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             var windowWidth = e.NewSize.Width;
@@ -55,37 +52,29 @@ namespace Food_Recipe_Appplication
 
         private void MenuButton_Click(object sender, RoutedEventArgs e)
         {
-            MenuButton.Visibility = Visibility.Collapsed;
             LeftMenu.Visibility = Visibility.Visible;
-            var sb = (Storyboard)FindResource("OpenMenu");
-            this.BeginStoryboard(sb);
+            MenuButton.Visibility = Visibility.Collapsed;
         }
 
         private void LeftMenuButton_Click(object sender, RoutedEventArgs e)
         {
-
-            var sb = (Storyboard)FindResource("CloseMenu");
-            this.BeginStoryboard(sb);
-            var timer = new System.Timers.Timer();
+            LeftMenu.Visibility = Visibility.Collapsed;
             MenuButton.Visibility = Visibility.Visible;
         }
 
         private void HomeButton_Click(object sender, RoutedEventArgs e)
         {
-            MenuButton.Visibility = Visibility.Visible;
-            LeftMenuButton.Visibility = Visibility.Collapsed;
             this.NavigationService.Navigate(new HomePage());
-
         }
 
         private void FavouriteButton_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new FavouritePage(recipeList.SearchFavoriteRecipes()));
+            this.NavigationService.Navigate(new FavouritePage());
         }
 
         private void SettingButton_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new SettingPage(recipeList.SearchFavoriteRecipes()));
+            this.NavigationService.Navigate(new SettingPage());
         }
 
         private void AddImage_Click(object sender, RoutedEventArgs e)
@@ -113,12 +102,17 @@ namespace Food_Recipe_Appplication
 
         private void LeftArrowButton_Click(object sender, RoutedEventArgs e)
         {
-
+            if (Step != 1)
+            {
+                Step--;
+                StepNumber.Text = Step.ToString();
+            }
         }
 
         private void RightArrowButton_Click(object sender, RoutedEventArgs e)
         {
-
+            Step++;
+            StepNumber.Text = Step.ToString();
         }
 
         private void DescriptionBox_GotFocus(object sender, RoutedEventArgs e)
@@ -129,13 +123,47 @@ namespace Food_Recipe_Appplication
 
         private void DescriptionBox_LostFocus(object sender, RoutedEventArgs e)
         {
-            DescriptionBox.Text = "Viết công thức chỗ này";
-            DescriptionBox.Foreground = Brushes.Gray;
+            if (DescriptionBox.Text == "")
+            {
+                DescriptionBox.Text = "Viết công thức chỗ này";
+                DescriptionBox.Foreground = Brushes.Gray;
+            }
+
         }
 
-        private void HomeButton_Click_1(object sender, RoutedEventArgs e)
+        private void AddNameRecipeBox_GotFocus(object sender, RoutedEventArgs e)
         {
+            AddNameRecipeBox.Text = "";
+            AddNameRecipeBox.Foreground = Brushes.Black;
+        }
 
+        private void AddNameRecipeBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (AddNameRecipeBox.Text == "")
+            {
+                AddNameRecipeBox.Text = "Nhập tên công thức";
+                AddNameRecipeBox.Foreground = Brushes.Gray;
+            }
+
+        }
+
+        private void AddRecipeImage_Click(object sender, RoutedEventArgs e)
+        {
+            var openFileDialog = new OpenFileDialog();
+            string filePath;
+            if (openFileDialog.ShowDialog() == true)
+            {
+                File.ReadAllText(openFileDialog.FileName);
+                filePath = openFileDialog.FileName;
+                var bitmap =
+                new BitmapImage(
+                    new Uri(
+                        filePath,
+                        UriKind.Absolute)
+                    );
+                Debug.WriteLine(filePath);
+                BrowseRecipeImage.Source = bitmap;
+            }
         }
     }
 }
