@@ -174,9 +174,14 @@ namespace Food_Recipe_Appplication
         {
             var icon = sender as PackIcon;
             icon.Foreground = Brushes.Red;
-      
-            
-            
+            foreach( var recipe in recipeList)
+            {
+                if (recipe.FoodName == temp.FoodName)
+                {
+                    recipe.ToggleFavorite();
+                }
+            }
+                   
         }
 
         private void DetaisButton_Click(object sender, RoutedEventArgs e)
