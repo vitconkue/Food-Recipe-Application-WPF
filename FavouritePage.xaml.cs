@@ -1,6 +1,8 @@
-﻿using System;
+﻿using MaterialDesignThemes.Wpf;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +22,12 @@ namespace Food_Recipe_Appplication
     /// <summary>
     /// Interaction logic for FavouritePage.xaml
     /// </summary>
+    /// 
+   
     public partial class FavouritePage : Page
     {
-        private RecipesList _favoriteList = new RecipesList(); 
+        private RecipesList _favoriteList = new RecipesList();
+        private Recipe temp = new Recipe();
         //public FavouritePage()
         //{
         //    InitializeComponent();
@@ -96,11 +101,9 @@ namespace Food_Recipe_Appplication
         private void ListViewItem_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             var item = sender as ListViewItem;
-            var temp = dataListView.SelectedItem;
             if (item != null)
             {
-                Recipe tempRecipe = (Recipe)item.Content;
-                MessageBox.Show(tempRecipe.FoodName); 
+                temp = (Recipe)item.Content;              
             }
         }
 
@@ -136,6 +139,43 @@ namespace Food_Recipe_Appplication
         }
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
+            BindingDataFromFavRecipeList();
+        }
+        private void StackPanel_MouseEnter(object sender, MouseEventArgs e)
+        {
+            BrushConverter bc = new BrushConverter();
+            (sender as StackPanel).Background = (Brush)bc.ConvertFrom("#CAC9C7");
+        }
+
+        private void panel_MouseLeave(object sender, MouseEventArgs e)
+        {
+            (sender as StackPanel).Background = Brushes.White;
+        }
+
+
+        private void PackIcon_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            var icon = sender as PackIcon;
+            icon.Foreground = Brushes.Pink;
+            Debug.WriteLine(temp.FoodName);
+            foreach (var recipe in _favoriteList)
+            { 
+                if (recipe.FoodName == temp.FoodName)
+                {
+                    recipe.ToggleFavorite();
+                    _favoriteList = _favoriteList.SearchFavoriteRecipes();
+                    BindingDataFromFavRecipeList();
+                }
+            }
+
+
+        }
+        private void DetaisButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void BindingDataFromFavRecipeList()
+        {
             try
             {
                 var number = NumberOfRecipePerPage();
@@ -159,7 +199,7 @@ namespace Food_Recipe_Appplication
                 Button firstButton = (Button)SkipButton.Children[0];
                 firstButton.Background = Brushes.Orange;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 TextBlock nofication = new TextBlock();
                 nofication.Text = "Empty!!!";
@@ -168,7 +208,7 @@ namespace Food_Recipe_Appplication
                 panel.HorizontalAlignment = HorizontalAlignment.Center;
                 panel.Children.Add(nofication);
                 GridLayout.VerticalAlignment = VerticalAlignment.Center;
-                GridLayout.Children.Add(panel);             
+                GridLayout.Children.Add(panel);
             }
         }
     }

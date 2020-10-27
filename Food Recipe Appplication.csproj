@@ -76,10 +76,10 @@
     </Compile>
     <Compile Include="IsFavoriteToColorConverter.cs" />
     <Compile Include="Recipe.cs" />
-    <Compile Include="RecipesList.cs" />
-    <Compile Include="RecipeWindow.xaml.cs">
-      <DependentUpon>RecipeWindow.xaml</DependentUpon>
+    <Compile Include="RecipeDetailsPage.xaml.cs">
+      <DependentUpon>RecipeDetailsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RecipesList.cs" />
     <Compile Include="SettingPage.xaml.cs">
       <DependentUpon>SettingPage.xaml</DependentUpon>
     </Compile>
@@ -112,7 +112,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="RecipeWindow.xaml">
+    <Page Include="RecipeDetailsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -64,8 +64,6 @@ namespace Food_Recipe_Appplication
         private void MenuButton_Click(object sender, RoutedEventArgs e)
         {
             MenuButton.Visibility = Visibility.Collapsed;
-           
-
             LeftMenu.Visibility = Visibility.Visible;
             var sb = (Storyboard)FindResource("OpenMenu");
             this.BeginStoryboard(sb);
