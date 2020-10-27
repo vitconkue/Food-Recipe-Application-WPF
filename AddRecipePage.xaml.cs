@@ -116,8 +116,47 @@ namespace Food_Recipe_Appplication
 
         private void DescriptionBox_LostFocus(object sender, RoutedEventArgs e)
         {
-            DescriptionBox.Text = "Viết công thức chỗ này";
-            DescriptionBox.Foreground = Brushes.Gray;
+            if(DescriptionBox.Text=="")
+            {
+                DescriptionBox.Text = "Viết công thức chỗ này";
+                DescriptionBox.Foreground = Brushes.Gray;
+            }
+
+        }
+
+        private void AddNameRecipeBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            AddNameRecipeBox.Text = "";
+            AddNameRecipeBox.Foreground = Brushes.Black;
+        }
+
+        private void AddNameRecipeBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (AddNameRecipeBox.Text == "")
+            {
+                AddNameRecipeBox.Text = "Nhập tên công thức";
+                AddNameRecipeBox.Foreground = Brushes.Gray;
+            }
+            
+        }
+
+        private void AddRecipeImage_Click(object sender, RoutedEventArgs e)
+        {
+            var openFileDialog = new OpenFileDialog();
+            string filePath;
+            if (openFileDialog.ShowDialog() == true)
+            {
+                File.ReadAllText(openFileDialog.FileName);
+                filePath = openFileDialog.FileName;
+                var bitmap =
+                new BitmapImage(
+                    new Uri(
+                        filePath,
+                        UriKind.Absolute)
+                    );
+                Debug.WriteLine(filePath);
+                BrowseRecipeImage.Source = bitmap;
+            }
         }
     }
 }
