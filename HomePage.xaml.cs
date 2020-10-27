@@ -3,19 +3,25 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
+using System.Data;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Markup;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+
+
 
 namespace Food_Recipe_Appplication
 {
@@ -24,6 +30,7 @@ namespace Food_Recipe_Appplication
     /// </summary>
     public partial class HomePage : Page
     {
+      
         private RecipesList recipeList = new RecipesList();
         public HomePage()
         {
@@ -55,13 +62,23 @@ namespace Food_Recipe_Appplication
 
         private void MenuButton_Click(object sender, RoutedEventArgs e)
         {
-            LeftMenu.Visibility = Visibility.Visible;
             MenuButton.Visibility = Visibility.Collapsed;
-        }
+           
 
+            LeftMenu.Visibility = Visibility.Visible;
+            var sb = (Storyboard)FindResource("OpenMenu");
+            this.BeginStoryboard(sb);
+        }
+  
         private void LeftMenuButton_Click(object sender, RoutedEventArgs e)
         {
-            LeftMenu.Visibility = Visibility.Collapsed;
+
+            var sb = (Storyboard)FindResource("CloseMenu");
+            this.BeginStoryboard(sb);
+            var timer = new System.Timers.Timer();
+            timer.Interval = 3000;
+            timer.Start();
+            timer.Stop();
             MenuButton.Visibility = Visibility.Visible;
         }
 
