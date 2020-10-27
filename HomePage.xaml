@@ -127,10 +127,10 @@
                                         <ImageBrush ImageSource="Photos/ca-kho-to.jpg"></ImageBrush>
                                     </Border.Background>
                                 </Border>
-                                <StackPanel  Height="30" HorizontalAlignment="Center" VerticalAlignment="Center"  Orientation="Horizontal">
+                                <StackPanel  Height="35" HorizontalAlignment="Center" VerticalAlignment="Center"  Orientation="Horizontal">
 
-                                    <TextBlock FontSize="15" Margin="0 4 10 0" Text="{Binding FoodName}"></TextBlock>
-                                    <materialDesign:PackIcon Foreground="{Binding IsFavorite, Converter={StaticResource isfavoriteicon}}"  Cursor="Hand" PreviewMouseLeftButtonDown="PackIcon_PreviewMouseLeftButtonDown" Height="25" Width="25"  Kind="Heart"/>
+                                    <TextBlock FontSize="15" Margin="0 10 10 0" Text="{Binding FoodName}"></TextBlock>
+                                    <materialDesign:PackIcon Foreground="{Binding IsFavorite, Converter={StaticResource isfavoriteicon}}" Margin="0 6 0 0"  Cursor="Hand" PreviewMouseLeftButtonDown="PackIcon_PreviewMouseLeftButtonDown" Height="25" Width="25"  Kind="Heart"/>
                                     <Button Name="DetaisButton" Click="DetaisButton_Click" Margin="10 0 0 0">Details</Button>
                                 </StackPanel>
                             </StackPanel>

@@ -168,8 +168,7 @@ namespace Food_Recipe_Appplication
                 panel.HorizontalAlignment = HorizontalAlignment.Center;
                 panel.Children.Add(nofication);
                 GridLayout.VerticalAlignment = VerticalAlignment.Center;
-                GridLayout.Children.Add(panel);
-               
+                GridLayout.Children.Add(panel);             
             }
         }
     }
