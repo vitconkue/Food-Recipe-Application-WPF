@@ -313,9 +313,7 @@
       </step>
     </steps>
   </recipe>
-<<<<<<< HEAD
-=======
-  <recipe isFavorite="false" date_created="28-10-2020">
+  <recipe isFavorite="false" date_created="28-10-2020" category="dryfood">
     <foodname>Mít trộn</foodname>
     <mainpicture_name>mittron</mainpicture_name>
     <ingredients>1 kg mít non1 lạng tôm1 lạng thịt ba chỉdầu ăn</ingredients>
@@ -343,5 +341,4 @@
       </step>
     </steps>
   </recipe>
->>>>>>> PagingDetailWindow
 </recipes>
