@@ -34,6 +34,7 @@ namespace Food_Recipe_Appplication
         private RecipesList recipeList = new RecipesList();
         private RecipesList searchResultList = new RecipesList();
         private Recipe temp = new Recipe();
+        private int currentPage;
         public HomePage()
         {
             InitializeComponent();
@@ -99,8 +100,40 @@ namespace Food_Recipe_Appplication
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-
-            ChangeBindingList(recipeList);
+            var config = ConfigurationManager.OpenExeConfiguration(
+              ConfigurationUserLevel.None);
+            var option = config.AppSettings.Settings["DisplayOption"].Value;
+            switch (option)
+            {
+                case "Order by name A-Z":
+                    {
+                        AtoZ.IsSelected = true;
+                        recipeList = recipeList.SortByName();
+                        ChangeBindingList(recipeList);
+                        break;
+                    }
+                case "Order by name Z-A":
+                    {
+                        ZtoA.IsSelected = true;
+                        recipeList = recipeList.SortByNameDescending();
+                        ChangeBindingList(recipeList);
+                        break;
+                    }
+                case "Order by date descending":
+                    {
+                        DateDescending.IsSelected = true;
+                        recipeList = recipeList.SortByDateDescending();
+                        ChangeBindingList(recipeList);
+                        break;
+                    }
+                case "Order by date ascending":
+                    {
+                        DateAscending.IsSelected = true;
+                        recipeList = recipeList.SortByDate();
+                        ChangeBindingList(recipeList);
+                        break;
+                    }
+            }
         }
         private int NumberOfRecipePerPage()
         {
@@ -109,7 +142,7 @@ namespace Food_Recipe_Appplication
             var result = int.Parse(config.AppSettings.Settings["NumberOfRecipePerPage"].Value);
             return result;
         }
-        private void PageNumber_Click(object sender, RoutedEventArgs e)
+        private void  PageNumber_Click(object sender, RoutedEventArgs e)
         {
             var number = NumberOfRecipePerPage();
             string[] separator = new string[] { "_" };
@@ -241,28 +274,33 @@ namespace Food_Recipe_Appplication
             {
                 case "Order by name A-Z":
                     {
-                        
-                        ChangeBindingList(recipeList.SortByName());
-                        
-
+                        recipeList = recipeList.SortByName();
+                        ChangeBindingList(recipeList);
                         break;
                     }
                 case "Order by name Z-A":
                     {
-                        ChangeBindingList(recipeList.SortByNameDescending());
+                        recipeList = recipeList.SortByNameDescending();
+                        ChangeBindingList(recipeList);
                         break;
                     }
                 case "Order by date descending":
                     {
-                        ChangeBindingList(recipeList.SortByDateDescending()); 
+                        recipeList = recipeList.SortByDateDescending();
+                        ChangeBindingList(recipeList); 
                         break;
                     }
                 case "Order by date ascending":
                     {
-                        ChangeBindingList(recipeList.SortByDate());
+                        recipeList = recipeList.SortByDate();
+                        ChangeBindingList(recipeList);
                         break;
                     }
-            }    
+            }
+            var config = ConfigurationManager.OpenExeConfiguration(
+             ConfigurationUserLevel.None);
+            config.AppSettings.Settings["DisplayOption"].Value = tokens[tokens.Length - 1];
+            config.Save(ConfigurationSaveMode.Minimal);
         }
     }
 }
