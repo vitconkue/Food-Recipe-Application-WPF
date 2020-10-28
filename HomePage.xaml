@@ -12,9 +12,9 @@
      TextOptions.TextFormattingMode="Ideal"
      TextOptions.TextRenderingMode="Auto"
      Background="{DynamicResource MaterialDesignPaper}"
-     FontFamily="{DynamicResource MaterialDesignFont}"
+     FontFamily="Consolas"
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="HomePage" Loaded="Page_Loaded">
+      Title="HomePage" Loaded="Page_Loaded" >
     <Page.Resources>
         <local:IsFavoriteToColorConverter x:Key="isfavoriteicon">
 
@@ -101,7 +101,7 @@
             <StackPanel Name="SearchBlock"  Orientation="Horizontal" FlowDirection="RightToLeft">
                 <Image Height="25" Source="Icons/loupe.png"></Image>
                 <TextBox PreviewKeyUp="SearchBox_PreviewKeyUp" materialDesign:TextFieldAssist.DecorationVisibility="Collapsed" BorderThickness="0.8" Name="SearchBox" Background="White" BorderBrush="Black" Width="250" Height="25" Margin="10 0 0 0" FlowDirection="LeftToRight" FontSize="13" GotFocus="SearchBox_GotFocus" LostFocus="SearchBox_LostFocus" Foreground="Gray">Search</TextBox>
-                <ComboBox  Name="OrderOptions" SelectionChanged="ComboBox_SelectionChanged" Width="190" Margin="20 0 0 0">
+                <ComboBox FontSize="13"  Name="OrderOptions" SelectionChanged="ComboBox_SelectionChanged" Width="190" Margin="20 0 0 0">
                     <ComboBoxItem Name="AtoZ">Order by name A-Z</ComboBoxItem>
                     <ComboBoxItem Name="ZtoA">Order by name Z-A</ComboBoxItem>
                     <ComboBoxItem Name="DateDescending">Order by date descending</ComboBoxItem>

@@ -19,14 +19,27 @@ namespace Food_Recipe_Appplication
     /// </summary>
     public partial class RecipeDetailsPage : Window
     {
+        private Recipe displayFood = new Recipe();
         public RecipeDetailsPage()
         {
             InitializeComponent();
         }
-
+        public RecipeDetailsPage(Recipe food)
+        {
+            InitializeComponent();
+            displayFood = food;
+        }
         private void PackIcon_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             this.Close();
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            var bindingList = displayFood.Steps.GetBindingData();
+            dataListView.ItemsSource = bindingList;
+            int totalPage = bindingList.Count();
+        }
+        
     }
 }
