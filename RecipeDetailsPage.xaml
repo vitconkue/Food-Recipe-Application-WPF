@@ -26,7 +26,7 @@
         </Grid.RowDefinitions>
         <Grid  FlowDirection="RightToLeft" Background="#fed8b1">
             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" >
-                <TextBlock FontSize="40">Gà Rán</TextBlock>
+                <TextBlock x:Name="FoodName" FontSize="40"></TextBlock>
 
             </StackPanel>
             <materialDesign:PackIcon Width="50" PreviewMouseLeftButtonDown="PackIcon_PreviewMouseLeftButtonDown" Kind="ExitToApp" Height="38" Cursor="Hand"></materialDesign:PackIcon>
@@ -37,6 +37,17 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="5*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition ></RowDefinition>
+                    <RowDefinition Height="15*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0">Nguyên liệu:</TextBlock>
+                <StackPanel Grid.Row="1" Name="ingredientPanel">
+                    
+                </StackPanel>
+                
+            </Grid>
             <Grid Grid.Column="1">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -46,6 +57,7 @@
                         <ColumnDefinition>
 
                         </ColumnDefinition>
+                        
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="0" Background="AliceBlue">
                         <Grid>

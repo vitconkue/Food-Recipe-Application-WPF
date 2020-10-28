@@ -41,7 +41,15 @@ namespace Food_Recipe_Appplication
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            FoodName.Text = displayFood.FoodName;
             bindingList = displayFood.Steps.GetBindingData();
+            var ingredients = displayFood.Ingredients.ListIngredient;
+            foreach(var ingredient in ingredients)
+            {
+                TextBlock text = new TextBlock();
+                text.Text = $"-{ingredient}";
+                ingredientPanel.Children.Add(text);
+            }
             totalStep = bindingList.Count();
             Button nextStep = new Button();
             Button prevStep = new Button();
