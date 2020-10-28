@@ -30,16 +30,18 @@ namespace Food_Recipe_Appplication
     /// </summary>
     public partial class HomePage : Page
     {
-     
+
         private RecipesList recipeList = new RecipesList();
+        private RecipesList searchResultList = new RecipesList();
         private Recipe temp = new Recipe();
         public HomePage()
         {
             InitializeComponent();
             SizeChanged += HomePage_SizeChanged;
             Debug.WriteLine("iN home page");
-            recipeList.LoadAll(); 
-            
+            recipeList.LoadAll();
+            searchResultList = recipeList;
+
         }
 
         private void HomePage_SizeChanged(object sender, SizeChangedEventArgs e)
@@ -68,7 +70,7 @@ namespace Food_Recipe_Appplication
             var sb = (Storyboard)FindResource("OpenMenu");
             this.BeginStoryboard(sb);
         }
-  
+
         private void LeftMenuButton_Click(object sender, RoutedEventArgs e)
         {
 
@@ -83,7 +85,7 @@ namespace Food_Recipe_Appplication
             this.NavigationService.Navigate(new SettingPage(recipeList));
         }
 
- 
+
 
         private void AddRecipeButton_Click(object sender, RoutedEventArgs e)
         {
@@ -98,26 +100,7 @@ namespace Food_Recipe_Appplication
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
 
-            var number = NumberOfRecipePerPage();
-            var bindingList = recipeList.GetByPage(1,number).GetBindingData();
-            dataListView.ItemsSource = bindingList;
-            int len = recipeList.Recipes.Count; 
-            int numberOfPage = len / number + (len % number == 0 ? 0:1);
-            
-            for(int i = 1; i <= numberOfPage; i++)
-            {
-                Button numberButton = new Button();
-                numberButton.Name = $"page_{i}";
-                numberButton.Content =$"{i}";
-                numberButton.Background = Brushes.White;
-                numberButton.BorderBrush = Brushes.Black;
-                numberButton.Foreground = Brushes.Black;
-                numberButton.Margin = new Thickness(5);
-                numberButton.Click += PageNumber_Click;
-                SkipButton.Children.Add(numberButton);               
-            }
-            Button firstButton = (Button)SkipButton.Children[0];
-            firstButton.Background = Brushes.Orange;
+            ChangeBindingList(recipeList);
         }
         private int NumberOfRecipePerPage()
         {
@@ -139,21 +122,21 @@ namespace Food_Recipe_Appplication
             var tokens = pageNumber.Split(separator, StringSplitOptions.None);
             int nextPage = int.Parse(tokens[1]);
 
-            RecipesList toShow = recipeList.GetByPage(nextPage,number);
-            dataListView.ItemsSource = toShow.GetBindingData(); 
-            
+            RecipesList toShow = recipeList.GetByPage(nextPage, number);
+            dataListView.ItemsSource = toShow.GetBindingData();
+
 
         }
 
 
         private void ListViewItem_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            
-            var item = sender as ListViewItem;          
+
+            var item = sender as ListViewItem;
             if (item != null)
-            {                   
+            {
                 temp = (Recipe)item.Content;
-            }          
+            }
         }
 
         private void StackPanel_MouseEnter(object sender, MouseEventArgs e)
@@ -172,7 +155,7 @@ namespace Food_Recipe_Appplication
         {
             var icon = sender as PackIcon;
             icon.Foreground = Brushes.Red;
-            foreach(var recipe in recipeList)
+            foreach (var recipe in recipeList)
             {
                 if (recipe.FoodName == temp.FoodName)
                 {
@@ -187,13 +170,62 @@ namespace Food_Recipe_Appplication
                     }
                 }
             }
-            
-            
+
+
         }
 
         private void DetaisButton_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+        private void ChangeBindingList(RecipesList input)
+        {
+            SkipButton.Children.Clear();
+            var number = NumberOfRecipePerPage();
+            var bindingList = input.GetByPage(1, number).GetBindingData();
+            dataListView.ItemsSource = bindingList;
+            int len = input.Recipes.Count;
+            int numberOfPage = len / number + (len % number == 0 ? 0 : 1);
+
+            for (int i = 1; i <= numberOfPage; i++)
+            {
+                Button numberButton = new Button();
+                numberButton.Name = $"page_{i}";
+                numberButton.Content = $"{i}";
+                numberButton.Background = Brushes.White;
+                numberButton.BorderBrush = Brushes.Black;
+                numberButton.Foreground = Brushes.Black;
+                numberButton.Margin = new Thickness(5);
+                numberButton.Click += PageNumber_Click;
+                SkipButton.Children.Add(numberButton);
+            }
+            try
+            {
+                Button firstButton = (Button)SkipButton.Children[0];
+                firstButton.Background = Brushes.Orange;
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+
+        private void SearchBox_PreviewKeyUp(object sender, KeyEventArgs e)
+        {
+            string key = (sender as TextBox).Text;
+            if (key == "")
+            {
+                //searchResultList = recipeList.SearchNameContains_NoneUtf(key);
+
+                ChangeBindingList(recipeList);
+            }
+            else
+            {
+                searchResultList = recipeList.SearchNameContains_NoneUtf(key);
+                ChangeBindingList(searchResultList);
+                //MessageBox.Show(key);
+            }
         }
     }
 }

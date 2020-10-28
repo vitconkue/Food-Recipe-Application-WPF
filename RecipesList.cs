@@ -125,8 +125,8 @@ namespace Food_Recipe_Appplication
         {
             RecipesList result = new RecipesList();
             // query
-            IEnumerable<Recipe> filtered = this.Where(food => food.FoodName.Contains(in_name) ||
-            HelperFunctions.RemovedUTF(food.FoodName).Contains(HelperFunctions.RemovedUTF(in_name)));
+            IEnumerable<Recipe> filtered = this.Where(food => food.FoodName.ToLower().Contains(in_name.ToLower()) ||
+            HelperFunctions.RemovedUTF(food.FoodName.ToLower()).Contains(HelperFunctions.RemovedUTF(in_name.ToLower())));
 
             // Order by: search rate
 
