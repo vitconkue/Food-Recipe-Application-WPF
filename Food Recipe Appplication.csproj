@@ -74,6 +74,7 @@
     <Compile Include="HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="IngredientList.cs" />
     <Compile Include="IsFavoriteToColorConverter.cs" />
     <Compile Include="Recipe.cs" />
     <Compile Include="RecipeDetailsPage.xaml.cs">

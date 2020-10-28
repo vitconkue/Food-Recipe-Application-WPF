@@ -42,7 +42,7 @@ namespace Food_Recipe_Appplication
                         Step newStep = Step.LoadedSingleStep(reader.ReadSubtree());
                         result.steps.Add(newStep);
 
-
+                        
                     }
                 }
             }

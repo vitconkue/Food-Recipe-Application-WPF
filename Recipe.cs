@@ -27,6 +27,8 @@ namespace Food_Recipe_Appplication
 
         private DateTime _date_created;
 
+        private IngredientList _ingredients;
+
         public string FoodName { get => _foodName; set => _foodName = value; }
         public bool IsFavorite { get => _isFavorite; set => _isFavorite = value; }
         public string MainPictureName { get => _mainPictureName; set => _mainPictureName = value; }
@@ -35,6 +37,7 @@ namespace Food_Recipe_Appplication
         public DateTime Date_created { get => _date_created; set => _date_created = value; }
         public string MainVideoLink { get => _mainVideoLink; set => _mainVideoLink = value; }
         public string Interesting_infomation { get => _interesting_infomation; set => _interesting_infomation = value; }
+        public IngredientList Ingredients { get => _ingredients; set => _ingredients = value; }
 
         public Recipe()
         {
@@ -104,6 +107,12 @@ namespace Food_Recipe_Appplication
 
                                 result._steps = StepsList.LoadedStepsList(reader.ReadSubtree());
 
+                                break;
+                            }
+                        case "ingredients":
+                            {
+                                result._ingredients = IngredientList.LoadIngredientList(reader.ReadSubtree()); 
+                                
                                 break;
                             }
                         default:
