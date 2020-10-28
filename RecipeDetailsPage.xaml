@@ -27,9 +27,11 @@
         <Grid  FlowDirection="RightToLeft" Background="#fed8b1">
             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" >
                 <TextBlock x:Name="FoodName" FontSize="40"></TextBlock>
-
             </StackPanel>
-            <materialDesign:PackIcon Width="50" PreviewMouseLeftButtonDown="PackIcon_PreviewMouseLeftButtonDown" Kind="ExitToApp" Height="38" Cursor="Hand"></materialDesign:PackIcon>
+            <Button Name="ExitButton" Width="50" Click="Button_Click">
+                <materialDesign:PackIcon   Kind="ExitToApp"  Cursor="Hand"></materialDesign:PackIcon>
+            </Button>
+            
         </Grid>
 
         <Grid  Grid.Row="1">

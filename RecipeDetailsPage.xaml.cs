@@ -34,14 +34,12 @@ namespace Food_Recipe_Appplication
             InitializeComponent();
             displayFood = food;
         }
-        private void PackIcon_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            this.Close();
-        }
+     
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             FoodName.Text = displayFood.FoodName;
+            ExitButton.Margin = new Thickness(0,0,1100,0);
             bindingList = displayFood.Steps.GetBindingData();
             var ingredients = displayFood.Ingredients.ListIngredient;
             foreach(var ingredient in ingredients)
@@ -89,6 +87,11 @@ namespace Food_Recipe_Appplication
                 temp.Add(step);
                 dataListView.ItemsSource = temp;
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
