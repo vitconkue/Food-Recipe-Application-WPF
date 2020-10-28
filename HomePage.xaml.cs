@@ -209,7 +209,7 @@ namespace Food_Recipe_Appplication
 
         private void DetaisButton_Click(object sender, RoutedEventArgs e)
         {
-            Window detailScreen = new RecipeDetailsPage();
+            Window detailScreen = new RecipeDetailsPage(temp);
             detailScreen.Show();
         }
         private void ChangeBindingList(RecipesList input)

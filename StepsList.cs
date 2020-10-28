@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -50,6 +51,16 @@ namespace Food_Recipe_Appplication
             return result;
         }
 
+        public BindingList<Step> GetBindingData() {
+
+            var stepArr = new BindingList<Step>();
+            foreach (var step in steps)
+            {
+                stepArr.Add(step);
+            }
+
+            return stepArr;
+        }
         public XElement ToXElement()
         {
             XElement result = new XElement("steps");

@@ -12,7 +12,7 @@
      TextOptions.TextFormattingMode="Ideal"
      TextOptions.TextRenderingMode="Auto"
      Background="{DynamicResource MaterialDesignPaper}"
-     FontFamily="{DynamicResource MaterialDesignFont}"
+     FontFamily="Consolas"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="HomePage" Loaded="Page_Loaded">
     <Page.Resources>
