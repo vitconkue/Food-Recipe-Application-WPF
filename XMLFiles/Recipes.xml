@@ -313,4 +313,35 @@
       </step>
     </steps>
   </recipe>
+<<<<<<< HEAD
+=======
+  <recipe isFavorite="false" date_created="28-10-2020">
+    <foodname>Mít trộn</foodname>
+    <mainpicture_name>mittron</mainpicture_name>
+    <ingredients>1 kg mít non1 lạng tôm1 lạng thịt ba chỉdầu ăn</ingredients>
+    <ingredients>
+      <ingredient>1 kg mít non</ingredient>
+      <ingredient>1 lạng tôm</ingredient>
+      <ingredient>1 lạng thịt ba chỉ</ingredient>
+      <ingredient>dầu ăn</ingredient>
+    </ingredients>
+    <steps>
+      <step>
+        <step_text>1thitnaitext</step_text>
+        <step_video_link>1thitnaivideo</step_video_link>
+        <step_picture_name>1thitnaipicture</step_picture_name>
+      </step>
+      <step>
+        <step_text>2thitnaitext</step_text>
+        <step_video_link>2thitnaivideo</step_video_link>
+        <step_picture_name>2thitnaipicture</step_picture_name>
+      </step>
+      <step>
+        <step_text>3thitnaitext</step_text>
+        <step_video_link>3thitnaivideo</step_video_link>
+        <step_picture_name>3thitnaipicture</step_picture_name>
+      </step>
+    </steps>
+  </recipe>
+>>>>>>> PagingDetailWindow
 </recipes>

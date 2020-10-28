@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +22,9 @@ namespace Food_Recipe_Appplication
     public partial class RecipeDetailsPage : Window
     {
         private Recipe displayFood = new Recipe();
+        private BindingList<Step> bindingList;
+        private int currentStep = 0;
+        private int totalStep;
         public RecipeDetailsPage()
         {
             InitializeComponent();
@@ -36,10 +41,46 @@ namespace Food_Recipe_Appplication
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            var bindingList = displayFood.Steps.GetBindingData();
-            dataListView.ItemsSource = bindingList;
-            int totalPage = bindingList.Count();
+            bindingList = displayFood.Steps.GetBindingData();
+            totalStep = bindingList.Count();
+            Button nextStep = new Button();
+            Button prevStep = new Button();
+            nextStep.Content = "Next Step";
+            prevStep.Content = "Prev Step";
+            nextStep.Margin = new Thickness(20, 0, 20, 0);
+            ButtonPanel.Children.Add(prevStep);
+            ButtonPanel.Children.Add(nextStep);
+ 
+            nextStep.Click += NextStep_Click;
+            prevStep.Click += PrevStep_Click;
+            var step = bindingList[currentStep];
+            BindingList<Step> temp = new BindingList<Step>();
+            temp.Add(step);
+            dataListView.ItemsSource = temp;
         }
-        
+
+        private void PrevStep_Click(object sender, RoutedEventArgs e)
+        {
+            if (currentStep > 0)
+            {
+                Debug.WriteLine(currentStep);
+                var step = bindingList[--currentStep];
+                BindingList<Step> temp = new BindingList<Step>();
+                temp.Add(step);
+                dataListView.ItemsSource = temp;
+            }
+        }
+
+        private void NextStep_Click(object sender, RoutedEventArgs e)
+        {
+            if (currentStep < totalStep-1)
+            {
+                Debug.WriteLine(currentStep);
+                var step = bindingList[++currentStep];   
+                BindingList<Step> temp = new BindingList<Step>();
+                temp.Add(step);
+                dataListView.ItemsSource = temp;
+            }
+        }
     }
 }
