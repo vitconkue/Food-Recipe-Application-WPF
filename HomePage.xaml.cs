@@ -215,7 +215,6 @@ namespace Food_Recipe_Appplication
         private void ChangeBindingList(RecipesList input)
         {
 
-
             SkipButton.Children.Clear();
             var number = NumberOfRecipePerPage();
             var bindingList = input.GetByPage(1, number).GetBindingData();

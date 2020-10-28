@@ -29,6 +29,8 @@ namespace Food_Recipe_Appplication
 
         private IngredientList _ingredients;
 
+        private string _category; // nước uống / món nước/ món khô
+
         public string FoodName { get => _foodName; set => _foodName = value; }
         public bool IsFavorite { get => _isFavorite; set => _isFavorite = value; }
         public string MainPictureName { get => _mainPictureName; set => _mainPictureName = value; }
@@ -38,6 +40,7 @@ namespace Food_Recipe_Appplication
         public string MainVideoLink { get => _mainVideoLink; set => _mainVideoLink = value; }
         public string Interesting_infomation { get => _interesting_infomation; set => _interesting_infomation = value; }
         public IngredientList Ingredients { get => _ingredients; set => _ingredients = value; }
+        public string Category { get => _category; set => _category = value; }
 
         public Recipe()
         {
@@ -49,6 +52,7 @@ namespace Food_Recipe_Appplication
             _steps = new StepsList();
             _interesting_infomation = "";
             _ingredients = new IngredientList();
+            _category = ""; 
         }
 
         public static Recipe LoadedSingleRecipe(XmlReader reader)
@@ -64,6 +68,9 @@ namespace Food_Recipe_Appplication
             DateTime dateCreated = DateTime.ParseExact(reader.GetAttribute(1), "dd-MM-yyyy", provider).Date;
 
             result.Date_created = dateCreated;
+
+            string categoryCreated = reader.GetAttribute(2);
+            result._category = categoryCreated;
 
             //TODO: Load single recipe after received reader from RecipeList
             while (reader.Read())
@@ -131,7 +138,7 @@ namespace Food_Recipe_Appplication
         public XElement ToXElement()
         {
             XElement result = new XElement("recipe", new XAttribute("isFavorite", _isFavorite ? "true" : "false"),
-                new XAttribute("date_created", _date_created.Date.ToString("dd/MM/yyyy")));
+                new XAttribute("date_created", _date_created.Date.ToString("dd/MM/yyyy")), new XAttribute("category", _category));
 
             result.Add(new XElement("foodname", _foodName));
             result.Add(new XElement("mainpicture_name", _mainPictureName));
