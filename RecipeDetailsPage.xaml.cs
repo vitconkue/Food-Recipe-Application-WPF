@@ -23,5 +23,10 @@ namespace Food_Recipe_Appplication
         {
             InitializeComponent();
         }
+
+        private void PackIcon_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
