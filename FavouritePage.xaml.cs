@@ -29,6 +29,8 @@ namespace Food_Recipe_Appplication
         private RecipesList _favoriteList = new RecipesList();
         private RecipesList searchResultList = new RecipesList();
         private Recipe temp = new Recipe();
+        private int currentPage = 1;
+        private int maxPage;
         //public FavouritePage()
         //{
         //    InitializeComponent();
@@ -140,7 +142,7 @@ namespace Food_Recipe_Appplication
         }
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            BindingDataFromFavRecipeList();
+            BindingDataFromFavRecipeList(_favoriteList);
         }
         private void StackPanel_MouseEnter(object sender, MouseEventArgs e)
         {
@@ -165,7 +167,7 @@ namespace Food_Recipe_Appplication
                 {
                     recipe.ToggleFavorite();
                     _favoriteList = _favoriteList.SearchFavoriteRecipes();
-                    BindingDataFromFavRecipeList();
+                    BindingDataFromFavRecipeList(_favoriteList);
                 }
             }
 
@@ -175,35 +177,54 @@ namespace Food_Recipe_Appplication
         {
 
         }
-        private void BindingDataFromFavRecipeList()
+        private void BindingDataFromFavRecipeList(RecipesList input)
         {
             try
             {
                 SkipButton.Children.Clear();
                 var number = NumberOfRecipePerPage();
-                var bindingList = _favoriteList.GetByPage(1, number).GetBindingData();
+                var bindingList = input.GetByPage(1, number).GetBindingData();
                 dataListView.ItemsSource = bindingList;
-                int len = _favoriteList.Recipes.Count;
+                int len = input.Recipes.Count;
                 int numberOfPage = len / number + (len % number == 0 ? 0 : 1);
-
-                for (int i = 1; i <= numberOfPage; i++)
+                if (numberOfPage != 0)
                 {
-                    Button numberButton = new Button();
-                    numberButton.Name = $"page_{i}";
-                    numberButton.Content = $"{i}";
-                    numberButton.Background = Brushes.White;
-                    numberButton.BorderBrush = Brushes.Black;
-                    numberButton.Foreground = Brushes.Black;
-                    numberButton.Margin = new Thickness(5);
-                    numberButton.Click += PageNumber_Click;
-                    SkipButton.Children.Add(numberButton);
-                }
-                try
-                {
-                    Button firstButton = (Button)SkipButton.Children[0];
+                    Button preButton = new Button();
+                    preButton.Name = "prev";
+                    preButton.Content = "Prev";
+                    preButton.Background = Brushes.White;
+                    preButton.BorderBrush = Brushes.Black;
+                    preButton.Foreground = Brushes.Black;
+                    preButton.Margin = new Thickness(5);
+                    preButton.Click += PreButton_Click;
+                    SkipButton.Children.Add(preButton);
+                    maxPage = numberOfPage;
+                    for (int i = 1; i <= numberOfPage; i++)
+                    {
+                        Button numberButton = new Button();
+                        numberButton.Name = $"page_{i}";
+                        numberButton.Content = $"{i}";
+                        numberButton.Background = Brushes.White;
+                        numberButton.BorderBrush = Brushes.Black;
+                        numberButton.Foreground = Brushes.Black;
+                        numberButton.Margin = new Thickness(5);
+                        numberButton.Click += PageNumber_Click;
+                        SkipButton.Children.Add(numberButton);
+                    }
+                    Button nextButton = new Button();
+                    nextButton.Name = "next";
+                    nextButton.Content = "Next";
+                    nextButton.Background = Brushes.White;
+                    nextButton.BorderBrush = Brushes.Black;
+                    nextButton.Foreground = Brushes.Black;
+                    nextButton.Margin = new Thickness(5);
+                    nextButton.Click += NextButton_Click;
+                    SkipButton.Children.Add(nextButton);
+                    Button firstButton = (Button)SkipButton.Children[1];
                     firstButton.Background = Brushes.Orange;
+                   
                 }
-                catch(Exception ex)
+                else
                 {
                     TextBlock nofication = new TextBlock();
                     nofication.Text = "Empty!!!";
@@ -217,14 +238,50 @@ namespace Food_Recipe_Appplication
             }
             catch (Exception ex)
             {
-                TextBlock nofication = new TextBlock();
-                nofication.Text = "Empty!!!";
-                nofication.FontSize = 40;
-                StackPanel panel = new StackPanel();
-                panel.HorizontalAlignment = HorizontalAlignment.Center;
-                panel.Children.Add(nofication);
-                GridLayout.VerticalAlignment = VerticalAlignment.Center;
-                GridLayout.Children.Add(panel);
+                
+            }
+        }
+        private void PreButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (currentPage > 1)
+            {
+                var number = NumberOfRecipePerPage();
+                currentPage = currentPage - 1;
+                RecipesList toShow = _favoriteList.GetByPage(currentPage, number);
+                foreach (Button button in SkipButton.Children)
+                {
+                    if (button.Content.ToString() == (currentPage).ToString())
+                    {
+                        button.Background = Brushes.Orange;
+                    }
+                    else
+                    {
+                        button.Background = Brushes.White;
+                    }
+                };
+                dataListView.ItemsSource = toShow.GetBindingData();
+            }
+        }
+
+        private void NextButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (currentPage < maxPage)
+            {
+                var number = NumberOfRecipePerPage();
+                currentPage = currentPage + 1;
+                RecipesList toShow = _favoriteList.GetByPage(currentPage, number);
+                foreach (Button button in SkipButton.Children)
+                {
+                    if (button.Content.ToString() == (currentPage).ToString())
+                    {
+                        button.Background = Brushes.Orange;
+                    }
+                    else
+                    {
+                        button.Background = Brushes.White;
+                    }
+                };
+                dataListView.ItemsSource = toShow.GetBindingData();
             }
         }
 

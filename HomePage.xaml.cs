@@ -34,7 +34,8 @@ namespace Food_Recipe_Appplication
         private RecipesList recipeList = new RecipesList();
         private RecipesList searchResultList = new RecipesList();
         private Recipe temp = new Recipe();
-        private int currentPage;
+        private int currentPage = 1;
+        private int maxPage;
         public HomePage()
         {
             InitializeComponent();
@@ -77,7 +78,6 @@ namespace Food_Recipe_Appplication
 
             var sb = (Storyboard)FindResource("CloseMenu");
             this.BeginStoryboard(sb);
-            var timer = new System.Timers.Timer();
             MenuButton.Visibility = Visibility.Visible;
         }
 
@@ -142,7 +142,7 @@ namespace Food_Recipe_Appplication
             var result = int.Parse(config.AppSettings.Settings["NumberOfRecipePerPage"].Value);
             return result;
         }
-        private void  PageNumber_Click(object sender, RoutedEventArgs e)
+        private void PageNumber_Click(object sender, RoutedEventArgs e)
         {
             var number = NumberOfRecipePerPage();
             string[] separator = new string[] { "_" };
@@ -154,7 +154,7 @@ namespace Food_Recipe_Appplication
             (sender as Button).Background = Brushes.Orange;
             var tokens = pageNumber.Split(separator, StringSplitOptions.None);
             int nextPage = int.Parse(tokens[1]);
-
+            currentPage = nextPage;
             RecipesList toShow = recipeList.GetByPage(nextPage, number);
             dataListView.ItemsSource = toShow.GetBindingData();
 
@@ -175,7 +175,7 @@ namespace Food_Recipe_Appplication
         private void StackPanel_MouseEnter(object sender, MouseEventArgs e)
         {
             BrushConverter bc = new BrushConverter();
-            (sender as StackPanel).Background = (Brush)bc.ConvertFrom("#CAC9C7");
+            (sender as StackPanel).Background = (Brush)bc.ConvertFrom("#ededed");
         }
 
         private void panel_MouseLeave(object sender, MouseEventArgs e)
@@ -214,14 +214,23 @@ namespace Food_Recipe_Appplication
         private void ChangeBindingList(RecipesList input)
         {
 
-          
+
             SkipButton.Children.Clear();
             var number = NumberOfRecipePerPage();
             var bindingList = input.GetByPage(1, number).GetBindingData();
             dataListView.ItemsSource = bindingList;
             int len = input.Recipes.Count;
             int numberOfPage = len / number + (len % number == 0 ? 0 : 1);
-
+            Button preButton = new Button();
+            preButton.Name = "prev";
+            preButton.Content = "Prev";
+            preButton.Background = Brushes.White;
+            preButton.BorderBrush = Brushes.Black;
+            preButton.Foreground = Brushes.Black;
+            preButton.Margin = new Thickness(5);
+            preButton.Click += PreButton_Click;
+            SkipButton.Children.Add(preButton);
+            maxPage = numberOfPage;
             for (int i = 1; i <= numberOfPage; i++)
             {
                 Button numberButton = new Button();
@@ -234,9 +243,18 @@ namespace Food_Recipe_Appplication
                 numberButton.Click += PageNumber_Click;
                 SkipButton.Children.Add(numberButton);
             }
+            Button nextButton = new Button();
+            nextButton.Name = "next";
+            nextButton.Content = "Next";
+            nextButton.Background = Brushes.White;
+            nextButton.BorderBrush = Brushes.Black;
+            nextButton.Foreground = Brushes.Black;
+            nextButton.Margin = new Thickness(5);
+            nextButton.Click += NextButton_Click;
+            SkipButton.Children.Add(nextButton);
             try
             {
-                Button firstButton = (Button)SkipButton.Children[0];
+                Button firstButton = (Button)SkipButton.Children[1];
                 firstButton.Background = Brushes.Orange;
             }
             catch (Exception ex)
@@ -245,6 +263,49 @@ namespace Food_Recipe_Appplication
             }
         }
 
+        private void PreButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (currentPage > 1)
+            {
+                var number = NumberOfRecipePerPage();
+                currentPage = currentPage - 1;
+                RecipesList toShow = recipeList.GetByPage(currentPage, number);
+                foreach (Button button in SkipButton.Children)
+                {
+                    if (button.Content.ToString() == (currentPage).ToString())
+                    {
+                        button.Background = Brushes.Orange;
+                    }
+                    else
+                    {
+                        button.Background = Brushes.White;
+                    }
+                };
+                dataListView.ItemsSource = toShow.GetBindingData();
+            }
+        }
+
+        private void NextButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (currentPage < maxPage)
+            {
+                var number = NumberOfRecipePerPage();
+                currentPage = currentPage + 1;
+                RecipesList toShow = recipeList.GetByPage(currentPage, number);
+                foreach (Button button in SkipButton.Children)
+                {
+                    if (button.Content.ToString() == (currentPage).ToString())
+                    {
+                        button.Background = Brushes.Orange;
+                    }
+                    else
+                    {
+                        button.Background = Brushes.White;
+                    }
+                };
+                dataListView.ItemsSource = toShow.GetBindingData();
+            }
+        }
 
         private void SearchBox_PreviewKeyUp(object sender, KeyEventArgs e)
         {
@@ -252,7 +313,7 @@ namespace Food_Recipe_Appplication
             if (key == "")
             {
                 //searchResultList = recipeList.SearchNameContains_NoneUtf(key);
-                
+
                 ChangeBindingList(recipeList);
             }
             else
@@ -263,14 +324,14 @@ namespace Food_Recipe_Appplication
             }
         }
 
-      
+
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string condition = ((ComboBoxItem)(sender as ComboBox).SelectedItem).ToString();
-            Debug.WriteLine(condition); 
+            Debug.WriteLine(condition);
             var tokens = condition.Split(new string[] { ": " }, StringSplitOptions.None);
-            switch(tokens[tokens.Length-1])
+            switch (tokens[tokens.Length - 1])
             {
                 case "Order by name A-Z":
                     {
@@ -287,7 +348,7 @@ namespace Food_Recipe_Appplication
                 case "Order by date descending":
                     {
                         recipeList = recipeList.SortByDateDescending();
-                        ChangeBindingList(recipeList); 
+                        ChangeBindingList(recipeList);
                         break;
                     }
                 case "Order by date ascending":
