@@ -29,7 +29,7 @@
                 <TextBlock FontSize="40">Gà Rán</TextBlock>
                
             </StackPanel>
-            <materialDesign:PackIcon Width="50" PreviewMouseLeftButtonDown="PackIcon_PreviewMouseLeftButtonDown" Kind="Shutdown" Height="38" Cursor="Hand"></materialDesign:PackIcon>
+            <materialDesign:PackIcon Width="50" PreviewMouseLeftButtonDown="PackIcon_PreviewMouseLeftButtonDown" Kind="ExitToApp" Height="38" Cursor="Hand"></materialDesign:PackIcon>
         </Grid>
 
         <Grid  Grid.Row="1">
@@ -111,7 +111,9 @@
                         
                        
                         <Grid Background="Aquamarine" Grid.Row="1">
-                            <TextBlock>Nut</TextBlock>
+                            <StackPanel>
+                                
+                            </StackPanel>
                         </Grid>
                     </Grid>
                 </Grid>

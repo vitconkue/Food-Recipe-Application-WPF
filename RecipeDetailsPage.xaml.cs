@@ -38,6 +38,8 @@ namespace Food_Recipe_Appplication
         {
             var bindingList = displayFood.Steps.GetBindingData();
             dataListView.ItemsSource = bindingList;
+            int totalPage = bindingList.Count();
         }
+        
     }
 }
