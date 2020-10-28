@@ -47,7 +47,8 @@ namespace Food_Recipe_Appplication
             _foodName = "";
             _isFavorite = false;
             _steps = new StepsList();
-            _interesting_infomation = ""; 
+            _interesting_infomation = "";
+            _ingredients = new IngredientList();
         }
 
         public static Recipe LoadedSingleRecipe(XmlReader reader)
@@ -136,7 +137,9 @@ namespace Food_Recipe_Appplication
             result.Add(new XElement("mainpicture_name", _mainPictureName));
             result.Add(new XElement("mainvideo_link", _mainVideoLink));
             result.Add(new XElement("interesting_information", _interesting_infomation));
+            result.Add(_ingredients.ToXElement());
             result.Add(_steps.ToXElement());
+            
 
 
             return result;

@@ -1,10 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <recipes>
-  <recipe isFavorite="false" date_created="01-01-2020">
+  <recipe isFavorite="true" date_created="01-01-2020">
     <mainpicture_name>cbs_mainpicture </mainpicture_name>
     <mainvideo_link>cbs_mainvideo</mainvideo_link>
     <foodname>Cá kho tộ</foodname>
     <interesting_information>Cá kho tộ rất ngon khi trời lạnh</interesting_information>
+    <ingredients>
+      <ingredient>1 con cá lóc</ingredient>
+      <ingredient>100g thịt ba chỉ</ingredient>
+      <ingredient>1 trái dừa non</ingredient>
+      <ingredient>1 củ hành khô</ingredient>
+      <ingredient>Ớt chín(tuỳ thích)</ingredient>
+    </ingredients>
     <steps>
       <step>
         <step_text>1cbs_step</step_text>
@@ -48,6 +55,13 @@
     <foodname>Bò né</foodname>
     <mainvideo_link>cbs_mainvideo</mainvideo_link>
     <mainpicture_name>picturenamethitnai</mainpicture_name>
+    <ingredients>
+      <ingredient>Thịt bò (300 g) </ingredient>
+      <ingredient>Trứng gà (1 quả)</ingredient>
+      <ingredient>Bánh mì</ingredient>
+      <ingredient>Hành khô, ngò</ingredient>
+      <ingredient>Ớt chín(tuỳ thích)</ingredient>
+    </ingredients>
     <steps>
       <step>
         <step_text>1thitnaitext</step_text>
@@ -296,6 +310,45 @@
         <step_text>3cc_step</step_text>
         <step_video_link>3cc_video</step_video_link>
         <step_picture_name>3cc_picture</step_picture_name>
+      </step>
+    </steps>
+  </recipe>
+  <recipe isFavorite="false" date_created="28-10-2020">
+    <foodname>Mít trộn</foodname>
+    <mainpicture_name>mittron</mainpicture_name>
+    <ingredients>1 kg mít non1 lạng tôm1 lạng thịt ba chỉdầu ăn</ingredients>
+    <ingredients>
+      <ingredient>1 kg mít non</ingredient>
+      <ingredient>1 lạng tôm</ingredient>
+      <ingredient>1 lạng thịt ba chỉ</ingredient>
+      <ingredient>dầu ăn</ingredient>
+    </ingredients>
+  </recipe>
+  <recipe isFavorite="false" date_created="28-10-2020">
+    <foodname>Mít trộn</foodname>
+    <mainpicture_name>mittron</mainpicture_name>
+    <ingredients>1 kg mít non1 lạng tôm1 lạng thịt ba chỉdầu ăn</ingredients>
+    <ingredients>
+      <ingredient>1 kg mít non</ingredient>
+      <ingredient>1 lạng tôm</ingredient>
+      <ingredient>1 lạng thịt ba chỉ</ingredient>
+      <ingredient>dầu ăn</ingredient>
+    </ingredients>
+    <steps>
+      <step>
+        <step_text>1thitnaitext</step_text>
+        <step_video_link>1thitnaivideo</step_video_link>
+        <step_picture_name>1thitnaipicture</step_picture_name>
+      </step>
+      <step>
+        <step_text>2thitnaitext</step_text>
+        <step_video_link>2thitnaivideo</step_video_link>
+        <step_picture_name>2thitnaipicture</step_picture_name>
+      </step>
+      <step>
+        <step_text>3thitnaitext</step_text>
+        <step_video_link>3thitnaivideo</step_video_link>
+        <step_picture_name>3thitnaipicture</step_picture_name>
       </step>
     </steps>
   </recipe>

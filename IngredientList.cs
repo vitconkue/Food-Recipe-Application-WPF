@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.RightsManagement;
@@ -6,11 +7,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media.Animation;
 using System.Xml;
+using System.Xml.Linq;
 using System.Xml.Serialization;
 
 namespace Food_Recipe_Appplication
 {
-    public class IngredientList
+    public class IngredientList: IEnumerable<string>
     {
         private List<string> _listIngredient;
 
@@ -58,6 +60,29 @@ namespace Food_Recipe_Appplication
 
             return result;
         }
-        
+
+        public XElement ToXElement()
+        {
+            XElement result = new XElement("ingredients");
+            foreach (var ingredient in _listIngredient)
+            {
+                result.Add(new XElement("ingredient", ingredient));
+            }
+
+            return result;
+        }
+
+        public IEnumerator<string> GetEnumerator()
+        {
+            foreach (var val in _listIngredient)
+            {
+                yield return val;
+            }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
     }
 }
