@@ -323,17 +323,6 @@
       <ingredient>1 lạng thịt ba chỉ</ingredient>
       <ingredient>dầu ăn</ingredient>
     </ingredients>
-  </recipe>
-  <recipe isFavorite="false" date_created="28-10-2020">
-    <foodname>Mít trộn</foodname>
-    <mainpicture_name>mittron</mainpicture_name>
-    <ingredients>1 kg mít non1 lạng tôm1 lạng thịt ba chỉdầu ăn</ingredients>
-    <ingredients>
-      <ingredient>1 kg mít non</ingredient>
-      <ingredient>1 lạng tôm</ingredient>
-      <ingredient>1 lạng thịt ba chỉ</ingredient>
-      <ingredient>dầu ăn</ingredient>
-    </ingredients>
     <steps>
       <step>
         <step_text>1thitnaitext</step_text>

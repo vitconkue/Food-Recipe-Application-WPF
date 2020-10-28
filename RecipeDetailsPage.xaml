@@ -18,7 +18,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*">
-                
+
             </RowDefinition>
             <RowDefinition Height="12*">
 
@@ -27,7 +27,7 @@
         <Grid  FlowDirection="RightToLeft" Background="#fed8b1">
             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" >
                 <TextBlock FontSize="40">Gà Rán</TextBlock>
-               
+
             </StackPanel>
             <materialDesign:PackIcon Width="50" PreviewMouseLeftButtonDown="PackIcon_PreviewMouseLeftButtonDown" Kind="ExitToApp" Height="38" Cursor="Hand"></materialDesign:PackIcon>
         </Grid>
@@ -41,7 +41,7 @@
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition>
-                            
+
                         </ColumnDefinition>
                         <ColumnDefinition>
 
@@ -51,7 +51,7 @@
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition>
-                                   
+
                                 </RowDefinition>
                                 <RowDefinition>
 
@@ -86,40 +86,41 @@
                                         <materialDesign:TransitioningContent.OpeningEffects>
                                             <materialDesign:TransitionEffect  Kind="SlideInFromRight"/>
                                         </materialDesign:TransitioningContent.OpeningEffects>
-                                        
-                                            <Grid>
-                                                <Grid.RowDefinitions>
-                                                    <RowDefinition></RowDefinition>
-                                                    <RowDefinition></RowDefinition>
-                                                </Grid.RowDefinitions>
-                                                <Grid Background="White" Grid.Row="0">
+
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition></RowDefinition>
+                                                <RowDefinition></RowDefinition>
+                                            </Grid.RowDefinitions>
+                                            <Grid Background="White" Grid.Row="0">
                                                 <TextBlock Text="{Binding Picture_name}">
-                                       
-                                                    </TextBlock>
-                                                </Grid>
-                                                <Grid Background="Blue" Grid.Row="1">
-                                                <TextBlock Text="{Binding Text}"></TextBlock>
-                                                </Grid>
+
+                                                </TextBlock>
                                             </Grid>
-                                        
+                                            <Grid Background="Blue" Grid.Row="1">
+                                                <TextBlock Text="{Binding Text}"></TextBlock>
+                                            </Grid>
+                                        </Grid>
+
                                     </materialDesign:TransitioningContent>
 
                                 </DataTemplate>
                             </ListView.ItemTemplate>
-                         
+
                         </ListView>
-                        
-                       
-                        <Grid Background="Aquamarine" Grid.Row="1">
-                            <StackPanel>
-                                
-                            </StackPanel>
-                        </Grid>
+
+
+
+                        <StackPanel Background="Aquamarine" Grid.Row="1" Orientation="Horizontal" Name="ButtonPanel">
+
+                        </StackPanel>
+
                     </Grid>
+                    
                 </Grid>
-               
+
             </Grid>
         </Grid>
     </Grid>
-    
+
 </Window>
