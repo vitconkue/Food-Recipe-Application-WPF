@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Security.RightsManagement;
 using System.Text;
@@ -157,7 +158,19 @@ namespace Food_Recipe_Appplication
         public RecipesList SortByName()
         {
             RecipesList result = new RecipesList();
-            IEnumerable<Recipe> filtered = this.OrderBy(food => food.FoodName);
+            List<Recipe> filtered = this.OrderBy(food => food.FoodName).ToList();
+            foreach (var value in filtered)
+            {
+                Debug.WriteLine(value.FoodName);
+                result.AddRecipeWithoutSaving(value);
+            }
+            return result;
+        }
+
+        public RecipesList SortByNameDescending()
+        {
+            RecipesList result = new RecipesList();
+            IEnumerable<Recipe> filtered = this.OrderByDescending(food => food.FoodName);
             foreach (var value in filtered)
             {
                 result.AddRecipeWithoutSaving(value);
@@ -169,6 +182,17 @@ namespace Food_Recipe_Appplication
         {
             RecipesList result = new RecipesList();
             IEnumerable<Recipe> filtered = this.OrderBy(food => food.Date_created);
+            foreach (var value in filtered)
+            {
+                result.AddRecipeWithoutSaving(value);
+            }
+            return result;
+        }
+
+        public RecipesList SortByDateDescending()
+        {
+            RecipesList result = new RecipesList();
+            IEnumerable<Recipe> filtered = this.OrderByDescending(food => food.Date_created);
             foreach (var value in filtered)
             {
                 result.AddRecipeWithoutSaving(value);

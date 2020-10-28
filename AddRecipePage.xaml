@@ -36,7 +36,7 @@
                     <TextBlock>Favourite</TextBlock>
                 </StackPanel>
             </Button>
-            <Button Name="AddRecipeButton" Style="{DynamicResource MenuButtonStyle}">
+            <Button Background="Orange" Name="AddRecipeButton" Style="{DynamicResource MenuButtonStyle}">
                 <StackPanel Orientation="Horizontal">
                     <Image Height="20" Source="Icons/add-file.png" Margin="10 0 10 0"></Image>
                     <TextBlock>Add recpie</TextBlock>
@@ -57,8 +57,7 @@
                 </StackPanel>
             </Button >
             <StackPanel Name="SearchBlock"  Orientation="Horizontal" FlowDirection="RightToLeft">
-                <Image Height="25" Source="Icons/loupe.png"></Image>
-                <TextBox materialDesign:TextFieldAssist.DecorationVisibility="Collapsed" BorderThickness="0.8" Name="SearchBox" Background="White" BorderBrush="Black" Width="250" Height="25" Margin="10 0 0 0" FlowDirection="LeftToRight" FontSize="13" GotFocus="SearchBox_GotFocus" LostFocus="SearchBox_LostFocus" Foreground="Gray">Search</TextBox>
+                
             </StackPanel>
         </StackPanel>
 

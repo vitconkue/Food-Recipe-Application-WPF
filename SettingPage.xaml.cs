@@ -32,7 +32,7 @@ namespace Food_Recipe_Appplication
         public SettingPage(RecipesList list)
         {
             InitializeComponent();
-            SizeChanged += SettingPage_SizeChanged;
+       
             var config = ConfigurationManager.OpenExeConfiguration(
               ConfigurationUserLevel.None);
             var state = config.AppSettings.Settings["ShowSplashScreen"].Value;
@@ -41,23 +41,7 @@ namespace Food_Recipe_Appplication
             recipeList = list;
         }
   
-        private void SettingPage_SizeChanged(object sender, SizeChangedEventArgs e)
-        {
-            var windowWidth = e.NewSize.Width;
-            SearchBlock.Margin = new Thickness(windowWidth - 480, 0, 0, 0);
-        }
-
-        private void SearchBox_GotFocus(object sender, RoutedEventArgs e)
-        {
-            SearchBox.Text = "";
-            SearchBox.Foreground = Brushes.Black;
-        }
-
-        private void SearchBox_LostFocus(object sender, RoutedEventArgs e)
-        {
-            SearchBox.Text = "Search";
-            SearchBox.Foreground = Brushes.Gray;
-        }
+        
 
         private void MenuButton_Click(object sender, RoutedEventArgs e)
         {

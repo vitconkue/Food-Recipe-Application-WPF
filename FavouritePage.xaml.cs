@@ -27,6 +27,7 @@ namespace Food_Recipe_Appplication
     public partial class FavouritePage : Page
     {
         private RecipesList _favoriteList = new RecipesList();
+        private RecipesList searchResultList = new RecipesList();
         private Recipe temp = new Recipe();
         //public FavouritePage()
         //{
@@ -178,6 +179,7 @@ namespace Food_Recipe_Appplication
         {
             try
             {
+                SkipButton.Children.Clear();
                 var number = NumberOfRecipePerPage();
                 var bindingList = _favoriteList.GetByPage(1, number).GetBindingData();
                 dataListView.ItemsSource = bindingList;
@@ -196,8 +198,22 @@ namespace Food_Recipe_Appplication
                     numberButton.Click += PageNumber_Click;
                     SkipButton.Children.Add(numberButton);
                 }
-                Button firstButton = (Button)SkipButton.Children[0];
-                firstButton.Background = Brushes.Orange;
+                try
+                {
+                    Button firstButton = (Button)SkipButton.Children[0];
+                    firstButton.Background = Brushes.Orange;
+                }
+                catch(Exception ex)
+                {
+                    TextBlock nofication = new TextBlock();
+                    nofication.Text = "Empty!!!";
+                    nofication.FontSize = 40;
+                    StackPanel panel = new StackPanel();
+                    panel.HorizontalAlignment = HorizontalAlignment.Center;
+                    panel.Children.Add(nofication);
+                    GridLayout.VerticalAlignment = VerticalAlignment.Center;
+                    GridLayout.Children.Add(panel);
+                }
             }
             catch (Exception ex)
             {
@@ -211,5 +227,54 @@ namespace Food_Recipe_Appplication
                 GridLayout.Children.Add(panel);
             }
         }
+
+        private void SearchBox_PreviewKeyUp(object sender, KeyEventArgs e)
+        { 
+            string key = (sender as TextBox).Text;
+            if (key == "")
+            {
+                //searchResultList = recipeList.SearchNameContains_NoneUtf(key);
+
+                ChangeBindingList(_favoriteList);
+            }
+            else
+            {
+                searchResultList = _favoriteList.SearchNameContains_NoneUtf(key);
+                ChangeBindingList(searchResultList);
+                //MessageBox.Show(key);
+            }
+        }
+        private void ChangeBindingList(RecipesList input)
+        {
+            SkipButton.Children.Clear();
+            var number = NumberOfRecipePerPage();
+            var bindingList = input.GetByPage(1, number).GetBindingData();
+            dataListView.ItemsSource = bindingList;
+            int len = input.Recipes.Count;
+            int numberOfPage = len / number + (len % number == 0 ? 0 : 1);
+
+            for (int i = 1; i <= numberOfPage; i++)
+            {
+                Button numberButton = new Button();
+                numberButton.Name = $"page_{i}";
+                numberButton.Content = $"{i}";
+                numberButton.Background = Brushes.White;
+                numberButton.BorderBrush = Brushes.Black;
+                numberButton.Foreground = Brushes.Black;
+                numberButton.Margin = new Thickness(5);
+                numberButton.Click += PageNumber_Click;
+                SkipButton.Children.Add(numberButton);
+            }
+            try
+            {
+                Button firstButton = (Button)SkipButton.Children[0];
+                firstButton.Background = Brushes.Orange;
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
     }
 }

@@ -48,7 +48,7 @@ namespace Food_Recipe_Appplication
         {
             var windowWidth = e.NewSize.Width;
             Debug.WriteLine(windowWidth);
-            SearchBlock.Margin = new Thickness(windowWidth - 480, 0, 0, 0);
+            SearchBlock.Margin = new Thickness(windowWidth - 700, 0, 0, 0);
         }
 
         private void SearchBox_GotFocus(object sender, RoutedEventArgs e)
@@ -180,6 +180,8 @@ namespace Food_Recipe_Appplication
         }
         private void ChangeBindingList(RecipesList input)
         {
+
+          
             SkipButton.Children.Clear();
             var number = NumberOfRecipePerPage();
             var bindingList = input.GetByPage(1, number).GetBindingData();
@@ -217,7 +219,7 @@ namespace Food_Recipe_Appplication
             if (key == "")
             {
                 //searchResultList = recipeList.SearchNameContains_NoneUtf(key);
-
+                
                 ChangeBindingList(recipeList);
             }
             else
@@ -226,6 +228,41 @@ namespace Food_Recipe_Appplication
                 ChangeBindingList(searchResultList);
                 //MessageBox.Show(key);
             }
+        }
+
+      
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string condition = ((ComboBoxItem)(sender as ComboBox).SelectedItem).ToString();
+            Debug.WriteLine(condition); 
+            var tokens = condition.Split(new string[] { ": " }, StringSplitOptions.None);
+            switch(tokens[tokens.Length-1])
+            {
+                case "Order by name A-Z":
+                    {
+                        
+                        ChangeBindingList(recipeList.SortByName());
+                        
+
+                        break;
+                    }
+                case "Order by name Z-A":
+                    {
+                        ChangeBindingList(recipeList.SortByNameDescending());
+                        break;
+                    }
+                case "Order by date descending":
+                    {
+                        ChangeBindingList(recipeList.SortByDateDescending()); 
+                        break;
+                    }
+                case "Order by date ascending":
+                    {
+                        ChangeBindingList(recipeList.SortByDate());
+                        break;
+                    }
+            }    
         }
     }
 }

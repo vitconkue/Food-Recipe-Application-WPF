@@ -46,17 +46,7 @@ namespace Food_Recipe_Appplication
             SearchBlock.Margin = new Thickness(windowWidth - 480, 0, 0, 0);
         }
 
-        private void SearchBox_GotFocus(object sender, RoutedEventArgs e)
-        {
-            SearchBox.Text = "";
-            SearchBox.Foreground = Brushes.Black;
-        }
-
-        private void SearchBox_LostFocus(object sender, RoutedEventArgs e)
-        {
-            SearchBox.Text = "Search";
-            SearchBox.Foreground = Brushes.Gray;
-        }
+      
 
         private void MenuButton_Click(object sender, RoutedEventArgs e)
         {

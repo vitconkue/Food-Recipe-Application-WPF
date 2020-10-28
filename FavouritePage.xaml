@@ -71,7 +71,7 @@
                     <TextBlock>Home</TextBlock>
                 </StackPanel>
             </Button>
-            <Button Name="FavoriteButton" Style="{DynamicResource MenuButtonStyle}">
+            <Button Background="Orange" Name="FavoriteButton" Style="{DynamicResource MenuButtonStyle}">
                 <StackPanel Orientation="Horizontal">
                     <Image Height="20" Source="Icons/favourite.png" Margin="10 0 10 0"></Image>
                     <TextBlock>Favourite</TextBlock>
@@ -100,7 +100,7 @@
             </Button >
             <StackPanel Name="SearchBlock"  Orientation="Horizontal" FlowDirection="RightToLeft">
                 <Image Height="25" Source="Icons/loupe.png"></Image>
-                <TextBox materialDesign:TextFieldAssist.DecorationVisibility="Collapsed" BorderThickness="0.8" Name="SearchBox" Background="White" BorderBrush="Black" Width="250" Height="25" Margin="10 0 0 0" FlowDirection="LeftToRight" FontSize="13" GotFocus="SearchBox_GotFocus" LostFocus="SearchBox_LostFocus" Foreground="Gray">Search</TextBox>
+                <TextBox PreviewKeyUp="SearchBox_PreviewKeyUp" materialDesign:TextFieldAssist.DecorationVisibility="Collapsed" BorderThickness="0.8" Name="SearchBox" Background="White" BorderBrush="Black" Width="250" Height="25" Margin="10 0 0 0" FlowDirection="LeftToRight" FontSize="13" GotFocus="SearchBox_GotFocus" LostFocus="SearchBox_LostFocus" Foreground="Gray">Search</TextBox>
             </StackPanel>
         </StackPanel>
 
