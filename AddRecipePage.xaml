@@ -56,9 +56,11 @@
                     <TextBlock>Menu</TextBlock>
                 </StackPanel>
             </Button >
-            <StackPanel Name="SearchBlock"  Orientation="Horizontal" FlowDirection="RightToLeft">
-                
-            </StackPanel>
+
+            <Button Margin="1053 0  0  0"  Background="#fed8b1" x:Name="ShutDownButton" Click="ShutDownButton_Click">
+                    <materialDesign:PackIcon Kind="Shutdown"></materialDesign:PackIcon>
+                </Button>
+      
         </StackPanel>
 
         <StackPanel Name="SkipButton" HorizontalAlignment="Center" DockPanel.Dock="Bottom" Orientation="Horizontal"  Height="25">

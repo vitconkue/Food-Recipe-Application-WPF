@@ -99,6 +99,9 @@
                 </StackPanel>
             </Button >
             <StackPanel Name="SearchBlock"  Orientation="Horizontal" FlowDirection="RightToLeft">
+                <Button Background="#fed8b1" x:Name="ShutDownButton" Margin="0 0 20 0" Click="ShutDownButton_Click">
+                    <materialDesign:PackIcon Kind="Shutdown"></materialDesign:PackIcon>
+                </Button>
                 <Image Height="25" Source="Icons/loupe.png"></Image>
                 <TextBox PreviewKeyUp="SearchBox_PreviewKeyUp" materialDesign:TextFieldAssist.DecorationVisibility="Collapsed" BorderThickness="0.8" Name="SearchBox" Background="White" BorderBrush="Black" Width="250" Height="25" Margin="10 0 0 0" FlowDirection="LeftToRight" FontSize="13" GotFocus="SearchBox_GotFocus" LostFocus="SearchBox_LostFocus" Foreground="Gray">Search</TextBox>
             </StackPanel>

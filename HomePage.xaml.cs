@@ -36,6 +36,7 @@ namespace Food_Recipe_Appplication
         private Recipe temp = new Recipe();
         private int currentPage = 1;
         private int maxPage;
+        private Window detailScreen;
         public HomePage()
         {
             InitializeComponent();
@@ -50,7 +51,7 @@ namespace Food_Recipe_Appplication
         {
             var windowWidth = e.NewSize.Width;
             Debug.WriteLine(windowWidth);
-            SearchBlock.Margin = new Thickness(windowWidth - 700, 0, 0, 0);
+            SearchBlock.Margin = new Thickness(windowWidth - 750, 0, 0, 0);
         }
 
         private void SearchBox_GotFocus(object sender, RoutedEventArgs e)
@@ -209,7 +210,7 @@ namespace Food_Recipe_Appplication
 
         private void DetaisButton_Click(object sender, RoutedEventArgs e)
         {
-            Window detailScreen = new RecipeDetailsPage(temp);
+            detailScreen = new RecipeDetailsPage(temp);
             detailScreen.Show();
         }
         private void ChangeBindingList(RecipesList input)
@@ -362,6 +363,16 @@ namespace Food_Recipe_Appplication
              ConfigurationUserLevel.None);
             config.AppSettings.Settings["DisplayOption"].Value = tokens[tokens.Length - 1];
             config.Save(ConfigurationSaveMode.Minimal);
+        }
+
+        private void ShutDownButton_Click(object sender, RoutedEventArgs e)
+        {
+            Window parentWindow = Window.GetWindow(this);
+            parentWindow.Close();
+            if (detailScreen!=null)
+            {
+                detailScreen.Close();
+            }
         }
     }
 }

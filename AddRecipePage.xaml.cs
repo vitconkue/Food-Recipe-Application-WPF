@@ -34,17 +34,13 @@ namespace Food_Recipe_Appplication
         public AddRecipePage(RecipesList recipes)
         {
             InitializeComponent();
-            SizeChanged += AddRecipePage_SizeChanged;
+  
             recipeList = recipes;
         }
 
         private int Step = 1;
 
-        private void AddRecipePage_SizeChanged(object sender, SizeChangedEventArgs e)
-        {
-            var windowWidth = e.NewSize.Width;
-            SearchBlock.Margin = new Thickness(windowWidth - 480, 0, 0, 0);
-        }
+       
 
       
 
@@ -162,6 +158,12 @@ namespace Food_Recipe_Appplication
                 Debug.WriteLine(filePath);
                 BrowseRecipeImage.Source = bitmap;
             }
+        }
+
+        private void ShutDownButton_Click(object sender, RoutedEventArgs e)
+        {
+            Window parentWindow = Window.GetWindow(this);
+            parentWindow.Close();
         }
     }
 }

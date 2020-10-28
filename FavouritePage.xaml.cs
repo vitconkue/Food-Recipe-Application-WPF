@@ -49,7 +49,7 @@ namespace Food_Recipe_Appplication
         private void FavouritePage_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             var windowWidth = e.NewSize.Width;
-            SearchBlock.Margin = new Thickness(windowWidth - 480, 0, 0, 0);
+            SearchBlock.Margin = new Thickness(windowWidth - 550, 0, 0, 0);
         }
 
 
@@ -98,7 +98,7 @@ namespace Food_Recipe_Appplication
 
         private void SettingButton_Click(object sender, RoutedEventArgs e)
         {
-        
+            this.NavigationService.Navigate(new SettingPage(_favoriteList));
         }
 
         private void ListViewItem_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -333,5 +333,10 @@ namespace Food_Recipe_Appplication
             }
         }
 
+        private void ShutDownButton_Click(object sender, RoutedEventArgs e)
+        {
+            Window parentWindow = Window.GetWindow(this);
+            parentWindow.Close();
+        }
     }
 }

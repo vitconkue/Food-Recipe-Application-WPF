@@ -141,5 +141,11 @@ namespace Food_Recipe_Appplication
             var number = config.AppSettings.Settings["NumberOfRecipePerPage"].Value;
             numberDisplay.Text = number;
         }
+
+        private void ShutDownButton_Click(object sender, RoutedEventArgs e)
+        {
+            Window parentWindow = Window.GetWindow(this);
+            parentWindow.Close();
+        }
     }
 }

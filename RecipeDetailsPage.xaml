@@ -28,7 +28,7 @@
             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" >
                 <TextBlock x:Name="FoodName" FontSize="40"></TextBlock>
             </StackPanel>
-            <Button Name="ExitButton" Width="50" Click="Button_Click">
+            <Button Background="#fed8b1" Name="ExitButton" Width="50" Click="Button_Click">
                 <materialDesign:PackIcon   Kind="ExitToApp"  Cursor="Hand"></materialDesign:PackIcon>
             </Button>
             
