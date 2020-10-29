@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <recipes>
   <recipe isFavorite="false" date_created="01-01-2020" category="dryfood">
-    <mainpicture_name>cbs_mainpicture </mainpicture_name>
+    <mainpicture_name>ca-kho-to.jpg </mainpicture_name>
     <mainvideo_link>cbs_mainvideo</mainvideo_link>
     <foodname>Cá kho tộ</foodname>
     <interesting_information>Cá kho tộ rất ngon khi trời lạnh</interesting_information>
@@ -10,44 +10,62 @@
       <ingredient>100g thịt ba chỉ</ingredient>
       <ingredient>1 trái dừa non</ingredient>
       <ingredient>1 củ hành khô</ingredient>
+      <ingredient>Nước dừa (1 quả)</ingredient>
       <ingredient>Ớt chín(tuỳ thích)</ingredient>
     </ingredients>
     <steps>
       <step>
-        <step_text>1cbs_step</step_text>
-        <step_video_link>1cbs_step_video</step_video_link>
-        <step_picture_name>1cbs_step_picture</step_picture_name>
+        <step_text>Đầu tiên, bạn đánh vảy, cắt bỏ vay, phần nội tạng bên trong, chà xát muối lên bề mặt cá rửa lại nhiều lần với nước để khử sạch mùi tanh của cá. Tiếp đó, bạn cắt cá thành khúc ngắn, cho vào bát thêm ít xì dầu, 1 muỗng cà phê muối, 1 muỗng cà phê hạt nêm, 1 muỗng nước mắm, trộn đều. Bí quyết đơn giản trong cách làm cá kho tộ ngon là ướp cá với gia vị trong khoảng 30 phút.</step_text>
+        <step_picture_name>cat-ca-loc-thanh-khuc.jpg</step_picture_name>
       </step>
       <step>
-        <step_text>2cbs_step</step_text>
-        <step_video_link>2cbs_video</step_video_link>
-        <step_picture_name>2cbs_picture</step_picture_name>
+        <step_text>Kế đến, bạn chà xát muối lên miếng thịt ba chỉ, rửa lại nhiều lần với nước, để khô ráo, cắt thành lát vừa ăn.</step_text>
+        <step_picture_name>cat-thit-ba-chi.jpg</step_picture_name>
       </step>
       <step>
-        <step_text>3cbs_step</step_text>
-        <step_video_link>3cbs_video</step_video_link>
-        <step_picture_name>3cbs_picture</step_picture_name>
+        <step_text>Kế tiếp, bạn bắc tộ lên bếp cho nóng rồi thêm 1 muỗng dầu ăn vào. Khi dầu sôi, bạn cho hành, tỏi băm vào phi thơm rồi cho ớt cắt lát vào xào cùng. Cho tiếp thịt ba chỉ vào xào săn lại rồi tắt bếp.</step_text>
+        <step_picture_name>bac-noi-ca-len-bep.jpg</step_picture_name>
+      </step>
+      <step>
+        <step_text>Nước cá còn xâm xấp và đặc sánh lại, bạn rắc thêm lên trên ít tiêu xay để tăng thêm hương vị cho món ăn. Sau cùng, bạn dùng hành lá, ngò rí lên trên trang trí cho món ăn đẹp mắt. Như vậy, chúng ta đã hoàn thành cách làm cá kho tộ ngon đúng điệu ngay tại nhà.</step_text>
+        <step_picture_name>trang-tri-mon-an.jpg</step_picture_name>
       </step>
     </steps>
+    
   </recipe>
   <recipe isFavorite="false" date_created="03-02-1990" category="dryfood">
     <mainpicture_name>cc_mainpicture </mainpicture_name>
+    <ingredients>
+      <ingredient>1 quả hành tây</ingredient>
+      <ingredient>1 đùi gà</ingredient>
+      <ingredient>1 ức gà</ingredient>
+      <ingredient>Lá chanh</ingredient>
+      <ingredient>2 muỗng cà phê nước mắm</ingredient>
+      <ingredient>Ớt chín(tuỳ thích)</ingredient>
+      <ingredient>1/2 quả chanh</ingredient>
+
+    </ingredients>
     <foodname>Gỏi gà lá chanh</foodname>
     <steps>
       <step>
-        <step_text>1cc_step</step_text>
-        <step_video_link>1cc_step_video</step_video_link>
-        <step_picture_name>1cc_step_picture</step_picture_name>
+        <step_text>Thịt gà (lườn gà) sau khi rửa sạch với nước muối pha loãng thì cho lườn gà vào nồi thêm 1 thìa bột canh và luộc chín. Thịt gà không lên luộc kỹ vì thịt gà sẽ khô, không có độ ngọt. Khi luộc gà nên thêm 1 thìa bột canh để thịt gà đậm đà hơn. Hoặc bạn có thể ướp thịt gà sau khi xé với chút bột canh cũng được nhé.</step_text>
+        <step_picture_name>so-che-ga.jpg</step_picture_name>
       </step>
       <step>
-        <step_text>2cc_step</step_text>
-        <step_video_link>2cc_video</step_video_link>
-        <step_picture_name>2cc_picture</step_picture_name>
+        <step_text>Hành tây bóc lớp vỏ ngoài rồi cắt mỏng sau đó ngâm hành tây. Vớt hành tây ra để ráo rồi cho vào bát tô trộn cùng 2 thìa đường.</step_text>
+        <step_picture_name>so-che-hanh.jpg</step_picture_name>
       </step>
       <step>
-        <step_text>3cc_step</step_text>
-        <step_video_link>3cc_video</step_video_link>
-        <step_picture_name>3cc_picture</step_picture_name>
+        <step_text>Pha 2 thìa nước mắm ngon, 2 thìa đường cho hòa tan rồi thêm ớt cắt mỏng, 2 thìa nước cốt chanh. (Mắm pha theo tỷ lệ sao cho hợp với khẩu vị của gia đình bạn).</step_text>
+        <step_picture_name>pha-nuoc-tron-nom.jpg</step_picture_name>
+      </step>
+      <step>
+        <step_text>Hành khô bóc vỏ thái mỏng rồi phi giòn. Lạc rang chín xát vỏ giã dối. Lá chanh thái sợi. Rau răm rửa sạch thái nhỏ.</step_text>
+        <step_picture_name>phi-hanh.jpg</step_picture_name>
+      </step>
+      <step>
+        <step_text>Cho cà rốt, dưa chuột, hành tây vào bát tô rộng trộn đều sau đó thêm thịt gà vào rồi trộn nhẹ tay.</step_text>
+        <step_picture_name>tron-nom.jpg</step_picture_name>
       </step>
     </steps>
   </recipe>
@@ -64,19 +82,18 @@
     </ingredients>
     <steps>
       <step>
-        <step_text>1thitnaitext</step_text>
-        <step_video_link>1thitnaivideo</step_video_link>
-        <step_picture_name>1thitnaipicture</step_picture_name>
+        <step_text> Ướp thịt trong 1 cái tô nhỏ với 1 thìa nước tương, 1 thìa dầu hào, 1 thìa tỏi băm, 1 thìa đường, ½ thìa tiêu và 1 thìa mè trắng rang. Dùng tay hoặc đũa trộn đều thịt và ướp thịt từ 20-30 phút cho ngấm.Tỏi bóc vỏ băm nhuyễn, hành tươi rửa sạch thái khúc dài. Trong lúc đợi thịt bò thì bạn sơ chế các nguyên liệu khác. Tỏi đập dập, băm nhuyễn.</step_text>
+        <step_picture_name>thuc-hien-uop-thit-bo.jpg</step_picture_name>
       </step>
       <step>
-        <step_text>2thitnaitext</step_text>
-        <step_video_link>2thitnaivideo</step_video_link>
-        <step_picture_name>2thitnaipicture</step_picture_name>
+        <step_text>
+          Xào thịt: Nấu quá lâu thì bò sẽ bị dai. Cùng lúc đập 1 quả trứng gà vào làm ốp la. Canh thời gian sao cho thịt và trứng chín vừa tới là được. Nếu bạn không quen ăn trứng ốp la thì có thể chiên chín 2 mặt.
+          thêm vào xúc xích, khoai tây chiên, pate, cà chua,… rắc lên trên một ít hành lá và ngò rí. Khi ăn dùng kèm với tương ớt và bánh mì nóng giòn là tuyệt cú mèo. Món này dùng nóng mới ngon, bị nguội thì sẽ bị đổi vị.</step_text>
+        <step_picture_name>tien-hanh-lam-chin-thit-bo.jpg</step_picture_name>
       </step>
       <step>
-        <step_text>3thitnaitext</step_text>
-        <step_video_link>3thitnaivideo</step_video_link>
-        <step_picture_name>3thitnaipicture</step_picture_name>
+        <step_text>Hoàn thành món ăn</step_text>
+        <step_picture_name>hoan-thanh-mon-be-ne.jpg</step_picture_name>
       </step>
     </steps>
   </recipe>
