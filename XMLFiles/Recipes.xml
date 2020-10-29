@@ -97,7 +97,7 @@
       </step>
     </steps>
   </recipe>
-  <recipe isFavorite="false" date_created="22-10-2020" category="dryfood">
+  <!--<recipe isFavorite="false" date_created="22-10-2020" category="dryfood">
     <foodname>Chả giò</foodname>
     <mainvideo_link>cbs_mainvideo</mainvideo_link>
     <mainpicture_name>picturenamethitnai</mainpicture_name>
@@ -357,5 +357,5 @@
         <step_picture_name>3thitnaipicture</step_picture_name>
       </step>
     </steps>
-  </recipe>
+  </recipe>-->
 </recipes>
