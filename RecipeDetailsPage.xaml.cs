@@ -23,6 +23,7 @@ namespace Food_Recipe_Appplication
     {
         private Recipe displayFood = new Recipe();
         private BindingList<Step> bindingList;
+        private string videoUrl;
         private int currentStep = 0;
         private int totalStep;
         public RecipeDetailsPage()
@@ -38,7 +39,10 @@ namespace Food_Recipe_Appplication
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            videoUrl = displayFood.MainVideoLink;
+            Info.Text = displayFood.Interesting_infomation;
             FoodName.Text = displayFood.FoodName;
+            Step.Text = "Bước 1";
             ExitButton.Margin = new Thickness(0,0,1100,0);
             bindingList = displayFood.Steps.GetBindingData();
             var ingredients = displayFood.Ingredients.ListIngredient;
@@ -46,6 +50,7 @@ namespace Food_Recipe_Appplication
             {
                 TextBlock text = new TextBlock();
                 text.Text = $"-{ingredient}";
+                text.TextWrapping = TextWrapping.Wrap;
                 ingredientPanel.Children.Add(text);
             }
             totalStep = bindingList.Count();
@@ -53,7 +58,8 @@ namespace Food_Recipe_Appplication
             Button prevStep = new Button();
             nextStep.Content = "Next Step";
             prevStep.Content = "Prev Step";
-            nextStep.Margin = new Thickness(20, 0, 20, 0);
+            nextStep.Margin = new Thickness(30, 0, 20, 0);
+            prevStep.Margin = new Thickness(20, 0, 0, 0);
             ButtonPanel.Children.Add(prevStep);
             ButtonPanel.Children.Add(nextStep);
  
@@ -70,10 +76,12 @@ namespace Food_Recipe_Appplication
             if (currentStep > 0)
             {
                 Debug.WriteLine(currentStep);
+
                 var step = bindingList[--currentStep];
                 BindingList<Step> temp = new BindingList<Step>();
                 temp.Add(step);
                 dataListView.ItemsSource = temp;
+                Step.Text = $"Bước {currentStep+1}";
             }
         }
 
@@ -86,6 +94,7 @@ namespace Food_Recipe_Appplication
                 BindingList<Step> temp = new BindingList<Step>();
                 temp.Add(step);
                 dataListView.ItemsSource = temp;
+                Step.Text = $"Bước {currentStep+1}";
             }
         }
 
@@ -93,5 +102,19 @@ namespace Food_Recipe_Appplication
         {
             this.Close();
         }
+
+        private void WebBrowser_Loaded(object sender, RoutedEventArgs e)
+        {
+            string[] separator = new string[] { "=" };
+            var tokens = videoUrl.Split(separator, StringSplitOptions.None);
+            string videoID = tokens[tokens.Length - 1];
+            string html = "<html><head>";
+            html += "<meta content='IE=Edge' http-equiv='X-UA-Compatible'/>";
+            html += "</head><body>";
+            html += $"<iframe width='560' height='315' src='https://www.youtube.com/embed/{videoID}' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>";
+            html += "</body></html>";
+            (sender as WebBrowser).NavigateToString(html);
+        }
     }
 }
+

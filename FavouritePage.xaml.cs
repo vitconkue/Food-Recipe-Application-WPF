@@ -49,7 +49,7 @@ namespace Food_Recipe_Appplication
         private void FavouritePage_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             var windowWidth = e.NewSize.Width;
-            SearchBlock.Margin = new Thickness(windowWidth - 550, 0, 0, 0);
+            SearchBlock.Margin = new Thickness(windowWidth - 750, 0, 0, 0);
         }
 
 
@@ -142,7 +142,41 @@ namespace Food_Recipe_Appplication
         }
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            BindingDataFromFavRecipeList(_favoriteList);
+            var config = ConfigurationManager.OpenExeConfiguration(
+             ConfigurationUserLevel.None);
+            var option = config.AppSettings.Settings["DisplayOption"].Value;
+            switch (option)
+            {
+                case "Order by name A-Z":
+                    {
+                        AtoZ.IsSelected = true;
+                        _favoriteList = _favoriteList.SortByName();
+                        ChangeBindingList(_favoriteList);
+                        break;
+                    }
+                case "Order by name Z-A":
+                    {
+                        ZtoA.IsSelected = true;
+                        _favoriteList = _favoriteList.SortByNameDescending();
+                        ChangeBindingList(_favoriteList);
+                        break;
+                    }
+                case "Order by date descending":
+                    {
+                        DateDescending.IsSelected = true;
+                        _favoriteList = _favoriteList.SortByDateDescending();
+                        ChangeBindingList(_favoriteList);
+                        break;
+                    }
+                case "Order by date ascending":
+                    {
+                        DateAscending.IsSelected = true;
+                        _favoriteList = _favoriteList.SortByDate();
+                        ChangeBindingList(_favoriteList);
+                        break;
+                    }
+            }
+
         }
         private void StackPanel_MouseEnter(object sender, MouseEventArgs e)
         {
@@ -167,7 +201,7 @@ namespace Food_Recipe_Appplication
                 {
                     recipe.ToggleFavorite();
                     _favoriteList = _favoriteList.SearchFavoriteRecipes();
-                    BindingDataFromFavRecipeList(_favoriteList);
+                    ChangeBindingList(_favoriteList);
                 }
             }
 
@@ -177,70 +211,7 @@ namespace Food_Recipe_Appplication
         {
 
         }
-        private void BindingDataFromFavRecipeList(RecipesList input)
-        {
-            try
-            {
-                SkipButton.Children.Clear();
-                var number = NumberOfRecipePerPage();
-                var bindingList = input.GetByPage(1, number).GetBindingData();
-                dataListView.ItemsSource = bindingList;
-                int len = input.Recipes.Count;
-                int numberOfPage = len / number + (len % number == 0 ? 0 : 1);
-                if (numberOfPage != 0)
-                {
-                    Button preButton = new Button();
-                    preButton.Name = "prev";
-                    preButton.Content = "Prev";
-                    preButton.Background = Brushes.White;
-                    preButton.BorderBrush = Brushes.Black;
-                    preButton.Foreground = Brushes.Black;
-                    preButton.Margin = new Thickness(5);
-                    preButton.Click += PreButton_Click;
-                    SkipButton.Children.Add(preButton);
-                    maxPage = numberOfPage;
-                    for (int i = 1; i <= numberOfPage; i++)
-                    {
-                        Button numberButton = new Button();
-                        numberButton.Name = $"page_{i}";
-                        numberButton.Content = $"{i}";
-                        numberButton.Background = Brushes.White;
-                        numberButton.BorderBrush = Brushes.Black;
-                        numberButton.Foreground = Brushes.Black;
-                        numberButton.Margin = new Thickness(5);
-                        numberButton.Click += PageNumber_Click;
-                        SkipButton.Children.Add(numberButton);
-                    }
-                    Button nextButton = new Button();
-                    nextButton.Name = "next";
-                    nextButton.Content = "Next";
-                    nextButton.Background = Brushes.White;
-                    nextButton.BorderBrush = Brushes.Black;
-                    nextButton.Foreground = Brushes.Black;
-                    nextButton.Margin = new Thickness(5);
-                    nextButton.Click += NextButton_Click;
-                    SkipButton.Children.Add(nextButton);
-                    Button firstButton = (Button)SkipButton.Children[1];
-                    firstButton.Background = Brushes.Orange;
-                   
-                }
-                else
-                {
-                    TextBlock nofication = new TextBlock();
-                    nofication.Text = "Empty!!!";
-                    nofication.FontSize = 40;
-                    StackPanel panel = new StackPanel();
-                    panel.HorizontalAlignment = HorizontalAlignment.Center;
-                    panel.Children.Add(nofication);
-                    GridLayout.VerticalAlignment = VerticalAlignment.Center;
-                    GridLayout.Children.Add(panel);
-                }
-            }
-            catch (Exception ex)
-            {
-                
-            }
-        }
+        
         private void PreButton_Click(object sender, RoutedEventArgs e)
         {
             if (currentPage > 1)
@@ -303,29 +274,62 @@ namespace Food_Recipe_Appplication
         }
         private void ChangeBindingList(RecipesList input)
         {
-            SkipButton.Children.Clear();
-            var number = NumberOfRecipePerPage();
-            var bindingList = input.GetByPage(1, number).GetBindingData();
-            dataListView.ItemsSource = bindingList;
-            int len = input.Recipes.Count;
-            int numberOfPage = len / number + (len % number == 0 ? 0 : 1);
-
-            for (int i = 1; i <= numberOfPage; i++)
-            {
-                Button numberButton = new Button();
-                numberButton.Name = $"page_{i}";
-                numberButton.Content = $"{i}";
-                numberButton.Background = Brushes.White;
-                numberButton.BorderBrush = Brushes.Black;
-                numberButton.Foreground = Brushes.Black;
-                numberButton.Margin = new Thickness(5);
-                numberButton.Click += PageNumber_Click;
-                SkipButton.Children.Add(numberButton);
-            }
             try
             {
-                Button firstButton = (Button)SkipButton.Children[0];
-                firstButton.Background = Brushes.Orange;
+                SkipButton.Children.Clear();
+                var number = NumberOfRecipePerPage();
+                var bindingList = input.GetByPage(1, number).GetBindingData();
+                dataListView.ItemsSource = bindingList;
+                int len = input.Recipes.Count;
+                int numberOfPage = len / number + (len % number == 0 ? 0 : 1);
+                if (numberOfPage != 0)
+                {
+                    Button preButton = new Button();
+                    preButton.Name = "prev";
+                    preButton.Content = "Prev";
+                    preButton.Background = Brushes.White;
+                    preButton.BorderBrush = Brushes.Black;
+                    preButton.Foreground = Brushes.Black;
+                    preButton.Margin = new Thickness(5);
+                    preButton.Click += PreButton_Click;
+                    SkipButton.Children.Add(preButton);
+                    maxPage = numberOfPage;
+                    for (int i = 1; i <= numberOfPage; i++)
+                    {
+                        Button numberButton = new Button();
+                        numberButton.Name = $"page_{i}";
+                        numberButton.Content = $"{i}";
+                        numberButton.Background = Brushes.White;
+                        numberButton.BorderBrush = Brushes.Black;
+                        numberButton.Foreground = Brushes.Black;
+                        numberButton.Margin = new Thickness(5);
+                        numberButton.Click += PageNumber_Click;
+                        SkipButton.Children.Add(numberButton);
+                    }
+                    Button nextButton = new Button();
+                    nextButton.Name = "next";
+                    nextButton.Content = "Next";
+                    nextButton.Background = Brushes.White;
+                    nextButton.BorderBrush = Brushes.Black;
+                    nextButton.Foreground = Brushes.Black;
+                    nextButton.Margin = new Thickness(5);
+                    nextButton.Click += NextButton_Click;
+                    SkipButton.Children.Add(nextButton);
+                    Button firstButton = (Button)SkipButton.Children[1];
+                    firstButton.Background = Brushes.Orange;
+
+                }
+                else
+                {
+                    TextBlock nofication = new TextBlock();
+                    nofication.Text = "Empty!!!";
+                    nofication.FontSize = 40;
+                    StackPanel panel = new StackPanel();
+                    panel.HorizontalAlignment = HorizontalAlignment.Center;
+                    panel.Children.Add(nofication);
+                    GridLayout.VerticalAlignment = VerticalAlignment.Center;
+                    GridLayout.Children.Add(panel);
+                }
             }
             catch (Exception ex)
             {
@@ -337,6 +341,44 @@ namespace Food_Recipe_Appplication
         {
             Window parentWindow = Window.GetWindow(this);
             parentWindow.Close();
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string condition = ((ComboBoxItem)(sender as ComboBox).SelectedItem).ToString();
+            Debug.WriteLine(condition);
+            var tokens = condition.Split(new string[] { ": " }, StringSplitOptions.None);
+            switch (tokens[tokens.Length - 1])
+            {
+                case "Order by name A-Z":
+                    {
+                        _favoriteList = _favoriteList.SortByName();
+                        ChangeBindingList(_favoriteList);
+                        break;
+                    }
+                case "Order by name Z-A":
+                    {
+                        _favoriteList = _favoriteList.SortByNameDescending();
+                        ChangeBindingList(_favoriteList);
+                        break;
+                    }
+                case "Order by date descending":
+                    {
+                        _favoriteList = _favoriteList.SortByDateDescending();
+                        ChangeBindingList(_favoriteList);
+                        break;
+                    }
+                case "Order by date ascending":
+                    {
+                        _favoriteList = _favoriteList.SortByDate();
+                        ChangeBindingList(_favoriteList);
+                        break;
+                    }
+            }
+            var config = ConfigurationManager.OpenExeConfiguration(
+             ConfigurationUserLevel.None);
+            config.AppSettings.Settings["DisplayOptionFavPage"].Value = tokens[tokens.Length - 1];
+            config.Save(ConfigurationSaveMode.Minimal);
         }
     }
 }

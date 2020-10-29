@@ -16,6 +16,9 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="FavouritePage" Loaded="Page_Loaded">
     <Page.Resources>
+        <local:ImageLinkConverter x:Key="convertImageLink">
+
+        </local:ImageLinkConverter>
         <local:IsFavoriteToColorConverter x:Key="isfavoriteicon">
 
         </local:IsFavoriteToColorConverter>
@@ -103,7 +106,13 @@
                     <materialDesign:PackIcon Kind="Shutdown"></materialDesign:PackIcon>
                 </Button>
                 <Image Height="25" Source="Icons/loupe.png"></Image>
-                <TextBox PreviewKeyUp="SearchBox_PreviewKeyUp" materialDesign:TextFieldAssist.DecorationVisibility="Collapsed" BorderThickness="0.8" Name="SearchBox" Background="White" BorderBrush="Black" Width="250" Height="25" Margin="10 0 0 0" FlowDirection="LeftToRight" FontSize="13" GotFocus="SearchBox_GotFocus" LostFocus="SearchBox_LostFocus" Foreground="Gray">Search</TextBox>
+               <TextBox PreviewKeyUp="SearchBox_PreviewKeyUp" materialDesign:TextFieldAssist.DecorationVisibility="Collapsed" BorderThickness="0.8" Name="SearchBox" Background="White" BorderBrush="Black" Width="250" Height="25" Margin="10 0 0 0" FlowDirection="LeftToRight" FontSize="13" GotFocus="SearchBox_GotFocus" LostFocus="SearchBox_LostFocus" Foreground="Gray">Search</TextBox>
+               <ComboBox FontSize="13"  Name="OrderOptions" SelectionChanged="ComboBox_SelectionChanged" Width="190" Margin="20 0 0 0">
+                    <ComboBoxItem Name="AtoZ">Order by name A-Z</ComboBoxItem>
+                    <ComboBoxItem Name="ZtoA">Order by name Z-A</ComboBoxItem>
+                    <ComboBoxItem Name="DateDescending">Order by date descending</ComboBoxItem>
+                    <ComboBoxItem Name="DateAscending">Order by date ascending</ComboBoxItem>
+               </ComboBox>
             </StackPanel>
         </StackPanel>
 
@@ -127,7 +136,7 @@
                                 <Border BorderThickness="0.5" BorderBrush="Gray"
                                      Width="300" Height="250">
                                     <Border.Background >
-                                        <ImageBrush ImageSource="Photos/ca-kho-to.jpg"></ImageBrush>
+                                        <ImageBrush RenderOptions.BitmapScalingMode="HighQuality" x:Name="FoodImage" ImageSource="{Binding MainPictureName,Converter={StaticResource convertImageLink}}"></ImageBrush>
                                     </Border.Background>
                                 </Border>
                                 <StackPanel  Height="35" HorizontalAlignment="Center" VerticalAlignment="Center"  Orientation="Horizontal">
