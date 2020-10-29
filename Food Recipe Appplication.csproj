@@ -223,38 +223,68 @@
     <Resource Include="Photos\tron-nom.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Data\Images\Cá kho tộ\bac-noi-ca-len-bep.jpg" />
-    <Resource Include="Data\Images\Cá kho tộ\ca-kho-to.jpg" />
+    <None Include="Data\Images\Cá kho tộ\bac-noi-ca-len-bep.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Images\Cá kho tộ\ca-kho-to.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Data\Images\Cá kho tộ\cat-ca-loc-thanh-khuc.jpg" />
-    <Resource Include="Data\Images\Cá kho tộ\cat-thit-ba-chi.jpg" />
-    <Resource Include="Data\Images\Cá kho tộ\trang-tri-mon-an.jpg" />
+    <None Include="Data\Images\Cá kho tộ\cat-ca-loc-thanh-khuc.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Images\Cá kho tộ\cat-thit-ba-chi.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Images\Cá kho tộ\trang-tri-mon-an.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Data\Images\Gỏi gà lá chanh\so-che-ga.jpg" />
+    <None Include="Data\Images\Gỏi gà lá chanh\so-che-ga.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Data\Images\Gỏi gà lá chanh\pha-nuoc-tron-nom.jpg" />
-    <Resource Include="Data\Images\Gỏi gà lá chanh\phi-hanh.jpg" />
-    <Resource Include="Data\Images\Gỏi gà lá chanh\so-che-hanh.jpg" />
-    <Resource Include="Data\Images\Gỏi gà lá chanh\tron-nom.jpg" />
+    <None Include="Data\Images\Gỏi gà lá chanh\pha-nuoc-tron-nom.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Images\Gỏi gà lá chanh\phi-hanh.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Images\Gỏi gà lá chanh\so-che-hanh.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Images\Gỏi gà lá chanh\tron-nom.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Data\Images\Bò né\thuc-hien-uop-thit-bo.jpg" />
-    <Resource Include="Data\Images\Bò né\tien-hanh-lam-chin-thit-bo.jpg" />
+    <None Include="Data\Images\Bò né\thuc-hien-uop-thit-bo.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Images\Bò né\tien-hanh-lam-chin-thit-bo.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\Icons\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Data\Images\Bò né\hoan-thanh-mon-be-ne.jpg" />
+    <None Include="Data\Images\Bò né\hoan-thanh-mon-be-ne.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Data\Images\Bò né\bo-ne.jpg" />
+    <None Include="Data\Images\Bò né\bo-ne.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Data\Images\Gỏi gà lá chanh\goi-ga-la-chanh.jpg" />
+    <None Include="Data\Images\Gỏi gà lá chanh\goi-ga-la-chanh.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MaterialDesignThemes.3.2.0\build\MaterialDesignThemes.targets" Condition="Exists('packages\MaterialDesignThemes.3.2.0\build\MaterialDesignThemes.targets')" />

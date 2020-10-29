@@ -15,6 +15,11 @@
      FontFamily="Consolas"
     WindowStyle="None" WindowStartupLocation="CenterScreen"  Title="RecipeDetailsPage"  MinHeight="650" MinWidth="1200"
         Loaded="Window_Loaded">
+    <Window.Resources>
+        <local:ImageLinkConverter x:Key="convertImageLink">
+
+        </local:ImageLinkConverter>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*">
@@ -107,12 +112,12 @@
                                                 <RowDefinition></RowDefinition>
                                             </Grid.RowDefinitions>
                                             <Grid Background="White" Grid.Row="0">
-                                                <TextBlock Text="{Binding Picture_name}">
+                                                <Image Source="{Binding Picture_name,Converter={StaticResource convertImageLink}}">
 
-                                                </TextBlock>
+                                                </Image>
                                             </Grid>
-                                            <Grid Background="Blue" Grid.Row="1">
-                                                <TextBlock Text="{Binding Text}"></TextBlock>
+                                            <Grid Grid.Row="1">
+                                                <TextBlock TextWrapping="Wrap" Text="{Binding Text}"></TextBlock>
                                             </Grid>
                                         </Grid>
 
