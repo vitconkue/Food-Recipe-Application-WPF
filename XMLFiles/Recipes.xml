@@ -34,7 +34,7 @@
     
   </recipe>
   <recipe isFavorite="false" date_created="03-02-1990" category="dryfood">
-    <mainpicture_name>cc_mainpicture </mainpicture_name>
+    <mainpicture_name>goi-ga-la-chanh.jpg</mainpicture_name>
     <ingredients>
       <ingredient>1 quả hành tây</ingredient>
       <ingredient>1 đùi gà</ingredient>
@@ -72,7 +72,7 @@
   <recipe isFavorite="false" date_created="09-01-2021" category="dryfood">
     <foodname>Bò né</foodname>
     <mainvideo_link>cbs_mainvideo</mainvideo_link>
-    <mainpicture_name>picturenamethitnai</mainpicture_name>
+    <mainpicture_name>bo-ne.jpg</mainpicture_name>
     <ingredients>
       <ingredient>Thịt bò (300 g) </ingredient>
       <ingredient>Trứng gà (1 quả)</ingredient>

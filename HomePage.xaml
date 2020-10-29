@@ -135,7 +135,7 @@
                                 <StackPanel  MouseLeave="panel_MouseLeave" Margin="5"  MouseEnter="StackPanel_MouseEnter"  Name="panel">
                                     <Border Width="300" Height="250">
                                         <Border.Background >
-                                            <ImageBrush x:Name="FoodImage" ImageSource="Photos/ca-kho-to.jpg"></ImageBrush>
+                                            <ImageBrush x:Name="FoodImage" ImageSource="{Binding MainPictureName}"></ImageBrush>
                                         </Border.Background>
                                     </Border>
                                     <StackPanel  Height="35" HorizontalAlignment="Center" VerticalAlignment="Center"  Orientation="Horizontal">

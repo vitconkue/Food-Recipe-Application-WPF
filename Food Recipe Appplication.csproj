@@ -74,6 +74,7 @@
     <Compile Include="HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ImageLinkConverter.cs" />
     <Compile Include="IngredientList.cs" />
     <Compile Include="IsFavoriteToColorConverter.cs" />
     <Compile Include="Recipe.cs" />
@@ -220,6 +221,40 @@
     <Resource Include="Photos\tien-hanh-lam-chin-thit-bo.jpg" />
     <Resource Include="Photos\trang-tri-mon-an.jpg" />
     <Resource Include="Photos\tron-nom.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Data\Images\Cá kho tộ\bac-noi-ca-len-bep.jpg" />
+    <Resource Include="Data\Images\Cá kho tộ\ca-kho-to.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Data\Images\Cá kho tộ\cat-ca-loc-thanh-khuc.jpg" />
+    <Resource Include="Data\Images\Cá kho tộ\cat-thit-ba-chi.jpg" />
+    <Resource Include="Data\Images\Cá kho tộ\trang-tri-mon-an.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Data\Images\Gỏi gà lá chanh\so-che-ga.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Data\Images\Gỏi gà lá chanh\pha-nuoc-tron-nom.jpg" />
+    <Resource Include="Data\Images\Gỏi gà lá chanh\phi-hanh.jpg" />
+    <Resource Include="Data\Images\Gỏi gà lá chanh\so-che-hanh.jpg" />
+    <Resource Include="Data\Images\Gỏi gà lá chanh\tron-nom.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Data\Images\Bò né\thuc-hien-uop-thit-bo.jpg" />
+    <Resource Include="Data\Images\Bò né\tien-hanh-lam-chin-thit-bo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\Icons\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Data\Images\Bò né\hoan-thanh-mon-be-ne.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Data\Images\Bò né\bo-ne.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Data\Images\Gỏi gà lá chanh\goi-ga-la-chanh.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MaterialDesignThemes.3.2.0\build\MaterialDesignThemes.targets" Condition="Exists('packages\MaterialDesignThemes.3.2.0\build\MaterialDesignThemes.targets')" />
