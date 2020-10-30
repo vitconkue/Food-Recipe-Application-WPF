@@ -15,55 +15,56 @@
      FontFamily="{DynamicResource MaterialDesignFont}"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="AddRecipePage">
-    <DockPanel>
-        <StackPanel DockPanel.Dock="Left"  Name="LeftMenu" Background="#ffd8a7" Width="170">
+	<DockPanel>
+		<StackPanel DockPanel.Dock="Left"  Name="LeftMenu" Background="#ffd8a7" Width="170">
 
-            <Button Style="{DynamicResource MenuButtonStyle}"  Name="LeftMenuButton" Click="LeftMenuButton_Click">
-                <StackPanel Orientation="Horizontal">
-                    <Image Height="20" Source="Icons/menu.png" Margin="10 0 10 0"></Image>
-                    <TextBlock>Menu</TextBlock>
-                </StackPanel>
-            </Button>
-            <Button Name="HomeButton" Click="HomeButton_Click"  Style="{DynamicResource MenuButtonStyle}">
-                <StackPanel Orientation="Horizontal">
-                    <Image Height="20" Source="Icons/home-page.png" Margin="10 0 10 0"></Image>
-                    <TextBlock>Home</TextBlock>
-                </StackPanel>
-            </Button>
-            <Button Name="FavouriteButton" Click="FavouriteButton_Click" Style="{DynamicResource MenuButtonStyle}">
-                <StackPanel Orientation="Horizontal">
-                    <Image Height="20" Source="Icons/favourite.png" Margin="10 0 10 0"></Image>
-                    <TextBlock>Favourite</TextBlock>
-                </StackPanel>
-            </Button>
-            <Button Background="Orange" Name="AddRecipeButton" Style="{DynamicResource MenuButtonStyle}">
-                <StackPanel Orientation="Horizontal">
-                    <Image Height="20" Source="Icons/add-file.png" Margin="10 0 10 0"></Image>
-                    <TextBlock>Add recpie</TextBlock>
-                </StackPanel>
-            </Button>
-            <Button Name="SettingButton" Click="SettingButton_Click" Style="{DynamicResource MenuButtonStyle}">
-                <StackPanel Orientation="Horizontal">
-                    <Image Height="20" Source="Icons/settings.png" Margin="10 0 10 0"></Image>
-                    <TextBlock>Settings</TextBlock>
-                </StackPanel>
-            </Button>
-        </StackPanel>
-        <StackPanel  DockPanel.Dock="Top" Orientation="Horizontal" Background="#fed8b1" Height="50">
-            <Button Visibility="Collapsed" Style="{DynamicResource MenuButtonStyle}" Name="MenuButton" Click="MenuButton_Click">
-                <StackPanel Orientation="Horizontal">
-                    <Image Height="20" Source="Icons/menu.png" Margin="10 0 10 0"></Image>
-                    <TextBlock>Menu</TextBlock>
-                </StackPanel>
-            </Button >
-            <StackPanel Name="SearchBlock"  Orientation="Horizontal" FlowDirection="RightToLeft">
-                
-            </StackPanel>
-        </StackPanel>
+			<Button Style="{DynamicResource MenuButtonStyle}"  Name="LeftMenuButton" Click="LeftMenuButton_Click">
+				<StackPanel Orientation="Horizontal">
+					<Image Height="20" Source="Icons/menu.png" Margin="10 0 10 0"></Image>
+					<TextBlock>Menu</TextBlock>
+				</StackPanel>
+			</Button>
+			<Button Name="HomeButton" Click="HomeButton_Click"  Style="{DynamicResource MenuButtonStyle}">
+				<StackPanel Orientation="Horizontal">
+					<Image Height="20" Source="Icons/home-page.png" Margin="10 0 10 0"></Image>
+					<TextBlock>Home</TextBlock>
+				</StackPanel>
+			</Button>
+			<Button Name="FavouriteButton" Click="FavouriteButton_Click" Style="{DynamicResource MenuButtonStyle}">
+				<StackPanel Orientation="Horizontal">
+					<Image Height="20" Source="Icons/favourite.png" Margin="10 0 10 0"></Image>
+					<TextBlock>Favourite</TextBlock>
+				</StackPanel>
+			</Button>
+			<Button Name="AddRecipeButton" Style="{DynamicResource MenuButtonStyle}">
+				<StackPanel Orientation="Horizontal">
+					<Image Height="20" Source="Icons/add-file.png" Margin="10 0 10 0"></Image>
+					<TextBlock>Add recpie</TextBlock>
+				</StackPanel>
+			</Button>
+			<Button Name="SettingButton" Click="SettingButton_Click" Style="{DynamicResource MenuButtonStyle}">
+				<StackPanel Orientation="Horizontal">
+					<Image Height="20" Source="Icons/settings.png" Margin="10 0 10 0"></Image>
+					<TextBlock>Settings</TextBlock>
+				</StackPanel>
+			</Button>
+		</StackPanel>
+		<StackPanel  DockPanel.Dock="Top" Orientation="Horizontal" Background="#fed8b1" Height="50">
+			<Button Visibility="Collapsed" Style="{DynamicResource MenuButtonStyle}" Name="MenuButton" Click="MenuButton_Click">
+				<StackPanel Orientation="Horizontal">
+					<Image Height="20" Source="Icons/menu.png" Margin="10 0 10 0"></Image>
+					<TextBlock>Menu</TextBlock>
+				</StackPanel>
+			</Button >
+			<StackPanel Name="SearchBlock"  Orientation="Horizontal" FlowDirection="RightToLeft">
+				<Image Height="25" Source="Icons/loupe.png"></Image>
+				<TextBox materialDesign:TextFieldAssist.DecorationVisibility="Collapsed" BorderThickness="0.8" Name="SearchBox" Background="White" BorderBrush="Black" Width="250" Height="25" Margin="10 0 0 0" FlowDirection="LeftToRight" FontSize="13" GotFocus="SearchBox_GotFocus" LostFocus="SearchBox_LostFocus" Foreground="Gray">Search</TextBox>
+			</StackPanel>
+		</StackPanel>
 
-        <StackPanel Name="SkipButton" HorizontalAlignment="Center" DockPanel.Dock="Bottom" Orientation="Horizontal"  Height="25">
+		<StackPanel Name="SkipButton" HorizontalAlignment="Center" DockPanel.Dock="Bottom" Orientation="Horizontal"  Height="25">
 
-        </StackPanel>
+		</StackPanel>
 
 
 		<Grid>
@@ -73,17 +74,21 @@
 			</Grid.ColumnDefinitions>
 			<Grid.RowDefinitions>
 				<RowDefinition Height="0.25*" />
+				<RowDefinition Height="0.25*" />
 				<RowDefinition Height="2*" />
 				<RowDefinition Height="1*" />
 			</Grid.RowDefinitions>
-			<TextBox Name="AddNameRecipeBox"  BorderThickness="2" BorderBrush="Black" FlowDirection="LeftToRight" FontSize="16" GotFocus="AddNameRecipeBox_GotFocus" LostFocus="AddNameRecipeBox_LostFocus" Foreground="Gray">Nhập tên công thức</TextBox>
-			<StackPanel Grid.Column="1" Orientation="Horizontal">
-				<Button x:Name="BrowseRecipeImageButton" Click="AddRecipeImage_Click">Browse</Button>
-				<Image x:Name="BrowseRecipeImage"></Image>
-			</StackPanel>
-			<Image x:Name="RecipeImage" Grid.Row="1" ></Image>
-			<TextBox Grid.Column="1" Grid.Row="1" Name="DescriptionBox"  BorderThickness="2" BorderBrush="Black" FlowDirection="LeftToRight" FontSize="16" GotFocus="DescriptionBox_GotFocus" LostFocus="DescriptionBox_LostFocus" Foreground="Gray" TextWrapping="Wrap">Viết công thức chỗ này</TextBox>
-			<StackPanel Grid.Row="2">
+			<TextBox Margin="2" Name="AddNameRecipeBox"  BorderThickness="2" BorderBrush="Black" FlowDirection="LeftToRight" FontSize="16" GotFocus="AddNameRecipeBox_GotFocus" LostFocus="AddNameRecipeBox_LostFocus" Foreground="Gray">Nhập tên công thức</TextBox>
+			<TextBox Margin="2" Grid.Column="1" Name="VideoLinkBox"  BorderThickness="2" BorderBrush="Black" FlowDirection="LeftToRight" FontSize="16" GotFocus="VideoLinkBox_GotFocus" LostFocus="VideoLinkBox_LostFocus" Foreground="Gray" TextChanged="VideoLinkBox_TextChanged">Nhập đường dẫn video</TextBox>
+			<TextBox Margin="2" Grid.Row="1" Name="InterestingInfoBox"  BorderThickness="2" BorderBrush="Black" FlowDirection="LeftToRight" FontSize="16" GotFocus="InterestingInfoBox_GotFocus" LostFocus="InterestingInfoBox_LostFocus" Foreground="Gray">Nhập thông tin thú vị về món ăn</TextBox>
+			<ComboBox x:Name="Category" FontWeight="Bold"  Margin="2" Grid.Row="1" Grid.Column="1" SelectionChanged="Category_SelectionChanged">
+				<ComboBoxItem IsSelected="True">Món khô</ComboBoxItem>
+				<ComboBoxItem>Món nước</ComboBoxItem>
+				<ComboBoxItem>Đồ uống</ComboBoxItem>
+			</ComboBox>
+			<Image Margin="2" x:Name="RecipeImage" Grid.Row="2" Source="Icons/unknown.png"></Image>
+			<TextBox Margin="2" Grid.Column="1" Grid.Row="2" Name="DescriptionBox"  BorderThickness="2" BorderBrush="Black" FlowDirection="LeftToRight" FontSize="16" GotFocus="DescriptionBox_GotFocus" LostFocus="DescriptionBox_LostFocus" Foreground="Gray" TextWrapping="Wrap" AcceptsReturn="True">Nhập danh sách nguyên liệu (xuống dòng mỗi loại)</TextBox>
+			<StackPanel Grid.Row="3">
 				<Grid Height="130">
 					<Grid.ColumnDefinitions>
 						<ColumnDefinition Width="1*" />
@@ -91,19 +96,19 @@
 					</Grid.ColumnDefinitions>
 					<Button  Style="{DynamicResource MenuButtonStyle}" x:Name="AddImageButton" Click="AddImage_Click"  Width="80" Height="80" Margin="0,20,0,0">
 						<StackPanel Orientation="Vertical">
-							<Image Source="Icons/add-image.png" Width="48" Margin="20,0,0,0"/>
-							<TextBlock Text="Add Image" Margin="15,0,0,0"/>
+							<Image Source="Icons/add-image.png" Width="48" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+							<TextBlock Text="Add Image" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 						</StackPanel>
 					</Button>
 					<Button Grid.Column="2" Grid.Row="2" Style="{DynamicResource MenuButtonStyle}" x:Name="SaveButton" Click="SaveButton_Click" Margin="0,20,0,0" Width="80" Height="80">
 						<StackPanel Orientation="Vertical">
-							<Image Source="Icons/checked.png" Width="48" Margin="15,0,0,0"/>
-							<TextBlock Text="Save" Margin="25,5,0,0"/>
+							<Image Source="Icons/checked.png" Width="48" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+							<TextBlock Text="Save" Margin="0,5,0,0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 						</StackPanel>
 					</Button>
 				</Grid>
 			</StackPanel>
-			<StackPanel Grid.Column="2" Grid.Row="2">
+			<StackPanel Grid.Column="2" Grid.Row="3">
 				<Grid Height="129">
 					<Grid.ColumnDefinitions>
 						<ColumnDefinition Width="1*" />
@@ -113,57 +118,57 @@
 					<Grid.RowDefinitions>
 						<RowDefinition Height="1*" />
 					</Grid.RowDefinitions>
-					<Button Grid.Row="2" Style="{DynamicResource MenuButtonStyle}" x:Name="LeftArrowButton" Click="LeftArrowButton_Click" Margin="0" Width="80" Height="80">
-						<Image Source="Icons/left-arrow.png" Width="48" Margin="15,0,0,0"/>
+					<Button Grid.Row="2" Style="{DynamicResource MenuButtonStyle}" x:Name="LeftArrowButton" Click="LeftArrowButton_Click" Margin="0" Width="50" Height="50">
+						<Image Source="Icons/left-arrow.png" Width="48" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 					</Button>
 					<Grid Grid.Column="1" Grid.Row="2">
 						<Image x:Name="StepNumberImage" Source="Icons/circle-shape.png" Width="48" Margin="0,0,0,0"/>
-						<TextBlock x:Name="StepNumber" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0">1</TextBlock>
+						<TextBlock x:Name="StepNumber" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0">0</TextBlock>
 					</Grid>
-					<Button Grid.Column="2" Style="{DynamicResource MenuButtonStyle}" x:Name="RightArrowButton" Click="RightArrowButton_Click" Margin="0,0,0,0" Width="80" Height="80">
-						<Image Source="Icons/right-arrow.png" Width="48" Margin="15,0,0,0"/>
+					<Button Grid.Column="2" Style="{DynamicResource MenuButtonStyle}" x:Name="RightArrowButton" Click="RightArrowButton_Click" Margin="0,0,0,0" Width="50" Height="50">
+						<Image Source="Icons/right-arrow.png" Width="48" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 					</Button>
 				</Grid>
 			</StackPanel>
 		</Grid>
 
 	</DockPanel>
-    <Page.Resources>
-        <Style x:Key="MenuButtonStyle" TargetType="{x:Type Button}">
-            <Setter Property="Height" Value="50"></Setter>
-            <Setter Property="Width" Value="170"></Setter>
-            <Setter Property="HorizontalContentAlignment" Value="Left"></Setter>
-            <Setter Property="Background" Value="Transparent"></Setter>
-            <Setter Property="BorderBrush" Value="Transparent"></Setter>
-            <Setter Property="BorderThickness" Value="0"></Setter>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Border Background="{TemplateBinding Background}">
-                            <ContentPresenter VerticalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="#fdad5c"/>
-                </Trigger>
-            </Style.Triggers>
+	<Page.Resources>
+		<Style x:Key="MenuButtonStyle" TargetType="{x:Type Button}">
+			<Setter Property="Height" Value="50"></Setter>
+			<Setter Property="Width" Value="170"></Setter>
+			<Setter Property="HorizontalContentAlignment" Value="Left"></Setter>
+			<Setter Property="Background" Value="Transparent"></Setter>
+			<Setter Property="BorderBrush" Value="Transparent"></Setter>
+			<Setter Property="BorderThickness" Value="0"></Setter>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type Button}">
+						<Border Background="{TemplateBinding Background}">
+							<ContentPresenter VerticalAlignment="Center"/>
+						</Border>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+			<Style.Triggers>
+				<Trigger Property="IsMouseOver" Value="True">
+					<Setter Property="Background" Value="#fdad5c"/>
+				</Trigger>
+			</Style.Triggers>
 
-        </Style>
-        <Style TargetType="Image">
-            <Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality"></Setter>
-        </Style>
-        <Storyboard x:Key="OpenMenu">
-            <DoubleAnimation Storyboard.TargetName="LeftMenu"
+		</Style>
+		<Style TargetType="Image">
+			<Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality"></Setter>
+		</Style>
+		<Storyboard x:Key="OpenMenu">
+			<DoubleAnimation Storyboard.TargetName="LeftMenu"
                   Storyboard.TargetProperty="Width"
                   From="0" To="170" Duration="0:0:0.3" />
-        </Storyboard>
-        <Storyboard x:Key="CloseMenu">
-            <DoubleAnimation Storyboard.TargetName="LeftMenu"
+		</Storyboard>
+		<Storyboard x:Key="CloseMenu">
+			<DoubleAnimation Storyboard.TargetName="LeftMenu"
                   Storyboard.TargetProperty="Width"
                   From="170" To="0" Duration="0:0:0.3" />
-        </Storyboard>
-    </Page.Resources>
+		</Storyboard>
+	</Page.Resources>
 </Page>

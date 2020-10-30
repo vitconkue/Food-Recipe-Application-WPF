@@ -16,6 +16,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using Microsoft.Win32;
+using System.Runtime.CompilerServices;
 
 namespace Food_Recipe_Appplication
 {
@@ -24,7 +25,7 @@ namespace Food_Recipe_Appplication
     /// </summary>
     public partial class AddRecipePage : Page
     {
-        private RecipesList recipeList = new RecipesList(); 
+        private RecipesList recipeList = new RecipesList();
         //public AddRecipePage()
         //{
         //    InitializeComponent();
@@ -38,15 +39,29 @@ namespace Food_Recipe_Appplication
             recipeList = recipes;
         }
 
-        private int Step = 1;
-
+        private int Step = 0;
+        private Recipe recipe = new Recipe();
+        private StepsList list = new StepsList();
+        private List<string> pathList = new List<string>();
+        private string IngredientsString = "123";
+        private string filePath = "123";
         private void AddRecipePage_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             var windowWidth = e.NewSize.Width;
             SearchBlock.Margin = new Thickness(windowWidth - 480, 0, 0, 0);
         }
 
-      
+        private void SearchBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            SearchBox.Text = "";
+            SearchBox.Foreground = Brushes.Black;
+        }
+
+        private void SearchBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            SearchBox.Text = "Search";
+            SearchBox.Foreground = Brushes.Gray;
+        }
 
         private void MenuButton_Click(object sender, RoutedEventArgs e)
         {
@@ -78,7 +93,6 @@ namespace Food_Recipe_Appplication
         private void AddImage_Click(object sender, RoutedEventArgs e)
         {
             var openFileDialog = new OpenFileDialog();
-            string filePath;
             if (openFileDialog.ShowDialog() == true)
             {
                 File.ReadAllText(openFileDialog.FileName);
@@ -95,44 +109,292 @@ namespace Food_Recipe_Appplication
         }
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-
+            //Save this Step
+            if (Step >= list.Count() || Step == 0)
+            {
+                if (Step == 0)
+                {
+                    recipe.FoodName = AddNameRecipeBox.Text;
+                    recipe.MainVideoLink = VideoLinkBox.Text;
+                    recipe.Interesting_infomation = InterestingInfoBox.Text;
+                    recipe.Category = Category.Text;
+                    IngredientsString = DescriptionBox.Text;
+                    pathList.Add(filePath);
+                    AddNameRecipeBox.Focusable = false;
+                    VideoLinkBox.Focusable = false;
+                    InterestingInfoBox.Focusable = false;
+                    Category.IsEnabled = false;
+                }
+                else
+                {
+                    if(Step==list.Count())
+                    {
+                        Step recipeStep = new Step();
+                        recipeStep.Text = DescriptionBox.Text;
+                        pathList.RemoveAt(Step);
+                        pathList.Add(filePath);
+                        list.Steps[Step - 1] = recipeStep;
+                    }
+                    else
+                    {
+                        Step recipeStep = new Step();
+                        recipeStep.Text = DescriptionBox.Text;
+                        pathList.Add(filePath);
+                        list.AddStep(recipeStep);
+                    } 
+                }
+                Step++;
+                StepNumber.Text = Step.ToString();
+                DescriptionBox.Text = "Nhập hướng dẫn thực hiện";
+                DescriptionBox.Foreground = Brushes.Gray;
+                var bitmap =
+                new BitmapImage(
+                    new Uri(
+                        "Icons/unknown.png",
+                        UriKind.Relative)
+                    );
+                RecipeImage.Source = bitmap;
+            }
+            else
+            {
+                //Save
+                Step recipeStep = new Step();
+                recipeStep.Text = DescriptionBox.Text;
+                pathList.RemoveAt(Step);
+                pathList.Insert(Step, filePath);
+                list.Steps[Step - 1] = recipeStep;
+                //Next Step
+                Step++;
+                StepNumber.Text = Step.ToString();
+                DescriptionBox.Text = list[Step - 1].Text;
+                filePath = pathList[Step];
+                var bitmap =
+                    new BitmapImage(
+                    new Uri(
+                        filePath,
+                        UriKind.Absolute)
+                    );
+                RecipeImage.Source = bitmap;
+            }
+            //
+            var Path = HelperFunctions.GetThisFilePath();
+            var directory = System.IO.Path.GetDirectoryName(Path);
+            directory += "/Photos";
+            int fCount;
+            fCount = HelperFunctions.countingFile(directory);
+            for (int i = 0; i < pathList.Count(); i++)
+            {
+                //Tạo filename
+                string fileName = "img" + (i + 1 + fCount).ToString() + ".png";
+                //Thêm filename vào Step
+                if(i==0)
+                {
+                    recipe.MainPictureName = fileName;
+                }
+                else
+                {
+                    list[i - 1].Picture_name = fileName;
+                }
+                string sourcePath = pathList[i];
+                string targetPath = directory;
+                //Combine file và đường dẫn
+                string sourceFile = System.IO.Path.Combine(sourcePath, "");
+                string destFile = System.IO.Path.Combine(targetPath, fileName);
+                //Copy file từ file nguồn đến file đích
+                System.IO.File.Copy(sourceFile, destFile, true);
+            }
+            recipe.Steps = list;
+            //Tách chuỗi nguyên liệu
+            string ingredient = "";
+            for (int i = 0; i < IngredientsString.Length; i++)
+            {
+                if (IngredientsString[i] != '\r' && IngredientsString[i] != '\n')
+                {
+                    ingredient += IngredientsString[i];
+                }
+                else
+                {
+                    recipe.Ingredients.AddIngredient(ingredient);
+                    ingredient = "";
+                    while(IngredientsString[i] == '\r' || IngredientsString[i] == '\n')
+                    {
+                        i++;
+                        if(i == IngredientsString.Length)
+                        {
+                            break;
+                        }
+                    }
+                    i--;
+                }
+            }
+            recipe.Ingredients.AddIngredient(ingredient);
+            Console.WriteLine("123");
         }
 
         private void LeftArrowButton_Click(object sender, RoutedEventArgs e)
         {
             if (Step != 1)
             {
+                //Save
+                if (Step < list.Count())
+                {
+                    Step recipeStep = new Step();
+                    recipeStep.Text = DescriptionBox.Text;
+                    pathList.RemoveAt(Step);
+                    pathList.Insert(Step, filePath);
+                    list.Steps[Step - 1] = recipeStep;
+                }
+                else if(Step == list.Count())
+                {
+                    Step recipeStep = new Step();
+                    recipeStep.Text = DescriptionBox.Text;
+                    pathList.RemoveAt(Step);
+                    pathList.Add(filePath);
+                    list.Steps[Step - 1] = recipeStep;
+                }
+                else
+                {
+                    Step recipeStep = new Step();
+                    recipeStep.Text = DescriptionBox.Text;
+                    pathList.Add(filePath);
+                    list.AddStep(recipeStep);
+                }
+                //Previous Step
                 Step--;
                 StepNumber.Text = Step.ToString();
+                if (Step == 0)
+                {
+                    AddNameRecipeBox.Text = recipe.FoodName;
+                    VideoLinkBox.Text = recipe.MainVideoLink;
+                    filePath = pathList[Step];
+                    var bitmap =
+                    new BitmapImage(
+                        new Uri(
+                            filePath,
+                            UriKind.Absolute)
+                        );
+                    Debug.WriteLine(filePath);
+                    RecipeImage.Source = bitmap;
+                }
+                else
+                {
+                    DescriptionBox.Text = list.Steps[Step - 1].Text;
+                    filePath = pathList[Step];
+                    var bitmap =
+                    new BitmapImage(
+                        new Uri(
+                            filePath,
+                            UriKind.Absolute)
+                        );
+                    Debug.WriteLine(filePath);
+                    RecipeImage.Source = bitmap;
+                }
             }
         }
 
         private void RightArrowButton_Click(object sender, RoutedEventArgs e)
         {
-            Step++;
-            StepNumber.Text = Step.ToString();
+            if (Step >= list.Count() || Step == 0)
+            {
+                if (Step == 0)
+                {
+                    recipe.FoodName = AddNameRecipeBox.Text;
+                    recipe.MainVideoLink = VideoLinkBox.Text;
+                    recipe.Interesting_infomation = InterestingInfoBox.Text;
+                    recipe.Category = Category.Text;
+                    IngredientsString = DescriptionBox.Text;
+                    pathList.Add(filePath);
+                    AddNameRecipeBox.Focusable = false;
+                    VideoLinkBox.Focusable = false;
+                    InterestingInfoBox.Focusable = false;
+                    Category.IsEnabled = false;
+                }
+                else
+                {
+                    if (Step == list.Count())
+                    {
+                        Step recipeStep = new Step();
+                        recipeStep.Text = DescriptionBox.Text;
+                        pathList.RemoveAt(Step);
+                        pathList.Add(filePath);
+                        list.Steps[Step - 1] = recipeStep;
+                    }
+                    else
+                    {
+                        Step recipeStep = new Step();
+                        recipeStep.Text = DescriptionBox.Text;
+                        pathList.Add(filePath);
+                        list.AddStep(recipeStep);
+                    }
+                }
+                Step++;
+                StepNumber.Text = Step.ToString();
+                DescriptionBox.Text = "Nhập hướng dẫn thực hiện";
+                DescriptionBox.Foreground = Brushes.Gray;
+                var bitmap =
+                new BitmapImage(
+                    new Uri(
+                        "Icons/unknown.png",
+                        UriKind.Relative)
+                    );
+                RecipeImage.Source = bitmap;
+            }
+            else
+            {
+                //Save
+                Step recipeStep = new Step();
+                recipeStep.Text = DescriptionBox.Text;
+                pathList.RemoveAt(Step);
+                pathList.Insert(Step, filePath);
+                list.Steps[Step - 1] = recipeStep;
+                //Next Step
+                Step++;
+                StepNumber.Text = Step.ToString();
+                DescriptionBox.Text = list[Step - 1].Text;
+                filePath = pathList[Step];
+                var bitmap =
+                    new BitmapImage(
+                    new Uri(
+                        filePath,
+                        UriKind.Absolute)
+                    );
+                RecipeImage.Source = bitmap;
+            }
         }
-
         private void DescriptionBox_GotFocus(object sender, RoutedEventArgs e)
         {
-            DescriptionBox.Text = "";
-            DescriptionBox.Foreground = Brushes.Black;
+            if (DescriptionBox.Text == "Nhập danh sách nguyên liệu (xuống dòng mỗi loại)" || DescriptionBox.Text == "Nhập hướng dẫn thực hiện")
+            {
+                DescriptionBox.Text = "";
+                DescriptionBox.Foreground = Brushes.Black;
+            }  
         }
 
         private void DescriptionBox_LostFocus(object sender, RoutedEventArgs e)
         {
             if (DescriptionBox.Text == "")
             {
-                DescriptionBox.Text = "Viết công thức chỗ này";
-                DescriptionBox.Foreground = Brushes.Gray;
+                if(Step==0)
+                {
+                    DescriptionBox.Text = "Nhập danh sách nguyên liệu (xuống dòng mỗi loại)";
+                    DescriptionBox.Foreground = Brushes.Gray;
+                }
+                else
+                {
+                    DescriptionBox.Text = "Nhập hướng dẫn thực hiện";
+                    DescriptionBox.Foreground = Brushes.Gray;
+                }    
             }
 
         }
 
         private void AddNameRecipeBox_GotFocus(object sender, RoutedEventArgs e)
         {
-            AddNameRecipeBox.Text = "";
-            AddNameRecipeBox.Foreground = Brushes.Black;
+            if(AddNameRecipeBox.Text == "Nhập tên công thức")
+            {
+                AddNameRecipeBox.Text = "";
+                AddNameRecipeBox.Foreground = Brushes.Black;
+            }
         }
 
         private void AddNameRecipeBox_LostFocus(object sender, RoutedEventArgs e)
@@ -145,23 +407,50 @@ namespace Food_Recipe_Appplication
 
         }
 
-        private void AddRecipeImage_Click(object sender, RoutedEventArgs e)
+
+        private void VideoLinkBox_GotFocus(object sender, RoutedEventArgs e)
         {
-            var openFileDialog = new OpenFileDialog();
-            string filePath;
-            if (openFileDialog.ShowDialog() == true)
+            if (VideoLinkBox.Text == "Nhập đường dẫn video")
             {
-                File.ReadAllText(openFileDialog.FileName);
-                filePath = openFileDialog.FileName;
-                var bitmap =
-                new BitmapImage(
-                    new Uri(
-                        filePath,
-                        UriKind.Absolute)
-                    );
-                Debug.WriteLine(filePath);
-                BrowseRecipeImage.Source = bitmap;
+                VideoLinkBox.Text = "";
+                VideoLinkBox.Foreground = Brushes.Black;
             }
+        }
+
+        private void VideoLinkBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (VideoLinkBox.Text == "")
+            {
+                VideoLinkBox.Text = "Nhập đường dẫn video";
+                VideoLinkBox.Foreground = Brushes.Gray;
+            }
+        }
+
+        private void VideoLinkBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void InterestingInfoBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if(InterestingInfoBox.Text == "Nhập thông tin thú vị về món ăn")
+            {
+                InterestingInfoBox.Text = "";
+                InterestingInfoBox.Foreground = Brushes.Black;
+            }
+        }
+
+        private void InterestingInfoBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (InterestingInfoBox.Text == "")
+            {
+                InterestingInfoBox.Text = "Nhập thông tin thú vị về món ăn";
+                InterestingInfoBox.Foreground = Brushes.Gray;
+            }
+        }
+        private void Category_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

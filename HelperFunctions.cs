@@ -5,6 +5,8 @@ using System.Linq;
 using System.Security.Permissions;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+using System.Runtime.CompilerServices;
 
 namespace Food_Recipe_Appplication
 {
@@ -75,5 +77,17 @@ namespace Food_Recipe_Appplication
 
             return result;
         }
-    }
+        //Counting file in a folder
+        public static int countingFile(string path)
+        {
+            int fCount = Directory.GetFiles(path, "*", SearchOption.TopDirectoryOnly).Length;
+            return fCount;
+        }
+
+
+        public static string GetThisFilePath([CallerFilePath] string path = null)
+        {
+            return path;
+        }
+}
 }
