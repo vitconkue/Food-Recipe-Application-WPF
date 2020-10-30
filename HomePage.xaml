@@ -103,8 +103,8 @@
             </Button >
            
             <StackPanel Name="SearchBlock"  Orientation="Horizontal" FlowDirection="RightToLeft">
-                <Button Background="#fed8b1" x:Name="ShutDownButton" Margin="0 0 20 0" Click="ShutDownButton_Click">
-                    <materialDesign:PackIcon Kind="Shutdown"></materialDesign:PackIcon>
+                <Button BorderBrush="Black" Background="#fed8b1" x:Name="ShutDownButton" Margin="0 0 20 0" Click="ShutDownButton_Click">
+                    <materialDesign:PackIcon Foreground="Black" Kind="Shutdown"></materialDesign:PackIcon>
                 </Button>
                 <Image Height="25" Source="Icons/loupe.png"></Image>
                 <TextBox PreviewKeyUp="SearchBox_PreviewKeyUp" materialDesign:TextFieldAssist.DecorationVisibility="Collapsed" BorderThickness="0.8" Name="SearchBox" Background="White" BorderBrush="Black" Width="250" Height="25" Margin="10 0 0 0" FlowDirection="LeftToRight" FontSize="13" GotFocus="SearchBox_GotFocus" LostFocus="SearchBox_LostFocus" Foreground="Gray">Search</TextBox>
@@ -136,7 +136,7 @@
                             </materialDesign:TransitioningContent.OpeningEffects>
                             <Border BorderThickness="0.6" BorderBrush="Orange" CornerRadius="6">
                                 <StackPanel  MouseLeave="panel_MouseLeave" Margin="5"  MouseEnter="StackPanel_MouseEnter"  Name="panel">
-                                    <Border Width="300" Height="250">
+                                    <Border Width="250" Height="200">
                                         <Border.Background >
                                             <ImageBrush RenderOptions.BitmapScalingMode="HighQuality" x:Name="FoodImage" ImageSource="{Binding MainPictureName,Converter={StaticResource convertImageLink}}"></ImageBrush>
                                         </Border.Background>
@@ -147,6 +147,12 @@
                                         <materialDesign:PackIcon  Foreground="{Binding IsFavorite, Converter={StaticResource isfavoriteicon}}" Margin="0 6 0 0"  Cursor="Hand" PreviewMouseLeftButtonDown="PackIcon_PreviewMouseLeftButtonDown" Height="25" Width="25"  Kind="Heart"/>
                                         <Button Name="DetaisButton" Click="DetaisButton_Click" Margin="10 0 0 0">Details</Button>
                                     </StackPanel>
+                                    <Border BorderThickness="0 0.6 0 0" BorderBrush="Orange">
+                                    <StackPanel  Height="35" HorizontalAlignment="Center" VerticalAlignment="Center"  Orientation="Horizontal">
+                                        <TextBlock Padding="0 10 0 0" VerticalAlignment="Center" Height="35" HorizontalAlignment="Center" Text="{Binding Category}"></TextBlock>
+                
+                                    </StackPanel>
+                                    </Border>
                                 </StackPanel>
                             </Border>
                         </materialDesign:TransitioningContent>

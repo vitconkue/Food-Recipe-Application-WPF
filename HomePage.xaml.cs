@@ -310,11 +310,12 @@ namespace Food_Recipe_Appplication
 
         private void SearchBox_PreviewKeyUp(object sender, KeyEventArgs e)
         {
+            
             string key = (sender as TextBox).Text;
             if (key == "")
             {
                 //searchResultList = recipeList.SearchNameContains_NoneUtf(key);
-
+          
                 ChangeBindingList(recipeList);
             }
             else
@@ -323,6 +324,7 @@ namespace Food_Recipe_Appplication
                 ChangeBindingList(searchResultList);
                 //MessageBox.Show(key);
             }
+          
         }
 
 

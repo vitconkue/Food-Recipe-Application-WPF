@@ -29,6 +29,7 @@ namespace Food_Recipe_Appplication
         private RecipesList _favoriteList = new RecipesList();
         private RecipesList searchResultList = new RecipesList();
         private Recipe temp = new Recipe();
+        private Window detailScreen;
         private int currentPage = 1;
         private int maxPage;
         //public FavouritePage()
@@ -209,7 +210,8 @@ namespace Food_Recipe_Appplication
         }
         private void DetaisButton_Click(object sender, RoutedEventArgs e)
         {
-
+            detailScreen = new RecipeDetailsPage(temp);
+            detailScreen.Show();
         }
         
         private void PreButton_Click(object sender, RoutedEventArgs e)

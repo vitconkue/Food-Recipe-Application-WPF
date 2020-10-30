@@ -19,6 +19,7 @@
         <local:ImageLinkConverter x:Key="convertImageLink">
 
         </local:ImageLinkConverter>
+
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -34,8 +35,8 @@
             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" >
                 <TextBlock x:Name="FoodName" FontSize="40"></TextBlock>
             </StackPanel>
-            <Button Background="#fed8b1" Name="ExitButton" Width="50" Click="Button_Click">
-                <materialDesign:PackIcon   Kind="ExitToApp"  Cursor="Hand"></materialDesign:PackIcon>
+            <Button BorderBrush="Black" Background="#fed8b1" Name="ExitButton" Width="50" Click="Button_Click">
+                <materialDesign:PackIcon Foreground="Black"   Kind="ExitToApp"  Cursor="Hand"></materialDesign:PackIcon>
             </Button>
             <materialDesign:PackIcon Kind="SilverwareForkKnife" Foreground="Red" Width="73" Height="50" RenderTransformOrigin="5.86,0.524" Margin="1114,0,0,3.6" VerticalAlignment="Bottom"></materialDesign:PackIcon>
         </Grid>
@@ -89,7 +90,9 @@
                                 <Grid Grid.Row="1">
                                     <StackPanel>
                                         <TextBlock Foreground="Orange" Margin="0 10 0 10" Padding="10 0 0 0">THÔNG TIN MÓN ĂN</TextBlock>
-                                        <TextBlock Margin="10 0 0 0" x:Name="Info" TextWrapping="Wrap"></TextBlock>
+                                       
+                                        <TextBlock  Margin="10 0 0 0" x:Name="Info" TextWrapping="Wrap"></TextBlock>
+
                                     </StackPanel>
                                 </Grid>
                             </Grid>

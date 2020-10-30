@@ -57,10 +57,10 @@
                 </StackPanel>
             </Button >
 
-            <Button Margin="1053 0  0  0"  Background="#fed8b1" x:Name="ShutDownButton" Click="ShutDownButton_Click">
-                    <materialDesign:PackIcon Kind="Shutdown"></materialDesign:PackIcon>
-                </Button>
-      
+            <Button BorderBrush="Black" Margin="1053 0  0  0"  Background="#fed8b1" x:Name="ShutDownButton" Click="ShutDownButton_Click">
+                <materialDesign:PackIcon Foreground="Black" Kind="Shutdown"></materialDesign:PackIcon>
+            </Button>
+
         </StackPanel>
 
         <StackPanel Name="SkipButton" HorizontalAlignment="Center" DockPanel.Dock="Bottom" Orientation="Horizontal"  Height="25">
@@ -68,68 +68,68 @@
         </StackPanel>
 
 
-		<Grid>
-			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="1*" />
-				<ColumnDefinition Width="1*" />
-			</Grid.ColumnDefinitions>
-			<Grid.RowDefinitions>
-				<RowDefinition Height="0.25*" />
-				<RowDefinition Height="2*" />
-				<RowDefinition Height="1*" />
-			</Grid.RowDefinitions>
-			<TextBox Name="AddNameRecipeBox"  BorderThickness="2" BorderBrush="Black" FlowDirection="LeftToRight" FontSize="16" GotFocus="AddNameRecipeBox_GotFocus" LostFocus="AddNameRecipeBox_LostFocus" Foreground="Gray">Nhập tên công thức</TextBox>
-			<StackPanel Grid.Column="1" Orientation="Horizontal">
-				<Button x:Name="BrowseRecipeImageButton" Click="AddRecipeImage_Click">Browse</Button>
-				<Image x:Name="BrowseRecipeImage"></Image>
-			</StackPanel>
-			<Image x:Name="RecipeImage" Grid.Row="1" ></Image>
-			<TextBox Grid.Column="1" Grid.Row="1" Name="DescriptionBox"  BorderThickness="2" BorderBrush="Black" FlowDirection="LeftToRight" FontSize="16" GotFocus="DescriptionBox_GotFocus" LostFocus="DescriptionBox_LostFocus" Foreground="Gray" TextWrapping="Wrap">Viết công thức chỗ này</TextBox>
-			<StackPanel Grid.Row="2">
-				<Grid Height="130">
-					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="1*" />
-						<ColumnDefinition Width="1*" />
-					</Grid.ColumnDefinitions>
-					<Button  Style="{DynamicResource MenuButtonStyle}" x:Name="AddImageButton" Click="AddImage_Click"  Width="80" Height="80" Margin="0,20,0,0">
-						<StackPanel Orientation="Vertical">
-							<Image Source="Icons/add-image.png" Width="48" Margin="20,0,0,0"/>
-							<TextBlock Text="Add Image" Margin="15,0,0,0"/>
-						</StackPanel>
-					</Button>
-					<Button Grid.Column="2" Grid.Row="2" Style="{DynamicResource MenuButtonStyle}" x:Name="SaveButton" Click="SaveButton_Click" Margin="0,20,0,0" Width="80" Height="80">
-						<StackPanel Orientation="Vertical">
-							<Image Source="Icons/checked.png" Width="48" Margin="15,0,0,0"/>
-							<TextBlock Text="Save" Margin="25,5,0,0"/>
-						</StackPanel>
-					</Button>
-				</Grid>
-			</StackPanel>
-			<StackPanel Grid.Column="2" Grid.Row="2">
-				<Grid Height="129">
-					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="1*" />
-						<ColumnDefinition Width="1*" />
-						<ColumnDefinition Width="1*" />
-					</Grid.ColumnDefinitions>
-					<Grid.RowDefinitions>
-						<RowDefinition Height="1*" />
-					</Grid.RowDefinitions>
-					<Button Grid.Row="2" Style="{DynamicResource MenuButtonStyle}" x:Name="LeftArrowButton" Click="LeftArrowButton_Click" Margin="0" Width="80" Height="80">
-						<Image Source="Icons/left-arrow.png" Width="48" Margin="15,0,0,0"/>
-					</Button>
-					<Grid Grid.Column="1" Grid.Row="2">
-						<Image x:Name="StepNumberImage" Source="Icons/circle-shape.png" Width="48" Margin="0,0,0,0"/>
-						<TextBlock x:Name="StepNumber" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0">1</TextBlock>
-					</Grid>
-					<Button Grid.Column="2" Style="{DynamicResource MenuButtonStyle}" x:Name="RightArrowButton" Click="RightArrowButton_Click" Margin="0,0,0,0" Width="80" Height="80">
-						<Image Source="Icons/right-arrow.png" Width="48" Margin="15,0,0,0"/>
-					</Button>
-				</Grid>
-			</StackPanel>
-		</Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.25*" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <TextBox Name="AddNameRecipeBox"  BorderThickness="2" BorderBrush="Black" FlowDirection="LeftToRight" FontSize="16" GotFocus="AddNameRecipeBox_GotFocus" LostFocus="AddNameRecipeBox_LostFocus" Foreground="Gray">Nhập tên công thức</TextBox>
+            <StackPanel Grid.Column="1" Orientation="Horizontal">
+                <Button x:Name="BrowseRecipeImageButton" Click="AddRecipeImage_Click">Browse</Button>
+                <Image x:Name="BrowseRecipeImage"></Image>
+            </StackPanel>
+            <Image x:Name="RecipeImage" Grid.Row="1" ></Image>
+            <TextBox Grid.Column="1" Grid.Row="1" Name="DescriptionBox"  BorderThickness="2" BorderBrush="Black" FlowDirection="LeftToRight" FontSize="16" GotFocus="DescriptionBox_GotFocus" LostFocus="DescriptionBox_LostFocus" Foreground="Gray" TextWrapping="Wrap">Viết công thức chỗ này</TextBox>
+            <StackPanel Grid.Row="2">
+                <Grid Height="130">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+                    <Button  Style="{DynamicResource MenuButtonStyle}" x:Name="AddImageButton" Click="AddImage_Click"  Width="80" Height="80" Margin="0,20,0,0">
+                        <StackPanel Orientation="Vertical">
+                            <Image Source="Icons/add-image.png" Width="48" Margin="20,0,0,0"/>
+                            <TextBlock Text="Add Image" Margin="15,0,0,0"/>
+                        </StackPanel>
+                    </Button>
+                    <Button Grid.Column="2" Grid.Row="2" Style="{DynamicResource MenuButtonStyle}" x:Name="SaveButton" Click="SaveButton_Click" Margin="0,20,0,0" Width="80" Height="80">
+                        <StackPanel Orientation="Vertical">
+                            <Image Source="Icons/checked.png" Width="48" Margin="15,0,0,0"/>
+                            <TextBlock Text="Save" Margin="25,5,0,0"/>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+            </StackPanel>
+            <StackPanel Grid.Column="2" Grid.Row="2">
+                <Grid Height="129">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*" />
+                    </Grid.RowDefinitions>
+                    <Button Grid.Row="2" Style="{DynamicResource MenuButtonStyle}" x:Name="LeftArrowButton" Click="LeftArrowButton_Click" Margin="0" Width="80" Height="80">
+                        <Image Source="Icons/left-arrow.png" Width="48" Margin="15,0,0,0"/>
+                    </Button>
+                    <Grid Grid.Column="1" Grid.Row="2">
+                        <Image x:Name="StepNumberImage" Source="Icons/circle-shape.png" Width="48" Margin="0,0,0,0"/>
+                        <TextBlock x:Name="StepNumber" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0">1</TextBlock>
+                    </Grid>
+                    <Button Grid.Column="2" Style="{DynamicResource MenuButtonStyle}" x:Name="RightArrowButton" Click="RightArrowButton_Click" Margin="0,0,0,0" Width="80" Height="80">
+                        <Image Source="Icons/right-arrow.png" Width="48" Margin="15,0,0,0"/>
+                    </Button>
+                </Grid>
+            </StackPanel>
+        </Grid>
 
-	</DockPanel>
+    </DockPanel>
     <Page.Resources>
         <Style x:Key="MenuButtonStyle" TargetType="{x:Type Button}">
             <Setter Property="Height" Value="50"></Setter>

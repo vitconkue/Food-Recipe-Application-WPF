@@ -185,9 +185,6 @@
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Photos\ca-kho-to.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Icons\next.png" />
   </ItemGroup>
   <ItemGroup>
@@ -207,20 +204,6 @@
     <None Include="XMLFiles\Recipes.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Photos\bac-noi-ca-len-bep.jpg" />
-    <Resource Include="Photos\cat-ca-loc-thanh-khuc.jpg" />
-    <Resource Include="Photos\cat-thit-ba-chi.jpg" />
-    <Resource Include="Photos\hoan-thanh-mon-be-ne.jpg" />
-    <Resource Include="Photos\pha-nuoc-tron-nom.jpg" />
-    <Resource Include="Photos\phi-hanh.jpg" />
-    <Resource Include="Photos\so-che-ga.jpg" />
-    <Resource Include="Photos\so-che-hanh.jpg" />
-    <Resource Include="Photos\thuc-hien-uop-thit-bo.jpg" />
-    <Resource Include="Photos\tien-hanh-lam-chin-thit-bo.jpg" />
-    <Resource Include="Photos\trang-tri-mon-an.jpg" />
-    <Resource Include="Photos\tron-nom.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Data\Images\Cá kho tộ\bac-noi-ca-len-bep.jpg">
