@@ -33,7 +33,7 @@
         <Grid  FlowDirection="RightToLeft" Background="#fed8b1">
 
             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" >
-                <TextBlock x:Name="FoodName" FontSize="40"></TextBlock>
+                <TextBlock FontWeight="Bold" x:Name="FoodName" FontSize="40"></TextBlock>
             </StackPanel>
             <Button BorderBrush="Black" Background="#fed8b1" Name="ExitButton" Width="50" Click="Button_Click">
                 <materialDesign:PackIcon Foreground="Black"   Kind="ExitToApp"  Cursor="Hand"></materialDesign:PackIcon>
@@ -52,7 +52,7 @@
                         <RowDefinition ></RowDefinition>
                         <RowDefinition Height="15*"></RowDefinition>
                     </Grid.RowDefinitions>
-                    <TextBlock Foreground="Orange" Padding="10 0 0 0" VerticalAlignment="Center" Grid.Row="0">NGUYÊN LIỆU:</TextBlock>
+                    <TextBlock FontWeight="Heavy"  Foreground="Orange" Padding="10 0 0 0" VerticalAlignment="Center" Grid.Row="0">NGUYÊN LIỆU:</TextBlock>
                     <StackPanel Grid.Row="1" Name="ingredientPanel">
 
                     </StackPanel>
@@ -83,13 +83,13 @@
                                 </Grid.RowDefinitions>
                                 <Grid Grid.Row="0">
                                     <StackPanel>
-                                        <TextBlock Foreground="Orange" Margin="0 10 0 10" Padding="10 0 0 0">VIDEO</TextBlock>
-                                        <WebBrowser  Loaded="WebBrowser_Loaded" Height="279" Margin="0,0,-0.2,0"></WebBrowser>
+                                        <TextBlock FontWeight="Heavy" Foreground="Orange" Margin="0 10 0 10" Padding="10 0 0 0">VIDEO</TextBlock>
+                                        <WebBrowser  Loaded="WebBrowser_Loaded" Height="293" Margin="10,0,9.8,0"></WebBrowser>
                                     </StackPanel>
                                 </Grid>
                                 <Grid Grid.Row="1">
-                                    <StackPanel>
-                                        <TextBlock Foreground="Orange" Margin="0 10 0 10" Padding="10 0 0 0">THÔNG TIN MÓN ĂN</TextBlock>
+                                    <StackPanel Margin="0,10,-0.2,0">
+                                        <TextBlock FontWeight="Heavy" Foreground="Orange" Margin="0 10 0 10" Padding="10 0 0 0">THÔNG TIN MÓN ĂN</TextBlock>
                                        
                                         <TextBlock  Margin="10 0 0 0" x:Name="Info" TextWrapping="Wrap"></TextBlock>
 
@@ -111,8 +111,8 @@
                             </RowDefinition>
                         </Grid.RowDefinitions>
                         <StackPanel Height="80" Grid.Row="0" Margin="0,0,-0.2,514.4" Grid.RowSpan="2">
-                            <TextBlock Foreground="Orange" Padding="20 0 0 0" Margin="0 10 0 0" VerticalAlignment="Center" >CÁC BƯỚC THỰC HIỆN:</TextBlock>
-                            <TextBlock Height="30" Foreground="Red" Margin="0 10 0 0" Padding="20 0 0 0" VerticalAlignment="Center" x:Name="Step"></TextBlock>
+                            <TextBlock FontWeight="Heavy" Foreground="Orange" Padding="20 0 0 0" Margin="0 10 0 0" VerticalAlignment="Center" >CÁC BƯỚC THỰC HIỆN:</TextBlock>
+                            <TextBlock FontWeight="Heavy" Height="30" Foreground="Red" Margin="0 10 0 0" Padding="20 0 0 0" VerticalAlignment="Center" x:Name="Step"></TextBlock>
                         </StackPanel>
 
                         <ListView Margin="0,10,0,0"  Grid.Row="1" Name="dataListView" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
