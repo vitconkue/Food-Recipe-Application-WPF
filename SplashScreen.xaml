@@ -30,9 +30,9 @@
         <ProgressBar Foreground="Gray" Background="White" x:Name="progress" Width="500"  Minimum="0" Maximum="5" Value="0" Height="6" Canvas.Left="157" Canvas.Top="427"/>
         <CheckBox  Foreground="White" Width="150" Height="20" Canvas.Left="319" Canvas.Top="402" Checked="CheckBox_Checked">
             <CheckBox.Resources>
-                <!--Unchecked state-->
+              
                 <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="White"/>
-                <!--Checked state-->
+           
                 <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="Green"/>
             </CheckBox.Resources> Never show this again
         </CheckBox>
