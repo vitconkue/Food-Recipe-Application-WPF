@@ -5,21 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Food_Recipe_Appplication"
         mc:Ignorable="d"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
         FontFamily="Consolas"
         TextElement.FontSize="11"
-        Title="SplashScreen" Height="450" Width="800" MaxHeight="450" MaxWidth="800" MinHeight="450" MinWidth="800" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen"
+        Title="SplashScreen"  Height="450" Width="800" MaxHeight="450" MaxWidth="800" MinHeight="450" MinWidth="800" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen"
          WindowStyle="None">
     <Canvas>
+        <Canvas.Background>
+            <ImageBrush ImageSource="Data/SplashScreenImg/food.jpg"></ImageBrush>
+        </Canvas.Background>
+        <materialDesign:PackIcon Foreground="White" Kind="Idea" Canvas.Top="47" Height="53" Width="34" Canvas.Left="38"/>
+        <TextBlock Foreground="Orange" FontSize="45" Canvas.Left="77" Canvas.Top="47">Did you know?</TextBlock>
+        <TextBlock Name="info" FontSize="25" Foreground="White" Canvas.Left="77" Canvas.Top="121"></TextBlock>
 
-        <Button Name="SkipButton" Click="SkipButton_Click" Canvas.Left="728" Canvas.Top="10" Width="46">
+        <Button Foreground="White" Name="SkipButton" Click="SkipButton_Click" Canvas.Left="728" Canvas.Top="10" Width="46">
             <StackPanel Orientation="Horizontal">
-                <Image Height="10" Source="Icons/next.png" Margin="0 0 5 0"></Image>
-                <TextBlock>Skip</TextBlock>
+                <materialDesign:PackIcon Kind="SkipForward" Width="13"/>
+                <TextBlock TextWrapping="Wrap" Margin="5 0 0 0" Height="14" Width="34"><Run Text="Skip"/></TextBlock>
             </StackPanel>
         </Button>
 
-        <ProgressBar Foreground="Gray" Background="White" x:Name="progress" Width="500"  Minimum="0" Maximum="5" Value="0" Height="6" Canvas.Left="152" Canvas.Top="388"/>
-        <CheckBox Width="150" Height="20" Canvas.Left="330" Canvas.Top="363" Checked="CheckBox_Checked">Never show this again</CheckBox>
+        <ProgressBar Foreground="Gray" Background="White" x:Name="progress" Width="500"  Minimum="0" Maximum="5" Value="0" Height="6" Canvas.Left="157" Canvas.Top="427"/>
+        <CheckBox  Foreground="White" Width="150" Height="20" Canvas.Left="319" Canvas.Top="402" Checked="CheckBox_Checked">
+            <CheckBox.Resources>
+                <!--Unchecked state-->
+                <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="White"/>
+                <!--Checked state-->
+                <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="Green"/>
+            </CheckBox.Resources> Never show this again
+        </CheckBox>
     </Canvas>
     <Window.Resources>
         <Style TargetType="Button">
@@ -32,4 +48,5 @@
             <Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality"></Setter>
         </Style>
     </Window.Resources>
+
 </Window>

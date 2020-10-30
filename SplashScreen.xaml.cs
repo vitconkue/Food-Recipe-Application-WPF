@@ -20,11 +20,15 @@ namespace Food_Recipe_Appplication
     /// <summary>
     /// Interaction logic for SplashScreen.xaml
     /// </summary>
+   
     public partial class SplashScreen : Window
     {
         Timer timer;
         double count = 0;
         double time = 5;
+        Random rng = new Random();
+        private Recipe recipe = new Recipe();
+        private RecipesList recipeList = new RecipesList();
         public SplashScreen()
         {
             InitializeComponent();
@@ -38,10 +42,16 @@ namespace Food_Recipe_Appplication
             {
                 var screen = new MainWindow();
                 screen.Show();
+                
                 this.Close();
             }
             else
             {
+                recipeList.LoadAll();
+                List<Recipe> temp = recipeList.Recipes;
+                int len = temp.Count();
+                int index=rng.Next(0, len-1);
+                info.Text = temp[index].Interesting_infomation;
                 timer = new Timer();
                 timer.Elapsed += Timer_Elapsed;
                 timer.Interval = 10;
@@ -86,5 +96,7 @@ namespace Food_Recipe_Appplication
             screen.Show();
             this.Close();
         }
+
+       
     }
 }
