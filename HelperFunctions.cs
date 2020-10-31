@@ -5,7 +5,8 @@ using System.Linq;
 using System.Security.Permissions;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.IO;
+using System.Runtime.CompilerServices;
 namespace Food_Recipe_Appplication
 {
     class HelperFunctions
@@ -74,6 +75,11 @@ namespace Food_Recipe_Appplication
           
 
             return result;
+        }
+
+        public static string GetThisFilePath([CallerFilePath] string path = null)
+        {
+            return path;
         }
     }
 }

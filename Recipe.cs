@@ -138,7 +138,7 @@ namespace Food_Recipe_Appplication
         public XElement ToXElement()
         {
             XElement result = new XElement("recipe", new XAttribute("isFavorite", _isFavorite ? "true" : "false"),
-                new XAttribute("date_created", _date_created.Date.ToString("dd/MM/yyyy")), new XAttribute("category", _category));
+                new XAttribute("date_created", _date_created.Date.ToString("dd-MM-yyyy")), new XAttribute("category", _category));
 
             result.Add(new XElement("foodname", _foodName));
             result.Add(new XElement("mainpicture_name", _mainPictureName));
