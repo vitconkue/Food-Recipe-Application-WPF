@@ -45,6 +45,7 @@ namespace Food_Recipe_Appplication
         private List<string> pathList = new List<string>();
         private string IngredientsString = "123";
         private string filePath = "123";
+        
         private void AddRecipePage_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             var windowWidth = e.NewSize.Width;
@@ -231,7 +232,10 @@ namespace Food_Recipe_Appplication
                 }
             }
             recipe.Ingredients.AddIngredient(ingredient);
-            recipeList.AddRecipe(recipe); 
+            recipeList.AddRecipe(recipe);
+            //Messagebox
+            MessageBox.Show("Tạo món ăn mới thành công");
+            this.NavigationService.Navigate(new HomePage());
         }
 
         private void LeftArrowButton_Click(object sender, RoutedEventArgs e)
@@ -345,10 +349,13 @@ namespace Food_Recipe_Appplication
                 StepNumber.Text = Step.ToString();
                 DescriptionBox.Text = "Nhập hướng dẫn thực hiện";
                 DescriptionBox.Foreground = Brushes.Gray;
+                var directory = AppDomain.CurrentDomain.BaseDirectory;
+                directory += "Data\\Images\\unknown.png";
+                filePath = directory;
                 var bitmap =
                 new BitmapImage(
                     new Uri(
-                        "Icons/unknown.png",
+                        "Icons\\unknown.png",
                         UriKind.Relative)
                     );
                 RecipeImage.Source = bitmap;
