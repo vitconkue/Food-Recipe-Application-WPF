@@ -23,7 +23,7 @@ namespace Food_Recipe_Appplication
     /// Interaction logic for SettingPage.xaml
     /// </summary>
     /// 
-    
+
     public partial class SettingPage : Page
     {
         private RecipesList recipeList = new RecipesList();
@@ -32,7 +32,7 @@ namespace Food_Recipe_Appplication
         public SettingPage(RecipesList list)
         {
             InitializeComponent();
-       
+
             var config = ConfigurationManager.OpenExeConfiguration(
               ConfigurationUserLevel.None);
             var state = config.AppSettings.Settings["ShowSplashScreen"].Value;
@@ -40,8 +40,8 @@ namespace Food_Recipe_Appplication
             ToggleSwitch1.IsChecked = showSplash;
             recipeList = list;
         }
-  
-        
+
+
 
         private void MenuButton_Click(object sender, RoutedEventArgs e)
         {
@@ -102,31 +102,34 @@ namespace Food_Recipe_Appplication
         {
             Regex regex = new Regex("[^0-9]+");
             e.Handled = regex.IsMatch(e.Text);
-            
+
         }
 
         private void numberDisplay_KeyDown(object sender, KeyEventArgs e)
         {
+
+
             if (e.Key == Key.Return)
             {
-                if (int.Parse(numberDisplay.Text) > 10)
-                {
-                    invalidNofication.Visibility = Visibility.Visible;
-                    checkImg.Visibility = Visibility.Collapsed;
-                    message.Text = "Number have to less than 11 and bigger than 0!!!";
-                }
-                else
+                int result;
+                if (int.TryParse(numberDisplay.Text, out result))
                 {
                     checkImg.Visibility = Visibility.Visible;
                     invalidNofication.Visibility = Visibility.Collapsed;
                     var config = ConfigurationManager.OpenExeConfiguration(
               ConfigurationUserLevel.None);
-                    var number = config.AppSettings.Settings["NumberOfRecipePerPage"].Value=numberDisplay.Text;
+                    var number = config.AppSettings.Settings["NumberOfRecipePerPage"].Value = numberDisplay.Text;
                     config.Save(ConfigurationSaveMode.Minimal);
                     numberDisplay.Focusable = false;
                 }
+                else
+                {
+                    invalidNofication.Visibility = Visibility.Visible;
+                    checkImg.Visibility = Visibility.Collapsed;
+                    message.Text = "Number have to less than 11 and bigger than 0!!!";
+                }
             }
-           
+
         }
 
         private void numberDisplay_MouseDown(object sender, MouseButtonEventArgs e)

@@ -81,7 +81,6 @@ namespace Food_Recipe_Appplication
 
             var sb = (Storyboard)FindResource("CloseMenu");
             this.BeginStoryboard(sb);
-            var timer = new System.Timers.Timer();
             MenuButton.Visibility = Visibility.Visible;
         }
 
@@ -335,14 +334,13 @@ namespace Food_Recipe_Appplication
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void ShutDownButton_Click(object sender, RoutedEventArgs e)
         {
-            Window parentWindow = Window.GetWindow(this);
-            parentWindow.Close();
+            Application.Current.Shutdown();
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)

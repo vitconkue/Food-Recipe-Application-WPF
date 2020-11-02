@@ -17,6 +17,7 @@ using System.Windows.Shapes;
 using System.IO;
 using Microsoft.Win32;
 using System.Runtime.CompilerServices;
+using System.Windows.Media.Animation;
 
 namespace Food_Recipe_Appplication
 {
@@ -35,7 +36,6 @@ namespace Food_Recipe_Appplication
         public AddRecipePage(RecipesList recipes)
         {
             InitializeComponent();
-            SizeChanged += AddRecipePage_SizeChanged;
             recipeList = recipes;
         }
 
@@ -46,33 +46,29 @@ namespace Food_Recipe_Appplication
         private string IngredientsString = "123";
         private string filePath = "123";
         
-        private void AddRecipePage_SizeChanged(object sender, SizeChangedEventArgs e)
-        {
-            var windowWidth = e.NewSize.Width;
-            SearchBlock.Margin = new Thickness(windowWidth - 480, 0, 0, 0);
-        }
+      
 
-        private void SearchBox_GotFocus(object sender, RoutedEventArgs e)
+     
+        private void ShutDownButton_Click(object sender, RoutedEventArgs e)
         {
-            SearchBox.Text = "";
-            SearchBox.Foreground = Brushes.Black;
+            Window parentWindow = Window.GetWindow(this);
+            parentWindow.Close();
         }
-
-        private void SearchBox_LostFocus(object sender, RoutedEventArgs e)
-        {
-            SearchBox.Text = "Search";
-            SearchBox.Foreground = Brushes.Gray;
-        }
-
         private void MenuButton_Click(object sender, RoutedEventArgs e)
         {
-            LeftMenu.Visibility = Visibility.Visible;
             MenuButton.Visibility = Visibility.Collapsed;
+
+
+            LeftMenu.Visibility = Visibility.Visible;
+            var sb = (Storyboard)FindResource("OpenMenu");
+            this.BeginStoryboard(sb);
         }
 
         private void LeftMenuButton_Click(object sender, RoutedEventArgs e)
         {
-            LeftMenu.Visibility = Visibility.Collapsed;
+
+            var sb = (Storyboard)FindResource("CloseMenu");
+            this.BeginStoryboard(sb);
             MenuButton.Visibility = Visibility.Visible;
         }
 
