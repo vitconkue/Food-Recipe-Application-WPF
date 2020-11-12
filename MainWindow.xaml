@@ -5,6 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Food_Recipe_Appplication"
         mc:Ignorable="d"
-        Title="MainWindow" MinHeight="760" MinWidth="1300" Height="760" Width="1300" MaxHeight="760" MaxWidth="1300" WindowStartupLocation="CenterScreen"   WindowStyle="None">
-	<Frame Name="frame" NavigationUIVisibility="Hidden"/>
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="15"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignPaper}"
+     FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="MainWindow" Height="760" Width="1300"  WindowStartupLocation="CenterScreen" 
+    >
+    <Grid>
+    <Frame Grid.Row="1" Name="frame" NavigationUIVisibility="Hidden"/>
+    </Grid>
 </Window>

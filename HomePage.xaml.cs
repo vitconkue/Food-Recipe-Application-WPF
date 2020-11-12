@@ -51,7 +51,7 @@ namespace Food_Recipe_Appplication
         {
             var windowWidth = e.NewSize.Width;
             Debug.WriteLine(windowWidth);
-            SearchBlock.Margin = new Thickness(windowWidth - 750, 0, 0, 0);
+            SearchBlock.Margin = new Thickness(windowWidth - 700, 0, 0, 0);
         }
 
         private void SearchBox_GotFocus(object sender, RoutedEventArgs e)
@@ -256,11 +256,12 @@ namespace Food_Recipe_Appplication
             try
             {
                 Button firstButton = (Button)SkipButton.Children[1];
-                firstButton.Background = Brushes.Orange;
+                BrushConverter bc = new BrushConverter();
+                firstButton.Background = (Brush)bc.ConvertFrom("#ed81a1");
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -310,12 +311,12 @@ namespace Food_Recipe_Appplication
 
         private void SearchBox_PreviewKeyUp(object sender, KeyEventArgs e)
         {
-            
+
             string key = (sender as TextBox).Text;
             if (key == "")
             {
                 //searchResultList = recipeList.SearchNameContains_NoneUtf(key);
-          
+
                 ChangeBindingList(recipeList);
             }
             else
@@ -324,7 +325,7 @@ namespace Food_Recipe_Appplication
                 ChangeBindingList(searchResultList);
                 //MessageBox.Show(key);
             }
-          
+
         }
 
 
@@ -369,12 +370,14 @@ namespace Food_Recipe_Appplication
 
         private void ShutDownButton_Click(object sender, RoutedEventArgs e)
         {
-            Window parentWindow = Window.GetWindow(this);
-            parentWindow.Close();
-            if (detailScreen!=null)
-            {
-                detailScreen.Close();
-            }
+            Application.Current.Shutdown();
+        }
+
+        private void MaximizeButton_Click(object sender, RoutedEventArgs e)
+        {
+            
+                Application.Current.MainWindow.Width=500;
+          
         }
     }
 }

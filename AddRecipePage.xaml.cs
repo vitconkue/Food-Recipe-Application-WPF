@@ -51,8 +51,7 @@ namespace Food_Recipe_Appplication
      
         private void ShutDownButton_Click(object sender, RoutedEventArgs e)
         {
-            Window parentWindow = Window.GetWindow(this);
-            parentWindow.Close();
+            Application.Current.Shutdown();
         }
         private void MenuButton_Click(object sender, RoutedEventArgs e)
         {
@@ -310,11 +309,11 @@ namespace Food_Recipe_Appplication
                     }
                     else if(Category.Text == "Món nước")
                     {
-                        recipe.Category = "waterdish";
+                        recipe.Category = "Món nước";
                     }
                     else
                     {
-                        recipe.Category = "drink";
+                        recipe.Category = "Thức uống";
                     }
                     IngredientsString = DescriptionBox.Text;
                     pathList.Add(filePath);

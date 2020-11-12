@@ -8,11 +8,11 @@
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
      TextElement.FontWeight="Regular"
-     TextElement.FontSize="15"
+     TextElement.FontSize="18"
      TextOptions.TextFormattingMode="Ideal"
      TextOptions.TextRenderingMode="Auto"
      Background="{DynamicResource MaterialDesignPaper}"
-     FontFamily="Consolas"
+     FontFamily="{DynamicResource MaterialDesignFont}"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="HomePage" Loaded="Page_Loaded" >
     <Page.Resources>
@@ -40,7 +40,7 @@
             </Setter>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="#fdad5c"/>
+                    <Setter Property="Background" Value="#ed81a1"/>
                 </Trigger>
             </Style.Triggers>
 
@@ -61,51 +61,48 @@
     </Page.Resources>
     <DockPanel>
 
-        <StackPanel DockPanel.Dock="Left"  Name="LeftMenu" Background="#ffd8a7"  Width="170" Visibility="Collapsed">
-            <Button  Style="{DynamicResource MenuButtonStyle}"  Name="LeftMenuButton" Click="LeftMenuButton_Click">
+        <StackPanel DockPanel.Dock="Left"  Name="LeftMenu" Background="#ffc0cb"  Width="170" Visibility="Collapsed">
+            <Button   Style="{DynamicResource MenuButtonStyle}"  Name="LeftMenuButton" Click="LeftMenuButton_Click">
                 <StackPanel Orientation="Horizontal">
-                    <Image Height="20" Source="Icons/menu.png" Margin="10 0 10 0"></Image>
-                    <TextBlock>Menu</TextBlock>
+                    <Image Height="25" Source="Icons/menu.png" Margin="10 0 10 0"></Image>
+                    <TextBlock VerticalAlignment="Center">Menu</TextBlock>
                 </StackPanel>
             </Button>
-            <Button Background="Orange"  Style="{DynamicResource MenuButtonStyle}">
+            <Button  Background="#ed81a1"  Style="{DynamicResource MenuButtonStyle}">
                 <StackPanel Orientation="Horizontal">
-                    <Image Height="20" Source="Icons/home-page.png" Margin="10 0 10 0"></Image>
-                    <TextBlock>Home</TextBlock>
+                    <Image Height="25" Source="Icons/home-page.png" Margin="10 0 10 0"></Image>
+                    <TextBlock VerticalAlignment="Center">Home</TextBlock>
                 </StackPanel>
             </Button>
             <Button Name="FavoriteButton" Click="FavoriteButton_Click" Style="{DynamicResource MenuButtonStyle}">
                 <StackPanel Orientation="Horizontal">
-                    <Image Height="20" Source="Icons/favourite.png" Margin="10 0 10 0"></Image>
-                    <TextBlock>Favourite</TextBlock>
+                    <Image Height="25" Source="Icons/favourite.png" Margin="10 0 10 0"></Image>
+                    <TextBlock VerticalAlignment="Center">Favourite</TextBlock>
                 </StackPanel>
             </Button>
             <Button Name="AddRecipeButton" Click="AddRecipeButton_Click"  Style="{DynamicResource MenuButtonStyle}">
                 <StackPanel Orientation="Horizontal">
-                    <Image Height="20" Source="Icons/add-file.png" Margin="10 0 10 0"></Image>
-                    <TextBlock>Add recpie</TextBlock>
+                    <Image Height="25" Source="Icons/add-file.png" Margin="10 0 10 0"></Image>
+                    <TextBlock VerticalAlignment="Center">Add recpie</TextBlock>
                 </StackPanel>
             </Button>
             <Button Name="SettingButton" Click="SettingButton_Click" Style="{DynamicResource MenuButtonStyle}">
                 <StackPanel Orientation="Horizontal">
-                    <Image Height="20" Source="Icons/settings.png" Margin="10 0 10 0"></Image>
-                    <TextBlock>Settings</TextBlock>
+                    <Image Height="25" Source="Icons/settings.png" Margin="10 0 10 0"></Image>
+                    <TextBlock VerticalAlignment="Center">Settings</TextBlock>
                 </StackPanel>
             </Button>
         </StackPanel>
 
-        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Background="#fed8b1" Height="50">
-            <Button  Style="{DynamicResource MenuButtonStyle}" Name="MenuButton" Click="MenuButton_Click">
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Background="#f4c2c2" Height="50">
+            <Button VerticalContentAlignment="Center"  Style="{DynamicResource MenuButtonStyle}" Name="MenuButton" Click="MenuButton_Click">
                 <StackPanel Orientation="Horizontal">
-                    <Image Height="20" Source="Icons/menu.png" Margin="10 0 10 0"></Image>
-                    <TextBlock>Menu</TextBlock>
+                    <Image Height="25" Source="Icons/menu.png" Margin="10 0 10 0"></Image>
+                    <TextBlock VerticalAlignment="Center">Menu</TextBlock>
                 </StackPanel>
             </Button >
-           
+
             <StackPanel Name="SearchBlock"  Orientation="Horizontal" FlowDirection="RightToLeft">
-                <Button BorderBrush="Black" Background="#fed8b1" x:Name="ShutDownButton" Margin="0 0 20 0" Click="ShutDownButton_Click">
-                    <materialDesign:PackIcon Foreground="Black" Kind="Shutdown"></materialDesign:PackIcon>
-                </Button>
                 <Image Height="25" Source="Icons/loupe.png"></Image>
                 <TextBox PreviewKeyUp="SearchBox_PreviewKeyUp" materialDesign:TextFieldAssist.DecorationVisibility="Collapsed" BorderThickness="0.8" Name="SearchBox" Background="White" BorderBrush="Black" Width="250" Height="25" Margin="10 0 0 0" FlowDirection="LeftToRight" FontSize="13" GotFocus="SearchBox_GotFocus" LostFocus="SearchBox_LostFocus" Foreground="Gray">Search</TextBox>
                 <ComboBox FontSize="13"  Name="OrderOptions" SelectionChanged="ComboBox_SelectionChanged" Width="190" Margin="20 0 0 0">
@@ -147,7 +144,7 @@
                                         <materialDesign:PackIcon  Foreground="{Binding IsFavorite, Converter={StaticResource isfavoriteicon}}" Margin="0 6 0 0"  Cursor="Hand" PreviewMouseLeftButtonDown="PackIcon_PreviewMouseLeftButtonDown" Height="25" Width="25"  Kind="Heart"/>
                                         <Button Name="DetaisButton" Click="DetaisButton_Click" Margin="10 0 0 0">Details</Button>
                                     </StackPanel>
-                                    <Border BorderThickness="0 0.6 0 0" BorderBrush="Orange">
+                                    <Border BorderThickness="0 0.6 0 0" BorderBrush="#ed81a1">
                                     <StackPanel  Height="35" HorizontalAlignment="Center" VerticalAlignment="Center"  Orientation="Horizontal">
                                         <TextBlock Padding="0 10 0 0" VerticalAlignment="Center" Height="35" HorizontalAlignment="Center" Text="{Binding Category}"></TextBlock>
                 

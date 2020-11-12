@@ -147,8 +147,7 @@ namespace Food_Recipe_Appplication
 
         private void ShutDownButton_Click(object sender, RoutedEventArgs e)
         {
-            Window parentWindow = Window.GetWindow(this);
-            parentWindow.Close();
+            Application.Current.Shutdown();
         }
     }
 }

@@ -34,7 +34,16 @@ namespace Food_Recipe_Appplication
         {
             frame.NavigationService.Navigate(new HomePage());
         }
-         
+
+        private void ShutDownButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MaximizeButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
        
 }
