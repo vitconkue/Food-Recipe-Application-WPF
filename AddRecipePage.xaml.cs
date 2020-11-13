@@ -300,27 +300,40 @@ namespace Food_Recipe_Appplication
             {
                 if (Step == 0)
                 {
-                    recipe.FoodName = AddNameRecipeBox.Text;
-                    recipe.MainVideoLink = VideoLinkBox.Text;
-                    recipe.Interesting_infomation = InterestingInfoBox.Text;
-                    if (Category.Text == "Món khô")
+                    if(AddNameRecipeBox.Text == "Nhập tên công thức" || AddNameRecipeBox.Text == "" || 
+                        VideoLinkBox.Text == "Nhập đường dẫn video" || VideoLinkBox.Text == "" ||
+                         InterestingInfoBox.Text == "Nhập thông tin thú vị về món ăn" || InterestingInfoBox.Text == "" ||
+                          DescriptionBox.Text == "Nhập danh sách nguyên liệu (xuống dòng mỗi loại)" || 
+                           DescriptionBox.Text == "")
                     {
-                        recipe.Category = "dryfood"; 
-                    }
-                    else if(Category.Text == "Món nước")
-                    {
-                        recipe.Category = "Món nước";
+                        MessageBox.Show("Vui lòng nhập đầy đủ các thông tin về công thức!!!");
+                        return;
                     }
                     else
                     {
-                        recipe.Category = "Thức uống";
+                        recipe.FoodName = AddNameRecipeBox.Text;
+                        recipe.MainVideoLink = VideoLinkBox.Text;
+                        recipe.Interesting_infomation = InterestingInfoBox.Text;
+                        if (Category.Text == "Món khô")
+                        {
+                            recipe.Category = "dryfood";
+                        }
+                        else if (Category.Text == "Món nước")
+                        {
+                            recipe.Category = "Món nước";
+                        }
+                        else
+                        {
+                            recipe.Category = "Thức uống";
+                        }
+                        IngredientsString = DescriptionBox.Text;
+                        pathList.Add(filePath);
+                        AddNameRecipeBox.Focusable = false;
+                        VideoLinkBox.Focusable = false;
+                        InterestingInfoBox.Focusable = false;
+                        Category.IsEnabled = false;
                     }
-                    IngredientsString = DescriptionBox.Text;
-                    pathList.Add(filePath);
-                    AddNameRecipeBox.Focusable = false;
-                    VideoLinkBox.Focusable = false;
-                    InterestingInfoBox.Focusable = false;
-                    Category.IsEnabled = false;
+                    
                 }
                 else
                 {
