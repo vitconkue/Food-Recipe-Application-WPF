@@ -368,16 +368,10 @@ namespace Food_Recipe_Appplication
             config.Save(ConfigurationSaveMode.Minimal);
         }
 
-        private void ShutDownButton_Click(object sender, RoutedEventArgs e)
-        {
-            Application.Current.Shutdown();
-        }
 
-        private void MaximizeButton_Click(object sender, RoutedEventArgs e)
+        private void CategoryButton_Click(object sender, RoutedEventArgs e)
         {
-            
-                Application.Current.MainWindow.Width=500;
-          
+
         }
     }
 }

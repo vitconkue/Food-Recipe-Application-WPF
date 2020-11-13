@@ -44,6 +44,11 @@ namespace Food_Recipe_Appplication
         {
 
         }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
        
 }

@@ -14,8 +14,8 @@
      Background="{DynamicResource MaterialDesignPaper}"
      FontFamily="{DynamicResource MaterialDesignFont}"
         Title="MainWindow" Height="760" Width="1300"  WindowStartupLocation="CenterScreen" 
-    >
-    <Grid>
-    <Frame Grid.Row="1" Name="frame" NavigationUIVisibility="Hidden"/>
+    Closed="Window_Closed">
+    <Grid Focusable="False">
+    <Frame Focusable="False" Grid.Row="1" Name="frame" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

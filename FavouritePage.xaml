@@ -23,7 +23,7 @@
 
         </local:IsFavoriteToColorConverter>
         <Style x:Key="MenuButtonStyle" TargetType="{x:Type Button}">
-            <Setter Property="Height" Value="50"></Setter>
+            <Setter Property="Height" Value="70"></Setter>
             <Setter Property="Width" Value="170"></Setter>
             <Setter Property="HorizontalContentAlignment" Value="Left"></Setter>
             <Setter Property="Background" Value="Transparent"></Setter>
@@ -61,7 +61,7 @@
     </Page.Resources>
     <DockPanel>
 
-        <StackPanel DockPanel.Dock="Left"  Name="LeftMenu" Background="#ffc0cb"  Width="170" Visibility="Collapsed">
+        <StackPanel DockPanel.Dock="Left"  Name="LeftMenu" Background="#ffc0cb"  Width="170">
             <Button   Style="{DynamicResource MenuButtonStyle}"  Name="LeftMenuButton" Click="LeftMenuButton_Click">
                 <StackPanel Orientation="Horizontal">
                     <Image Height="25" Source="Icons/menu.png" Margin="10 0 10 0"></Image>
@@ -80,6 +80,12 @@
                     <TextBlock VerticalAlignment="Center">Favourite</TextBlock>
                 </StackPanel>
             </Button>
+            <Button Name="CategoryButton" Click="CategoryButton_Click" Style="{DynamicResource MenuButtonStyle}">
+                <StackPanel Orientation="Horizontal">
+                    <Image Height="25" Source="Icons/category.png" Margin="10 0 10 0"></Image>
+                    <TextBlock VerticalAlignment="Center">Category</TextBlock>
+                </StackPanel>
+            </Button>
             <Button Name="AddRecipeButton" Click="AddRecipeButton_Click"  Style="{DynamicResource MenuButtonStyle}">
                 <StackPanel Orientation="Horizontal">
                     <Image Height="25" Source="Icons/add-file.png" Margin="10 0 10 0"></Image>
@@ -94,8 +100,8 @@
             </Button>
         </StackPanel>
 
-        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Background="#f4c2c2" Height="50">
-            <Button VerticalContentAlignment="Center"  Style="{DynamicResource MenuButtonStyle}" Name="MenuButton" Click="MenuButton_Click">
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Background="#f4c2c2" Height="70">
+            <Button Visibility="Collapsed" VerticalContentAlignment="Center"  Style="{DynamicResource MenuButtonStyle}" Name="MenuButton" Click="MenuButton_Click">
                 <StackPanel Orientation="Horizontal">
                     <Image Height="25" Source="Icons/menu.png" Margin="10 0 10 0"></Image>
                     <TextBlock VerticalAlignment="Center">Menu</TextBlock>
@@ -104,8 +110,8 @@
 
             <StackPanel Name="SearchBlock"  Orientation="Horizontal" FlowDirection="RightToLeft">
                 <Image Height="25" Source="Icons/loupe.png"></Image>
-                <TextBox PreviewKeyUp="SearchBox_PreviewKeyUp" materialDesign:TextFieldAssist.DecorationVisibility="Collapsed" BorderThickness="0.8" Name="SearchBox" Background="White" BorderBrush="Black" Width="250" Height="25" Margin="10 0 0 0" FlowDirection="LeftToRight" FontSize="13" GotFocus="SearchBox_GotFocus" LostFocus="SearchBox_LostFocus" Foreground="Gray">Search</TextBox>
-                <ComboBox FontSize="13"  Name="OrderOptions" SelectionChanged="ComboBox_SelectionChanged" Width="190" Margin="20 0 0 0">
+                <TextBox PreviewKeyUp="SearchBox_PreviewKeyUp" materialDesign:TextFieldAssist.DecorationVisibility="Collapsed" BorderThickness="0.8" Name="SearchBox" Background="White" BorderBrush="Black" Width="250" Height="30" Margin="10 0 0 0" FlowDirection="LeftToRight" FontSize="15" GotFocus="SearchBox_GotFocus" LostFocus="SearchBox_LostFocus" Foreground="Gray">Search</TextBox>
+                <ComboBox FontSize="15"  Name="OrderOptions" SelectionChanged="ComboBox_SelectionChanged" Width="190" Margin="20 0 0 0">
                     <ComboBoxItem Name="AtoZ">Order by name A-Z</ComboBoxItem>
                     <ComboBoxItem Name="ZtoA">Order by name Z-A</ComboBoxItem>
                     <ComboBoxItem Name="DateDescending">Order by date descending</ComboBoxItem>

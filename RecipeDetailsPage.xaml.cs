@@ -50,7 +50,7 @@ namespace Food_Recipe_Appplication
             foreach(var ingredient in ingredients)
             {
                 TextBlock text = new TextBlock();
-                text.Text = $"-{ingredient}";
+                text.Text = $"- {ingredient}";
                 text.TextWrapping = TextWrapping.Wrap;
                 ingredientPanel.Children.Add(text);
             }

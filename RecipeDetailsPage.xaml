@@ -13,7 +13,7 @@
      TextOptions.TextRenderingMode="Auto"
      Background="{DynamicResource MaterialDesignPaper}"
     FontFamily="{DynamicResource MaterialDesignFont}"
-    WindowStyle="None" WindowStartupLocation="CenterScreen"  Title="RecipeDetailsPage"  MinHeight="700" MinWidth="1200" MaxHeight="700" MaxWidth="1200" Height="700"  Width="1200"
+    WindowStyle="None" WindowStartupLocation="CenterScreen"  Title="RecipeDetailsPage" Height="700"  Width="1200"
         Loaded="Window_Loaded">
     <Window.Resources>
         <local:ImageLinkConverter x:Key="convertImageLink">
@@ -30,15 +30,15 @@
 
             </RowDefinition>
         </Grid.RowDefinitions>
-        <Grid  FlowDirection="RightToLeft" Background="#fed8b1">
+        <Grid  FlowDirection="RightToLeft" Background="#f4c2c2">
 
             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" >
                 <TextBlock FontWeight="Bold" x:Name="FoodName" FontSize="40"></TextBlock>
             </StackPanel>
-            <Button BorderBrush="Black" Background="#fed8b1" Name="ExitButton" Width="50" Click="Button_Click">
+            <Button BorderBrush="Black" Background="#f4c2c2" Name="ExitButton" Width="50" Click="Button_Click">
                 <materialDesign:PackIcon Foreground="Black"   Kind="ExitToApp"  Cursor="Hand"></materialDesign:PackIcon>
             </Button>
-            <materialDesign:PackIcon Kind="SilverwareForkKnife" Foreground="Red" Width="73" Height="50" RenderTransformOrigin="5.86,0.524" Margin="1114,0,0,3.6" VerticalAlignment="Bottom"></materialDesign:PackIcon>
+            <materialDesign:PackIcon Kind="SilverwareForkKnife"  Width="73" Height="50" RenderTransformOrigin="5.86,0.524" Margin="1114,0,0,3.6" VerticalAlignment="Bottom"></materialDesign:PackIcon>
         </Grid>
 
         <Grid  Grid.Row="1">
@@ -53,7 +53,7 @@
                         <RowDefinition Height="15*"></RowDefinition>
                     </Grid.RowDefinitions>
                     <TextBlock FontWeight="Heavy"  Foreground="Orange" Padding="10 0 0 0" VerticalAlignment="Center" Grid.Row="0">NGUYÊN LIỆU:</TextBlock>
-                    <StackPanel Grid.Row="1" Name="ingredientPanel">
+                    <StackPanel Grid.Row="1" Name="ingredientPanel" Margin="10,0,0.4,0">
 
                     </StackPanel>
 

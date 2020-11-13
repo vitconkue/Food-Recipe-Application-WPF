@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -39,9 +40,15 @@ namespace Food_Recipe_Appplication
             var showSplash = bool.Parse(state);
             ToggleSwitch1.IsChecked = showSplash;
             recipeList = list;
+            SizeChanged += SettingPage_SizeChanged;
         }
 
-
+        private void SettingPage_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            var windowWidth = e.NewSize.Width;
+            Debug.WriteLine(windowWidth);
+            SearchBlock.Margin = new Thickness(windowWidth - 550, 0, 0, 0);
+        }
 
         private void MenuButton_Click(object sender, RoutedEventArgs e)
         {
@@ -88,7 +95,7 @@ namespace Food_Recipe_Appplication
         }
 
 
-        private void FavouriteButtton_Click(object sender, RoutedEventArgs e)
+        private void FavouriteButton_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new FavouritePage(recipeList.SearchFavoriteRecipes()));
         }
@@ -112,15 +119,17 @@ namespace Food_Recipe_Appplication
             if (e.Key == Key.Return)
             {
                 int result;
-                if (int.TryParse(numberDisplay.Text, out result))
+                if (int.TryParse(numberDisplay.Text, out result)&&result<=10&&result>0)
                 {
                     checkImg.Visibility = Visibility.Visible;
                     invalidNofication.Visibility = Visibility.Collapsed;
+                    numberDisplay.Focusable = false;
+                    numberDisplay.CaretBrush = Brushes.White;
                     var config = ConfigurationManager.OpenExeConfiguration(
               ConfigurationUserLevel.None);
                     var number = config.AppSettings.Settings["NumberOfRecipePerPage"].Value = numberDisplay.Text;
                     config.Save(ConfigurationSaveMode.Minimal);
-                    numberDisplay.Focusable = false;
+                   
                 }
                 else
                 {
@@ -134,7 +143,9 @@ namespace Food_Recipe_Appplication
 
         private void numberDisplay_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            numberDisplay.CaretBrush = Brushes.Black;
             numberDisplay.Focusable = true;
+          
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
@@ -148,6 +159,11 @@ namespace Food_Recipe_Appplication
         private void ShutDownButton_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
+        }
+
+        private void CategoryButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -50,7 +50,7 @@ namespace Food_Recipe_Appplication
         private void FavouritePage_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             var windowWidth = e.NewSize.Width;
-            SearchBlock.Margin = new Thickness(windowWidth - 750, 0, 0, 0);
+            SearchBlock.Margin = new Thickness(windowWidth - 700, 0, 0, 0);
         }
 
 
@@ -379,6 +379,11 @@ namespace Food_Recipe_Appplication
              ConfigurationUserLevel.None);
             config.AppSettings.Settings["DisplayOptionFavPage"].Value = tokens[tokens.Length - 1];
             config.Save(ConfigurationSaveMode.Minimal);
+        }
+
+        private void CategoryButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

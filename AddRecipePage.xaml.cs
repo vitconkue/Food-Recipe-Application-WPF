@@ -33,10 +33,18 @@ namespace Food_Recipe_Appplication
         //    SizeChanged += AddRecipePage_SizeChanged;
         //}
 
+        private void AddRecipePage_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            var windowWidth = e.NewSize.Width;
+            Debug.WriteLine(windowWidth);
+            SearchBlock.Margin = new Thickness(windowWidth - 550, 0, 0, 0);
+        }
+
         public AddRecipePage(RecipesList recipes)
         {
             InitializeComponent();
             recipeList = recipes;
+            SizeChanged += AddRecipePage_SizeChanged;
         }
 
         private int Step = 0;
@@ -478,6 +486,11 @@ namespace Food_Recipe_Appplication
             }
         }
         private void Category_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void CategoryButton_Click(object sender, RoutedEventArgs e)
         {
 
         }

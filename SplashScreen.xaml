@@ -9,34 +9,36 @@
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        TextElement.FontSize="11"
-        Title="SplashScreen"  Height="650" Width="900" MaxHeight="450" MaxWidth="800" MinHeight="450" MinWidth="800" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen"
+        TextElement.FontSize="15"
+        Title="SplashScreen"  Height="650" Width="900" MaxHeight="650" MaxWidth="900" MinHeight="650" MinWidth="900" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen"
          WindowStyle="None">
-    <Canvas>
-        <Canvas.Background>
-            <ImageBrush ImageSource="Data/SplashScreenImg/food.jpg"></ImageBrush>
-        </Canvas.Background>
-        <materialDesign:PackIcon Foreground="White" Kind="Idea" Canvas.Top="47" Height="53" Width="34" Canvas.Left="38"/>
-        <TextBlock Foreground="Orange" FontSize="45" Canvas.Left="77" Canvas.Top="47">Did you know?</TextBlock>
-        <TextBlock Name="info" FontSize="25" Foreground="White" Canvas.Left="77" Canvas.Top="121"></TextBlock>
+    <Grid>
+        <Canvas>
+            <Canvas.Background>
+                <ImageBrush ImageSource="Data/SplashScreenImg/food.jpg"></ImageBrush>
+            </Canvas.Background>
+            <materialDesign:PackIcon Foreground="White" Kind="Idea" Canvas.Top="47" Height="53" Width="34" Canvas.Left="38"/>
+            <TextBlock Foreground="Orange" FontSize="45" Canvas.Left="77" Canvas.Top="47">Did you know?</TextBlock>
+            <TextBlock Name="info" FontSize="25" Foreground="White" Canvas.Left="77" Canvas.Top="121"></TextBlock>
 
-        <Button Foreground="White" Name="SkipButton" Click="SkipButton_Click" Canvas.Left="728" Canvas.Top="10" Width="46">
-            <StackPanel Orientation="Horizontal">
-                <materialDesign:PackIcon Kind="SkipForward" Width="13"/>
-                <TextBlock TextWrapping="Wrap" Margin="5 0 0 0" Height="14" Width="34"><Run Text="Skip"/></TextBlock>
-            </StackPanel>
-        </Button>
+            <Button Foreground="White" Name="SkipButton" Click="SkipButton_Click" Canvas.Left="811" Canvas.Top="20" Width="60" Height="20">
+                <StackPanel Orientation="Horizontal" Width="171">
+                    <materialDesign:PackIcon Kind="SkipForward" Width="18" RenderTransformOrigin="-0.236,0.875"/>
+                    <TextBlock  TextWrapping="Wrap" Margin="5 0 0 0" Height="20" Width="33"><Run Text="Skip"/></TextBlock>
+                </StackPanel>
+            </Button>
 
-        <ProgressBar Foreground="Gray" Background="White" x:Name="progress" Width="500"  Minimum="0" Maximum="5" Value="0" Height="6" Canvas.Left="157" Canvas.Top="427"/>
-        <CheckBox  Foreground="White" Width="150" Height="20" Canvas.Left="319" Canvas.Top="402" Checked="CheckBox_Checked">
-            <CheckBox.Resources>
-              
-                <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="White"/>
-           
-                <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="Green"/>
-            </CheckBox.Resources> Never show this again
-        </CheckBox>
-    </Canvas>
+            <ProgressBar Foreground="Gray" Background="White" x:Name="progress" Width="500"  Minimum="0" Maximum="5" Value="0" Height="6" Canvas.Left="198" Canvas.Top="594"/>
+            <CheckBox  Foreground="White" Width="171" Height="20" Canvas.Left="364" Canvas.Top="569" Checked="CheckBox_Checked">
+                <CheckBox.Resources>
+
+                    <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="White"/>
+
+                    <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="Green"/>
+                </CheckBox.Resources> Never show this again
+            </CheckBox>
+        </Canvas>
+    </Grid>
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="Background" Value="Transparent"></Setter>
