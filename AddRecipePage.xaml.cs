@@ -37,7 +37,7 @@ namespace Food_Recipe_Appplication
         {
             var windowWidth = e.NewSize.Width;
             Debug.WriteLine(windowWidth);
-            SearchBlock.Margin = new Thickness(windowWidth - 550, 0, 0, 0);
+            SearchBlock.Margin = new Thickness(windowWidth - 523, 0, 0, 0);
         }
 
         public AddRecipePage(RecipesList recipes)
@@ -492,7 +492,7 @@ namespace Food_Recipe_Appplication
 
         private void CategoryButton_Click(object sender, RoutedEventArgs e)
         {
-
+            this.NavigationService.Navigate(new CategoryPage(recipeList));
         }
     }
 }

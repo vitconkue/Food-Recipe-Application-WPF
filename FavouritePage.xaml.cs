@@ -28,6 +28,7 @@ namespace Food_Recipe_Appplication
     {
         private RecipesList _favoriteList = new RecipesList();
         private RecipesList searchResultList = new RecipesList();
+        private RecipesList recipeList = new RecipesList();
         private Recipe temp = new Recipe();
         private Window detailScreen;
         private int currentPage = 1;
@@ -42,7 +43,7 @@ namespace Food_Recipe_Appplication
         {
             InitializeComponent();
             SizeChanged += FavouritePage_SizeChanged;
-
+            recipeList = favoriteList;
             _favoriteList = favoriteList;
             _favoriteList = _favoriteList.SearchFavoriteRecipes(); 
         }
@@ -383,7 +384,7 @@ namespace Food_Recipe_Appplication
 
         private void CategoryButton_Click(object sender, RoutedEventArgs e)
         {
-
+            this.NavigationService.Navigate(new CategoryPage(recipeList));
         }
     }
 }

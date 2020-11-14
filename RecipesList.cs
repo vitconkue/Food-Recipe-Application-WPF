@@ -61,6 +61,39 @@ namespace Food_Recipe_Appplication
 
             return foods;
         }
+        public BindingList<Recipe> GetCategoryBindingData()
+        {
+            var foods = new BindingList<Recipe>();
+            foreach (var recipe in _recipes)
+            {
+                if(recipe.Category=="Món khô")
+                foods.Add(recipe);
+                break;
+            }
+            foreach (var recipe in _recipes)
+            {
+                if (recipe.Category == "Món nước")
+                    foods.Add(recipe);
+                break;
+            }
+            foreach (var recipe in _recipes)
+            {
+                if (recipe.Category == "Đồ uống")
+                    foods.Add(recipe);
+                break;
+            }
+            return foods;
+        }
+        public BindingList<Recipe> GetCategoryBindingList(string category)
+        {
+            var foods = new BindingList<Recipe>();
+            foreach (var recipe in _recipes)
+            {
+                if (recipe.Category == category)
+                    foods.Add(recipe);
+            }
+            return foods;
+        }
         public void LoadAll()
         {
             //TODO: implement

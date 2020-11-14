@@ -1,0 +1,171 @@
+﻿<Page x:Class="Food_Recipe_Appplication.CategoryPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Food_Recipe_Appplication"
+      mc:Ignorable="d" 
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="18"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignPaper}"
+     FontFamily="{DynamicResource MaterialDesignFont}"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CategoryPage" Loaded="Page_Loaded">
+
+    <Page.Resources>
+        <local:ImageLinkConverter x:Key="convertImageLink">
+
+        </local:ImageLinkConverter>
+        <local:IsFavoriteToColorConverter x:Key="isfavoriteicon">
+
+        </local:IsFavoriteToColorConverter>
+        <Style x:Key="MenuButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Height" Value="70"></Setter>
+            <Setter Property="Width" Value="170"></Setter>
+            <Setter Property="HorizontalContentAlignment" Value="Left"></Setter>
+            <Setter Property="Background" Value="Transparent"></Setter>
+            <Setter Property="BorderBrush" Value="Transparent"></Setter>
+            <Setter Property="BorderThickness" Value="0"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#ed81a1"/>
+                </Trigger>
+            </Style.Triggers>
+
+        </Style>
+        <Style TargetType="Image">
+            <Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality"></Setter>
+        </Style>
+        <Storyboard x:Key="OpenMenu">
+            <DoubleAnimation Storyboard.TargetName="LeftMenu"
+                  Storyboard.TargetProperty="Width"
+                  From="0" To="170" Duration="0:0:0.3" />
+        </Storyboard>
+        <Storyboard x:Key="CloseMenu">
+            <DoubleAnimation Storyboard.TargetName="LeftMenu"
+                  Storyboard.TargetProperty="Width"
+                  From="170" To="0" Duration="0:0:0.3" />
+        </Storyboard>
+    </Page.Resources>
+    <DockPanel>
+
+        <StackPanel DockPanel.Dock="Left"  Name="LeftMenu" Background="#ffc0cb"  Width="170">
+            <Button   Style="{DynamicResource MenuButtonStyle}"  Name="LeftMenuButton" Click="LeftMenuButton_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Height="25" Source="Icons/menu.png" Margin="10 0 10 0"></Image>
+                    <TextBlock VerticalAlignment="Center">Menu</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button x:Name="HomeButton" Click="HomeButton_Click"  Style="{DynamicResource MenuButtonStyle}">
+                <StackPanel Orientation="Horizontal">
+                    <Image Height="25" Source="Icons/home-page.png" Margin="10 0 10 0"></Image>
+                    <TextBlock VerticalAlignment="Center">Home</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Click="FavoriteButton_Click"  Name="FavoriteButton"  Style="{DynamicResource MenuButtonStyle}">
+                <StackPanel Orientation="Horizontal">
+                    <Image Height="25" Source="Icons/favourite.png" Margin="10 0 10 0"></Image>
+                    <TextBlock VerticalAlignment="Center">Favourite</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Background="#ed81a1" Name="CategoryButton" Style="{DynamicResource MenuButtonStyle}">
+                <StackPanel Orientation="Horizontal">
+                    <Image Height="25" Source="Icons/category.png" Margin="10 0 10 0"></Image>
+                    <TextBlock VerticalAlignment="Center">Category</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Name="AddRecipeButton" Click="AddRecipeButton_Click"  Style="{DynamicResource MenuButtonStyle}">
+                <StackPanel Orientation="Horizontal">
+                    <Image Height="25" Source="Icons/add-file.png" Margin="10 0 10 0"></Image>
+                    <TextBlock VerticalAlignment="Center">Add recpie</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Name="SettingButton" Click="SettingButton_Click" Style="{DynamicResource MenuButtonStyle}">
+                <StackPanel Orientation="Horizontal">
+                    <Image Height="25" Source="Icons/settings.png" Margin="10 0 10 0"></Image>
+                    <TextBlock VerticalAlignment="Center">Settings</TextBlock>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Background="#f4c2c2" Height="70">
+            <Button Visibility="Collapsed" VerticalContentAlignment="Center"  Style="{DynamicResource MenuButtonStyle}" Name="MenuButton" Click="MenuButton_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Height="25" Source="Icons/menu.png" Margin="10 0 10 0"></Image>
+                    <TextBlock VerticalAlignment="Center">Menu</TextBlock>
+                </StackPanel>
+            </Button >
+
+            <StackPanel Name="SearchBlock"  Orientation="Horizontal" FlowDirection="RightToLeft">
+                <materialDesign:PackIcon Kind="Food" Height="60" Width="63"/>
+                <TextBlock FontWeight="DemiBold" Margin="10 0 0 0" HorizontalAlignment="Center" VerticalAlignment="Center">Food Recipe</TextBlock>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Name="SkipButton" HorizontalAlignment="Center" DockPanel.Dock="Bottom" Orientation="Horizontal"  Height="50">
+
+        </StackPanel>
+        <Grid Name="GridLayout">
+            <ListView Name="dataListView" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel />
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <materialDesign:TransitioningContent>
+                            <materialDesign:TransitioningContent.OpeningEffects>
+                                <materialDesign:TransitionEffect Kind="SlideInFromRight" />
+                            </materialDesign:TransitioningContent.OpeningEffects>
+                            <Border BorderThickness="0.6" BorderBrush="Orange" CornerRadius="6">
+                                <StackPanel  MouseLeave="panel_MouseLeave" Margin="5"  MouseEnter="StackPanel_MouseEnter"  Name="panel">
+                                    <Border Width="260" Height="210">
+                                        <Border.Background >
+                                            <ImageBrush RenderOptions.BitmapScalingMode="HighQuality" x:Name="FoodImage" ImageSource="{Binding MainPictureName,Converter={StaticResource convertImageLink}}"></ImageBrush>
+                                        </Border.Background>
+                                    </Border>
+                                    <StackPanel  Height="40" HorizontalAlignment="Center" VerticalAlignment="Center"  Orientation="Horizontal">
+
+                                        <TextBlock FontSize="15" Padding="0 10 0 0" VerticalAlignment="Center" Height="35" HorizontalAlignment="Center" Text="{Binding Category}"></TextBlock>
+                                        <Button Margin="10 5 0 0" Name="SeeAllButton" Click="SeeAllButton_Click">SeeAll</Button>
+                                    </StackPanel>
+                           
+                                </StackPanel>
+                            </Border>
+                        </materialDesign:TransitioningContent>
+
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.ItemContainerStyle>
+                    <Style  TargetType="{x:Type ListViewItem}">
+                        <Setter Property="Background" Value="Transparent" />
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type ListViewItem}">
+                                    <ContentPresenter />
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Property="Margin" Value="5 5 5 5"></Setter>
+                        <EventSetter  Event="PreviewMouseLeftButtonDown" Handler="ListViewItem_PreviewMouseLeftButtonDown"></EventSetter>
+                    </Style>
+                </ListView.ItemContainerStyle>
+            </ListView>
+        </Grid>
+
+    </DockPanel>
+</Page>
