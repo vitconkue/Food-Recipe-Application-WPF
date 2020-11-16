@@ -47,7 +47,7 @@ namespace Food_Recipe_Appplication
         {
             var windowWidth = e.NewSize.Width;
             Debug.WriteLine(windowWidth);
-            SearchBlock.Margin = new Thickness(windowWidth - 522, 0, 0, 0);
+            SearchBlock.Margin = new Thickness(windowWidth - 350, 0, 0, 0);
         }
 
         private void MenuButton_Click(object sender, RoutedEventArgs e)

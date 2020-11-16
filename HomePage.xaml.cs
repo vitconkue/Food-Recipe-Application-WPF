@@ -35,6 +35,7 @@ namespace Food_Recipe_Appplication
         private RecipesList searchResultList = new RecipesList();
         private Recipe temp = new Recipe();
         private int currentPage = 1;
+        private int maxButtonPerPage = 5;
         private int maxPage;
         private Window detailScreen;
         public HomePage()
@@ -152,7 +153,8 @@ namespace Food_Recipe_Appplication
             {
                 button.Background = Brushes.White;
             };
-            (sender as Button).Background = Brushes.Orange;
+            BrushConverter bc = new BrushConverter();
+            (sender as Button).Background = (Brush)bc.ConvertFrom("#ed81a1");
             var tokens = pageNumber.Split(separator, StringSplitOptions.None);
             int nextPage = int.Parse(tokens[1]);
             currentPage = nextPage;
@@ -232,7 +234,8 @@ namespace Food_Recipe_Appplication
             preButton.Click += PreButton_Click;
             SkipButton.Children.Add(preButton);
             maxPage = numberOfPage;
-            for (int i = 1; i <= numberOfPage; i++)
+            int temp = numberOfPage < maxButtonPerPage ? numberOfPage : maxButtonPerPage;
+            for (int i = 1; i <= temp ; i++)
             {
                 Button numberButton = new Button();
                 numberButton.Name = $"page_{i}";
@@ -272,11 +275,26 @@ namespace Food_Recipe_Appplication
                 var number = NumberOfRecipePerPage();
                 currentPage = currentPage - 1;
                 RecipesList toShow = recipeList.GetByPage(currentPage, number);
+                if ((currentPage + 1) % maxButtonPerPage == 0 && currentPage - 1 < maxPage)
+                {
+                    foreach (Button button in SkipButton.Children)
+                    {
+                        int num = 1;
+                        if (int.TryParse(button.Content.ToString(), out num))
+                        {
+                            num -= maxButtonPerPage;
+                            button.Content = num.ToString();
+                        }
+
+
+                    };
+                }
                 foreach (Button button in SkipButton.Children)
                 {
                     if (button.Content.ToString() == (currentPage).ToString())
                     {
-                        button.Background = Brushes.Orange;
+                        BrushConverter bc = new BrushConverter();
+                        button.Background = (Brush)bc.ConvertFrom("#ed81a1");
                     }
                     else
                     {
@@ -294,11 +312,26 @@ namespace Food_Recipe_Appplication
                 var number = NumberOfRecipePerPage();
                 currentPage = currentPage + 1;
                 RecipesList toShow = recipeList.GetByPage(currentPage, number);
+                if ((currentPage - 1) % maxButtonPerPage == 0 && currentPage - 1 < maxPage)
+                {
+                    foreach (Button button in SkipButton.Children)
+                    {
+                        int num = 1;
+                        if (int.TryParse(button.Content.ToString(), out num))
+                        {
+                            num += maxButtonPerPage;
+                            button.Content = num.ToString();
+                        }
+
+
+                    };
+                }
                 foreach (Button button in SkipButton.Children)
                 {
                     if (button.Content.ToString() == (currentPage).ToString())
                     {
-                        button.Background = Brushes.Orange;
+                        BrushConverter bc = new BrushConverter();
+                        button.Background = (Brush)bc.ConvertFrom("#ed81a1");
                     }
                     else
                     {
@@ -321,6 +354,7 @@ namespace Food_Recipe_Appplication
             }
             else
             {
+
                 searchResultList = recipeList.SearchNameContains_NoneUtf(key);
                 ChangeBindingList(searchResultList);
                 //MessageBox.Show(key);

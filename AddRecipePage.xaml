@@ -54,21 +54,19 @@
                 </StackPanel>
             </Button>
         </StackPanel>
-
         <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Background="#f4c2c2" Height="70">
-            <Button Visibility="Hidden" VerticalContentAlignment="Center"  Style="{DynamicResource MenuButtonStyle}" Name="MenuButton" Click="MenuButton_Click">
+            <Button Visibility="Collapsed" VerticalContentAlignment="Center"  Style="{DynamicResource MenuButtonStyle}" Name="MenuButton" Click="MenuButton_Click">
                 <StackPanel Orientation="Horizontal">
                     <Image Height="25" Source="Icons/menu.png" Margin="10 0 10 0"></Image>
                     <TextBlock VerticalAlignment="Center">Menu</TextBlock>
                 </StackPanel>
             </Button >
 
-            <StackPanel   Name="SearchBlock"  Orientation="Horizontal" FlowDirection="RightToLeft" Width="180">
+            <StackPanel Name="SearchBlock"  Orientation="Horizontal" FlowDirection="RightToLeft">
                 <materialDesign:PackIcon Kind="Food" Height="60" Width="63"/>
                 <TextBlock FontWeight="DemiBold" Margin="10 0 0 0" HorizontalAlignment="Center" VerticalAlignment="Center">Food Recipe</TextBlock>
             </StackPanel>
         </StackPanel>
-
         <StackPanel Name="SkipButton" HorizontalAlignment="Center" DockPanel.Dock="Bottom" Orientation="Horizontal"  Height="50">
 
         </StackPanel>
@@ -88,16 +86,16 @@
                     <RowDefinition Height="2*" />
                     <RowDefinition Height="1*" />
                 </Grid.RowDefinitions>
-                <TextBox FontSize="15" Margin="2" Name="AddNameRecipeBox"  BorderThickness="2" BorderBrush="Black" FlowDirection="LeftToRight"  GotFocus="AddNameRecipeBox_GotFocus" LostFocus="AddNameRecipeBox_LostFocus" Foreground="Gray">Nhập tên công thức</TextBox>
-                <TextBox FontSize="15" Margin="2" Grid.Column="1" Name="VideoLinkBox"  BorderThickness="2" BorderBrush="Black" FlowDirection="LeftToRight"  GotFocus="VideoLinkBox_GotFocus" LostFocus="VideoLinkBox_LostFocus" Foreground="Gray" TextChanged="VideoLinkBox_TextChanged">Nhập đường dẫn video</TextBox>
-                <TextBox FontSize="15" Margin="2" Grid.Row="1" Name="InterestingInfoBox"  BorderThickness="2" BorderBrush="Black" FlowDirection="LeftToRight" GotFocus="InterestingInfoBox_GotFocus" LostFocus="InterestingInfoBox_LostFocus" Foreground="Gray">Nhập thông tin thú vị về món ăn</TextBox>
+                <TextBox FontSize="15" Margin="2" Name="AddNameRecipeBox"  BorderThickness="2" BorderBrush="Black" FlowDirection="LeftToRight"  GotFocus="AddNameRecipeBox_GotFocus" LostFocus="AddNameRecipeBox_LostFocus" Foreground="Gray">Recipe name</TextBox>
+                <TextBox FontSize="15" Margin="2" Grid.Column="1" Name="VideoLinkBox"  BorderThickness="2" BorderBrush="Black" FlowDirection="LeftToRight"  GotFocus="VideoLinkBox_GotFocus" LostFocus="VideoLinkBox_LostFocus" Foreground="Gray" TextChanged="VideoLinkBox_TextChanged">Video link</TextBox>
+                <TextBox TextWrapping="Wrap" FontSize="15" Margin="2" Grid.Row="1" Name="InterestingInfoBox"  BorderThickness="2" BorderBrush="Black" FlowDirection="LeftToRight" GotFocus="InterestingInfoBox_GotFocus" LostFocus="InterestingInfoBox_LostFocus" Foreground="Gray">Interesting infomation about this food</TextBox>
                 <ComboBox FontSize="15" x:Name="Category" FontWeight="Bold"  Margin="2" Grid.Row="1" Grid.Column="1" SelectionChanged="Category_SelectionChanged">
                     <ComboBoxItem IsSelected="True">Món khô</ComboBoxItem>
                     <ComboBoxItem>Món nước</ComboBoxItem>
                     <ComboBoxItem>Đồ uống</ComboBoxItem>
                 </ComboBox>
                 <Image Margin="2" x:Name="RecipeImage" Grid.Row="2" Source="Icons/unknown.png"></Image>
-                <TextBox Margin="2" Grid.Column="1" Grid.Row="2" Name="DescriptionBox"  BorderThickness="2" BorderBrush="Black" FlowDirection="LeftToRight" FontSize="15" GotFocus="DescriptionBox_GotFocus" LostFocus="DescriptionBox_LostFocus" Foreground="Gray" TextWrapping="Wrap" AcceptsReturn="True">Nhập danh sách nguyên liệu (xuống dòng mỗi loại)</TextBox>
+                <TextBox Margin="2" Grid.Column="1" Grid.Row="2" Name="DescriptionBox"  BorderThickness="2" BorderBrush="Black" FlowDirection="LeftToRight" FontSize="15" GotFocus="DescriptionBox_GotFocus" LostFocus="DescriptionBox_LostFocus" Foreground="Gray" TextWrapping="Wrap" AcceptsReturn="True" TextChanged="DescriptionBox_TextChanged">Input ingredients (press Enter after a ingredients)</TextBox>
                 <StackPanel Grid.Row="3">
                     <Grid Height="130" Margin="0,0,0.2,0">
                         <Grid.ColumnDefinitions>

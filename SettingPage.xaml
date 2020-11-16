@@ -57,7 +57,7 @@
             </StackPanel>
 
             <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Background="#f4c2c2" Height="70">
-                <Button Visibility="Hidden" VerticalContentAlignment="Center"  Style="{DynamicResource MenuButtonStyle}" Name="MenuButton" Click="MenuButton_Click">
+                <Button Visibility="Collapsed" VerticalContentAlignment="Center"  Style="{DynamicResource MenuButtonStyle}" Name="MenuButton" Click="MenuButton_Click">
                     <StackPanel Orientation="Horizontal">
                         <Image Height="25" Source="Icons/menu.png" Margin="10 0 10 0"></Image>
                         <TextBlock VerticalAlignment="Center">Menu</TextBlock>
@@ -67,10 +67,8 @@
                 <StackPanel Name="SearchBlock"  Orientation="Horizontal" FlowDirection="RightToLeft">
                     <materialDesign:PackIcon Kind="Food" Height="60" Width="63"/>
                     <TextBlock FontWeight="DemiBold" Margin="10 0 0 0" HorizontalAlignment="Center" VerticalAlignment="Center">Food Recipe</TextBlock>
-
                 </StackPanel>
             </StackPanel>
-
             <materialDesign:TransitioningContent Focusable="False">
                 <materialDesign:TransitioningContent.OpeningEffects>
                     <materialDesign:TransitionEffect Kind="SlideInFromRight" />

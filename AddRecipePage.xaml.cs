@@ -37,7 +37,7 @@ namespace Food_Recipe_Appplication
         {
             var windowWidth = e.NewSize.Width;
             Debug.WriteLine(windowWidth);
-            SearchBlock.Margin = new Thickness(windowWidth - 523, 0, 0, 0);
+            SearchBlock.Margin = new Thickness(windowWidth - 350, 0, 0, 0);
         }
 
         public AddRecipePage(RecipesList recipes)
@@ -53,10 +53,10 @@ namespace Food_Recipe_Appplication
         private List<string> pathList = new List<string>();
         private string IngredientsString = "123";
         private string filePath = "123";
-        
-      
 
-     
+
+
+
         private void ShutDownButton_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
@@ -149,7 +149,7 @@ namespace Food_Recipe_Appplication
                 }
                 Step++;
                 StepNumber.Text = Step.ToString();
-                DescriptionBox.Text = "Nhập hướng dẫn thực hiện";
+                DescriptionBox.Text = "Input description";
                 DescriptionBox.Foreground = Brushes.Gray;
                 var bitmap =
                 new BitmapImage(
@@ -196,7 +196,7 @@ namespace Food_Recipe_Appplication
                 //Thêm filename vào Step
                 if (i == 0)
                 {
-                    recipe.MainPictureName = recipe.FoodName + "//"+ fileName;
+                    recipe.MainPictureName = recipe.FoodName + "//" + fileName;
                 }
                 else
                 {
@@ -308,13 +308,11 @@ namespace Food_Recipe_Appplication
             {
                 if (Step == 0)
                 {
-                    if(AddNameRecipeBox.Text == "Nhập tên công thức" || AddNameRecipeBox.Text == "" || 
-                        VideoLinkBox.Text == "Nhập đường dẫn video" || VideoLinkBox.Text == "" ||
-                         InterestingInfoBox.Text == "Nhập thông tin thú vị về món ăn" || InterestingInfoBox.Text == "" ||
-                          DescriptionBox.Text == "Nhập danh sách nguyên liệu (xuống dòng mỗi loại)" || 
+                    if (AddNameRecipeBox.Text == "Recipe name" || AddNameRecipeBox.Text == "" ||
+                          DescriptionBox.Text == "Input ingredients (press Enter after a ingredients)" ||
                            DescriptionBox.Text == "")
                     {
-                        MessageBox.Show("Vui lòng nhập đầy đủ các thông tin về công thức!!!");
+                        MessageBox.Show("Please input requirement infomation!!!");
                         return;
                     }
                     else
@@ -341,7 +339,7 @@ namespace Food_Recipe_Appplication
                         InterestingInfoBox.Focusable = false;
                         Category.IsEnabled = false;
                     }
-                    
+
                 }
                 else
                 {
@@ -363,7 +361,7 @@ namespace Food_Recipe_Appplication
                 }
                 Step++;
                 StepNumber.Text = Step.ToString();
-                DescriptionBox.Text = "Nhập hướng dẫn thực hiện";
+                DescriptionBox.Text = "Input description";
                 DescriptionBox.Foreground = Brushes.Gray;
                 var directory = AppDomain.CurrentDomain.BaseDirectory;
                 directory += "Data\\Images\\unknown.png";
@@ -400,7 +398,7 @@ namespace Food_Recipe_Appplication
         }
         private void DescriptionBox_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (DescriptionBox.Text == "Nhập danh sách nguyên liệu (xuống dòng mỗi loại)" || DescriptionBox.Text == "Nhập hướng dẫn thực hiện")
+            if (DescriptionBox.Text == "Input ingredients (press Enter after a ingredients)" || DescriptionBox.Text == "Nhập hướng dẫn thực hiện")
             {
                 DescriptionBox.Text = "";
                 DescriptionBox.Foreground = Brushes.Black;
@@ -413,12 +411,12 @@ namespace Food_Recipe_Appplication
             {
                 if (Step == 0)
                 {
-                    DescriptionBox.Text = "Nhập danh sách nguyên liệu (xuống dòng mỗi loại)";
+                    DescriptionBox.Text = "Input ingredients (press Enter after a ingredients)";
                     DescriptionBox.Foreground = Brushes.Gray;
                 }
                 else
                 {
-                    DescriptionBox.Text = "Nhập hướng dẫn thực hiện";
+                    DescriptionBox.Text = "Input description";
                     DescriptionBox.Foreground = Brushes.Gray;
                 }
             }
@@ -427,7 +425,7 @@ namespace Food_Recipe_Appplication
 
         private void AddNameRecipeBox_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (AddNameRecipeBox.Text == "Nhập tên công thức")
+            if (AddNameRecipeBox.Text == "Recipe name")
             {
                 AddNameRecipeBox.Text = "";
                 AddNameRecipeBox.Foreground = Brushes.Black;
@@ -438,7 +436,7 @@ namespace Food_Recipe_Appplication
         {
             if (AddNameRecipeBox.Text == "")
             {
-                AddNameRecipeBox.Text = "Nhập tên công thức";
+                AddNameRecipeBox.Text = "Recipe name";
                 AddNameRecipeBox.Foreground = Brushes.Gray;
             }
 
@@ -447,7 +445,7 @@ namespace Food_Recipe_Appplication
 
         private void VideoLinkBox_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (VideoLinkBox.Text == "Nhập đường dẫn video")
+            if (VideoLinkBox.Text == "Video link")
             {
                 VideoLinkBox.Text = "";
                 VideoLinkBox.Foreground = Brushes.Black;
@@ -458,7 +456,7 @@ namespace Food_Recipe_Appplication
         {
             if (VideoLinkBox.Text == "")
             {
-                VideoLinkBox.Text = "Nhập đường dẫn video";
+                VideoLinkBox.Text = "Video link";
                 VideoLinkBox.Foreground = Brushes.Gray;
             }
         }
@@ -470,7 +468,7 @@ namespace Food_Recipe_Appplication
 
         private void InterestingInfoBox_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (InterestingInfoBox.Text == "Nhập thông tin thú vị về món ăn")
+            if (InterestingInfoBox.Text == "Interesting infomation about this food")
             {
                 InterestingInfoBox.Text = "";
                 InterestingInfoBox.Foreground = Brushes.Black;
@@ -481,7 +479,7 @@ namespace Food_Recipe_Appplication
         {
             if (InterestingInfoBox.Text == "")
             {
-                InterestingInfoBox.Text = "Nhập thông tin thú vị về món ăn";
+                InterestingInfoBox.Text = "Interesting infomation about this food";
                 InterestingInfoBox.Foreground = Brushes.Gray;
             }
         }
@@ -493,6 +491,11 @@ namespace Food_Recipe_Appplication
         private void CategoryButton_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new CategoryPage(recipeList));
+        }
+
+        private void DescriptionBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

@@ -33,6 +33,7 @@ namespace Food_Recipe_Appplication
         private Window detailScreen;
         private int currentPage = 1;
         private int maxPage;
+        private int maxButtonPerPage = 5;
         //public FavouritePage()
         //{
         //    InitializeComponent();
@@ -129,7 +130,8 @@ namespace Food_Recipe_Appplication
             {
                 button.Background = Brushes.White;
             };
-            (sender as Button).Background = Brushes.Orange;
+            BrushConverter bc = new BrushConverter();
+            (sender as Button).Background = (Brush)bc.ConvertFrom("#ed81a1");
             var tokens = pageNumber.Split(separator, StringSplitOptions.None);
             int nextPage = int.Parse(tokens[1]);
 
@@ -213,19 +215,34 @@ namespace Food_Recipe_Appplication
             detailScreen = new RecipeDetailsPage(temp);
             detailScreen.Show();
         }
-        
+
         private void PreButton_Click(object sender, RoutedEventArgs e)
         {
             if (currentPage > 1)
             {
                 var number = NumberOfRecipePerPage();
                 currentPage = currentPage - 1;
-                RecipesList toShow = _favoriteList.GetByPage(currentPage, number);
+                RecipesList toShow = recipeList.GetByPage(currentPage, number);
+                if ((currentPage + 1) % maxButtonPerPage == 0 && currentPage - 1 < maxPage)
+                {
+                    foreach (Button button in SkipButton.Children)
+                    {
+                        int num = 1;
+                        if (int.TryParse(button.Content.ToString(), out num))
+                        {
+                            num -= maxButtonPerPage;
+                            button.Content = num.ToString();
+                        }
+
+
+                    };
+                }
                 foreach (Button button in SkipButton.Children)
                 {
                     if (button.Content.ToString() == (currentPage).ToString())
                     {
-                        button.Background = Brushes.Orange;
+                        BrushConverter bc = new BrushConverter();
+                        button.Background = (Brush)bc.ConvertFrom("#ed81a1");
                     }
                     else
                     {
@@ -242,12 +259,27 @@ namespace Food_Recipe_Appplication
             {
                 var number = NumberOfRecipePerPage();
                 currentPage = currentPage + 1;
-                RecipesList toShow = _favoriteList.GetByPage(currentPage, number);
+                RecipesList toShow = recipeList.GetByPage(currentPage, number);
+                if ((currentPage - 1) % maxButtonPerPage == 0 && currentPage - 1 < maxPage)
+                {
+                    foreach (Button button in SkipButton.Children)
+                    {
+                        int num = 1;
+                        if (int.TryParse(button.Content.ToString(), out num))
+                        {
+                            num += maxButtonPerPage;
+                            button.Content = num.ToString();
+                        }
+
+
+                    };
+                }
                 foreach (Button button in SkipButton.Children)
                 {
                     if (button.Content.ToString() == (currentPage).ToString())
                     {
-                        button.Background = Brushes.Orange;
+                        BrushConverter bc = new BrushConverter();
+                        button.Background = (Brush)bc.ConvertFrom("#ed81a1");
                     }
                     else
                     {
@@ -296,7 +328,8 @@ namespace Food_Recipe_Appplication
                     preButton.Click += PreButton_Click;
                     SkipButton.Children.Add(preButton);
                     maxPage = numberOfPage;
-                    for (int i = 1; i <= numberOfPage; i++)
+                    int temp = numberOfPage < maxButtonPerPage ? numberOfPage : maxButtonPerPage;
+                    for (int i = 1; i <= temp; i++)
                     {
                         Button numberButton = new Button();
                         numberButton.Name = $"page_{i}";
@@ -318,7 +351,8 @@ namespace Food_Recipe_Appplication
                     nextButton.Click += NextButton_Click;
                     SkipButton.Children.Add(nextButton);
                     Button firstButton = (Button)SkipButton.Children[1];
-                    firstButton.Background = Brushes.Orange;
+                    BrushConverter bc = new BrushConverter();
+                    firstButton.Background = (Brush)bc.ConvertFrom("#ed81a1");
 
                 }
                 else
