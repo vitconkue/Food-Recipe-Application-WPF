@@ -42,7 +42,6 @@ namespace Food_Recipe_Appplication
         {
             InitializeComponent();
             SizeChanged += HomePage_SizeChanged;
-            Debug.WriteLine("iN home page");
             recipeList.LoadAll();
             searchResultList = recipeList;
 
@@ -285,6 +284,7 @@ namespace Food_Recipe_Appplication
                         {
                             num -= maxButtonPerPage;
                             button.Content = num.ToString();
+                            button.Name = $"page_{num}";
                         }
 
 
@@ -322,6 +322,7 @@ namespace Food_Recipe_Appplication
                         {
                             num += maxButtonPerPage;
                             button.Content = num.ToString();
+                            button.Name = $"page_{num}";
                         }
 
 
