@@ -322,15 +322,15 @@ namespace Food_Recipe_Appplication
                         recipe.Interesting_infomation = InterestingInfoBox.Text;
                         if (Category.Text == "Dry Food")
                         {
-                            recipe.Category = "dryfood";
+                            recipe.Category = "Dry Food";
                         }
-                        else if (Category.Text == "Water dish")
+                        else if (Category.Text == "Water Dish")
                         {
-                            recipe.Category = "waterdish";
+                            recipe.Category = "Water Dish";
                         }
                         else
                         {
-                            recipe.Category = "drink";
+                            recipe.Category = "Drink";
                         }
                         IngredientsString = DescriptionBox.Text;
                         pathList.Add(filePath);
@@ -398,7 +398,7 @@ namespace Food_Recipe_Appplication
         }
         private void DescriptionBox_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (DescriptionBox.Text == "Input ingredients (press Enter after a ingredients)" || DescriptionBox.Text == "Nhập hướng dẫn thực hiện")
+            if (DescriptionBox.Text == "Input ingredients (press Enter after a ingredients)" || DescriptionBox.Text == "Input description")
             {
                 DescriptionBox.Text = "";
                 DescriptionBox.Foreground = Brushes.Black;

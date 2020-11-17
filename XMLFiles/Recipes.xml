@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <recipes>
-  <recipe isFavorite="false" date_created="01-01-2020" category="dryfood">
+  <recipe isFavorite="false" date_created="01-01-2020" category="Dry Food">
     <mainpicture_name>Cá kho tộ//ca-kho-to.jpg </mainpicture_name>
     <mainvideo_link>https://www.youtube.com/watch?v=b-4aOjI5Lzs</mainvideo_link>
     <foodname>Cá kho tộ</foodname>
@@ -33,7 +33,7 @@
     </steps>
     
   </recipe>
-  <recipe isFavorite="false" date_created="03-02-1990" category="dryfood">
+  <recipe isFavorite="false" date_created="03-02-1990" category="Dry Food">
     <mainpicture_name>Gỏi gà lá chanh//goi-ga-la-chanh.jpg</mainpicture_name>
     <mainvideo_link>https://www.youtube.com/watch?v=UMmG8EIq1-Y</mainvideo_link>
     <ingredients>
@@ -70,7 +70,7 @@
       </step>
     </steps>
   </recipe>
-  <recipe isFavorite="false" date_created="09-01-2021" category="dryfood">
+  <recipe isFavorite="false" date_created="09-01-2021" category="Dry Food">
     <foodname>Bò né</foodname>
     <mainvideo_link>https://www.youtube.com/watch?v=irL0oZvhV3I</mainvideo_link>
     <mainpicture_name>Bò né//bo-ne.jpg</mainpicture_name>

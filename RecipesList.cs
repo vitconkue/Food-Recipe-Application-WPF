@@ -66,21 +66,27 @@ namespace Food_Recipe_Appplication
             var foods = new BindingList<Recipe>();
             foreach (var recipe in _recipes)
             {
-                if(recipe.Category=="dryfood")
-                foods.Add(recipe);
-                break;
+                if (recipe.Category == "Dry Food")
+                {
+                    foods.Add(recipe);
+                    break;
+                }
             }
             foreach (var recipe in _recipes)
             {
-                if (recipe.Category == "waterdish")
+                if (recipe.Category == "Water Dish")
+                {
                     foods.Add(recipe);
-                break;
+                    break;
+                }
             }
             foreach (var recipe in _recipes)
             {
-                if (recipe.Category == "drink")
+                if (recipe.Category == "Drink")
+                {
                     foods.Add(recipe);
-                break;
+                    break;
+                }
             }
             return foods;
         }

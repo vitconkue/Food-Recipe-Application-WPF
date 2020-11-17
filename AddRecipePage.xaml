@@ -91,7 +91,7 @@
                 <TextBox TextWrapping="Wrap" FontSize="15" Margin="2" Grid.Row="1" Name="InterestingInfoBox"  BorderThickness="2" BorderBrush="Black" FlowDirection="LeftToRight" GotFocus="InterestingInfoBox_GotFocus" LostFocus="InterestingInfoBox_LostFocus" Foreground="Gray">Interesting infomation about this food</TextBox>
                 <ComboBox FontSize="15" x:Name="Category" FontWeight="Bold"  Margin="2" Grid.Row="1" Grid.Column="1" SelectionChanged="Category_SelectionChanged">
                     <ComboBoxItem IsSelected="True">Dry Food</ComboBoxItem>
-                    <ComboBoxItem>Water dish</ComboBoxItem>
+                    <ComboBoxItem>Water Dish</ComboBoxItem>
                     <ComboBoxItem>Drink</ComboBoxItem>
                 </ComboBox>
                 <Image Margin="2" x:Name="RecipeImage" Grid.Row="2" Source="Icons/unknown.png"></Image>
