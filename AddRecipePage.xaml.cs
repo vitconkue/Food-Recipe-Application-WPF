@@ -237,7 +237,7 @@ namespace Food_Recipe_Appplication
             recipe.Ingredients.AddIngredient(ingredient);
             recipeList.AddRecipe(recipe);
             //Messagebox
-            MessageBox.Show("Tạo món ăn mới thành công");
+            MessageBox.Show("Created new recipe!");
             this.NavigationService.Navigate(new HomePage());
         }
 
@@ -309,10 +309,10 @@ namespace Food_Recipe_Appplication
                 if (Step == 0)
                 {
                     if (AddNameRecipeBox.Text == "Recipe name" || AddNameRecipeBox.Text == "" ||
-                          DescriptionBox.Text == "Input ingredients (press Enter after a ingredients)" ||
+                          DescriptionBox.Text == "Input ingredients (press Enter after an ingredient)" ||
                            DescriptionBox.Text == "")
                     {
-                        MessageBox.Show("Please input requirement infomation!!!");
+                        MessageBox.Show("Please input required infomation!!!");
                         return;
                     }
                     else
@@ -320,17 +320,17 @@ namespace Food_Recipe_Appplication
                         recipe.FoodName = AddNameRecipeBox.Text;
                         recipe.MainVideoLink = VideoLinkBox.Text;
                         recipe.Interesting_infomation = InterestingInfoBox.Text;
-                        if (Category.Text == "Món khô")
+                        if (Category.Text == "Dry Food")
                         {
                             recipe.Category = "dryfood";
                         }
-                        else if (Category.Text == "Món nước")
+                        else if (Category.Text == "Water dish")
                         {
-                            recipe.Category = "Món nước";
+                            recipe.Category = "waterdish";
                         }
                         else
                         {
-                            recipe.Category = "Thức uống";
+                            recipe.Category = "drink";
                         }
                         IngredientsString = DescriptionBox.Text;
                         pathList.Add(filePath);
