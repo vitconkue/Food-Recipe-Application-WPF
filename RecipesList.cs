@@ -66,19 +66,19 @@ namespace Food_Recipe_Appplication
             var foods = new BindingList<Recipe>();
             foreach (var recipe in _recipes)
             {
-                if(recipe.Category=="Món khô")
+                if(recipe.Category=="dryfood")
                 foods.Add(recipe);
                 break;
             }
             foreach (var recipe in _recipes)
             {
-                if (recipe.Category == "Món nước")
+                if (recipe.Category == "waterdish")
                     foods.Add(recipe);
                 break;
             }
             foreach (var recipe in _recipes)
             {
-                if (recipe.Category == "Đồ uống")
+                if (recipe.Category == "drink")
                     foods.Add(recipe);
                 break;
             }
