@@ -36,7 +36,7 @@ namespace Food_Recipe_Appplication
         {
             InitializeComponent();
             food = foodTemp;
-            recipeList = foodList;
+            recipeList = foodList.GetCategoryBindingList(foodTemp.Category); 
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -100,7 +100,7 @@ namespace Food_Recipe_Appplication
 
             SkipButton.Children.Clear();
             var number = NumberOfRecipePerPage();
-            var bindingList = input.GetByPage(1, number).GetCategoryBindingList(food.Category);
+            var bindingList = input.GetByPage(1, number).GetBindingData();
             dataListView.ItemsSource = bindingList;
             int len = input.Recipes.Count;
             int numberOfPage = len / number + (len % number == 0 ? 0 : 1);
@@ -314,6 +314,14 @@ namespace Food_Recipe_Appplication
                 //MessageBox.Show(key);
             }
 
+        }
+
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
         }
     }
 }

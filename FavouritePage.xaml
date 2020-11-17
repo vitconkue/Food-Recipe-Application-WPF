@@ -45,6 +45,9 @@
             </Style.Triggers>
 
         </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="TextWrapping" Value="Wrap"></Setter>
+        </Style>
         <Style TargetType="Image">
             <Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality"></Setter>
         </Style>

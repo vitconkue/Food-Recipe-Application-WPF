@@ -31,7 +31,6 @@
         <step_picture_name>Cá kho tộ//trang-tri-mon-an.jpg</step_picture_name>
       </step>
     </steps>
-    
   </recipe>
   <recipe isFavorite="false" date_created="03-02-1990" category="Dry Food">
     <mainpicture_name>Gỏi gà lá chanh//goi-ga-la-chanh.jpg</mainpicture_name>
@@ -44,7 +43,6 @@
       <ingredient>2 muỗng cà phê nước mắm</ingredient>
       <ingredient>Ớt chín(tuỳ thích)</ingredient>
       <ingredient>1/2 quả chanh</ingredient>
-
     </ingredients>
     <foodname>Gỏi gà lá chanh</foodname>
     <steps>
@@ -70,10 +68,190 @@
       </step>
     </steps>
   </recipe>
+  <recipe isFavorite="false" date_created="17-11-2020" category="Water Dish">
+    <foodname>Lẩu bò nhúng mắm ruốc</foodname>
+    <mainpicture_name>Lẩu bò nhúng mắm ruốc//img0.png</mainpicture_name>
+    <mainvideo_link>https://www.youtube.com/watch?v=-V_6Kuh55Vc</mainvideo_link>
+    <interesting_information>Lẩu bò mắm ruốc - món ngon đặc sản Bình Dương thơm ngon ngất ngây, thích hợp cho cả nhà thưởng thức vào những ngày cuối tuần quây quần cùng nhau. Hương vị mới lạ với sự kết hợp giữa vị ngọt của thịt bò tươi, cùng với vị đậm đà đặc trưng riêng của mắm ruốc trong nước lẩu sẽ khiến cả nhà trầm trồ cho mà xem</interesting_information>
+    <ingredients>
+      <ingredient>Thịt bò (300gr)</ingredient>
+      <ingredient>Sả (50 gr)</ingredient>
+      <ingredient>Mắm ruốc (4 muỗng canh)</ingredient>
+      <ingredient>Rau muống (500 gr)</ingredient>
+      <ingredient>Tỏi băm (10 gr)</ingredient>
+      <ingredient>Hành tím băm (10 gr)</ingredient>
+      <ingredient>Ớt băm (10 gr)</ingredient>
+      <ingredient>Nước dừa (600 ml)</ingredient>
+      <ingredient>Nước (50 ml)</ingredient>
+      <ingredient>Hành tây (1 củ)</ingredient>
+      <ingredient>Hạt nêm (1/2 muỗng canh)</ingredient>
+      <ingredient>Đường trắng (1 muỗng canh)</ingredient>
+    </ingredients>
+    <steps>
+      <step>
+        <step_text>Băm nhỏ tỏi, hành tím, ớt, các bạn có thể cắt lát cũng được, nhưng băm nhỏ thì khi phi sẽ dễ vàng và thơm hơn nghen, lúc ăn cũng ít bị có mùi nữa, sẽ ngon hơn rất nhiều so với lúc cắt đó.</step_text>
+        <step_picture_name>Lẩu bò nhúng mắm ruốc//img1.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Cắt múi cau 1/2 củ hành tây để nấu nước nhúng lẩu, 1/2 còn lại cắt khoanh để khi ăn bỏ vào nồi lẩu (dành cho những bạn thích ăn hành tây giòn nghen). Ngâm rau muống với nước muối, rửa sạch và lặt bỏ phần cuống già. Thái mỏng thịt bò sau đó ướp với sả băm. Cho thịt bò vừa ướp vào ngăn mát tủ lạnh đến khi dùng thì lấy ra. Bước này giúp thịt bò thơm sả, không bị hôi tanh nhé!</step_text>
+        <step_picture_name>Lẩu bò nhúng mắm ruốc//img2.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Cho dầu vào nồi, đợi dầu nóng thì các bạn cho tỏi vào trước, phi khoảng 2 phút thì tiếp tới hành tím 1 phút nữa thì cho sả và ớt vào phi chung, phi đến khi thơm. Cho tiếp 4 muỗng canh mắm ruốc vào, đảo đều, khoảng 5 phút. Cho tiếp 50ml nước lọc vào đảo đều. Nêm thêm 1 muỗng canh đường, đảo đều cho tan đường, nấu 1 tí cho phần nước sôi lên. Múc một ít hỗn hợp mắm ruốc ra chén để làm nước chấm ăn thịt bò.</step_text>
+        <step_picture_name>Lẩu bò nhúng mắm ruốc//img3.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Sau khi ruốc chuyển màu và thơm lên, các bạn đổ phần nước dừa vào nhé. Nêm thêm 1/2 muỗng canh hạt nêm, đến khi nước dùng sôi thì cho hành tây cắt múi để ngọt nước lẩu. Phần nước lẩu đã nấu hoàn tất rồi đó, bắt đầu cho ra bàn tiệc và, lấy bò ra thưởng thức thôi nào!</step_text>
+        <step_picture_name>Lẩu bò nhúng mắm ruốc//img4.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Lẩu bò nhúng mắm ruốc đã hoàn thành rồi. Nồi lẩu sôi cùng mùi mắm ruốc nồng nàn thật khó kìm lòng. Rắc thêm hành lá, tiếp đó, cho rau muống vào, nhúng nhanh thịt bò vào nước lẩu. Vị tươi ngọt của thịt bò cùng với mùi vị đặc trưng của mắm ruốc thiệt là quyến rũ đúng không nào?</step_text>
+        <step_picture_name>Lẩu bò nhúng mắm ruốc//img5.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Món này các bạn có thể ăn theo kiểu cuốn bánh tráng hoặc ăn cùng bún là bá cháy bọ chét luôn nghen. Cách nấu lẩu bò mắm ruốc không hề khó chút nào đâu nhé, chị em cứ thử vào bếp làm ngay để cả nhà được thưởng thức nào.</step_text>
+        <step_picture_name>Lẩu bò nhúng mắm ruốc//img6.png</step_picture_name>
+      </step>
+    </steps>
+  </recipe>
+  <recipe isFavorite="false" date_created="17-11-2020" category="Water Dish">
+    <foodname>Bún Mắm Miền Tây</foodname>
+    <mainpicture_name>Bún Mắm Miền Tây//img0.png</mainpicture_name>
+    <mainvideo_link>https://www.youtube.com/watch?v=aOYDKeFsTIQ</mainvideo_link>
+    <interesting_information>Bún mắm này là bún mắm kiểu miền Tây chứ không phải là bún mắm nêm kiểu Trung. Tùy khẩu vị mà mỗi nơi người ta có thể thêm thắt nguyên liệu khác nhau nhưng cơ bản phải có tôm, mực, heo quay thì bún mắm mới ngon đúng vị.</interesting_information>
+    <ingredients>
+      <ingredient>Mắm cá linh (300 gr)</ingredient>
+      <ingredient>Xương heo (800 gr)</ingredient>
+      <ingredient>Mực (300 gr)</ingredient>
+      <ingredient>Tôm tươi (300 gr)</ingredient>
+      <ingredient>Thịt heo quay (300 gr)</ingredient>
+      <ingredient>Bún tươi (1kg)</ingredient>
+      <ingredient>Cà tím (3 trái)</ingredient>
+      <ingredient>Bắp chuối (200 gr)</ingredient>
+      <ingredient>Rau nhút (200 gr)</ingredient>
+      <ingredient>Húng quế (5 cây)</ingredient>
+      <ingredient>Rau muống (200 gr)</ingredient>
+      <ingredient>Hẹ (10 cọng)</ingredient>
+      <ingredient>Đường trắng (3 muỗng canh)</ingredient>
+      <ingredient>Hạt nêm (2 muỗng canh)</ingredient>
+      <ingredient>Nước mắm (2 muỗng canh)</ingredient>
+    </ingredients>
+    <steps>
+      <step>
+        <step_text>Thịt heo quay cắt nhỏ vừa ăn. Tôm, mực và xương heo rửa sạch, để ráo nước.</step_text>
+        <step_picture_name>Bún Mắm Miền Tây//img1.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Đun sôi 3 lít nước cho xương heo vào luộc với 2 trái ớt cắt nhỏ cho xương không bị tanh. Nước sôi thì để lửa đun liu riu và hớt bỏ bọt cho nước được trong.</step_text>
+        <step_picture_name>Bún Mắm Miền Tây//img2.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Cà tím gọt vỏ, rửa sạch, chẻ đôi rồi cắt thành từng lát mỏng. Rau muống bỏ bớt lá, rửa sạch, bào sợi nhỏ. Hẹ rửa sạch, cắt nhỏ.</step_text>
+        <step_picture_name>Bún Mắm Miền Tây//img3.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Trong 1 nồi khác, đun nhỏ lửa mắm cá linh với 2 chén nước cho mắm nhừ.</step_text>
+        <step_picture_name>Bún Mắm Miền Tây//img4.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Bắp chuối bào nhỏ ngâm vào nước pha với giấm cho không bị thâm rồi rửa sạch. Rau nhút và húng quế nhặt sạch, rửa sạch.</step_text>
+        <step_picture_name>Bún Mắm Miền Tây//img5.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Khi mắm cá nhừ thì lọc qua rây để loại bỏ xương.</step_text>
+        <step_picture_name>Bún Mắm Miền Tây//img6.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Sau khi đun nước dùng được khoảng 1 tiếng rưỡi thì cho tôm vào luộc khoảng 5 phút rồi vớt ra bóc vỏ, bỏ đầu và để đuôi. Cũng như tôm, mực cắt thành khoanh nhỏ, cho vào luộc vừa chín thì vớt ra.</step_text>
+        <step_picture_name>Bún Mắm Miền Tây//img7.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Nước dùng sau khi đun xong thì cho phần cốt mắm vào. Khi nước sôi trở lại thì cho cà tím vào. Nêm vào nồi nước 2 muỗng canh hạt nêm, 3 muỗng canh đường và 2 muỗng canh nước mắm, khuấy đều rồi tắt bếp.</step_text>
+        <step_picture_name>Bún Mắm Miền Tây//img8.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Cho bún ra tô thêm rau sống, hẹ, húng quế, heo quay, tôm và mực lên trên, chan thêm nước dùng cho vừa ăn là có thể thưởng thức.</step_text>
+        <step_picture_name>Bún Mắm Miền Tây//img9.png</step_picture_name>
+      </step>
+    </steps>
+  </recipe>
+  
+  <recipe isFavorite="false" date_created="18-11-2020" category="Water Dish">
+    <foodname>Bún Bò Huế</foodname>
+    <mainpicture_name>Bún Bò Huế//img0.png</mainpicture_name>
+    <mainvideo_link>https://www.youtube.com/watch?v=NsbGadEFjFg</mainvideo_link>
+    <interesting_information>Bún bò Huế giò heo là món ăn ngon được nhiều người yêu thích, vị nước lèo đặc trưng của mắm ruốc huế, ngọt thanh từ thịt bò và xương, cay cay của sa tế ớt sẽ là món bạn không thể dừng ăn. Đặc biệt những sợi bún mềm mềm, dai dai được làm từ máy làm bún và tỏa ra một mùi thơm rất kích thích vị giác</interesting_information>
+    <ingredients>
+      <ingredient>Khẩu phần: 20 người</ingredient>
+      <ingredient>Bắp bò  (900 gr)</ingredient>
+      <ingredient>Đuôi bò (900 gr)</ingredient>
+      <ingredient>Chả lụa (450 gr)</ingredient>
+      <ingredient>Tiết heo (450 gr)</ingredient>
+      <ingredient>Nước dùng gà (8 lít)</ingredient>
+      <ingredient>Sả (12 cây)</ingredient>
+      <ingredient>Hành tây (2 củ)</ingredient>
+      <ingredient>Muối (45 gr)</ingredient>
+      <ingredient>Đường trắng (30 gr)</ingredient>
+      <ingredient>Nước mắm (60 ml)</ingredient>
+      <ingredient>Bột ngọt (10 gr)</ingredient>
+      <ingredient>Hạt điều (45 gr)</ingredient>
+      <ingredient>Hành tím băm (5 muỗng cafe)</ingredient>
+      <ingredient>Tỏi băm (5 muỗng cafe)</ingredient>
+      <ingredient>Húng quế (4 cây)</ingredient>
+      <ingredient>Tía tô (4 cây)</ingredient>
+      <ingredient>Giá đỗ (500 gr)</ingredient>
+      <ingredient>Ớt (5 trái)</ingredient>
+      <ingredient>Chanh (1 trái)</ingredient>
+      <ingredient>Bắp chuối (800 gr)</ingredient>
+      <ingredient>Bún tươi (3kg)</ingredient>
+      <ingredient>Bột tôm (30 gr)</ingredient>
+      <ingredient>Móng giò heo (900 gr)</ingredient>
+      <ingredient>Dầu ăn (45 ml)</ingredient>
+    </ingredients>
+    <steps>
+      <step>
+        <step_text>Để bún bò đươc ngon, đầu tiên bạn cần rửa sạch bắp bò và đuôi bò, cùng móng giò heo. Sau đó, đem chần sơ qua nước sôi. Bạn chỉ cần chần cho nguyên liệu ra chất cặn thì vớt ra sả sạch lại với nước lạnh</step_text>
+        <step_picture_name>Bún Bò Huế//img1.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Cho thịt, nước dùng gà, sả và hành tây vào nồi đầy nước tới miệng. Đun sôi rồi giảm nhiệt, đun liu riu, thêm vào 45g muối, 30g đường, 30g bột tôm, 60ml nước mắm. Nấu móng giò heo khoảng 1 tiếng là được, còn thịt bò thì để từ 2 - 3 tiếng đồng hồ.</step_text>
+        <step_picture_name>Bún Bò Huế//img2.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Hòa nước cốt 1 trái chanh với 500ml nước lọc, cho vào thau. Lột bỏ vỏ già của bắp chuối, cắt lát mỏng theo chiều ngang. Cắt tới đâu thì ngâm ngay vào thau nước khoảng 30 phút cho bắp chuối không bị thâm đen.</step_text>
+        <step_picture_name>Bún Bò Huế//img3.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Sau khi các loại thịt, móng giò đã chín, vớt ra, để nguội. Sau đó, thái bắp bò thành các miếng mỏng, vừa ăn. Chặt móng giò thành các miếng vừa ăn. Điều chỉnh thêm gia vị vào nồi nước dùng nếu cần thiết.</step_text>
+        <step_picture_name>Bún Bò Huế//img4.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Cho 45g hạt điều màu vào xào trong chảo với 45ml dầu ăn cho đến khi các hạt có màu đỏ tươi. Sau đó, vớt các hạt ra, thêm 5 muỗng cà phê hành tím băm và 5 muỗng cà phê tỏi băm vào xào cho đến khi vàng thơm. Rồi thêm hỗn hợp này vào nồi nước dùng.</step_text>
+        <step_picture_name>Bún Bò Huế//img5.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Sả lấy đầu, rửa sạch và đập dập. Hành tây bóc vỏ, rửa sơ qua nước rồi cắt đôi. Tía tô và húng quế lặt lấy lá, ngâm trong nước khoảng 10 phút rồi rửa sạch lại, vớt ra cho ráo nước. Giá đỗ rửa sạch, để ráo.</step_text>
+        <step_picture_name>Bún Bò Huế//img6.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Nấu nồi nước sôi, cho huyết heo vào nồi luộc chín. Sau đó, vớt huyết heo ra, cắt nhỏ thành từng miếng vừa ăn.</step_text>
+        <step_picture_name>Bún Bò Huế//img7.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Bún tươi chần qua nước sôi, rồi cho ra tô. Tiếp đó thêm giò lụa, thịt bắp bò, móng giò, huyết heo lên trên bún. Chan nước dùng. Ăn kèm với ớt, giá đỗ và các loại rau thơm</step_text>
+        <step_picture_name>Bún Bò Huế//img8.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Bún tươi chần qua nước sôi, rồi cho ra tô. Tiếp đó thêm giò lụa, thịt bắp bò, móng giò, huyết heo lên trên bún. Chan nước dùng. Ăn kèm với ớt, giá đỗ và các loại rau thơm</step_text>
+        <step_picture_name>Bún Bò Huế//img9.png</step_picture_name>
+      </step>
+    </steps>
+  </recipe>
   <recipe isFavorite="false" date_created="09-01-2021" category="Dry Food">
     <foodname>Bò né</foodname>
-    <mainvideo_link>https://www.youtube.com/watch?v=irL0oZvhV3I</mainvideo_link>
     <mainpicture_name>Bò né//bo-ne.jpg</mainpicture_name>
+    <mainvideo_link>https://www.youtube.com/watch?v=irL0oZvhV3I</mainvideo_link>
+    <interesting_information></interesting_information>
     <ingredients>
       <ingredient>Thịt bò (300 g) </ingredient>
       <ingredient>Trứng gà (1 quả)</ingredient>
@@ -93,6 +271,125 @@
       <step>
         <step_text>Hoàn thành món ăn</step_text>
         <step_picture_name>Bò né//hoan-thanh-mon-be-ne.jpg</step_picture_name>
+      </step>
+    </steps>
+  </recipe>
+  <recipe isFavorite="false" date_created="17-11-2020" category="Dry Food">
+    <foodname>Cơm Cháy Kho Quẹt</foodname>
+    <mainpicture_name>Cơm Cháy Kho Quẹt//img0.png</mainpicture_name>
+    <mainvideo_link>https://www.youtube.com/watch?v=PW2Lwnirt64</mainvideo_link>
+    <interesting_information>Cơm cháy kho quẹt là món ăn dân dã và siêu ngon, được nhiều người ưa thích. Sự giòn rụm của cơm cháy chiên, quết cùng kho quẹt đậm đà gia vị thật rất dễ gây nghiện</interesting_information>
+    <ingredients>
+      <ingredient>Khẩu phần : 4 người</ingredient>
+      <ingredient>Gạo tẻ (1 chén)</ingredient>
+      <ingredient>Gạo nếp (1 chén)</ingredient>
+      <ingredient>Tôm khô (50 gr)</ingredient>
+      <ingredient>Hành tím (1 củ)</ingredient>
+      <ingredient>Mỡ heo (300 gr)</ingredient>
+      <ingredient>Hành lá (3 nhánh)</ingredient>
+      <ingredient>Nước mắm (5 muỗng canh)</ingredient>
+      <ingredient>Đường trắng (5 muỗng canh)</ingredient>
+      <ingredient>Tiêu (1 muỗng cafe)</ingredient>
+      <ingredient>Ớt bột (1/2 muỗng cafe)</ingredient>
+      <ingredient>Dầu ăn (300 ml)</ingredient>
+    </ingredients>
+    <steps>
+      <step>
+        <step_text>Trộn đều 1 chén gạo và 1 chén nếp, sau đó vo sạch cho vào nồi thêm 1 muỗng canh dầu ăn và nấu chín. Đợi cơm nguội bớt cho cơm ra khay và ép mỏng khoảng 5 cm rồi cho vào tủ lạnh trong 30 phút. Cắt thành từng miếng vừa ăn rồi cho vào lò nướng sấy trong vòng 2 tiếng ở nhiệt độ 120 độ C.</step_text>
+        <step_picture_name>Cơm Cháy Kho Quẹt//img1.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Pha 5 muỗng canh nước mắm, 5 muỗng canh đường với 5 muỗng canh nước trong chén rồi khuấy đều. Ngâm 50gr tôm khô với 100 ml nước nóng trong 15 phút. Cho 300gr mỡ heo vào chảo và chiên thành tóp mỡ. Phi thơm 1 củ hành tím băm, sau đó cho tôm khô, tóp mỡ và phần nước mắm đã pha ban đầu vào nấu cho sệt lại. Thêm 1 muỗng cà phê tiêu, hành lá và 1/2 muỗng cà phê ớt bột để tăng thêm hương vị.</step_text>
+        <step_picture_name>Cơm Cháy Kho Quẹt//img2.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Lấy cơm đã sấy ra khỏi lò nướng và chiên vàng giòn là xong cách làm cơm cháy ngon. Thêm mỡ hành lên cơm cháy là có thể thưởng thức rồi.</step_text>
+        <step_picture_name>Cơm Cháy Kho Quẹt//img3.png</step_picture_name>
+      </step>
+    </steps>
+  </recipe>
+  <recipe isFavorite="false" date_created="18-11-2020" category="Drink">
+    <foodname>Detox Sả Gừng</foodname>
+    <mainpicture_name>Detox Sả Gừng//img0.png</mainpicture_name>
+    <mainvideo_link>https://www.youtube.com/watch?v=q1GY2m1BHz4</mainvideo_link>
+    <interesting_information>Với nước uống sả gừng, không những là thức uống giảm nhiệt ngày hè mà còn tốt cho sức khỏe. Sả có nhiều công dụng như: chống ung thư, giảm cân, giảm huyết áp, giúp tiêu hóa tốt,...</interesting_information>
+    <ingredients>
+      <ingredient>Khẩu phần : 2 người</ingredient>
+      <ingredient>Sả (3 cây)</ingredient>
+      <ingredient>Đường phèn (100 gr)</ingredient>
+      <ingredient>Gừng (1 củ)</ingredient>
+      <ingredient>Nước (2 lít)</ingredient>
+    </ingredients>
+    <steps>
+      <step>
+        <step_text>Sả cây rửa sạch, cắt khúc, đập dập. Gừng cũng rửa sạch, cắt lát, đập dập.</step_text>
+        <step_picture_name>Detox Sả Gừng//img1.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Cho 2 lít nước vào nồi đun, sau đó bỏ 200gr đường phèn, cho sả, gừng vào. Đun đến khi nước sôi, hạ lửa nhỏ, đun thêm khoảng 30-45 phút (để cho tinh chất trong sả và gừng tiết ra).</step_text>
+        <step_picture_name>Detox Sả Gừng//img2.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Nấu xong để nguội, lọc bỏ xác gừng, giữ lại sả. Cho vào bình để tủ lạnh, uống dần.</step_text>
+        <step_picture_name>Detox Sả Gừng//img3.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Sau khi uống hết nước sả gừng. Bạn cho nước lọc vào bình có xác sả, để tủ lạnh sau đó uống tiếp (uống khoảng 2-3 lần nước thì vứt xác sả đi).</step_text>
+        <step_picture_name>Detox Sả Gừng//img4.png</step_picture_name>
+      </step>
+    </steps>
+  </recipe>
+  <recipe isFavorite="false" date_created="18-11-2020" category="Drink">
+    <foodname>Siro Chanh</foodname>
+    <mainpicture_name>Siro Chanh//img0.png</mainpicture_name>
+    <mainvideo_link>https://www.youtube.com/watch?v=NwL6LdJFrPY</mainvideo_link>
+    <interesting_information>Vào những ngày thời tiết oi ả, nắng không nắng, mưa không mưa lại còn hì hầm suốt ngày, còn gì tuyệt vời hơn được thưởng thức những ly Siro chanh ngọt mát, thanh tao phải không nào?</interesting_information>
+    <ingredients>
+      <ingredient>Khẩu phần (4 người)</ingredient>
+      <ingredient>Đường trắng (200 gr)</ingredient>
+      <ingredient>Chanh (425 gr)</ingredient>
+      <ingredient></ingredient>
+    </ingredients>
+    <steps>
+      <step>
+        <step_text>Dùng dao nhỏ và mỏng để lạng bớt phần ngoài của vỏ chanh bỏ đi, cắt chanh ra và vắt lấy nước cốt. Cho đường vào trộn với vỏ chanh để vỏ chanh ngâm đường cho đường tan hoàn toàn (khoảng 3 tiếng).</step_text>
+        <step_picture_name>Siro Chanh//img1.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Đun sôi hỗn hợp trên lửa vừa cho đến khi sôi. khi hỗn hợp sôi, bạn lấy ra và dùng dụng cụ vắt thêm nước từ vỏ chanh. Nếu bạn muốn để dành thì chờ siro vỏ chanh nguội, cho vào bình sạch (đã đun khử trùng với nước sôi), đậy kín và cất trong ngăn mát.</step_text>
+        <step_picture_name>Siro Chanh//img2.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Bình siro chanh dây có thể bảo quản trong tủ lạnh đến 3 tháng. Khi dùng bạn cần pha theo tỉ lệ: 1 phần siro chanh 5 phần nước lọc. ­Giờ thì bạn có thể thưởng thức siro chanh được rồi.</step_text>
+        <step_picture_name>Siro Chanh//img3.png</step_picture_name>
+      </step>
+    </steps>
+  </recipe>
+  <recipe isFavorite="false" date_created="18-11-2020" category="Drink">
+    <foodname>Cà Phê Sữa Tươi</foodname>
+    <mainpicture_name>Cà Phê Sữa Tươi//img0.png</mainpicture_name>
+    <mainvideo_link>https://www.youtube.com/watch?v=Pspx8xV4JVg</mainvideo_link>
+    <interesting_information>Cà Phê Sữa Tươi - thức uống thơm ngon, cho mỗi bữa ăn hay thư giản. Cách pha cà phê sữa tươi đơn giản, bột cà phê hòa tan rất nhanh, quyện cùng bột cacao tăng thêm vị đắng và thơm cho ly cà phê</interesting_information>
+    <ingredients>
+      <ingredient>Khẩu phần  : 2 người</ingredient>
+      <ingredient>Bột cà phê (18 gr)</ingredient>
+      <ingredient>Bột ca cao (1 muỗng canh)</ingredient>
+      <ingredient>Sưỡi tươi không đường (100 ml)</ingredient>
+      <ingredient>Đường trắng (2 muỗng canh)</ingredient>
+      <ingredient>Đá (10 viên)</ingredient>
+    </ingredients>
+    <steps>
+      <step>
+        <step_text>Cách pha cà phê sữa tươi: Trộn đều bột cacao với đường. Bột cà phê espresso pha nóng rồi chế vào tô có chứa cacao và đường, khuấy lên cho đều và tan đường.</step_text>
+        <step_picture_name>Cà Phê Sữa Tươi//img1.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Cho đá viên vào ly, chế từ từ hỗn hợp cà phê cacao vào sao cho cà phê chiếm 3/4 ly. Ngay liền lúc đó bạn chế sữa tươi vào và thưởng thức ngay nhé.</step_text>
+        <step_picture_name>Cà Phê Sữa Tươi//img2.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Cách pha cà phê sữa tươi có sự kết hợp giữa cacao thơm lừng cùng sữa tươi beo béo khiến cho cà phê thanh thanh, đăng đắng mà không bị quá ngọt hay quá đắng. Bạn có thể pha ly cà phê này cho ba mẹ uống vào buổi sáng và chắc chắn cả hai đều khen ngon cho xem.</step_text>
+        <step_picture_name>Cà Phê Sữa Tươi//img3.png</step_picture_name>
       </step>
     </steps>
   </recipe>

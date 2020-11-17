@@ -48,6 +48,9 @@
         <Style TargetType="Image">
             <Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality"></Setter>
         </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="TextWrapping" Value="Wrap"></Setter>
+        </Style>
         <Storyboard x:Key="OpenMenu">
             <DoubleAnimation Storyboard.TargetName="LeftMenu"
                   Storyboard.TargetProperty="Width"

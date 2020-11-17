@@ -118,6 +118,14 @@ namespace Food_Recipe_Appplication
             html += "</body></html>";
             (sender as WebBrowser).NavigateToString(html);
         }
+
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
+        }
     }
 }
 

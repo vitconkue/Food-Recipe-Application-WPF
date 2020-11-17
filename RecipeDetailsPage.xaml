@@ -14,7 +14,7 @@
      Background="{DynamicResource MaterialDesignPaper}"
     FontFamily="{DynamicResource MaterialDesignFont}"
     WindowStyle="None" WindowStartupLocation="CenterScreen"  Title="RecipeDetailsPage" Height="700"  Width="1200"
-        Loaded="Window_Loaded">
+   MouseDown="Window_MouseDown"     Loaded="Window_Loaded">
     <Window.Resources>
         <local:ImageLinkConverter x:Key="convertImageLink">
 

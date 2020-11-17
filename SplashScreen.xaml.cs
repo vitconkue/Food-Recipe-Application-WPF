@@ -29,12 +29,14 @@ namespace Food_Recipe_Appplication
         Random rng = new Random();
         private Recipe recipe = new Recipe();
         private RecipesList recipeList = new RecipesList();
+        
         public SplashScreen()
         {
             InitializeComponent();
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+           
             var value = ConfigurationManager.AppSettings["ShowSplashScreen"];
             var showSplash = bool.Parse(value);
             
@@ -50,8 +52,10 @@ namespace Food_Recipe_Appplication
                 recipeList.LoadAll();
                 List<Recipe> temp = recipeList.Recipes;
                 int len = temp.Count();
-                int index=rng.Next(0, len-1);
+                Rerandom: int index = rng.Next(0, len - 1);
                 info.Text = temp[index].Interesting_infomation;
+                if (info.Text == "")
+                    goto Rerandom;
                 timer = new Timer();
                 timer.Elapsed += Timer_Elapsed;
                 timer.Interval = 10;
@@ -97,6 +101,12 @@ namespace Food_Recipe_Appplication
             this.Close();
         }
 
-       
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
+        }
     }
 }

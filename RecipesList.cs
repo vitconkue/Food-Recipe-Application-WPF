@@ -90,13 +90,13 @@ namespace Food_Recipe_Appplication
             }
             return foods;
         }
-        public BindingList<Recipe> GetCategoryBindingList(string category)
+        public RecipesList GetCategoryBindingList(string category)
         {
-            var foods = new BindingList<Recipe>();
+            var foods = new RecipesList();
             foreach (var recipe in _recipes)
             {
                 if (recipe.Category == category)
-                    foods.Add(recipe);
+                    foods.AddRecipeWithoutSaving(recipe);
             }
             return foods;
         }
@@ -125,6 +125,7 @@ namespace Food_Recipe_Appplication
 
 
                             _recipes.Add(newRecipe);
+                            Debug.WriteLine(newRecipe.FoodName);
                         }
                     }
                 }

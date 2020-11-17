@@ -23,6 +23,9 @@
         <local:IsFavoriteToColorConverter x:Key="isfavoriteicon">
 
         </local:IsFavoriteToColorConverter>
+        <Style TargetType="TextBlock">
+            <Setter Property="TextWrapping" Value="Wrap"></Setter>
+        </Style>
         <Style x:Key="MenuButtonStyle" TargetType="{x:Type Button}">
             <Setter Property="Height" Value="70"></Setter>
             <Setter Property="Width" Value="170"></Setter>

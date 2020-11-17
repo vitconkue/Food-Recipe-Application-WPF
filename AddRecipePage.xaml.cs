@@ -114,20 +114,14 @@ namespace Food_Recipe_Appplication
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             //Save this Step
+            
             if (Step >= list.Count() || Step == 0)
             {
                 if (Step == 0)
                 {
-                    recipe.FoodName = AddNameRecipeBox.Text;
-                    recipe.MainVideoLink = VideoLinkBox.Text;
-                    recipe.Interesting_infomation = InterestingInfoBox.Text;
-                    recipe.Category = Category.Text;
-                    IngredientsString = DescriptionBox.Text;
-                    pathList.Add(filePath);
-                    AddNameRecipeBox.Focusable = false;
-                    VideoLinkBox.Focusable = false;
-                    InterestingInfoBox.Focusable = false;
-                    Category.IsEnabled = false;
+                    
+                    MessageBox.Show("Recipe need at least one step!!!","Can't save", MessageBoxButton.OK,MessageBoxImage.Error);
+                    return;
                 }
                 else
                 {
@@ -208,7 +202,15 @@ namespace Food_Recipe_Appplication
                 string sourceFile = System.IO.Path.Combine(sourcePath, "");
                 string destFile = System.IO.Path.Combine(targetPath, fileName);
                 //Copy file từ file nguồn đến file đích
-                System.IO.File.Copy(sourceFile, destFile, true);
+                try
+                {
+                    System.IO.File.Copy(sourceFile, destFile, true);
+                }
+                catch
+                {
+                    MessageBox.Show("Image is empty","Error",MessageBoxButton.OK,MessageBoxImage.Error);
+                    return;
+                }
             }
             recipe.Steps = list;
             //Tách chuỗi nguyên liệu
@@ -237,8 +239,8 @@ namespace Food_Recipe_Appplication
             recipe.Ingredients.AddIngredient(ingredient);
             recipeList.AddRecipe(recipe);
             //Messagebox
-            MessageBox.Show("Created new recipe!");
-            this.NavigationService.Navigate(new HomePage());
+            MessageBox.Show("Created new recipe!!!","Saved",MessageBoxButton.OK,MessageBoxImage.Information);
+            this.NavigationService.Navigate(new AddRecipePage(recipeList));
         }
 
         private void LeftArrowButton_Click(object sender, RoutedEventArgs e)
@@ -308,11 +310,11 @@ namespace Food_Recipe_Appplication
             {
                 if (Step == 0)
                 {
-                    if (AddNameRecipeBox.Text == "Recipe name" || AddNameRecipeBox.Text == "" ||
+                    if (AddNameRecipeBox.Text == "Recipe name*" || AddNameRecipeBox.Text == "" ||
                           DescriptionBox.Text == "Input ingredients (press Enter after an ingredient)" ||
                            DescriptionBox.Text == "")
                     {
-                        MessageBox.Show("Please input required infomation!!!");
+                        MessageBox.Show("Please input required infomation!!!","Error",MessageBoxButton.OK,MessageBoxImage.Warning);
                         return;
                     }
                     else
@@ -361,7 +363,7 @@ namespace Food_Recipe_Appplication
                 }
                 Step++;
                 StepNumber.Text = Step.ToString();
-                DescriptionBox.Text = "Input description";
+                DescriptionBox.Text = "Input description*";
                 DescriptionBox.Foreground = Brushes.Gray;
                 var directory = AppDomain.CurrentDomain.BaseDirectory;
                 directory += "Data\\Images\\unknown.png";
@@ -398,7 +400,7 @@ namespace Food_Recipe_Appplication
         }
         private void DescriptionBox_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (DescriptionBox.Text == "Input ingredients (press Enter after a ingredients)" || DescriptionBox.Text == "Input description")
+            if (DescriptionBox.Text == "Input ingredients (press Enter after a ingredients)*" || DescriptionBox.Text == "Input description")
             {
                 DescriptionBox.Text = "";
                 DescriptionBox.Foreground = Brushes.Black;
@@ -411,12 +413,12 @@ namespace Food_Recipe_Appplication
             {
                 if (Step == 0)
                 {
-                    DescriptionBox.Text = "Input ingredients (press Enter after a ingredients)";
+                    DescriptionBox.Text = "Input ingredients (press Enter after a ingredients)*";
                     DescriptionBox.Foreground = Brushes.Gray;
                 }
                 else
                 {
-                    DescriptionBox.Text = "Input description";
+                    DescriptionBox.Text = "Input description*";
                     DescriptionBox.Foreground = Brushes.Gray;
                 }
             }
@@ -425,7 +427,7 @@ namespace Food_Recipe_Appplication
 
         private void AddNameRecipeBox_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (AddNameRecipeBox.Text == "Recipe name")
+            if (AddNameRecipeBox.Text == "Recipe name*")
             {
                 AddNameRecipeBox.Text = "";
                 AddNameRecipeBox.Foreground = Brushes.Black;
@@ -436,7 +438,7 @@ namespace Food_Recipe_Appplication
         {
             if (AddNameRecipeBox.Text == "")
             {
-                AddNameRecipeBox.Text = "Recipe name";
+                AddNameRecipeBox.Text = "Recipe name*";
                 AddNameRecipeBox.Foreground = Brushes.Gray;
             }
 

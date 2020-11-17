@@ -9,8 +9,7 @@
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        TextElement.FontSize="15"
-        Title="SplashScreen"  Height="650" Width="900" MaxHeight="650" MaxWidth="900" MinHeight="650" MinWidth="900" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen"
+        TextElement.FontSize="15" Height="650" Width="920" MouseDown="Window_MouseDown" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen"
          WindowStyle="None">
     <Grid>
         <Canvas>
@@ -19,7 +18,7 @@
             </Canvas.Background>
             <materialDesign:PackIcon Foreground="White" Kind="Idea" Canvas.Top="47" Height="53" Width="34" Canvas.Left="38"/>
             <TextBlock Foreground="Orange" FontSize="45" Canvas.Left="77" Canvas.Top="47">Did you know?</TextBlock>
-            <TextBlock Name="info" FontSize="25" Foreground="White" Canvas.Left="77" Canvas.Top="121"></TextBlock>
+            <TextBlock TextWrapping="Wrap" Width="400" Height="400" Name="info" FontSize="25" Foreground="White" Canvas.Left="77" Canvas.Top="121"></TextBlock>
 
             <Button Foreground="White" Name="SkipButton" Click="SkipButton_Click" Canvas.Left="811" Canvas.Top="20" Width="60" Height="20">
                 <StackPanel Orientation="Horizontal" Width="171">

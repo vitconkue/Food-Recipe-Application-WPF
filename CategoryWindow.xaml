@@ -13,7 +13,7 @@
      TextOptions.TextRenderingMode="Auto"
      Background="{DynamicResource MaterialDesignPaper}"
      FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="CategoryWindow" WindowStartupLocation="CenterScreen" WindowStyle="None" Height="700" Width="1100" Loaded="Window_Loaded">
+        Title="CategoryWindow" WindowStartupLocation="CenterScreen" WindowStyle="None" Height="700" Width="1100" MinHeight="700" MinWidth="1100" MouseDown="Window_MouseDown" MaxHeight="700" MaxWidth="1100" Loaded="Window_Loaded">
     <Window.Resources>
         <local:ImageLinkConverter x:Key="convertImageLink">
 

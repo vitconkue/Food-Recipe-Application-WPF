@@ -143,6 +143,9 @@
             </Style.Triggers>
 
         </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="TextWrapping" Value="Wrap"></Setter>
+        </Style>
         <Storyboard x:Key="OpenMenu">
             <DoubleAnimation Storyboard.TargetName="LeftMenu"
                   Storyboard.TargetProperty="Width"
