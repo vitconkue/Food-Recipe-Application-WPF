@@ -223,7 +223,7 @@ namespace Food_Recipe_Appplication
                 var number = NumberOfRecipePerPage();
                 currentPage = currentPage - 1;
                 RecipesList toShow = recipeList.GetByPage(currentPage, number);
-                if ((currentPage + 1) % maxButtonPerPage == 0 && currentPage - 1 < maxPage)
+                if ((currentPage) % maxButtonPerPage == 0 && currentPage - 1 < maxPage)
                 {
                     foreach (Button button in SkipButton.Children)
                     {
@@ -232,6 +232,7 @@ namespace Food_Recipe_Appplication
                         {
                             num -= maxButtonPerPage;
                             button.Content = num.ToString();
+                            button.Name = $"page_{num}";
                         }
 
 
@@ -269,10 +270,12 @@ namespace Food_Recipe_Appplication
                         {
                             num += maxButtonPerPage;
                             button.Content = num.ToString();
+                            button.Name = $"page_{num}";
                         }
 
 
                     };
+
                 }
                 foreach (Button button in SkipButton.Children)
                 {

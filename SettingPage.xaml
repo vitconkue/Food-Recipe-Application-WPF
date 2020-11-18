@@ -39,7 +39,7 @@
                 <Button Name="CategoryButton" Click="CategoryButton_Click" Style="{DynamicResource MenuButtonStyle}">
                     <StackPanel Orientation="Horizontal">
                         <Image Height="25" Source="Icons/category.png" Margin="10 0 10 0"></Image>
-                        <TextBlock VerticalAlignment="Center">Category</TextBlock>
+                        <TextBlock VerticalAlignment="Center">Categories</TextBlock>
                     </StackPanel>
                 </Button>
                 <Button Click="AddRecipeButton_Click"  Name="AddRecipeButton"  Style="{DynamicResource MenuButtonStyle}">

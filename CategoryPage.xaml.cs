@@ -45,6 +45,23 @@ namespace Food_Recipe_Appplication
             SearchBlock.Margin = new Thickness(windowWidth - 350, 0, 0, 0);
         }
 
+        private void PackIcon_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            var icon = sender as PackIcon;
+            icon.Foreground = Brushes.Pink;
+            Debug.WriteLine(temp.FoodName);
+            foreach (var recipe in categoryList)
+            {
+                if (recipe.FoodName == temp.FoodName)
+                {
+                    recipe.ToggleFavorite();
+                    categoryList = categoryList.SearchFavoriteRecipes();
+                    
+                }
+            }
+
+
+        }
         private void MenuButton_Click(object sender, RoutedEventArgs e)
         {
             MenuButton.Visibility = Visibility.Collapsed;

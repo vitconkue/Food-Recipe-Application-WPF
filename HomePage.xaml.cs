@@ -345,20 +345,22 @@ namespace Food_Recipe_Appplication
             }
         }
 
-        private void SearchBox_PreviewKeyUp(object sender, KeyEventArgs e)
+        private async void SearchBox_PreviewKeyUp(object sender, KeyEventArgs e)
         {
 
             string key = (sender as TextBox).Text;
             if (key == "")
             {
                 //searchResultList = recipeList.SearchNameContains_NoneUtf(key);
-
+                await Task.Delay(300);
                 ChangeBindingList(recipeList);
             }
             else
             {
 
                 searchResultList = recipeList.SearchNameContains_NoneUtf(key);
+                await Task.Delay(300);
+
                 ChangeBindingList(searchResultList);
                 //MessageBox.Show(key);
             }
