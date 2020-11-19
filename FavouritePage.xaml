@@ -22,6 +22,9 @@
         <local:IsFavoriteToColorConverter x:Key="isfavoriteicon">
 
         </local:IsFavoriteToColorConverter>
+        <local:RecipeNameConverter x:Key="recipeNameConvert">
+
+        </local:RecipeNameConverter>
         <Style x:Key="MenuButtonStyle" TargetType="{x:Type Button}">
             <Setter Property="Height" Value="70"></Setter>
             <Setter Property="Width" Value="170"></Setter>
@@ -149,7 +152,7 @@
                                     </Border>
                                     <StackPanel  Height="35" HorizontalAlignment="Center" VerticalAlignment="Center"  Orientation="Horizontal">
 
-                                        <TextBlock FontSize="15" Margin="0 10 10 0" Text="{Binding FoodName}"></TextBlock>
+                                        <TextBlock ToolTip="{Binding FoodName}" FontSize="15" Margin="0 10 10 0" Text="{Binding FoodName,Converter={StaticResource recipeNameConvert}}"></TextBlock>
                                         <materialDesign:PackIcon ToolTip="Remove from favourite" Foreground="{Binding IsFavorite, Converter={StaticResource isfavoriteicon}}" Margin="0 6 0 0"  Cursor="Hand" PreviewMouseLeftButtonDown="PackIcon_PreviewMouseLeftButtonDown" Height="25" Width="25"  Kind="Heart"/>
                                         <Button Name="DetaisButton" Click="DetaisButton_Click" Margin="10 0 0 0">Details</Button>
                                     </StackPanel>

@@ -50,9 +50,12 @@ namespace Food_Recipe_Appplication
             foreach(var ingredient in ingredients)
             {
                 TextBlock text = new TextBlock();
-                text.Text = $"- {ingredient}";
-                text.TextWrapping = TextWrapping.Wrap;
-                ingredientPanel.Children.Add(text);
+                if (ingredient != "")
+                {
+                    text.Text = $"- {ingredient}";
+                    text.TextWrapping = TextWrapping.Wrap;
+                    ingredientPanel.Children.Add(text);
+                }
             }
             totalStep = bindingList.Count();
             Button nextStep = new Button();
@@ -63,7 +66,7 @@ namespace Food_Recipe_Appplication
             prevStep.Margin = new Thickness(20, 0, 0, 0);
             ButtonPanel.Children.Add(prevStep);
             ButtonPanel.Children.Add(nextStep);
- 
+        
             nextStep.Click += NextStep_Click;
             prevStep.Click += PrevStep_Click;
             var step = bindingList[currentStep];

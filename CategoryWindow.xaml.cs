@@ -28,6 +28,7 @@ namespace Food_Recipe_Appplication
         private Recipe food = new Recipe();
         private int currentPage = 1;
         private int maxPage;
+        private int maxButtonPerPage = 5;
         public CategoryWindow()
         {
             InitializeComponent();
@@ -95,100 +96,11 @@ namespace Food_Recipe_Appplication
         {
             (sender as StackPanel).Background = Brushes.White;
         }
-        private void ChangeBindingList(RecipesList input)
-        {
+        
+       
+     
 
-            SkipButton.Children.Clear();
-            var number = NumberOfRecipePerPage();
-            var bindingList = input.GetByPage(1, number).GetBindingData();
-            dataListView.ItemsSource = bindingList;
-            int len = input.Recipes.Count;
-            int numberOfPage = len / number + (len % number == 0 ? 0 : 1);
-            Button preButton = new Button();
-            preButton.Name = "prev";
-            preButton.Content = "Prev";
-            preButton.Background = Brushes.White;
-            preButton.BorderBrush = Brushes.Black;
-            preButton.Foreground = Brushes.Black;
-            preButton.Margin = new Thickness(5);
-            preButton.Click += PreButton_Click;
-            SkipButton.Children.Add(preButton);
-            maxPage = numberOfPage;
-            for (int i = 1; i <= numberOfPage; i++)
-            {
-                Button numberButton = new Button();
-                numberButton.Name = $"page_{i}";
-                numberButton.Content = $"{i}";
-                numberButton.Background = Brushes.White;
-                numberButton.BorderBrush = Brushes.Black;
-                numberButton.Foreground = Brushes.Black;
-                numberButton.Margin = new Thickness(5);
-                numberButton.Click += PageNumber_Click;
-                SkipButton.Children.Add(numberButton);
-            }
-            Button nextButton = new Button();
-            nextButton.Name = "next";
-            nextButton.Content = "Next";
-            nextButton.Background = Brushes.White;
-            nextButton.BorderBrush = Brushes.Black;
-            nextButton.Foreground = Brushes.Black;
-            nextButton.Margin = new Thickness(5);
-            nextButton.Click += NextButton_Click;
-            SkipButton.Children.Add(nextButton);
-            try
-            {
-                Button firstButton = (Button)SkipButton.Children[1];
-                BrushConverter bc = new BrushConverter();
-                firstButton.Background = (Brush)bc.ConvertFrom("#ed81a1");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-        private void PreButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (currentPage > 1)
-            {
-                var number = NumberOfRecipePerPage();
-                currentPage = currentPage - 1;
-                RecipesList toShow = recipeList.GetByPage(currentPage, number);
-                foreach (Button button in SkipButton.Children)
-                {
-                    if (button.Content.ToString() == (currentPage).ToString())
-                    {
-                        button.Background = Brushes.Orange;
-                    }
-                    else
-                    {
-                        button.Background = Brushes.White;
-                    }
-                };
-                dataListView.ItemsSource = toShow.GetBindingData();
-            }
-        }
-
-        private void NextButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (currentPage < maxPage)
-            {
-                var number = NumberOfRecipePerPage();
-                currentPage = currentPage + 1;
-                RecipesList toShow = recipeList.GetByPage(currentPage, number);
-                foreach (Button button in SkipButton.Children)
-                {
-                    if (button.Content.ToString() == (currentPage).ToString())
-                    {
-                        button.Background = Brushes.Orange;
-                    }
-                    else
-                    {
-                        button.Background = Brushes.White;
-                    }
-                };
-                dataListView.ItemsSource = toShow.GetBindingData();
-            }
-        }
+      
         private void PageNumber_Click(object sender, RoutedEventArgs e)
         {
             var number = NumberOfRecipePerPage();
@@ -198,7 +110,8 @@ namespace Food_Recipe_Appplication
             {
                 button.Background = Brushes.White;
             };
-            (sender as Button).Background = Brushes.Orange;
+            BrushConverter bc = new BrushConverter();
+            (sender as Button).Background = (Brush)bc.ConvertFrom("#ed81a1");
             var tokens = pageNumber.Split(separator, StringSplitOptions.None);
             int nextPage = int.Parse(tokens[1]);
             currentPage = nextPage;
@@ -314,6 +227,145 @@ namespace Food_Recipe_Appplication
                 //MessageBox.Show(key);
             }
 
+        }
+
+
+        private void ChangeBindingList(RecipesList input)
+        {
+
+            SkipButton.Children.Clear();
+            var number = NumberOfRecipePerPage();
+            var bindingList = input.GetByPage(1, number).GetBindingData();
+            dataListView.ItemsSource = bindingList;
+            int len = input.Recipes.Count;
+            int numberOfPage = len / number + (len % number == 0 ? 0 : 1);
+            maxPage = numberOfPage;
+            int temp = numberOfPage < maxButtonPerPage ? numberOfPage : maxButtonPerPage;
+            ChangeListButton(1, temp);
+        }
+
+        private void PreButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (currentPage > 1)
+            {
+                var number = NumberOfRecipePerPage();
+                currentPage = currentPage - 1;
+                RecipesList toShow = recipeList.GetByPage(currentPage, number);
+                if ((currentPage) % maxButtonPerPage == 0 && currentPage - 1 < maxPage)
+                {
+                    int temp = currentPage + 1 - maxButtonPerPage;
+                    ChangeListButton(temp, currentPage);
+
+                }
+                foreach (Button button in SkipButton.Children)
+                {
+                    if (button.Content.ToString() == (currentPage).ToString())
+                    {
+                        BrushConverter bc = new BrushConverter();
+                        button.Background = (Brush)bc.ConvertFrom("#ed81a1");
+                    }
+                    else
+                    {
+                        button.Background = Brushes.White;
+                    }
+                };
+                dataListView.ItemsSource = toShow.GetBindingData();
+            }
+        }
+
+        private void NextButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (currentPage < maxPage)
+            {
+                var number = NumberOfRecipePerPage();
+                currentPage = currentPage + 1;
+                RecipesList toShow = recipeList.GetByPage(currentPage, number);
+                if ((currentPage - 1) % maxButtonPerPage == 0 && currentPage - 1 < maxPage)
+                {
+                    int temp = currentPage + maxButtonPerPage;
+                    if (temp > nearestNumberDivideByFive(temp) && temp <= maxPage)
+                    {
+                        temp = nearestNumberDivideByFive(temp);
+                        ChangeListButton(currentPage, temp);
+                    }
+                    else
+                    {
+                        ChangeListButton(currentPage, maxPage);
+                    }
+                }
+                foreach (Button button in SkipButton.Children)
+                {
+                    if (button.Content.ToString() == (currentPage).ToString())
+                    {
+                        BrushConverter bc = new BrushConverter();
+                        button.Background = (Brush)bc.ConvertFrom("#ed81a1");
+                    }
+                    else
+                    {
+                        button.Background = Brushes.White;
+                    }
+                };
+                dataListView.ItemsSource = toShow.GetBindingData();
+            }
+        }
+
+        private void ChangeListButton(int minNum, int maxNum)
+        {
+            SkipButton.Children.Clear();
+            Button preButton = new Button();
+            preButton.Name = "prev";
+            preButton.Content = "Prev";
+            preButton.Background = Brushes.White;
+            preButton.BorderBrush = Brushes.Black;
+            preButton.Foreground = Brushes.Black;
+            preButton.Margin = new Thickness(5);
+            preButton.Click += PreButton_Click;
+            SkipButton.Children.Add(preButton);
+            for (int i = minNum; i <= maxNum; i++)
+            {
+                Button numberButton = new Button();
+                numberButton.Name = $"page_{i}";
+                numberButton.Content = $"{i}";
+                numberButton.Background = Brushes.White;
+                numberButton.BorderBrush = Brushes.Black;
+                numberButton.Foreground = Brushes.Black;
+                numberButton.Margin = new Thickness(5);
+                numberButton.Click += PageNumber_Click;
+                SkipButton.Children.Add(numberButton);
+            }
+            Button nextButton = new Button();
+            nextButton.Name = "next";
+            nextButton.Content = "Next";
+            nextButton.Background = Brushes.White;
+            nextButton.BorderBrush = Brushes.Black;
+            nextButton.Foreground = Brushes.Black;
+            nextButton.Margin = new Thickness(5);
+            nextButton.Click += NextButton_Click;
+            SkipButton.Children.Add(nextButton);
+            try
+            {
+                Button firstButton = (Button)SkipButton.Children[1];
+                BrushConverter bc = new BrushConverter();
+                firstButton.Background = (Brush)bc.ConvertFrom("#ed81a1");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public int nearestNumberDivideByFive(int num)
+        {
+            int result = 0;
+            while (num > 0)
+            {
+                num--;
+                if (num % 5 == 0)
+                {
+                    result = num;
+                    break;
+                }
+            }
+            return result;
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
