@@ -85,8 +85,8 @@
                         <Grid Grid.Row="0" Margin="30 20 0 0" HorizontalAlignment="Left">
                             <ToggleButton FontSize="14" x:Name="ToggleSwitch1" 
                           Style="{DynamicResource ToggleSwitchTopStyle}"
-                          Content="Show suggested food everytime you open app" 
-               Click="ToggleSwitch1_Click"    />
+                          Content="Show infomation about random food everytime you open app" 
+               Click="ToggleSwitch1_Click" />
                         </Grid>
 
 
