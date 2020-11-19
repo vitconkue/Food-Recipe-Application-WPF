@@ -400,7 +400,7 @@ namespace Food_Recipe_Appplication
         }
         private void DescriptionBox_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (DescriptionBox.Text == "Input ingredients (press Enter after a ingredients)*" || DescriptionBox.Text == "Input description")
+            if (DescriptionBox.Text == "Input ingredients (press Enter after a ingredients)*" || DescriptionBox.Text == "Input description*")
             {
                 DescriptionBox.Text = "";
                 DescriptionBox.Foreground = Brushes.Black;

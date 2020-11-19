@@ -175,7 +175,6 @@
       </step>
     </steps>
   </recipe>
-  
   <recipe isFavorite="false" date_created="18-11-2020" category="Water Dish">
     <foodname>Bún Bò Huế</foodname>
     <mainpicture_name>Bún Bò Huế//img0.png</mainpicture_name>
@@ -247,7 +246,7 @@
       </step>
     </steps>
   </recipe>
-  <recipe isFavorite="false" date_created="09-01-2021" category="Dry Food">
+  <recipe isFavorite="false" date_created="09-01-2020" category="Dry Food">
     <foodname>Bò né</foodname>
     <mainpicture_name>Bò né//bo-ne.jpg</mainpicture_name>
     <mainvideo_link>https://www.youtube.com/watch?v=irL0oZvhV3I</mainvideo_link>
@@ -390,6 +389,384 @@
       <step>
         <step_text>Cách pha cà phê sữa tươi có sự kết hợp giữa cacao thơm lừng cùng sữa tươi beo béo khiến cho cà phê thanh thanh, đăng đắng mà không bị quá ngọt hay quá đắng. Bạn có thể pha ly cà phê này cho ba mẹ uống vào buổi sáng và chắc chắn cả hai đều khen ngon cho xem.</step_text>
         <step_picture_name>Cà Phê Sữa Tươi//img3.png</step_picture_name>
+      </step>
+    </steps>
+  </recipe>
+  <recipe isFavorite="false" date_created="18-11-2020" category="Drink">
+    <foodname>Chanh Mật Ong</foodname>
+    <mainpicture_name>Chanh Mật Ong//img0.png</mainpicture_name>
+    <mainvideo_link>Video link</mainvideo_link>
+    <interesting_information>Chanh mật ong là món nước uống thanh nhiệt, giải độc, lợi tiểu, hỗ trợ tiêu hóa, tăng cường hệ thống miễn dịch. Ngoài ra, chanh mật ong còn giúp da dẻ mịn màng, hơi thở thơm tho. Thức uống chanh mật ong này dễ làm, có vị chua ngọt, khi uống rất thơm ngon. Thức uống này rất thích hợp dùng vào mỗi buổi sáng khi bắt đầu một ngày mới tràn đầy năng lượng cho cả gia đình.</interesting_information>
+    <ingredients>
+      <ingredient>Chanh (1 Trái)</ingredient>
+      <ingredient>Mật ong (2 Muỗng cà phê)</ingredient>
+      <ingredient>Nước (130 ml)</ingredient>
+    </ingredients>
+    <steps>
+      <step>
+        <step_text>Thái chanh thành lát mỏng. Cho chanh và mật ong vào ly.</step_text>
+        <step_picture_name>Chanh Mật Ong//img1.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Cho vào lò vi sóng trong 1 phút ở mức trung bình. Lấy hỗn hợp chanh mật ong ra khỏi lò vi sóng, thấy chanh vừa chín là được.</step_text>
+        <step_picture_name>Chanh Mật Ong//img2.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Rót nước ấm vào ly, khuấy đều. Dùng chanh mật ong khi nóng hoặc thêm đá viên.</step_text>
+        <step_picture_name>Chanh Mật Ong//img3.png</step_picture_name>
+      </step>
+    </steps>
+  </recipe>
+  <recipe isFavorite="false" date_created="18-11-2020" category="Drink">
+    <foodname>Sữa Đậu Phộng</foodname>
+    <mainpicture_name>Sữa Đậu Phộng//img0.png</mainpicture_name>
+    <mainvideo_link>https://www.youtube.com/watch?v=eaL1fkI662s</mainvideo_link>
+    <interesting_information>Đậu phộng vốn được biết đến như một loại lương thực giàu chất dinh dưỡng, được rất nhiều người ưa chuộng. Đậu phộng không chỉ được được chế biến thành nhiều món ăn hấp dẫn mà còn là thức uống rất tốt cho sức khỏe. Sữa đậu phộng lạ miệng cùng vị bùi bùi, béo béo của đậu phộng là thức uống giải khát ngon tuyệt cho cả nhà.</interesting_information>
+    <ingredients>
+      <ingredient>Đậu phộng (250 Gr)</ingredient>
+      <ingredient>Sữa tươi (200 ml)</ingredient>
+      <ingredient>Sữa đặc (50 Gr)</ingredient>
+      <ingredient>Đường nâu (70 Gr)</ingredient>
+    </ingredients>
+    <steps>
+      <step>
+        <step_text>Rang 250gr đậu cho đến khi đậu chuyển màu vàng, bắt đầu nghe mùi thơm thì tắt bếp. Sau đó bạn tách vỏ đậu ra cho thật sạch, rồi đem xay đậu phộng cho nhuyễn.</step_text>
+        <step_picture_name>Sữa Đậu Phộng//img1.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Nấu 500ml nước với 200ml sữa tươi, 50ml sữa đặc, 70gr đường nâu và đậu phộng vừa xay, bạn khuấy đều ở lửa nhỏ cho sữa hòa quyện khoảng 20 phút rồi tắt bếp. Cuối cùng rây sữa lại cho mịn và bắt đầu thưởng thức thôi nào.</step_text>
+        <step_picture_name>Sữa Đậu Phộng//img2.png</step_picture_name>
+      </step>
+    </steps>
+  </recipe>
+  <recipe isFavorite="false" date_created="18-11-2020" category="Dry Food">
+    <foodname>Pad Thái</foodname>
+    <mainpicture_name>Pad Thái//img0.png</mainpicture_name>
+    <mainvideo_link>https://www.youtube.com/watch?v=ClxFuKPsY30</mainvideo_link>
+    <interesting_information>Món Pad Thái với hương vị đậm đà, rất đặc biệt mang phong cách ẩm thực của xứ sở Thái Lan. Phần sốt chua ngọt thấm đều vào từng sợi phở, thêm vị tươi ngon của tôm và chút béo bùi của đậu hũ, khiến cho món Pad này càng khó cưỡng hơn khi thưởng thức.</interesting_information>
+    <ingredients>
+      <ingredient>Tôm sú (300gr)</ingredient>
+      <ingredient>Đường thốt nốt bột (50gr)</ingredient>
+      <ingredient>Nước cốt me (2 muỗng canh)</ingredient>
+      <ingredient>Bánh phở Thái (300gr)</ingredient>
+      <ingredient>Hành lá (50gr)</ingredient>
+      <ingredient>Đậu hũ chiên nhỏ (100gr)</ingredient>
+      <ingredient>Củ cải muối (50gr)</ingredient>
+      <ingredient>Trứng gà (4 quả)</ingredient>
+      <ingredient>Giá sống (50gr)</ingredient>
+      <ingredient>Đậu phộng rang (không vỏ) (50gr)</ingredient>
+      <ingredient>Chanh xanh không hạt (1 quả)</ingredient>
+      <ingredient>Tôm khô (30gr)</ingredient>
+      <ingredient></ingredient>
+    </ingredients>
+    <steps>
+      <step>
+        <step_text>Phần sốt: Bắc chảo cho 50gr đường thốt nốt nấu tan, rồi cho thêm 30ml nước, 2 muỗng canh nước mắm, 2 muỗng canh nước cốt me, nấu trong 10 phút ở lửa nhỏ cho đến sốt sệt lại.</step_text>
+        <step_picture_name>Pad Thái//img1.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>300gr tôm bóc vỏ áp chảo vàng đều, vớt ra để riêng. Cho tiếp 30gr tôm khô xay nhuyễn, 20gr hành tím cắt nhỏ, 20gr tỏi cắt nhỏ, 50gr củ cải muối, 1 muỗng cà phê ớt bột rồi xào trong 5 phút.</step_text>
+        <step_picture_name>Pad Thái//img2.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Cho tiếp bánh phở đã ngâm, đậu hũ chiên, tôm đã áp chảo vào cùng phần sốt đã chuẩn bị vào xào đều tay. Sau đó, dùng xẻng gạt phần phở xào qua 1 bên, 1/2 chảo còn lại cho 1 muỗng canh dầu ăn rồi thêm 4 quả trứng gà vào đảo đều tay.</step_text>
+        <step_picture_name>Pad Thái//img3.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Cuối cùng cho 50gr đậu phộng rang (giã nhỏ), giá sống, hẹ cắt khúc, tôm áp chảo vào xào thêm 2 phút, rồi tắt bếp.</step_text>
+        <step_picture_name>Pad Thái//img4.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Món Pad Thái thưởng thức ngon hơn khi vắt thêm chanh trộn đều, bạn có thể rắc thêm ớt bột để tùy chỉnh mức độ ăn cay của mình nhé.</step_text>
+        <step_picture_name>Pad Thái//img5.png</step_picture_name>
+      </step>
+    </steps>
+  </recipe>
+  <recipe isFavorite="false" date_created="18-11-2020" category="Dry Food">
+    <foodname>Gân Bò Cháy Tỏi</foodname>
+    <mainpicture_name>Gân Bò Cháy Tỏi//img0.png</mainpicture_name>
+    <mainvideo_link>https://www.youtube.com/watch?v=hGgo9mgp5ws</mainvideo_link>
+    <interesting_information>Cuối tuần lai rai với món gân bò cháy tỏi, đậm đà đầy hấp dẫn ăn là ghiền ngay. Gân bò được hầm mềm nhưng vẫn giữ được độ giòn sần sật, áo bên ngoài lớp tỏi phi thơm phức bùi bùi thấm đều gia vị.Món ăn có đầy đủ vị mặn ngọt và hương thơm nồng nàn của tỏi phi, tất cả hòa quyện tạo nên súc hút đặc biệt cho món ăn này.</interesting_information>
+    <ingredients>
+      <ingredient>Gân bò (500gr)</ingredient>
+      <ingredient>Tỏi băm (2 muỗng canh)</ingredient>
+      <ingredient>Tỏi củ (20gr)</ingredient>
+      <ingredient>Nước mắm (2.5 muỗng canh)</ingredient>
+      <ingredient>Đường trắng (1 muỗng canh)</ingredient>
+      <ingredient>Bột ngọt (1 muỗng cà phê)</ingredient>
+      <ingredient>Gừng lát (10gr)</ingredient>
+      <ingredient>Sả khúc (10gr)</ingredient>
+      <ingredient>Giấm (2 muỗng canh)</ingredient>
+    </ingredients>
+    <steps>
+      <step>
+        <step_text>Đầu tiên, bắt nồi nước sôi cho vào nồi 10gr gừng lát, 10gr sả khúc, 2 muỗng canh giấm (để cho gân bò nhanh mềm), sau đó cho 500gr gân bò đã được sơ chế sạch vào nồi luộc 30 phút cho gân mềm, rồi với ra tô nước lạnh để giữ được độ giòn của gân, kế tiếp đem cắt thành miếng vừa ăn. Lưu ý: Có thể hầm bò bằng nồi áp suất để tiết kiệm thời gian.</step_text>
+        <step_picture_name>Gân Bò Cháy Tỏi//img1.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Cho 2 muỗng canh dầu ăn vào chảo, cho 2 muỗng canh tỏi băm, 20gr tỏi củ để lửa vừa phi thơm vàng tỏi, tiếp đó cho gân bò vào đảo nhanh rồi nêm vào 2.5 muỗng canh nước mắm, 1 muỗng canh đường, 1 muỗng cà phê bột ngọt.</step_text>
+        <step_picture_name>Gân Bò Cháy Tỏi//img2.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Đảo đều tay cho gia vị thấm đều gân bò đến khi hỗn hợp keo lại áo đều gân là được, cho món ăn ra dĩa, trang trí thêm ớt sợi và hành lá để món ăn trông đẹp mắt và hấp dẫn hơn.</step_text>
+        <step_picture_name>Gân Bò Cháy Tỏi//img3.png</step_picture_name>
+      </step>
+    </steps>
+  </recipe>
+  <recipe isFavorite="false" date_created="18-11-2020" category="Dry Food">
+    <foodname>Gà Nướng Chao</foodname>
+    <mainpicture_name>Gà Nướng Chao//img0.png</mainpicture_name>
+    <mainvideo_link>https://www.youtube.com/watch?v=tNc6XT7aWiY</mainvideo_link>
+    <interesting_information>Gà Nướng Chao- món ăn khai vị cho bữa tiệc gia đình, Món ăn đặc biệt hấp dẫn bởi màu sắc đẹp mắt của chao đỏ, và có hương vị đặc biệt từ các loại chao và chút mùi thơm từ rượu vang. Món ăn này ghi điểm bởi độ mềm, thơm đậm đà của thịt gà thấm đượm gia vị.</interesting_information>
+    <ingredients>
+      <ingredient>Đùi gà tỏi rút xương (5 cái)</ingredient>
+      <ingredient>Chao trắng (10 miếng)</ingredient>
+      <ingredient>Chao đỏ (3 miếng)</ingredient>
+      <ingredient>Rượu vang đỏ (15ml)</ingredient>
+      <ingredient>Nước chao (15ml)</ingredient>
+      <ingredient>Mật ong (3 muỗng canh)</ingredient>
+      <ingredient>Tỏi băm (1 muỗng canh)</ingredient>
+      <ingredient>Hành tím băm (1 muỗng canh)</ingredient>
+      <ingredient>Gừng băm (1/2 muỗng canh)</ingredient>
+      <ingredient></ingredient>
+    </ingredients>
+    <steps>
+      <step>
+        <step_text>Đầu tiên, cho 10 miếng chao trắng, 3 miếng chao đỏ vào tô dùng muỗng tán nhuyễn, sau đó cho 15ml rượu vang, 3 muỗng canh mật ong, 15ml nước chao, 1/2 muỗng canh gừng băm, 1 muỗng canh hành tím băm, 1 muỗng canh tỏi băm rồi dùng muỗng khuấy đều hỗn hợp cho đều.</step_text>
+        <step_picture_name>Gà Nướng Chao//img1.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Tiếp theo, cho 7 đùi gà tỏi đã lóc bỏ xương vào, trộn đều, sau đó cuộn thịt lại dùng dây buột chặt rồi để ngăn đông tủ lạnh khoảng 2 tiếng cho thịt ngấm gia vị. Cho gà ra vĩ nướng có lót sẵn giấy bạc, rồi cho vào lò nướng đã làm nóng sẵn trước đó nướng ở nhiệt độ 200 độ và trong vòng 45 phút.</step_text>
+        <step_picture_name>Gà Nướng Chao//img2.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Khi thịt chín, lấy ra để nguội rồi thái thành miếng vừa ăn sau đó bày ra dĩa. Món ăn này có thể dùng kèm thêm salad, nấm hương nướng cũng rất hợp. Thịt gà mềm không bị khô, thấm đượm vị chao bùi có chút beo béo kết hợp với rượu vang tạo nêm mùi thơm khó cưỡng.</step_text>
+        <step_picture_name>Gà Nướng Chao//img3.png</step_picture_name>
+      </step>
+    </steps>
+  </recipe>
+  <recipe isFavorite="false" date_created="18-11-2020" category="Dry Food">
+    <foodname>Sủi Cảo Khô</foodname>
+    <mainpicture_name>Sủi Cảo Khô//img0.png</mainpicture_name>
+    <mainvideo_link>https://www.youtube.com/watch?v=Cgf5oyrK9Dk</mainvideo_link>
+    <interesting_information>Sủi cảo là món ăn ngon khá phổ biến ở nước ta, có nguồn gốc từ Trung Quốc. Sủi cảo có rất nhiều cách chế biến như hấp, chiên,...  Nhưng hôm nay, Cooky sẽ hướng dẫn cho bạn một cách chế biến món sủi cảo rất mới lạ, độc đáo, đó chính là sủi cảo khô. Những viên sủi cảo vòng óng, tròn ụ với phần vỏ dai dai, mềm mượt, phần nhân bên trong có thịt tôm vừa giòn vừa tươi được bao bọc bởi phần thịt được nêm nếm vừa vị, chan lên sủi cảo là nước sốt đậm đà.</interesting_information>
+    <ingredients>
+      <ingredient>Hoành thánh lá (200 gram)</ingredient>
+      <ingredient>Thịt nạc dăm xay (300 gram)</ingredient>
+      <ingredient>Cá thác lác nạo (100 gram)</ingredient>
+      <ingredient>Trứng gà (1 quả)</ingredient>
+      <ingredient>Tôm thẻ (500 gram)</ingredient>
+      <ingredient>Hành lá (20 gram)</ingredient>
+      <ingredient>Nước tương (80 ml)</ingredient>
+      <ingredient>Tỏi băm (1 muỗng canh)</ingredient>
+      <ingredient>Hành tím băm (1 muỗng canh)</ingredient>
+      <ingredient>Tiêu (1/2 muỗng canh)</ingredient>
+      <ingredient>Đường (1 muỗng canh)</ingredient>
+      <ingredient>Dầu mè (1 muỗng canh)</ingredient>
+      <ingredient>Dầu hào (1 muỗng canh)</ingredient>
+      <ingredient>Dấm đen (1 muỗng canh)</ingredient>
+      <ingredient>Nước lọc (50 ml)</ingredient>
+      <ingredient>Bột năng pha loãng (20 ml)</ingredient>
+      <ingredient></ingredient>
+    </ingredients>
+    <steps>
+      <step>
+        <step_text>Nhân thịt: Cho 300 gram thịt heo xay, 100 gram chả cá thác lác, 1 quả trứng gà, 1 muỗng canh tỏi băm, 1 muỗng canh hành tím băm, 30 ml nước tương, 1 muỗng cà phê đường, 1 muỗng cà phê hạt nêm, nửa muỗng cà phê muối, 1 muỗng cà phê tiêu, 1 muỗng cà phê dầu mè vào tô rồi trộn đều cho các nguyên liệu hòa quyện vào nhau.</step_text>
+        <step_picture_name>Sủi Cảo Khô//img1.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Cho nửa muỗng canh nhân thịt vào giữa lá hoành thánh, sau đó cho tôm lên trên rồi dùng tay thấm một ít nước lên mép rồi gấp mí lá hoành thánh lại. Tiếp đến, bắc nồi nước sôi, cho hoành thánh vào luộc đến khi hoành thánh nổi lên trên mặt nước, vớt ra để cho ráo nước (Trong trường hợp bạn không thể dùng ngay, bạn nên trộn 1 muỗng canh dầu ăn để hoành thánh không bị dính vào nhau)</step_text>
+        <step_picture_name>Sủi Cảo Khô//img2.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Nước sốt: Cho 50 ml nước tương, 50 ml nước lọc, 1 muỗng cà phê hạt nêm, 1 muỗng cà phê dầu mè, 1 muỗng canh dấm đen, 1 muỗng canh đường, 20 ml bột năng (pha loãng) vào chảo đun sôi, nêm nếm lại cho vừa ăn, tắt bếp</step_text>
+        <step_picture_name>Sủi Cảo Khô//img3.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Trộn hoành thánh đã trụng với nước sốt rồi cho ra đĩa, rắc tớp mỡ, hành phi, hành lá lên trên. Món dùng kèm với nước súp rau cải xanh. Chỉ cần dành một ít thời gian là bạn đã ngay những viên sủi cảo vòng óng, tròn ụ với phần vỏ dai dai, mềm mượt, phần nhân bên trong có thịt tôm vừa giòn vừa tươi được bao bọc bởi phần thịt được nêm nếm vừa vị, chan lên sủi cảo là nước sốt đậm đà. Bạn hãy bổ sung món này vào thực đơn của gia đình nhé!</step_text>
+        <step_picture_name>Sủi Cảo Khô//img4.png</step_picture_name>
+      </step>
+    </steps>
+  </recipe>
+  <recipe isFavorite="false" date_created="18-11-2020" category="Water Dish">
+    <foodname>Cháo Sò Huyết</foodname>
+    <mainpicture_name>Cháo Sò Huyết//img0.png</mainpicture_name>
+    <mainvideo_link>https://www.youtube.com/watch?v=LE93SxGYMH8</mainvideo_link>
+    <interesting_information>Sò huyết là một loại thực phẩm giàu chất sắt và canxi, rất tốt cho việc bồi bổ sức khỏe.</interesting_information>
+    <ingredients>
+      <ingredient>Sò huyết (500gr)</ingredient>
+      <ingredient>Thịt heo xay (200gr)</ingredient>
+      <ingredient>Nấm rơm (200gr)</ingredient>
+      <ingredient>Gạo tẻ (300gr)</ingredient>
+      <ingredient>Huyết heo (200gr)</ingredient>
+      <ingredient>Hành tím (15gr)</ingredient>
+      <ingredient>Hành trắng (15gr)</ingredient>
+      <ingredient>Nước mắm (1 muỗng canh)</ingredient>
+      <ingredient>Hạt nêm (1 muỗng canh)</ingredient>
+      <ingredient>Muối (1/2 muỗng canh)</ingredient>
+      <ingredient>Hành lá (20gr)</ingredient>
+      <ingredient>Ngò gai (20gr)</ingredient>
+      <ingredient></ingredient>
+    </ingredients>
+    <steps>
+      <step>
+        <step_text>Sò huyết mua về rửa sạch bùn đất, dùng bàn chải cọ sạch vỏ ngoài, rửa sạch rồi để ráo. Trụng sơ 500gr sò huyết với nước sôi và một ít sả cho thơm khoảng 30 giây, vớt sò ra để ráo rồi tách lấy sò và nước sò ra riêng.</step_text>
+        <step_picture_name>Cháo Sò Huyết//img1.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Cho 1 chén gạo tẻ vào nồi rang đến khi vàng đều, để riêng. Bắc nồi lên bếp, làm nóng dầu ăn, phi thơm 10gr hành tím và 10gr hành trắng đến khi vàng, kế đến cho vào 200gr thịt heo xay rồi xào săn. Kế đến cho 200gr nấm rơm vào đảo đều. Nêm vào 1 muỗng cà phê hạt nêm, 1 muỗng cà phê muối, 1 muỗng cà phê tiêu. Đảo đều khoảng 1 phút cho gia vị thấm sau đó cho vào 500ml nước luộc sò huyết, 500ml nước lọc. Cho gạo đã rang vào nồi, khuấy đều rồi nấu cho cháo mềm trong 20 phút.</step_text>
+        <step_picture_name>Cháo Sò Huyết//img2.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Khi cháo đã mềm nêm vào nồi 1/2 muỗng canh muối, 1 muỗng canh hạt nêm và 1 muỗng canh nước mắm, cho vào 200gr huyết heo, đảo đều rồi cho phần sò huyết đã luộc vào, rắc hành lá và ngò gai xắt nhuyễn lên mặt là hoàn tất.</step_text>
+        <step_picture_name>Cháo Sò Huyết//img3.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Cho cháo sò huyết ra tô, dùng nóng cùng rau gồm giá, rau má con, bắp cải trắng bào sợi, chấm với muối tiêu tắc. Cháo sò huyết ngon nhất khi đang còn nóng, khói tỏa nghi ngút. Vị ngọt tự nhiên của sò huyết hòa lẫn với vị cay nồng của tiêu, làm món cháo có hương vị ngọt dịu, ấm nồng hết sức hấp dẫn.</step_text>
+        <step_picture_name>Cháo Sò Huyết//img4.png</step_picture_name>
+      </step>
+    </steps>
+  </recipe>
+  <recipe isFavorite="false" date_created="18-11-2020" category="Dry Food">
+    <foodname>Gà Quay Me</foodname>
+    <mainpicture_name>Gà Quay Me//img0.png</mainpicture_name>
+    <mainvideo_link>https://www.youtube.com/watch?v=LLgPTIEGgEM</mainvideo_link>
+    <interesting_information>Gà quay me, món ăn bình dân với hương vị thơm ngon, lạ miệng. Nếu bạn là tín đồ của các món gà thì món ăn này bạn không thể bỏ qua được. Lớp da gà óng vàng được phủ lên phần nước sốt me chua chua ngọt ngọt, làm tăng thêm sự hấp dẫn, quyến rủ và bắt mắt của món ăn. Các món ăn kèm cùng vô cùng phong phú với xôi chiên phồng ngoài giòn tan còn bên trong thì mềm dẻo, thêm một ít rau xanh và kim chi thanh mát</interesting_information>
+    <ingredients>
+      <ingredient>Gà ta (1 con)</ingredient>
+      <ingredient>Xôi chiên (200gr)</ingredient>
+      <ingredient>Kim chi (200gr)</ingredient>
+      <ingredient>Rau răm (30gr)</ingredient>
+      <ingredient>Dưa leo (1 trái)</ingredient>
+      <ingredient>Nước cốt me (100gr)</ingredient>
+      <ingredient>Đường (120gr)</ingredient>
+      <ingredient>Tương ớt (50gr)</ingredient>
+      <ingredient>Tương cà (50gr)</ingredient>
+      <ingredient>Tương xí muội (50gr)</ingredient>
+      <ingredient>Nước mắm (1 muỗng cà phê)</ingredient>
+      <ingredient>Ớt xay (1 muỗng cà phê)</ingredient>
+      <ingredient>Tỏi băm (2 muỗng cà phê)</ingredient>
+      <ingredient>Hành tím băm (2 muỗng cà phê)</ingredient>
+      <ingredient>Nước lọc (150ml)</ingredient>
+      <ingredient>Hạt nêm (1 muỗng cà phê)</ingredient>
+      <ingredient>Bột ngọt (1 muỗng cà phê)</ingredient>
+      <ingredient>Tiêu xay (1/2 muỗng cà)</ingredient>
+      <ingredient>Nước tương (2 muỗng cà phê)</ingredient>
+    </ingredients>
+    <steps>
+      <step>
+        <step_text>Đầu tiên, gà ta sơ chế sạch sẽ, để ráo nước sau đó dùng nĩa hoặc tăm xăm nhẹ xung quanh lớp da để các gia vị thấm đều gà hơn. Uớp gà với 1 muỗng cà phê hạt nêm, 1 muỗng cà phê bột ngọt, 1/2 muỗng tiêu xay, 2 muỗng cà phê nước tương rồi dùng tay thoa đều xung quanh gà để ướp 20 phút</step_text>
+        <step_picture_name>Gà Quay Me//img1.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Bắt chảo dầu lên bếp cho nóng, cho gà đã ướp vào chiên ngập dầu với lửa vừa trong 10-12 phút cho gà chín vàng đều.</step_text>
+        <step_picture_name>Gà Quay Me//img2.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Làm sốt me: Cho 1 muỗng canh dầu ăn vào chảo, phi thơm 1 muỗng canh hành tím băm, 1 muỗng cà phê tỏi băm. Thêm 50gr nước cốt me, 100ml nước lọc, 60gr đường, 50gr tương ớt, 50gr tương cà, 50gr tương xí muội, 1/2 muỗng cà phê nước mắm, 1/2 muỗng cà phê ớt xay, khuấy tan rồi nấu sôi hỗn hợp đến khi hỗn hợp hơi sệt thì tắt bếp.</step_text>
+        <step_picture_name>Gà Quay Me//img3.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Cho gà ra mâm, rưới nước sôt me đều xung quanh gà ăn kèm với xôi chiên phồng, kim chi, dưa leo và rau răm, Gà được chiên vàng thơm thắm đượm vị, được rưới thêm nước sốt me chua ngọt làm tăng thêm hương vị của món ăn.</step_text>
+        <step_picture_name>Gà Quay Me//img4.png</step_picture_name>
+      </step>
+    </steps>
+  </recipe>
+  <recipe isFavorite="false" date_created="18-11-2020" category="Drink">
+    <foodname>Soda Galaxy</foodname>
+    <mainpicture_name>Soda Galaxy//img0.png</mainpicture_name>
+    <mainvideo_link>https://www.youtube.com/watch?v=3iRwnnPh0m8</mainvideo_link>
+    <interesting_information>Interesting infomation about this food</interesting_information>
+    <ingredients>
+      <ingredient>Hoa đậu biếc sấy khô (10 gram)</ingredient>
+      <ingredient>Nước lọc (700 ml)</ingredient>
+      <ingredient>Chanh vàng (4 trái)</ingredient>
+      <ingredient>Đường trắng (100 gram)</ingredient>
+      <ingredient>Nước soda 2 lon (330ml/lon)</ingredient>
+      <ingredient></ingredient>
+    </ingredients>
+    <steps>
+      <step>
+        <step_text>Đá xanh: Cho 700 ml nước lọc vào nồi đun cho sôi, cho 10 gram hoa đậu biếc vào nồi, khuấy đều rồi để nguội. Tiếp đến, lọc qua rây rồi cho nước vào khuôn đá để qua đêm cho đông lại, rồi đem đập nhuyễn hay xay nhuyễn</step_text>
+        <step_picture_name>Soda Galaxy//img1.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Đem 4 trái chanh vàng vắt lấy nước, bỏ hạt. Cho 100 gram đường trắng vào nước chanh, khuấy tan đường, nêm nếm lại cho vừa vị. Ở đây, bạn có thể thay thế chanh vàng bằng chanh xanh nhé.</step_text>
+        <step_picture_name>Soda Galaxy//img2.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Chuẩn bị một cái ly, cho 1 ít đá nhuyễn vào nửa ly, rót nước chanh vào 1/3 ly, cho đá xanh nhuyễn vào đầy ly, cuối cùng là rót soda vào và bạn đã có được một ly soda galaxy rồi đấy.</step_text>
+        <step_picture_name>Soda Galaxy//img3.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Trang trí một lát chanh và một nhánh lá húng lủi be bé lên trên mặt và thưởng thức ngay ly soda đủ màu sắc. Chỉ với những nguyên liệu hết sức đơn giản, dễ tìm là bạn đã có một cách biến tấu hoàn toàn mới, công thức trên sẽ "hô biến" ly soda chanh thông thường của bạn thành cả dải ngân hà đủ màu sắc.</step_text>
+        <step_picture_name>Soda Galaxy//img4.png</step_picture_name>
+      </step>
+    </steps>
+  </recipe>
+  <recipe isFavorite="false" date_created="18-11-2020" category="Dry Food">
+    <foodname>Cơm Cuộn Trứng</foodname>
+    <mainpicture_name>Cơm Cuộn Trứng//img0.png</mainpicture_name>
+    <mainvideo_link>Video link</mainvideo_link>
+    <interesting_information>Interesting infomation about this food</interesting_information>
+    <ingredients>
+      <ingredient>Ức gà (150 Gr)</ingredient>
+      <ingredient>Cà rốt (50 Gr)</ingredient>
+      <ingredient>Bí ngòi (50 Gr)</ingredient>
+      <ingredient>Đường trắng (1 Muỗng canh)</ingredient>
+      <ingredient>Tương cà Chinsu (2 Muỗng canh)</ingredient>
+      <ingredient>Cơm nguội (300 Gr)</ingredient>
+      <ingredient>Trứng gà (2 Quả)</ingredient>
+      <ingredient>Tỏi băm (1 Muỗng canh)</ingredient>
+      <ingredient>Hành tây (1 Muỗng canh)</ingredient>
+    </ingredients>
+    <steps>
+      <step>
+        <step_text>Phi thơm 1 muỗng canh tỏi băm và 1 canh hành tây xắt hạt lựu , trút phần ức gà đã thái hạt lựu và ướp 1 muỗng canh hạt nêm vào và xào nhanh trong 2 phút. Cho tiếp 50gr cà rốt thái hạt lựu và 50 bí ngòi xanh thái hạt lựu vào đảo đều cho chín.</step_text>
+        <step_picture_name>Cơm Cuộn Trứng//img1.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Cho tiếp 300gr cơm nguội vào, dùng sạn đánh tơi cơm. Nêm vào 2 muỗng canh tương cà Chinsu, 1 muỗng canh đường cát , trộn đều đến khi cơm ráo.</step_text>
+        <step_picture_name>Cơm Cuộn Trứng//img2.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Chiên tráng mỏng 2 quả trứng gà, sau đó cho cơm vào giữa, dùng sạn gập 2 mép trứng vào và lật úp ra dĩa.</step_text>
+        <step_picture_name>Cơm Cuộn Trứng//img3.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Món ăn ngon hơn khi dùng nóng và ăn kèm với tương ớt Chinsu cay bùng vị.</step_text>
+        <step_picture_name>Cơm Cuộn Trứng//img4.png</step_picture_name>
+      </step>
+    </steps>
+  </recipe>
+  <recipe isFavorite="false" date_created="18-11-2020" category="Water Dish">
+    <foodname>Mì Udon Thịt</foodname>
+    <mainpicture_name>Mì Udon Thịt//img0.png</mainpicture_name>
+    <mainvideo_link>Video link</mainvideo_link>
+    <interesting_information>Interesting infomation about this food</interesting_information>
+    <ingredients>
+      <ingredient>Mì Udon (150 Gr)</ingredient>
+      <ingredient>Nước (400 ml)</ingredient>
+      <ingredient>Thịt bò (200 Gr)</ingredient>
+      <ingredient>Hành tây (1/2 Củ)</ingredient>
+      <ingredient>Nước (1 Muỗng canh)</ingredient>
+      <ingredient>Đường trắng (2 Muỗng cà phê)</ingredient>
+      <ingredient>Rượu Mirin (1 Muỗng canh)</ingredient>
+      <ingredient>Nước tương (2 Muỗng canh)</ingredient>
+      <ingredient>Trứng gà (2 Quả)</ingredient>
+    </ingredients>
+    <steps>
+      <step>
+        <step_text>Cắt hành tây theo dạng hình bán nguyệt. Đổ 400ml nước vào nồi và đun sôi.</step_text>
+        <step_picture_name>Mì Udon Thịt//img1.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Đổ dầu trộn xà lách vào chảo, chờ đến khi dầu nóng lên thì bỏ thịt bò vào xào trên ngọn lửa vừa. Khi thấy thịt bò chín một nửa thì cho hành tây và gia vị được đánh dấu ☆ ở trên vào. Khi thịt chín tới thì đập trứng cho vào nồi và đậy nắp lại. Trong thời gian chờ trứng chín thì cho "MÌ UDON SUKI-SUKI", bột súp, nước sôi vào bát, chờ trong 5 phút.</step_text>
+        <step_picture_name>Mì Udon Thịt//img2.png</step_picture_name>
+      </step>
+      <step>
+        <step_text>Khi thấy bề mặt trứng chuyển sang màu trắng thì tắt bếp, bỏ các nguyên liệu đã nấu lên trên tô mì Udon đã được chuẩn bị sẵn, các bước đã hoàn thành.</step_text>
+        <step_picture_name>Mì Udon Thịt//img3.png</step_picture_name>
       </step>
     </steps>
   </recipe>
