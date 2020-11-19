@@ -4,7 +4,7 @@
     <mainpicture_name>Cá kho tộ//ca-kho-to.jpg </mainpicture_name>
     <mainvideo_link>https://www.youtube.com/watch?v=b-4aOjI5Lzs</mainvideo_link>
     <foodname>Cá kho tộ</foodname>
-    <interesting_information>Cá kho tộ rất ngon khi trời lạnh</interesting_information>
+    <interesting_information>Cơm trắng, cá kho tộ và canh chua là những món tạo thành bữa ăn đặc trưng của người miền Nam. Cái vị ngọt mềm, thơm ngậy của thịt cá, chút mằn mặn của nước mắm se se vị cay của ớt đã tạo nên hương vị đặc trưng của món ăn này</interesting_information>
     <ingredients>
       <ingredient>1 con cá lóc</ingredient>
       <ingredient>100g thịt ba chỉ</ingredient>
@@ -35,6 +35,7 @@
   <recipe isFavorite="false" date_created="03-02-1990" category="Dry Food">
     <mainpicture_name>Gỏi gà lá chanh//goi-ga-la-chanh.jpg</mainpicture_name>
     <mainvideo_link>https://www.youtube.com/watch?v=UMmG8EIq1-Y</mainvideo_link>
+     <interesting_information>Gỏi gà là món ăn yêu thích của nhiều gia đình, sự kết hợp giữa vị ngọt của thịt gà và vị thơm của lá răm vị bùi của ngó sen, vị hăng của bắp cải hay chát của hoa chuối.</interesting_information>
     <ingredients>
       <ingredient>1 quả hành tây</ingredient>
       <ingredient>1 đùi gà</ingredient>
