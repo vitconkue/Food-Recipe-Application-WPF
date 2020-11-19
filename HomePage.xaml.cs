@@ -63,6 +63,7 @@ namespace Food_Recipe_Appplication
         private void SearchBox_LostFocus(object sender, RoutedEventArgs e)
         {
             SearchBox.Text = "Search";
+            ChangeBindingList(recipeList);
             SearchBox.Foreground = Brushes.Gray;
         }
 
